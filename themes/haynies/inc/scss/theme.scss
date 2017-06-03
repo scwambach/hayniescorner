@@ -1,0 +1,23 @@
+// -------------------------------------
+//   External Libraries & Settings
+// -------------------------------------
+
+// // ----- Settings ----- //
+@import "core/settings";
+//
+// // ----- Compass ----- //
+@import "compass";
+body {
+  &.login {
+    background-color: white;
+    h1 {
+      a {
+        background-image: url(../images/login.png);
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 230px;
+        width: 164px;
+      }
+    }
+  }
+}

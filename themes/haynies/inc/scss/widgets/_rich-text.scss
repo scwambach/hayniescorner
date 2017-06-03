@@ -1,0 +1,30 @@
+.page-content {
+  padding: 70px 0;
+  h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .divide {
+    @include respond-at($ipad-port) {
+      width: 100%;
+      padding-bottom: 50px;
+    }
+    @include respond-to($ipad-port + 1) {
+      padding-right: 25px;
+    }
+    + .divide {
+      @include respond-to($ipad-port + 1) {
+        padding-left: 25px;
+      }
+      @include respond-at($ipad-port) {
+        padding-bottom: 0;
+      }
+    }
+    p {
+      line-height: 1.8;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

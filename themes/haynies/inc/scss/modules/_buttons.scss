@@ -1,0 +1,12 @@
+.btn {
+  @include border-radius(0 0);
+  padding: 10px 50px;
+  border: none;
+  display: inline-block;
+  margin: 20px 0;
+  text-transform: uppercase;
+  &.red {
+    background-color: $red;
+    color: $white;
+  }
+}

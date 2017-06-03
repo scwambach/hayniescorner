@@ -1,0 +1,88 @@
+footer {
+  background-color: $blue;
+  color: $white;
+  line-height: 2;
+  font-weight: 300;
+  .footer-container {
+    padding: 60px 0 50px 0;
+    .section {
+      padding: 0 12.5px;
+      &:first-of-type {
+        padding-left: 0;
+        padding-right: 25px;
+      }
+      &:last-of-type {
+        padding-right: 0;
+        padding-left: 25px;
+      }
+      @include respond-at($ipad-port) {
+        float: none;
+        width: 100%;
+        padding: 0 0 50px;
+        &:first-of-type {
+          padding: 0 0 50px;
+        }
+        &:last-of-type {
+          padding: 0;
+        }
+      }
+      h3 {
+        margin: 0;
+        font-size: 15px;
+        margin-bottom: 30px;
+        font-weight: 600;
+      }
+      a {
+        color: $white;
+      }
+      ul {
+        li {
+          a {
+            border-bottom: 1px solid $white;
+            display: block;
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            &:after {
+              content: "\f105";
+              font-family: "FontAwesome";
+              right: 0;
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    background-color: shade($blue, 20%);
+    padding: 20px 0;
+    ul {
+      @include respond-at($ipad-port) {
+        padding-top: 10px;
+      }
+      @include respond-to($ipad-port + 1) {
+        float: right;
+      }
+      li {
+        display: inline-block;
+        padding-left: 15px;
+        @include respond-at($ipad-port) {
+          padding-left: 0;
+          padding-right: 15px;
+
+        }
+        a {
+          font-size: 24px;
+          opacity: 0.6;
+          line-height: 1;
+          @include transition-duration($ani-speed);
+          color: $white;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+// ----- Turn Pixels into Ems ----- //
+@function calc-em($target-px, $context: $font-size-base) {
+  @return ($target-px / $context) * 1em;
+}
+
+// ----- Handle Media Queries ----- //
+@mixin respond-to($viewport-width) {
+  @media only screen and (min-width: $viewport-width) {
+    @content;
+  }
+}
+
+@mixin respond-at($viewport-width) {
+  @media only screen and (max-width: $viewport-width) {
+    @content;
+  }
+}
+
+
+// ----- Fixes Deprecation Warning and redifines Mixin ----- //
+@mixin box-sizing($box-model: $default-box-sizing) {
+  @if type-of($box-model) == string {
+    $box-model: unquote($box-model);
+  }
+  @include prefixed-properties(css3-boxsizing, $box-sizing-support-threshold, (box-sizing: $box-model));
+}
+
+//Font Type/Weight
+@mixin font-family($font) {
+  @if $font == main {
+    font-family: $main-font;
+  } @else if $font == mainItalic {
+    font-family: $main-font;
+    font-style: italic;
+  } @else if $font == mainLight {
+    font-family: $main-font;
+    font-weight: 300;
+  } @else if $font == mainLightItalic {
+    font-family: $main-font;
+    font-weight: 300;
+    font-style: italic;
+  } @else if $font == mainMed {
+    font-family: $main-font;
+    font-weight: 600;
+  } @else if $font == mainMedItalic {
+    font-family: $main-font;
+    font-weight: 600;
+    font-style: italic;
+  } @else if $font == mainBold {
+    font-family: $main-font;
+    font-weight: 700;
+  } @else if $font == mainBoldItalic {
+    font-family: $main-font;
+    font-weight: 700;
+    font-style: italic;
+  } @else {
+    font-family: $font;
+  }
+}
+
+// Animation KeyFrames
+@mixin anime-keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin size-height($font-size) {
+  font-size: $font-size;
+  line-height: $font-size + 4;
+}
+
+@mixin placeholder() {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {   /* Older versions of Firefox */
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin highlight() {
+  ::-moz-selection {
+    @content;
+  }
+  ::selection {
+    @content;
+  }
+}

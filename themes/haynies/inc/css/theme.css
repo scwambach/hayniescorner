@@ -1,0 +1,10 @@
+/* line 11, ../scss/theme.scss */
+body.login {
+  background-color: white; }
+  /* line 14, ../scss/theme.scss */
+  body.login h1 a {
+    background-image: url(../images/login.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 230px;
+    width: 164px; }

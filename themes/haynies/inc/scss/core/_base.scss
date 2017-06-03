@@ -1,0 +1,211 @@
+#wpadminbar {
+  right: 100%;
+  left: inherit;
+  @include transition-duration(0.2s);
+  &:after {
+    content: "ADMIN BAR";
+    height: 32px;
+    width: 120px;
+    background: $blue;
+    position: absolute;
+    left: 100%;
+    display: block;
+    padding: 0px 22px;
+    cursor: pointer;
+    @include respond-at($ipad-port) {
+      opacity: 0.2;
+      position: fixed;
+      z-index: 9;
+      top: 0;
+      left: 0;
+    }
+  }
+  &:hover {
+    right: 0;
+  }
+}
+html, body {
+  font-family: $main-font;
+  font-size: 13px;
+  margin: 0 !important;
+  line-height: 1.7;
+  @include transition-duration($ani-speed);
+  position: relative;
+  right: 0;
+  @include respond-to($ipad-port + 1) {
+    background-color: shade($blue, 20%);
+  }
+  &.logged-in {
+    margin: 0 !important;
+  }
+  &.slideOver {
+    right: 40%;
+    overflow-y: hidden;
+  }
+}
+html {
+  &.fullpage-video {
+    height: 100%;
+    overflow: hidden;
+    margin: 0 !important;
+    body {
+      height: 100%;
+      overflow: hidden;
+      margin: 0 !important;
+    }
+    main {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      display: table;
+    }
+    &.slideOver {
+      header {
+        right: 80%;
+      }
+    }
+  }
+}
+main {
+  &.solid {
+    @include respond-to($ipad-port + 1) {
+      padding-top: 78px;
+    }
+  }
+}
+.wrap {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: $page-width;
+  @include box-sizing(content-box);
+}
+a {
+  color: $blue;
+  &:hover, &:focus {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+.clearfix {
+  &:after, &:before {
+  	visibility: hidden;
+  	display: block;
+  	font-size: 0;
+  	content: " ";
+  	clear: both;
+  	height: 0;
+  }
+}
+p {
+  margin-bottom: 20px;
+}
+
+.clearfix {
+	display: block;
+}
+.halves, .thirds, .fourths, .fifths, .sixth {
+  float: left;
+}
+.halves {
+  width: 50%;
+}
+.thirds {
+  width: 33.333%;
+}
+.fourths {
+  width: 25%;
+}
+.fifths {
+  width: 20%;
+}
+.sixth {
+  width: 16.666%;
+  @include respond-at($ipad-port) {
+    width: 33.33333333%;
+    &:nth-child(3n+1) {
+      clear: left;
+    }
+  }
+  @include respond-at($mobile) {
+    width: 50%;
+    &:nth-child(3n+1) {
+      clear: none;
+    }
+  }
+}
+section {
+  &#content {
+    background-color: $white;
+  }
+}
+.video-contain {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  &.no-vid {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    min-height: 50%;
+    min-width: 50%;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba($blue, 0.6);
+    z-index: 2;
+  }
+}
+.centered-logo {
+  display: table-cell;
+  position: relative;
+  z-index: 3;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 30px;
+  img {
+    max-width: 450px;
+    width: 100%;
+  }
+}
+h3 {
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+.instashow-gallery-container {
+  transform: inherit !important;
+}
+.acf-map {
+	width: 100%;
+	height: 700px;
+	border: #ccc solid 1px;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
+}

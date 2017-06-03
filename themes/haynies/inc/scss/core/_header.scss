@@ -1,0 +1,281 @@
+header {
+  background: $white;
+  width: 100%;
+  z-index: 9;
+  position: relative;
+  @include transition-duration($ani-speed);
+  @include respond-to($ipad-port + 1) {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .fullpage-video & {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  .navigation {
+    @include respond-at($ipad-port) {
+      position: relative;
+      padding: 15px 30px;
+    }
+    .main-logo {
+      float: left;
+      @include respond-at($ipad-port) {
+        display: block;
+        @include box-sizing(content-box);
+      }
+      img {
+        max-width: 180px;
+        width: 100%;
+        @include respond-to($ipad-port + 1) {
+          padding: 15px 0;
+        }
+        @include respond-to(800px) {
+          padding: 15px 0;
+          max-width: 207px;
+        }
+        &.trans-logo {
+          display: none;
+        }
+      }
+    }
+    nav {
+      @include respond-to($ipad-port + 1) {
+        float: right;
+        display: block !important;
+      }
+      @include respond-at($ipad-port) {
+        position: fixed;
+        left: 100%;
+        top: 0;
+        background: $white;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        @include transition-duration($ani-speed);
+        .slideOver & {
+          left: 20%;
+        }
+      }
+      .menu-main-menu-container {
+        > ul {
+          background-color: transparent;
+          border: none;
+          @include box-shadow(0 0);
+          @include respond-at($ipad-port) {
+            padding: 0 0 30px;
+          }
+          > li {
+            &.current-menu-item {
+              > a {
+                color: $red !important;
+              }
+            }
+            border: none;
+            > a {
+              font-size: 13px;
+              @include transition-duration($ani-speed);
+              padding-left: 0;
+              padding-right: 0;
+              @include respond-to($ipad-port + 1) {
+                padding: 30px 20px;
+              }
+              @include respond-at($ipad-port) {
+                padding: 20px 30px;
+                border-bottom: 1px solid $gray;
+              }
+              &.has-submenu {
+                padding-left: 0;
+                padding-right: 0;
+                @include respond-at($ipad-port) {
+                  padding: 20px 30px;
+                }
+                @include respond-to($ipad-port + 1) {
+                  padding: 30px 20px;
+                }
+              }
+              &:hover, &:focus, &:active, &.highlighted {
+                background-color: transparent;
+                color: $red !important;
+                padding-left: 0;
+                padding-right: 0;
+                @include respond-to($ipad-port + 1) {
+                  padding: 30px 20px;
+                }
+                @include respond-at($ipad-port) {
+                  padding: 20px 30px;
+                }
+              }
+            }
+            &.callout {
+              a {
+                background-color: $red;
+                color: $white;
+                &:hover {
+                  color: $white !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    i {
+      @include respond-to($ipad-port + 1) {
+        display: none;
+      }
+      @include respond-at($ipad-port) {
+        font-size: 30px;
+        line-height: 40px;
+        color: shade($white, 40%);
+        cursor: pointer;
+        float: right;
+      }
+    }
+  }
+  &.top {
+    @include respond-to($ipad-port + 1) {
+      border-bottom: 1px solid rgba($white, 0.2);
+      background-color: transparent;
+      .navigation {
+        .main-logo {
+          img {
+            &.main {
+              display: none;
+            }
+            &.trans-logo {
+              display: block;
+            }
+          }
+        }
+        nav {
+          .menu-main-menu-container {
+            > ul {
+              > li {
+                &.current-menu-item {
+                  > a {
+                    color: $gray !important;
+                  }
+                }
+                > a {
+                  color: $white;
+                  &.has-submenu {
+                  }
+                  &:hover, &:focus, &:active, &.highlighted {
+                    color: $gray !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.solid {
+      background-color: $white;
+      @include box-shadow(0 0 15px -3px $black);
+      .navigation {
+        .main-logo {
+          img {
+            &.main {
+              display: block;
+            }
+            &.trans-logo {
+              display: none;
+            }
+          }
+        }
+        nav {
+          .menu-main-menu-container {
+            > ul {
+              > li {
+                &.current-menu-item {
+                  > a {
+                    color: $red !important;
+                  }
+                }
+                > a {
+                  color: $yellow;
+                  &.has-submenu {
+                  }
+                  &:hover, &:focus, &:active, &.highlighted {
+                    color: $red !important;
+                  }
+                }
+                &.callout {
+                  a {
+                    background-color: $red;
+                    color: $white;
+                    &:hover {
+                      color: $white !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.scrolling {
+    background-color: $white;
+    @include box-shadow(0 0 15px -3px $black);
+    .navigation {
+      .main-logo {
+        img {
+          &.main {
+            display: block;
+          }
+          &.trans-logo {
+            display: none;
+          }
+        }
+      }
+      nav {
+        @include respond-at($ipad-port) {
+          overflow-y: auto;
+        }
+        .menu-main-menu-container {
+          > ul {
+            > li {
+              &.current-menu-item {
+                > a {
+                  color: $red !important;
+                }
+              }
+              > a {
+                color: $yellow;
+                &.has-submenu {
+                }
+                &:hover, &:focus, &:active, &.highlighted {
+                  color: $red !important;
+                }
+              }
+              &.callout {
+                a {
+                  background-color: $red;
+                  color: $white;
+                  &:hover {
+                    color: $white !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.title_bar {
+  background-color: $gray;
+  padding: 30px 0;
+  border-bottom: 1px solid shade($gray, 5%);
+  h1 {
+    font-size: 26px;
+    margin: 0;
+    color: tint($black, 30%);
+  }
+}
