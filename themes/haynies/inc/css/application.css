@@ -3118,7 +3118,7 @@ output {
   padding-top: 7px;
   font-size: 14px;
   line-height: 1.42857;
-  color: #555555; }
+  color: #f9f9f9; }
 
 /* line 114, ../scss/libs/bootstrap/bootstrap/_forms.scss */
 .form-control {
@@ -3128,7 +3128,7 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857;
-  color: #555555;
+  color: #f9f9f9;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -4398,7 +4398,7 @@ tbody.collapse.in {
   font-size: 14px;
   font-weight: normal;
   line-height: 1;
-  color: #555555;
+  color: #f9f9f9;
   text-align: center;
   background-color: #eeeeee;
   border: 1px solid #ccc;
@@ -4542,7 +4542,7 @@ tbody.collapse.in {
         border-color: #eeeeee #eeeeee #ddd; }
     /* line 96, ../scss/libs/bootstrap/bootstrap/_navs.scss */
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-      color: #555555;
+      color: #f9f9f9;
       background-color: #fff;
       border: 1px solid #ddd;
       border-bottom-color: transparent;
@@ -11912,7 +11912,7 @@ div.instashow-error-caption {
     display: block;
     padding: 0px 22px;
     cursor: pointer; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 5, ../scss/core/_base.scss */
       #wpadminbar:after {
         opacity: 0.2;
@@ -11934,7 +11934,7 @@ html, body {
   transition-duration: 0.2s;
   position: relative;
   right: 0; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 27, ../scss/core/_base.scss */
     html, body {
       background-color: #155e96; } }
@@ -11966,7 +11966,7 @@ html.fullpage-video {
   html.fullpage-video.slideOver header {
     right: 80%; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   /* line 70, ../scss/core/_base.scss */
   main.solid {
     padding-top: 78px; } }
@@ -12036,14 +12036,14 @@ p {
 /* line 128, ../scss/core/_base.scss */
 .sixth {
   width: 16.666%; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 128, ../scss/core/_base.scss */
     .sixth {
       width: 33.33333333%; }
       /* line 132, ../scss/core/_base.scss */
       .sixth:nth-child(3n+1) {
         clear: left; } }
-  @media only screen and (max-width: 479px) {
+  @media only screen and (max-width: 480px) {
     /* line 128, ../scss/core/_base.scss */
     .sixth {
       width: 50%; }
@@ -12116,7 +12116,7 @@ h3 {
 /* line 202, ../scss/core/_base.scss */
 .acf-map {
   width: 100%;
-  height: 700px;
+  height: 400px;
   border: #ccc solid 1px; }
 
 /* fixes potential theme css conflict */
@@ -12132,7 +12132,7 @@ header {
   position: relative;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 1, ../scss/core/_header.scss */
     header {
       position: fixed;
@@ -12143,7 +12143,7 @@ header {
     position: fixed;
     top: 0;
     right: 0; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 17, ../scss/core/_header.scss */
     header .navigation {
       position: relative;
@@ -12151,7 +12151,7 @@ header {
   /* line 22, ../scss/core/_header.scss */
   header .navigation .main-logo {
     float: left; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 22, ../scss/core/_header.scss */
       header .navigation .main-logo {
         display: block;
@@ -12162,7 +12162,7 @@ header {
     header .navigation .main-logo img {
       max-width: 180px;
       width: 100%; }
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: 769px) {
         /* line 28, ../scss/core/_header.scss */
         header .navigation .main-logo img {
           padding: 15px 0; } }
@@ -12174,12 +12174,12 @@ header {
       /* line 38, ../scss/core/_header.scss */
       header .navigation .main-logo img.trans-logo {
         display: none; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 43, ../scss/core/_header.scss */
     header .navigation nav {
       float: right;
       display: block !important; } }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 43, ../scss/core/_header.scss */
     header .navigation nav {
       position: fixed;
@@ -12200,7 +12200,7 @@ header {
     border: none;
     -webkit-box-shadow: 0 0;
     box-shadow: 0 0; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 62, ../scss/core/_header.scss */
       header .navigation nav .menu-main-menu-container > ul {
         padding: 0 0 30px; } }
@@ -12217,24 +12217,24 @@ header {
         transition-duration: 0.2s;
         padding-left: 0;
         padding-right: 0; }
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 769px) {
           /* line 76, ../scss/core/_header.scss */
           header .navigation nav .menu-main-menu-container > ul > li > a {
             padding: 30px 20px; } }
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: 768px) {
           /* line 76, ../scss/core/_header.scss */
           header .navigation nav .menu-main-menu-container > ul > li > a {
             padding: 20px 30px;
-            border-bottom: 1px solid #555555; } }
+            border-bottom: 1px solid #f9f9f9; } }
         /* line 88, ../scss/core/_header.scss */
         header .navigation nav .menu-main-menu-container > ul > li > a.has-submenu {
           padding-left: 0;
           padding-right: 0; }
-          @media only screen and (max-width: 767px) {
+          @media only screen and (max-width: 768px) {
             /* line 88, ../scss/core/_header.scss */
             header .navigation nav .menu-main-menu-container > ul > li > a.has-submenu {
               padding: 20px 30px; } }
-          @media only screen and (min-width: 768px) {
+          @media only screen and (min-width: 769px) {
             /* line 88, ../scss/core/_header.scss */
             header .navigation nav .menu-main-menu-container > ul > li > a.has-submenu {
               padding: 30px 20px; } }
@@ -12244,11 +12244,11 @@ header {
           color: #d64408 !important;
           padding-left: 0;
           padding-right: 0; }
-          @media only screen and (min-width: 768px) {
+          @media only screen and (min-width: 769px) {
             /* line 98, ../scss/core/_header.scss */
             header .navigation nav .menu-main-menu-container > ul > li > a:hover, header .navigation nav .menu-main-menu-container > ul > li > a:focus, header .navigation nav .menu-main-menu-container > ul > li > a:active, header .navigation nav .menu-main-menu-container > ul > li > a.highlighted {
               padding: 30px 20px; } }
-          @media only screen and (max-width: 767px) {
+          @media only screen and (max-width: 768px) {
             /* line 98, ../scss/core/_header.scss */
             header .navigation nav .menu-main-menu-container > ul > li > a:hover, header .navigation nav .menu-main-menu-container > ul > li > a:focus, header .navigation nav .menu-main-menu-container > ul > li > a:active, header .navigation nav .menu-main-menu-container > ul > li > a.highlighted {
               padding: 20px 30px; } }
@@ -12259,11 +12259,11 @@ header {
         /* line 115, ../scss/core/_header.scss */
         header .navigation nav .menu-main-menu-container > ul > li.callout a:hover {
           color: #FFFFFF !important; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 124, ../scss/core/_header.scss */
     header .navigation i {
       display: none; } }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 124, ../scss/core/_header.scss */
     header .navigation i {
       font-size: 30px;
@@ -12271,7 +12271,7 @@ header {
       color: #999999;
       cursor: pointer;
       float: right; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 137, ../scss/core/_header.scss */
     header.top {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -12284,13 +12284,13 @@ header {
         display: block; }
       /* line 157, ../scss/core/_header.scss */
       header.top .navigation nav .menu-main-menu-container > ul > li.current-menu-item > a {
-        color: #555555 !important; }
+        color: #f9f9f9 !important; }
       /* line 161, ../scss/core/_header.scss */
       header.top .navigation nav .menu-main-menu-container > ul > li > a {
         color: #FFFFFF; }
         /* line 165, ../scss/core/_header.scss */
         header.top .navigation nav .menu-main-menu-container > ul > li > a:hover, header.top .navigation nav .menu-main-menu-container > ul > li > a:focus, header.top .navigation nav .menu-main-menu-container > ul > li > a:active, header.top .navigation nav .menu-main-menu-container > ul > li > a.highlighted {
-          color: #555555 !important; } }
+          color: #f9f9f9 !important; } }
   /* line 175, ../scss/core/_header.scss */
   header.top.solid {
     background-color: #FFFFFF;
@@ -12307,7 +12307,7 @@ header {
       color: #d64408 !important; }
     /* line 198, ../scss/core/_header.scss */
     header.top.solid .navigation nav .menu-main-menu-container > ul > li > a {
-      color: #f3be22; }
+      color: #777777; }
       /* line 202, ../scss/core/_header.scss */
       header.top.solid .navigation nav .menu-main-menu-container > ul > li > a:hover, header.top.solid .navigation nav .menu-main-menu-container > ul > li > a:focus, header.top.solid .navigation nav .menu-main-menu-container > ul > li > a:active, header.top.solid .navigation nav .menu-main-menu-container > ul > li > a.highlighted {
         color: #d64408 !important; }
@@ -12329,7 +12329,7 @@ header {
     /* line 231, ../scss/core/_header.scss */
     header.scrolling .navigation .main-logo img.trans-logo {
       display: none; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 236, ../scss/core/_header.scss */
       header.scrolling .navigation nav {
         overflow-y: auto; } }
@@ -12338,7 +12338,7 @@ header {
       color: #d64408 !important; }
     /* line 248, ../scss/core/_header.scss */
     header.scrolling .navigation nav .menu-main-menu-container > ul > li > a {
-      color: #f3be22; }
+      color: #777777; }
       /* line 252, ../scss/core/_header.scss */
       header.scrolling .navigation nav .menu-main-menu-container > ul > li > a:hover, header.scrolling .navigation nav .menu-main-menu-container > ul > li > a:focus, header.scrolling .navigation nav .menu-main-menu-container > ul > li > a:active, header.scrolling .navigation nav .menu-main-menu-container > ul > li > a.highlighted {
         color: #d64408 !important; }
@@ -12352,9 +12352,9 @@ header {
 
 /* line 272, ../scss/core/_header.scss */
 .title_bar {
-  background-color: #555555;
+  background-color: #f9f9f9;
   padding: 30px 0;
-  border-bottom: 1px solid #515151; }
+  border-bottom: 1px solid #ededed; }
   /* line 276, ../scss/core/_header.scss */
   .title_bar h1 {
     font-size: 26px;
@@ -12381,7 +12381,7 @@ footer {
       footer .footer-container .section:last-of-type {
         padding-right: 0;
         padding-left: 25px; }
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 768px) {
         /* line 8, ../scss/core/_footer.scss */
         footer .footer-container .section {
           float: none;
@@ -12419,11 +12419,11 @@ footer {
   footer .copyright {
     background-color: #155e96;
     padding: 20px 0; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 60, ../scss/core/_footer.scss */
       footer .copyright ul {
         padding-top: 10px; } }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 769px) {
       /* line 60, ../scss/core/_footer.scss */
       footer .copyright ul {
         float: right; } }
@@ -12431,7 +12431,7 @@ footer {
     footer .copyright ul li {
       display: inline-block;
       padding-left: 15px; }
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 768px) {
         /* line 67, ../scss/core/_footer.scss */
         footer .copyright ul li {
           padding-left: 0;
@@ -12455,7 +12455,7 @@ footer {
   position: relative;
   background-position: center;
   background-size: cover; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 1, ../scss/widgets/_aspot.scss */
     .aspot {
       padding: 100px 30px; } }
@@ -12479,7 +12479,7 @@ footer {
     margin: 0;
     font-weight: 700;
     text-transform: uppercase; }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 769px) {
       /* line 25, ../scss/widgets/_aspot.scss */
       .aspot h1 {
         font-size: 42px; } }
@@ -12495,20 +12495,20 @@ footer {
   .page-content h2 {
     text-transform: uppercase;
     font-weight: 400; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 7, ../scss/widgets/_rich-text.scss */
     .page-content .divide {
       width: 100%;
       padding-bottom: 50px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 7, ../scss/widgets/_rich-text.scss */
     .page-content .divide {
       padding-right: 25px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 15, ../scss/widgets/_rich-text.scss */
     .page-content .divide + .divide {
       padding-left: 25px; } }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     /* line 15, ../scss/widgets/_rich-text.scss */
     .page-content .divide + .divide {
       padding-bottom: 0; } }
@@ -12525,7 +12525,7 @@ footer {
   /* line 3, ../scss/widgets/_board.scss */
   .member-list > li {
     padding-bottom: 30px; }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 769px) {
       /* line 3, ../scss/widgets/_board.scss */
       .member-list > li {
         width: 33.333%;
@@ -12615,11 +12615,11 @@ form.wpcf7-form input[type="submit"] {
 /* line 1, ../scss/pages/_blog.scss */
 .single-post {
   margin-bottom: 60px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 1, ../scss/pages/_blog.scss */
     .single-post {
       display: table; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 6, ../scss/pages/_blog.scss */
     .single-post .featured-image, .single-post .content {
       display: table-cell; } }
@@ -12627,16 +12627,16 @@ form.wpcf7-form input[type="submit"] {
   .single-post .featured-image {
     background-position: center;
     background-size: cover; }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 769px) {
       /* line 11, ../scss/pages/_blog.scss */
       .single-post .featured-image {
         width: 35%; } }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 768px) {
       /* line 11, ../scss/pages/_blog.scss */
       .single-post .featured-image {
         height: 250px;
         margin-bottom: 15px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     /* line 22, ../scss/pages/_blog.scss */
     .single-post .content {
       padding-left: 30px; }
@@ -12652,22 +12652,22 @@ form.wpcf7-form input[type="submit"] {
       margin-bottom: 10px;
       padding-bottom: 5px; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   /* line 2, ../scss/pages/_business.scss */
   .single-business .featured-image, .single-business .content {
     float: left; } }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   /* line 7, ../scss/pages/_business.scss */
   .single-business .featured-image {
     width: 40%; } }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   /* line 7, ../scss/pages/_business.scss */
   .single-business .featured-image {
     margin-bottom: 30px; } }
 /* line 14, ../scss/pages/_business.scss */
 .single-business .featured-image img {
   max-width: 100%; }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   /* line 18, ../scss/pages/_business.scss */
   .single-business .content {
     width: 60%;
@@ -12690,7 +12690,7 @@ form.wpcf7-form input[type="submit"] {
       float: left;
       width: 25%;
       list-style: none; }
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 768px) {
         /* line 34, ../scss/pages/_business.scss */
         .single-business .content ul.image-gallery li {
           width: 50%; } }

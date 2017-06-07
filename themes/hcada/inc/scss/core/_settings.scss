@@ -1,0 +1,26 @@
+$main-serif:  Georgia, "Times New Roman", Times, serif !default;
+$main-sans:  Helvetica, Arial, sans-serif !default;
+
+//PAGE WIDTH
+$page-width: 1170px;
+
+$main-gutter: 20px;
+
+//COLORS
+$black: #000000;
+$white: #FFFFFF;
+$d-gray: #575757;
+$light-gray: #a8a8a8;
+$lighter-gray: #bfbfbf;
+$red: #8f162c;
+$blue: #1d4880;
+$green: #0d6535;
+
+//BREAKPOINTS
+$mobile: 480px;
+$ipad-land: 1024px;
+$ipad-port: 768px;
+$six-land: 667px;
+$six-port: 375px;
+$sixplus-land: 736px;
+$sixplus-port: 414px;
