@@ -2,5 +2,7 @@
 $copyright = get_field('copyright', 'option');
 ?>
 <footer>
-<?php echo $copyright; ?>
+  <div class="wrap">
+    <?php echo $copyright; ?>
+  </div>
 </footer>

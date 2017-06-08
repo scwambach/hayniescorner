@@ -390,6 +390,13 @@ header {
       -webkit-transition-delay: 0s, 0.2s;
       transition-delay: 0s, 0.2s; }
 
+/* line 1, ../scss/core/_footer.scss */
+footer {
+  background-color: #5b5c5b;
+  color: #FFFFFF;
+  font-weight: 500;
+  padding: 10px 0; }
+
 /* line 2, ../scss/widgets/_aspot.scss */
 section.aspot {
   height: 800px;
