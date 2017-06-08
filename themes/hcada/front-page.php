@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-frontpage
+<?php get_template_part('/inc/partials/widgets/aspot'); ?>
 <?php get_footer(); ?>

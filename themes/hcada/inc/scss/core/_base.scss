@@ -8,6 +8,7 @@ html {
   margin: 0;
   font-family: $main-sans;
   background-color: $blue;
+  overflow-x: hidden;
   &.modal-open {
     overflow: hidden;
   }
