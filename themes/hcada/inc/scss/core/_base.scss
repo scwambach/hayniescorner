@@ -9,6 +9,9 @@ html {
   font-family: $main-sans;
   background-color: $blue;
   overflow-x: hidden;
+  &.logged-in {
+    margin-top: 0 !important;
+  }
   &.modal-open {
     overflow: hidden;
   }
@@ -111,4 +114,27 @@ a {
 
 .video-container {
   @include video;
+}
+
+#wpadminbar {
+  right: 100%;
+  left: inherit;
+  @include transition-duration(0.2s);
+  &:after {
+    content: "ADMIN BAR";
+    height: 32px;
+    width: 120px;
+    background: rgba($red, 0.5);
+    position: absolute;
+    left: 100%;
+    display: block;
+    padding: 0px 22px;
+    cursor: pointer;
+    @include scale-down($ipad-land) {
+      opacity: 0.2;
+    }
+  }
+  &:hover {
+    right: 0;
+  }
 }

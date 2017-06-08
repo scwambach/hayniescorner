@@ -11,11 +11,15 @@ html {
   background-color: #2175b8;
   overflow-x: hidden; }
   /* line 12, ../scss/core/_base.scss */
+  body.logged-in,
+  html.logged-in {
+    margin-top: 0 !important; }
+  /* line 15, ../scss/core/_base.scss */
   body.modal-open,
   html.modal-open {
     overflow: hidden; }
 
-/* line 17, ../scss/core/_base.scss */
+/* line 20, ../scss/core/_base.scss */
 .wrap {
   max-width: 1170px;
   margin: 0 auto;
@@ -27,69 +31,69 @@ html {
     content: '';
     clear: both; }
 
-/* line 27, ../scss/core/_base.scss */
+/* line 30, ../scss/core/_base.scss */
 h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, form {
   margin: 0 0 20px; }
 
-/* line 31, ../scss/core/_base.scss */
+/* line 34, ../scss/core/_base.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold; }
 
-/* line 35, ../scss/core/_base.scss */
+/* line 38, ../scss/core/_base.scss */
 ul, ol {
   padding-left: 20px; }
 
-/* line 39, ../scss/core/_base.scss */
+/* line 42, ../scss/core/_base.scss */
 h1 {
   font-size: 32px;
   font-size: 2rem;
   line-height: 36px;
   line-height: 2.25rem; }
 
-/* line 43, ../scss/core/_base.scss */
+/* line 46, ../scss/core/_base.scss */
 h2 {
   font-size: 28px;
   font-size: 1.75rem;
   line-height: 32px;
   line-height: 2rem; }
 
-/* line 47, ../scss/core/_base.scss */
+/* line 50, ../scss/core/_base.scss */
 h3 {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 28px;
   line-height: 1.75rem; }
 
-/* line 51, ../scss/core/_base.scss */
+/* line 54, ../scss/core/_base.scss */
 h4 {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 26px;
   line-height: 1.625rem; }
 
-/* line 55, ../scss/core/_base.scss */
+/* line 58, ../scss/core/_base.scss */
 h5 {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 22px;
   line-height: 1.375rem; }
 
-/* line 59, ../scss/core/_base.scss */
+/* line 62, ../scss/core/_base.scss */
 h6 {
   font-size: 16px;
   font-size: 1rem;
   line-height: 20px;
   line-height: 1.25rem; }
 
-/* line 64, ../scss/core/_base.scss */
+/* line 67, ../scss/core/_base.scss */
 a {
   color: #d74727;
   text-decoration: none; }
-  /* line 67, ../scss/core/_base.scss */
+  /* line 70, ../scss/core/_base.scss */
   a:hover {
     color: #97321b; }
 
-/* line 73, ../scss/core/_base.scss */
+/* line 76, ../scss/core/_base.scss */
 .center-block {
   position: relative;
   border: 1px solid;
@@ -109,7 +113,7 @@ a {
     top: 0;
     display: block;
     background-color: rgba(0, 0, 0, 0.53); }
-  /* line 79, ../scss/core/_base.scss */
+  /* line 82, ../scss/core/_base.scss */
   .center-block i {
     color: #FFFFFF;
     font-size: 50px;
@@ -125,7 +129,7 @@ a {
     width: 100%;
     left: 0; }
 
-/* line 90, ../scss/core/_base.scss */
+/* line 93, ../scss/core/_base.scss */
 .boxes {
   margin-right: -20px; }
   /* line 2, ../scss/core/helpers/_layout.scss */
@@ -133,24 +137,24 @@ a {
     display: table;
     content: '';
     clear: both; }
-  /* line 93, ../scss/core/_base.scss */
+  /* line 96, ../scss/core/_base.scss */
   .boxes .box {
     width: 33.333%;
     float: left;
     box-sizing: border-box;
     padding: 0 20px 20px 0; }
-    /* line 95, ../scss/core/_base.scss */
+    /* line 98, ../scss/core/_base.scss */
     .boxes .box .inner {
       border: 1px solid #000000;
       height: 20px; }
-    /* line 99, ../scss/core/_base.scss */
+    /* line 102, ../scss/core/_base.scss */
     .boxes .box + .box {
       width: 66.666%;
       float: left;
       box-sizing: border-box;
       padding: 0 20px 20px 0; }
 
-/* line 105, ../scss/core/_base.scss */
+/* line 108, ../scss/core/_base.scss */
 .button {
   background-color: #d74727;
   color: #FFFFFF;
@@ -166,7 +170,7 @@ a {
     background-color: #df6c52;
     color: #FFFFFF; }
 
-/* line 108, ../scss/core/_base.scss */
+/* line 111, ../scss/core/_base.scss */
 .button-inline {
   background-color: #d74727;
   color: #FFFFFF;
@@ -188,7 +192,7 @@ a {
     background-color: #df6c52;
     color: #FFFFFF; }
 
-/* line 112, ../scss/core/_base.scss */
+/* line 115, ../scss/core/_base.scss */
 .video-container {
   padding-bottom: 56.25%;
   position: relative;
@@ -205,24 +209,54 @@ a {
     height: 100%;
     border: 0; }
 
+/* line 119, ../scss/core/_base.scss */
+#wpadminbar {
+  right: 100%;
+  left: inherit;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s; }
+  /* line 123, ../scss/core/_base.scss */
+  #wpadminbar:after {
+    content: "ADMIN BAR";
+    height: 32px;
+    width: 120px;
+    background: rgba(215, 71, 39, 0.5);
+    position: absolute;
+    left: 100%;
+    display: block;
+    padding: 0px 22px;
+    cursor: pointer; }
+    @media only screen and (max-width: 1024px) {
+      /* line 123, ../scss/core/_base.scss */
+      #wpadminbar:after {
+        opacity: 0.2; } }
+  /* line 137, ../scss/core/_base.scss */
+  #wpadminbar:hover {
+    right: 0; }
+
 /* line 1, ../scss/core/_header.scss */
 header {
   text-align: center;
   padding: 10px 0 0;
   background-color: #FFFFFF;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 2; }
-  /* line 7, ../scss/core/_header.scss */
+  /* line 10, ../scss/core/_header.scss */
   header a {
     display: inline-block;
     position: relative;
     top: 15px;
     z-index: 3; }
-    /* line 12, ../scss/core/_header.scss */
+    /* line 15, ../scss/core/_header.scss */
     header a img {
       width: 100%;
       max-width: 300px; }
-  /* line 17, ../scss/core/_header.scss */
+  /* line 20, ../scss/core/_header.scss */
   header .ribbon {
     position: absolute;
     top: 100%;
@@ -359,12 +393,19 @@ header {
 /* line 2, ../scss/widgets/_aspot.scss */
 section.aspot {
   height: 800px;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding-top: 60px;
   position: relative;
-  z-index: 1; }
-  /* line 7, ../scss/widgets/_aspot.scss */
+  z-index: 1;
+  overflow: hidden; }
+  /* line 8, ../scss/widgets/_aspot.scss */
+  section.aspot .scroll-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  /* line 14, ../scss/widgets/_aspot.scss */
   section.aspot nav {
     position: absolute;
     background: rgba(0, 0, 0, 0.3);
@@ -372,7 +413,7 @@ section.aspot {
     left: 0;
     width: 100%;
     padding: 10px 0; }
-    /* line 14, ../scss/widgets/_aspot.scss */
+    /* line 21, ../scss/widgets/_aspot.scss */
     section.aspot nav ul {
       list-style-type: none;
       padding: 0;
@@ -382,7 +423,7 @@ section.aspot {
         display: table;
         content: '';
         clear: both; }
-      /* line 19, ../scss/widgets/_aspot.scss */
+      /* line 26, ../scss/widgets/_aspot.scss */
       section.aspot nav ul li {
         display: block;
         width: 25%;
@@ -392,10 +433,10 @@ section.aspot {
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px; }
-        /* line 25, ../scss/widgets/_aspot.scss */
+        /* line 32, ../scss/widgets/_aspot.scss */
         section.aspot nav ul li + li {
           border-left: 1px solid #FFFFFF; }
-        /* line 28, ../scss/widgets/_aspot.scss */
+        /* line 35, ../scss/widgets/_aspot.scss */
         section.aspot nav ul li a {
           display: inline-block;
           width: 100%;
