@@ -1,5 +1,4 @@
-$main-serif:  Georgia, "Times New Roman", Times, serif !default;
-$main-sans:  Helvetica, Arial, sans-serif !default;
+$main-sans:  'Josefin Sans', sans-serif, Helvetica, Arial, sans-serif !default;
 
 //PAGE WIDTH
 $page-width: 1170px;
@@ -9,12 +8,13 @@ $main-gutter: 20px;
 //COLORS
 $black: #000000;
 $white: #FFFFFF;
-$d-gray: #575757;
-$light-gray: #a8a8a8;
-$lighter-gray: #bfbfbf;
-$red: #8f162c;
-$blue: #1d4880;
-$green: #0d6535;
+
+//HCADA Colors
+$red: #d74727;
+$blue: #2175b8;
+$green: #65943f;
+$green-light: #8db268;
+$gray: #5b5c5b;
 
 //BREAKPOINTS
 $mobile: 480px;

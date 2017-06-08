@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700");
 /* line 4, ../scss/core/_base.scss */
 body,
 html {
@@ -6,8 +7,8 @@ html {
   line-height: 26px;
   line-height: 1.625rem;
   margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  background-color: #FFFFFF; }
+  font-family: "Josefin Sans", sans-serif, Helvetica, Arial, sans-serif;
+  background-color: #2175b8; }
   /* line 11, ../scss/core/_base.scss */
   body.modal-open,
   html.modal-open {
@@ -81,13 +82,13 @@ h6 {
 
 /* line 63, ../scss/core/_base.scss */
 a {
-  color: #8f162c;
+  color: #d74727;
   text-decoration: none; }
   /* line 66, ../scss/core/_base.scss */
   a:hover {
-    color: #640f1f; }
+    color: #97321b; }
 
-/* line 71, ../scss/core/_base.scss */
+/* line 72, ../scss/core/_base.scss */
 .center-block {
   position: relative;
   border: 1px solid;
@@ -107,7 +108,7 @@ a {
     top: 0;
     display: block;
     background-color: rgba(0, 0, 0, 0.53); }
-  /* line 77, ../scss/core/_base.scss */
+  /* line 78, ../scss/core/_base.scss */
   .center-block i {
     color: #FFFFFF;
     font-size: 50px;
@@ -123,7 +124,7 @@ a {
     width: 100%;
     left: 0; }
 
-/* line 88, ../scss/core/_base.scss */
+/* line 89, ../scss/core/_base.scss */
 .boxes {
   margin-right: -20px; }
   /* line 2, ../scss/core/helpers/_layout.scss */
@@ -131,26 +132,26 @@ a {
     display: table;
     content: '';
     clear: both; }
-  /* line 91, ../scss/core/_base.scss */
+  /* line 92, ../scss/core/_base.scss */
   .boxes .box {
     width: 33.333%;
     float: left;
     box-sizing: border-box;
     padding: 0 20px 20px 0; }
-    /* line 93, ../scss/core/_base.scss */
+    /* line 94, ../scss/core/_base.scss */
     .boxes .box .inner {
       border: 1px solid #000000;
       height: 20px; }
-    /* line 97, ../scss/core/_base.scss */
+    /* line 98, ../scss/core/_base.scss */
     .boxes .box + .box {
       width: 66.666%;
       float: left;
       box-sizing: border-box;
       padding: 0 20px 20px 0; }
 
-/* line 103, ../scss/core/_base.scss */
+/* line 104, ../scss/core/_base.scss */
 .button {
-  background-color: #8f162c;
+  background-color: #d74727;
   color: #FFFFFF;
   padding: 10px 20px;
   display: block;
@@ -161,12 +162,12 @@ a {
   transition-duration: 0.2s; }
   /* line 89, ../scss/core/helpers/_typography.scss */
   .button:hover {
-    background-color: #a54556;
+    background-color: #df6c52;
     color: #FFFFFF; }
 
-/* line 106, ../scss/core/_base.scss */
+/* line 107, ../scss/core/_base.scss */
 .button-inline {
-  background-color: #8f162c;
+  background-color: #d74727;
   color: #FFFFFF;
   padding: 10px 20px;
   display: inline-block;
@@ -183,10 +184,10 @@ a {
   transition-duration: 0.2s; }
   /* line 76, ../scss/core/helpers/_typography.scss */
   .button-inline:hover {
-    background-color: #a54556;
+    background-color: #df6c52;
     color: #FFFFFF; }
 
-/* line 110, ../scss/core/_base.scss */
+/* line 111, ../scss/core/_base.scss */
 .video-container {
   padding-bottom: 56.25%;
   position: relative;
@@ -202,3 +203,151 @@ a {
     width: 100%;
     height: 100%;
     border: 0; }
+
+/* line 1, ../scss/core/_header.scss */
+header {
+  text-align: center;
+  padding: 10px 0 0;
+  margin-bottom: 60px;
+  background-color: #FFFFFF;
+  position: relative; }
+  /* line 7, ../scss/core/_header.scss */
+  header a {
+    display: inline-block; }
+    /* line 9, ../scss/core/_header.scss */
+    header a img {
+      width: 100%;
+      max-width: 300px; }
+  /* line 14, ../scss/core/_header.scss */
+  header .ribbon {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
+  /* line 28, ../scss/core/_header.scss */
+  header .menu-toggle {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 16px;
+    cursor: pointer;
+    padding: 5px 10px; }
+    /* line 37, ../scss/core/_header.scss */
+    header .menu-toggle span {
+      margin: 0 auto;
+      position: relative;
+      top: 7px;
+      width: 30px;
+      height: 2px;
+      background-color: #5b5c5b;
+      display: block;
+      -moz-transition-delay: 0.2s;
+      -o-transition-delay: 0.2s;
+      -webkit-transition-delay: 0.2s;
+      transition-delay: 0.2s; }
+      /* line 41, ../scss/core/_header.scss */
+      header .menu-toggle span:before, header .menu-toggle span:after {
+        position: absolute;
+        content: ''; }
+      /* line 49, ../scss/core/_header.scss */
+      header .menu-toggle span:before, header .menu-toggle span:after {
+        width: 30px;
+        height: 2px;
+        background-color: #5b5c5b;
+        display: block; }
+      /* line 55, ../scss/core/_header.scss */
+      header .menu-toggle span:before {
+        margin-top: -7px; }
+      /* line 58, ../scss/core/_header.scss */
+      header .menu-toggle span:after {
+        margin-top: 7px; }
+    /* line 63, ../scss/core/_header.scss */
+    header .menu-toggle:before {
+      content: 'MENU';
+      color: #5b5c5b;
+      font-weight: 100;
+      opacity: 0;
+      -moz-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      -webkit-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      display: inline-block;
+      padding-right: 5px;
+      position: absolute;
+      top: 50%;
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 100%;
+      line-height: 1;
+      margin-top: 2px; }
+    /* line 77, ../scss/core/_header.scss */
+    header .menu-toggle:hover:before {
+      opacity: 1; }
+    /* line 81, ../scss/core/_header.scss */
+    header .menu-toggle:hover span {
+      background-color: rgba(91, 92, 91, 0);
+      -moz-transition-delay: 0.2s;
+      -o-transition-delay: 0.2s;
+      -webkit-transition-delay: 0.2s;
+      transition-delay: 0.2s; }
+    /* line 85, ../scss/core/_header.scss */
+    header .menu-toggle span:before {
+      -moz-transition-property: margin, -moz-transform;
+      -o-transition-property: margin, -o-transform;
+      -webkit-transition-property: margin, -webkit-transform;
+      transition-property: margin, transform;
+      -moz-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      -webkit-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      -moz-transition-delay: 0.2s, 0s;
+      -o-transition-delay: 0.2s, 0s;
+      -webkit-transition-delay: 0.2s, 0s;
+      transition-delay: 0.2s, 0s;
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%; }
+    /* line 92, ../scss/core/_header.scss */
+    header .menu-toggle:hover span:before {
+      margin-top: 0;
+      -moz-transform: rotate(22.5deg) skewX(22.5deg);
+      -ms-transform: rotate(22.5deg) skewX(22.5deg);
+      -webkit-transform: rotate(22.5deg) skewX(22.5deg);
+      transform: rotate(22.5deg) skewX(22.5deg);
+      -moz-transition-delay: 0s, 0.2s;
+      -o-transition-delay: 0s, 0.2s;
+      -webkit-transition-delay: 0s, 0.2s;
+      transition-delay: 0s, 0.2s; }
+    /* line 97, ../scss/core/_header.scss */
+    header .menu-toggle span:after {
+      -moz-transition-property: margin, -moz-transform;
+      -o-transition-property: margin, -o-transform;
+      -webkit-transition-property: margin, -webkit-transform;
+      transition-property: margin, transform;
+      -moz-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      -webkit-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      -moz-transition-delay: 0.2s, 0s;
+      -o-transition-delay: 0.2s, 0s;
+      -webkit-transition-delay: 0.2s, 0s;
+      transition-delay: 0.2s, 0s;
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%; }
+    /* line 104, ../scss/core/_header.scss */
+    header .menu-toggle:hover span:after {
+      margin-top: 0;
+      -moz-transform: rotate(-22.5deg) skewX(-22.5deg);
+      -ms-transform: rotate(-22.5deg) skewX(-22.5deg);
+      -webkit-transform: rotate(-22.5deg) skewX(-22.5deg);
+      transform: rotate(-22.5deg) skewX(-22.5deg);
+      -moz-transition-delay: 0s, 0.2s;
+      -o-transition-delay: 0s, 0.2s;
+      -webkit-transition-delay: 0s, 0.2s;
+      transition-delay: 0s, 0.2s; }

@@ -7,7 +7,7 @@ html {
   @include line-height(26);
   margin: 0;
   font-family: $main-sans;
-  background-color: $white;
+  background-color: $blue;
   &.modal-open {
     overflow: hidden;
   }
@@ -67,6 +67,7 @@ a {
     color: shade($red, 30%);
   }
 }
+
 
 .center-block {
   position: relative;

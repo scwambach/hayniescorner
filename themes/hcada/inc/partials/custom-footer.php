@@ -1,3 +1,6 @@
+<?php
+$copyright = get_field('copyright', 'option');
+?>
 <footer>
-footer
+<?php echo $copyright; ?>
 </footer>

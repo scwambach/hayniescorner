@@ -1,0 +1,12 @@
+.sass-cache
+.DS_Store*
+.env
+.rvmrc
+.ruby-*
+tmp/*
+.bundle/*
+*.swp
+slurper_config.yml
+.cache/*
+*.scssc
+/tmp

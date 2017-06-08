@@ -1,0 +1,120 @@
+header {
+  text-align: center;
+  padding: 10px 0 0;
+  margin-bottom: 60px;
+  background-color: $white;
+  position: relative;
+  a {
+    display: inline-block;
+    img {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  .ribbon {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    @include transform(scale(1.1));
+  }
+
+
+
+
+
+
+
+
+  .menu-toggle {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    span {
+      margin: 0 auto;
+      position: relative;
+      top: 7px;
+      &:before, &:after {
+        position: absolute;
+        content: '';
+      }
+      width: 30px;
+      height: 2px;
+      background-color: $gray;
+      display: block;
+      &:before, &:after {
+        width: 30px;
+        height: 2px;
+        background-color: $gray;
+        display: block;
+      }
+      &:before {
+        margin-top: -7px;
+      }
+      &:after {
+        margin-top: 7px;
+      }
+      @include transition-delay(0.2s);
+    }
+    &:before {
+      content: 'MENU';
+      color: $gray;
+      font-weight: 100;
+      opacity: 0;
+      @include transition-duration(0.2s);
+      display: inline-block;
+      padding-right: 5px;
+      @include vertical-center;
+      right: 100%;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+    &:hover span {
+      background-color: rgba($gray, 0);
+      @include transition-delay(0.2s);
+    }
+    span:before {
+      @include transition-property(margin, transform);
+      @include transition-duration(0.2s);
+      @include transition-delay(0.2s, 0s);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+    }
+    &:hover span:before {
+      margin-top: 0;
+      @include transform(rotate(22.5deg) skewX(22.5deg));
+      @include transition-delay(0s, 0.2s);
+    }
+    span:after {
+      @include transition-property(margin, transform);
+      @include transition-duration(0.2s);
+      @include transition-delay(0.2s, 0s);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+    &:hover span:after {
+      margin-top: 0;
+      @include transform(rotate(-22.5deg) skewX(-22.5deg));
+      @include transition-delay(0s, 0.2s);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+}

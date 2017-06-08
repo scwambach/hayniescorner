@@ -11,11 +11,7 @@ $urlImage = $urlImage[0];
   <meta name="viewport" content="width=device-width" />
   <meta property="og:type" content="website">
   <meta property="og:title" content="<?php the_title(); ?>">
-  <?php if ($ogdesc) { ?>
-  <meta property="og:description" content="<?php echo $ogdesc; ?>">
-  <?php } else { ?>
   <meta property="og:description" content="<?php bloginfo( 'description' ); ?>">
-  <?php } ?>
   <meta property="og:url" content="<?php the_permalink(); ?>">
   <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
   <?php if ($urlImage) { ?>

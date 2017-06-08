@@ -7,5 +7,5 @@ function hcada_setup() {
   add_theme_support( 'post-thumbnails' );
   global $content_width;
   if ( ! isset( $content_width ) ) $content_width = 640;
-  register_nav_menus(array( 'main-menu' => __( 'Main Menu', 'hcada' ) ));
+  register_nav_menus(array( 'home-nav' => __( 'Home Nav', 'hcada' ) ));
 }
