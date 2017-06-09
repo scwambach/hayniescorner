@@ -167,6 +167,41 @@
       color: shade($link_color, 30%);
     }
   }
+  hr {
+    margin: 20px 0;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 4px dashed $white;
+    border-bottom: 4px dashed $white;
+    @include border-image(url('../images/dot.png') 13 round);
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+    &.aligncenter, &.alignleft, &.alignright {
+      display: block;
+      @include scale-down($ipad-port) {
+        margin-bottom: 20px;
+      }
+    }
+    &.aligncenter {
+      @include scale-up($ipad-port + 1) {
+        margin: 0 auto 20px;
+      }
+    }
+    &.alignleft {
+      @include scale-up($ipad-port + 1) {
+        float: left;
+        margin: 0 20px 20px 0;
+      }
+    }
+    &.alignright {
+      @include scale-up($ipad-port + 1) {
+        float: right;
+        margin: 0 0 20px 20px;
+      }
+    }
+  }
 }
 
 @mixin clip($path) {

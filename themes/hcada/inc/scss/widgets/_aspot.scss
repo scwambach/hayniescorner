@@ -1,15 +1,28 @@
 section {
   &.aspot {
-    height: 800px;
-    padding-top: 60px;
     position: relative;
     z-index: 1;
     overflow: hidden;
+    @include transition-duration(0.2s);
+    @include scale-up($ipad-port + 1) {
+      height: 800px;
+      padding-top: 60px;
+    }
+    @include scale-down($ipad-port) {
+      height: 450px;
+      margin-top: 60px;
+    }
+    @include scale-down($mobile) {
+      height: 300px;
+    }
     .scroll-image {
       position: absolute;
       height: 100%;
       width: 100%;
       @include background-cover(center bottom);
+      @include scale-down($ipad-port) {
+        transform: initial !important;
+      }
     }
     nav {
       position: absolute;

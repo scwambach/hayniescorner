@@ -7,6 +7,10 @@
   height: 16px;
   cursor: pointer;
   padding: 5px 10px;
+  @include scale-down($mobile) {
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
   span {
     margin: 0 auto;
     position: relative;
@@ -34,17 +38,19 @@
     @include transition-delay(0.2s);
   }
   &:before {
-    content: 'MENU';
-    color: $gray;
-    font-weight: 100;
-    opacity: 0;
-    @include transition-duration(0.2s);
-    display: inline-block;
-    padding-right: 5px;
-    @include vertical-center;
-    right: 100%;
-    line-height: 1;
-    margin-top: 2px;
+    @include scale-up($mobile + 1) {
+      content: 'MENU';
+      color: $gray;
+      font-weight: 100;
+      opacity: 0;
+      @include transition-duration(0.2s);
+      display: inline-block;
+      padding-right: 5px;
+      @include vertical-center;
+      right: 100%;
+      line-height: 1;
+      margin-top: 2px;
+    }
   }
   &:hover {
     &:before {
