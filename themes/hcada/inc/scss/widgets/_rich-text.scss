@@ -1,0 +1,17 @@
+section {
+  &.rich_text {
+    .inner {
+      .wrap {
+        .content {
+          background-color: $red;
+          position: relative;
+          margin: 70px 0;
+          .inner {
+            @include rich-mix($white, $white, 15px);
+            padding: 70px;
+          }
+        }
+      }
+    }
+  }
+}

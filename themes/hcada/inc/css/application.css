@@ -247,24 +247,32 @@ header {
   width: 100%;
   z-index: 2; }
   /* line 10, ../scss/core/_header.scss */
+  header:before {
+    content: '';
+    display: block;
+    background: #FFFFFF;
+    width: 200%;
+    height: 540px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    -moz-transform: translateX(-50%) rotate(-2deg);
+    -ms-transform: translateX(-50%) rotate(-2deg);
+    -webkit-transform: translateX(-50%) rotate(-2deg);
+    transform: translateX(-50%) rotate(-2deg);
+    -moz-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3); }
+  /* line 22, ../scss/core/_header.scss */
   header a {
     display: inline-block;
     position: relative;
     top: 15px;
     z-index: 3; }
-    /* line 15, ../scss/core/_header.scss */
+    /* line 27, ../scss/core/_header.scss */
     header a img {
       width: 100%;
       max-width: 300px; }
-  /* line 20, ../scss/core/_header.scss */
-  header .ribbon {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
   /* line 1, ../scss/core/modules/_menu-toggle.scss */
   header .menu-toggle {
     position: absolute;
@@ -397,6 +405,11 @@ footer {
   font-weight: 500;
   padding: 10px 0; }
 
+/* line 1, ../scss/core/modules/_content-box.scss */
+.content-box {
+  -webkit-clip-path: polygon(0 2%, 100% 0%, 97% 98%, 2% 100%);
+  clip-path: polygon(0 2%, 100% 0%, 97% 98%, 2% 100%); }
+
 /* line 2, ../scss/widgets/_aspot.scss */
 section.aspot {
   height: 800px;
@@ -448,3 +461,71 @@ section.aspot {
           display: inline-block;
           width: 100%;
           color: #FFFFFF; }
+
+/* line 5, ../scss/widgets/_rich-text.scss */
+section.rich_text .inner .wrap .content {
+  background-color: #d74727;
+  position: relative;
+  margin: 70px 0; }
+  /* line 9, ../scss/widgets/_rich-text.scss */
+  section.rich_text .inner .wrap .content .inner {
+    padding: 70px; }
+    /* line 149, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner p, section.rich_text .inner .wrap .content .inner li, section.rich_text .inner .wrap .content .inner h1, section.rich_text .inner .wrap .content .inner h2, section.rich_text .inner .wrap .content .inner h3, section.rich_text .inner .wrap .content .inner h4, section.rich_text .inner .wrap .content .inner h5, section.rich_text .inner .wrap .content .inner h6 {
+      color: #FFFFFF; }
+    /* line 152, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner p, section.rich_text .inner .wrap .content .inner li {
+      font-weight: 300; }
+    /* line 155, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner h1, section.rich_text .inner .wrap .content .inner h2, section.rich_text .inner .wrap .content .inner h3, section.rich_text .inner .wrap .content .inner h4, section.rich_text .inner .wrap .content .inner h5, section.rich_text .inner .wrap .content .inner h6 {
+      font-weight: 600; }
+    /* line 122, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner h1 {
+      font-size: 55px;
+      font-size: 3.4375rem;
+      line-height: 59px;
+      line-height: 3.6875rem; }
+    /* line 126, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner h2 {
+      font-size: 45px;
+      font-size: 2.8125rem;
+      line-height: 49px;
+      line-height: 3.0625rem; }
+    /* line 130, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner h3 {
+      font-size: 35px;
+      font-size: 2.1875rem;
+      line-height: 39px;
+      line-height: 2.4375rem; }
+    /* line 134, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner h4 {
+      font-size: 30px;
+      font-size: 1.875rem;
+      line-height: 34px;
+      line-height: 2.125rem; }
+    /* line 138, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner h5 {
+      font-size: 25px;
+      font-size: 1.5625rem;
+      line-height: 29px;
+      line-height: 1.8125rem; }
+    /* line 142, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner h6 {
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 24px;
+      line-height: 1.5rem; }
+    /* line 159, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner p, section.rich_text .inner .wrap .content .inner ul, section.rich_text .inner .wrap .content .inner h1, section.rich_text .inner .wrap .content .inner h2, section.rich_text .inner .wrap .content .inner h3, section.rich_text .inner .wrap .content .inner h4, section.rich_text .inner .wrap .content .inner h5, section.rich_text .inner .wrap .content .inner h6 {
+      margin-bottom: 15px; }
+    /* line 162, ../scss/core/helpers/_mixins.scss */
+    section.rich_text .inner .wrap .content .inner a {
+      color: #FFFFFF;
+      text-decoration: underline;
+      -moz-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      -webkit-transition-duration: 0.2s;
+      transition-duration: 0.2s; }
+      /* line 166, ../scss/core/helpers/_mixins.scss */
+      section.rich_text .inner .wrap .content .inner a:hover {
+        color: #b3b3b3; }

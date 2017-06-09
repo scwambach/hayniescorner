@@ -117,3 +117,59 @@
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
+
+@mixin header-stack($largest-size) {
+  h1 {
+    @include font-size($largest-size);
+    @include line-height($largest-size + 4);
+  }
+  h2 {
+    @include font-size($largest-size - 10);
+    @include line-height(($largest-size - 10) + 4);
+  }
+  h3 {
+    @include font-size($largest-size - 20);
+    @include line-height(($largest-size - 20) + 4);
+  }
+  h4 {
+    @include font-size($largest-size - 25);
+    @include line-height(($largest-size - 25) + 4);
+  }
+  h5 {
+    @include font-size($largest-size - 30);
+    @include line-height(($largest-size - 30) + 4);
+  }
+  h6 {
+    @include font-size($largest-size - 35);
+    @include line-height(($largest-size - 35) + 4);
+  }
+}
+
+@mixin rich-mix($color, $link_color, $margin) {
+  p, li, h1, h2, h3, h4, h5, h6 {
+    color: $color;
+  }
+  p, li {
+    font-weight: 300;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+  }
+  @include header-stack(55);
+  p, ul, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: $margin;
+  }
+  a {
+    color: $link_color;
+    text-decoration: underline;
+    @include transition-duration(0.2s);
+    &:hover {
+      color: shade($link_color, 30%);
+    }
+  }
+}
+
+@mixin clip($path) {
+  -webkit-clip-path: $path;
+  clip-path: $path;
+}

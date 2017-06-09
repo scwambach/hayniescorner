@@ -7,6 +7,18 @@ header {
   left: 0;
   width: 100%;
   z-index: 2;
+  &:before {
+    content: '';
+    display: block;
+    background: $white;
+    width: 200%;
+    height: 540px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    @include transform(translateX(-50%) rotate(-2deg));
+    @include box-shadow(0 0 30px 0 rgba($black, 0.3));
+  }
   a {
     display: inline-block;
     position: relative;
@@ -16,12 +28,6 @@ header {
       width: 100%;
       max-width: 300px;
     }
-  }
-  .ribbon {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    @include transform(scale(1.1));
   }
   @import 'modules/menu-toggle';
 }

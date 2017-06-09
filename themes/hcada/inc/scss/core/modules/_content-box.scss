@@ -1,0 +1,3 @@
+.content-box {
+  @include clip(polygon(0 2%, 100% 0%, 97% 98%, 2% 100%));
+}
