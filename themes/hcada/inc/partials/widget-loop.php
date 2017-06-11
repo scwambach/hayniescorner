@@ -2,10 +2,10 @@
 if( have_rows('page_sections') ):
     $i = 1;
     while ( have_rows('page_sections') ) : the_row();
-    echo '<section id="pg_widg_' . $i . '" class="widget clearfix ' . get_row_layout() . '">';
-    if( get_row_layout() == 'rich_text' ):
-      get_template_part('/inc/partials/widgets/rich', 'text' );
-    endif;
+    $widget = str_replace("_","-", get_row_layout());
+    $section_id = get_sub_field('section_id');
+    echo '<section id="' . $section_id . '" class="widget clearfix ' . $widget . '">';
+    get_template_part('/inc/partials/widgets/' . $widget );
     echo '</section>';
     $i++; endwhile;
   else :

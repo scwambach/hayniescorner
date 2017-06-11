@@ -38,7 +38,7 @@ section {
         margin: 0;
         li {
           display: block;
-          @include fourth(0, left);
+          @include fifth(0, left);
           text-align: center;
           text-transform: uppercase;
           letter-spacing: 2px;

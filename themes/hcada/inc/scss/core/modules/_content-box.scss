@@ -1,6 +1,33 @@
 .content-box {
   @include clip(polygon(0 2%, 100% 0%, 97% 98%, 2% 100%));
   &.box-alt {
-    @include clip(polygon(0 2%, 100% 0%, 97% 98%, 2% 100%));
+    @include clip(polygon(1% 0, 99% 2%, 100% 93%, 0 100%));
+  }
+}
+.inner {
+  &.red {
+    .wrap {
+      .content { background-color: $red; }
+    }
+  }
+  &.blue {
+    .wrap {
+      .content { background-color: $blue; }
+    }
+  }
+  &.green {
+    .wrap {
+      .content { background-color: $green; }
+    }
+  }
+  &.green-light {
+    .wrap {
+      .content { background-color: $green-light; }
+    }
+  }
+  &.gray {
+    .wrap {
+      .content { background-color: $gray; }
+    }
   }
 }

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700');
+@import 'libs/font-awesome';
 @import "compass";
 @import 'core/settings';
 @import 'core/helpers/mixins';
@@ -11,3 +12,4 @@
 @import 'core/modules/content-box';
 @import 'widgets/aspot';
 @import 'widgets/rich-text';
+@import 'pages/business';

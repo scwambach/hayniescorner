@@ -31,7 +31,7 @@
       'show_in_nav_menus'  => true,
       'menu_icon'          => 'dashicons-store',
       'query_var'          => true,
-      'rewrite'            => array( 'slug' => 'businesses', 'with_front' => false),
+      'rewrite'            => array( 'slug' => 'businesses', 'with_front' => true),
       'capability_type'    => 'post',
       'has_archive'        => false,
       'hierarchical'       => false,

@@ -1,5 +1,5 @@
 section {
-  &.rich_text {
+  &.rich-text {
     .inner {
       .wrap {
         .content {
@@ -9,31 +9,6 @@ section {
             @include rich-mix($white, $white, 15px);
             padding: 70px;
           }
-        }
-      }
-      &.red {
-        .wrap {
-          .content { background-color: $red; }
-        }
-      }
-      &.blue {
-        .wrap {
-          .content { background-color: $blue; }
-        }
-      }
-      &.green {
-        .wrap {
-          .content { background-color: $green; }
-        }
-      }
-      &.green-light {
-        .wrap {
-          .content { background-color: $green-light; }
-        }
-      }
-      &.gray {
-        .wrap {
-          .content { background-color: $gray; }
         }
       }
     }

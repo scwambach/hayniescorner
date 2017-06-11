@@ -1,0 +1,43 @@
+.single-business {
+  height: 100%;
+  main {
+    height: 100%;
+    .inner-business {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      @include background-cover(center);
+      .bottom-left,
+      .bottom-right,
+      .top-left,
+      .top-right {
+        position: absolute;
+      }
+      .bottom-left {
+        bottom: 50px;
+        left: 0;
+      }
+      .bottom-right {
+        bottom: 50px;
+        right: 0;
+      }
+      .top-left {
+        top: 0;
+        left: 0;
+      }
+      .top-right {
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    .wrap {
+      max-width: none;
+    }
+  }
+}
