@@ -10,7 +10,7 @@ $main_logo = get_field('main_logo', 'option')['url'];
     <span class="close-menu"><i class="fa fa-times close"></i> Close</span>
     <ul>
       <li>
-        <a class="top-item">Galleries</a>
+        <a class="top-item">Galleries <i class="fa fa-angle-down"></i></a>
         <div class="drop-down">
           <ul>
             <?php
@@ -40,7 +40,7 @@ $main_logo = get_field('main_logo', 'option')['url'];
         </div>
       </li>
       <li>
-        <a class="top-item">Restaurants</a>
+        <a class="top-item">Restaurants <i class="fa fa-angle-down"></i></a>
         <div class="drop-down">
           <ul>
             <?php
@@ -71,7 +71,7 @@ $main_logo = get_field('main_logo', 'option')['url'];
         </div>
       </li>
       <li>
-        <a class="top-item">Shops</a>
+        <a class="top-item">Shops <i class="fa fa-angle-down"></i></a>
         <div class="drop-down">
           <ul>
             <?php
@@ -102,7 +102,7 @@ $main_logo = get_field('main_logo', 'option')['url'];
         </div>
       </li>
       <li>
-        <a class="top-item">Services</a>
+        <a class="top-item">Services <i class="fa fa-angle-down"></i></a>
         <div class="drop-down">
           <ul>
             <?php

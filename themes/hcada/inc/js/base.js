@@ -138,4 +138,16 @@
   $(window).resize(function() {
     $('body').removeClass('slideOver');
   });
+
+
+  $('.menu-toggle').click(function() {
+    $('.business-nav').addClass('open')
+  })
+
+  $('.close-menu').click(function() {
+    $('.business-nav').removeClass('open')
+  })
+
+
+
 }(jQuery));

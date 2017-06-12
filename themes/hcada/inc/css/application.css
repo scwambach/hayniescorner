@@ -3478,9 +3478,9 @@ header {
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.95);
     top: 0;
-    left: 0;
+    left: 100%;
     z-index: 5;
     transition-duration: 0.2s;
     padding: 0;
@@ -3488,6 +3488,9 @@ header {
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
     /* line 61, ../scss/core/_header.scss */
+    header nav.business-nav.open {
+      left: 0; }
+    /* line 64, ../scss/core/_header.scss */
     header nav.business-nav .close-menu {
       font-size: 23px;
       font-size: 1.4375rem;
@@ -3503,25 +3506,25 @@ header {
       -o-transition-duration: 0.2s;
       -webkit-transition-duration: 0.2s;
       transition-duration: 0.2s; }
-      /* line 71, ../scss/core/_header.scss */
+      /* line 74, ../scss/core/_header.scss */
       header nav.business-nav .close-menu:hover {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.7);
         color: #FFFFFF; }
-    /* line 76, ../scss/core/_header.scss */
+    /* line 79, ../scss/core/_header.scss */
     header nav.business-nav ul {
       list-style-type: none;
       padding: 0;
       margin: 0; }
-    /* line 81, ../scss/core/_header.scss */
+    /* line 84, ../scss/core/_header.scss */
     header nav.business-nav > ul {
       border-bottom: 1px solid #000000; }
-      /* line 83, ../scss/core/_header.scss */
+      /* line 86, ../scss/core/_header.scss */
       header nav.business-nav > ul > li {
         border-top: 1px solid #000000; }
-        /* line 85, ../scss/core/_header.scss */
+        /* line 88, ../scss/core/_header.scss */
         header nav.business-nav > ul > li a {
           cursor: pointer; }
-          /* line 87, ../scss/core/_header.scss */
+          /* line 90, ../scss/core/_header.scss */
           header nav.business-nav > ul > li a.top-item {
             display: block;
             padding: 40px 20px;
@@ -3535,14 +3538,39 @@ header {
             -moz-transition-duration: 0.2s;
             -o-transition-duration: 0.2s;
             -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s; }
-            /* line 96, ../scss/core/_header.scss */
+            transition-duration: 0.2s;
+            position: relative; }
+            /* line 100, ../scss/core/_header.scss */
+            header nav.business-nav > ul > li a.top-item i {
+              right: 40px;
+              position: absolute;
+              top: 50%;
+              -moz-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+              -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+              font-size: 50px;
+              font-size: 3.125rem;
+              line-height: 50px;
+              line-height: 3.125rem; }
+            /* line 106, ../scss/core/_header.scss */
             header nav.business-nav > ul > li a.top-item:hover {
-              background-color: rgba(0, 0, 0, 0.5);
               color: #FFFFFF; }
-        /* line 102, ../scss/core/_header.scss */
+        /* line 111, ../scss/core/_header.scss */
         header nav.business-nav > ul > li .drop-down {
           display: none; }
+        /* line 116, ../scss/core/_header.scss */
+        header nav.business-nav > ul > li:nth-child(4n-3) .top-item:hover {
+          background-color: rgba(215, 71, 39, 0.7); }
+        /* line 123, ../scss/core/_header.scss */
+        header nav.business-nav > ul > li:nth-child(4n-2) .top-item:hover {
+          background-color: rgba(244, 189, 35, 0.7); }
+        /* line 130, ../scss/core/_header.scss */
+        header nav.business-nav > ul > li:nth-child(4n-1) .top-item:hover {
+          background-color: rgba(33, 117, 184, 0.7); }
+        /* line 137, ../scss/core/_header.scss */
+        header nav.business-nav > ul > li:nth-child(4n) .top-item:hover {
+          background-color: rgba(101, 148, 63, 0.7); }
 
 /* line 1, ../scss/core/_footer.scss */
 footer {
