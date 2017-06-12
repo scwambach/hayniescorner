@@ -26,7 +26,7 @@ header {
       bottom: -10px;
     }
   }
-  a {
+  > a {
     display: inline-block;
     position: relative;
     top: 15px;
@@ -46,4 +46,64 @@ header {
     }
   }
   @import 'modules/menu-toggle';
+  nav {
+    &.business-nav {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($white, 0.8);
+      top: 0;
+      left: 0;
+      z-index: 5;
+      transition-duration: 0.2s;
+      padding: 0;
+      @include box-sizing(border-box);
+      .close-menu {
+        @include font-size(23);
+        @include line-height(23);
+        cursor: pointer;
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid $black;
+        display: inline-block;
+        text-transform: uppercase;
+        @include transition-duration(0.2s);
+        &:hover {
+          background-color: rgba($black, 0.5);
+          color: $white;
+        }
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      > ul {
+        border-bottom: 1px solid $black;
+        > li {
+          border-top: 1px solid $black;
+          a {
+            cursor: pointer;
+            &.top-item {
+              display: block;
+              padding: 40px 20px;
+              @include font-size(30);
+              @include line-height(30);
+              font-weight: 700;
+              color: $black;
+              text-transform: uppercase;
+              @include transition-duration(0.2s);
+              &:hover {
+                background-color: rgba($black, 0.5);
+                color: $white;
+              }
+            }
+          }
+          .drop-down {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }

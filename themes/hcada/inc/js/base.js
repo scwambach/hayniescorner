@@ -17,24 +17,30 @@
     });
   });
 
-  //Equal Height Divs
-  $(window).load(function() {
-    var copy_height = $('.aspot .copy-container, .quote-with-image .quote-container').outerHeight();
-    var quote_height = $('.quote-with-image .quote-container').outerHeight();
-    var menu_height = $('nav .menu-main-menu-container').outerHeight();
-    $('.aspot .featured-image').height(copy_height);
-    $('.quote-image').height(quote_height);
-    $('header .top_bar').css('top', menu_height);
+
+  // Equal Heights Children - Cnt needs height
+  function equalHeight(cnt) {
+      var elementPadding = $(cnt).children().css('padding-top').slice(0,-2)*1 + $(cnt).children().css('padding-bottom').slice(0,-2)*1;
+      var minHeight = 0;
+      $(cnt).children().css('height', 'auto');
+      $(cnt).children().each(function(){
+        minHeight = $(this).height() > minHeight ? $(this).height() : minHeight;
+      });
+      minHeight = minHeight + elementPadding;
+      $(cnt).children().not('.button').css('height', minHeight);
+  }
+  if ($('.equal-height').children().length) {
+    setTimeout(function() {
+      $('.equal-height').each(function() { equalHeight(this); });
+    }, 100);
 
     $(window).resize(function() {
-      var copy_height = $('.aspot .copy-container, .quote-with-image .quote-container').outerHeight();
-      var quote_height = $('.quote-with-image .quote-container').outerHeight();
-      var menu_height = $('nav .menu-main-menu-container').outerHeight();
-      $('.aspot .featured-image').height(copy_height);
-      $('.quote-image, img.ribbon').height(quote_height);
-      $('header .top_bar').css('top', menu_height);
-    });
-  });
+      $('.equal-height').each(function() {
+        equalHeight(this);
+      });
+    })
+  }
+
 
   //Sticky Header Classes
   function popOver() {

@@ -1,0 +1,25 @@
+section {
+  &.get-involved {
+    .inner {
+      @include clearfix;
+      .copy-container, .map-container {
+        @include half(0, left);
+      }
+      .map-container {
+        .acf-map {
+          height: 50%;
+        }
+        .map-key {
+          @include rich-mix($white, $white, 15px);
+          padding: 70px;
+        }
+      }
+      .copy-container {
+        .inner, .secondary-copy {
+          @include rich-mix($white, $white, 15px);
+          padding: 70px;
+        }
+      }
+    }
+  }
+}
