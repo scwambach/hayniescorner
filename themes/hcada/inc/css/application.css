@@ -3301,12 +3301,12 @@ header {
     width: 200%;
     height: 540px;
     position: absolute;
-    bottom: -30px;
+    bottom: -35px;
     left: 50%;
-    -moz-transform: translateX(-50%) rotate(-2deg);
-    -ms-transform: translateX(-50%) rotate(-2deg);
-    -webkit-transform: translateX(-50%) rotate(-2deg);
-    transform: translateX(-50%) rotate(-2deg);
+    -moz-transform: translateX(-50%) rotate(-1.5deg);
+    -ms-transform: translateX(-50%) rotate(-1.5deg);
+    -webkit-transform: translateX(-50%) rotate(-1.5deg);
+    transform: translateX(-50%) rotate(-1.5deg);
     -moz-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3); }

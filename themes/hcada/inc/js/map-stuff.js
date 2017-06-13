@@ -71,9 +71,11 @@
 
   var map = null;
   $(document).ready(function(){
-  	$('.acf-map').each(function(){
-  		map = new_map( $(this) );
-  	});
+    setTimeout(function(){
+      $('.acf-map').each(function(){
+        map = new_map( $(this) );
+      });
+    }, 200);
   });
 
 

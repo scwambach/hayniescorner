@@ -39,7 +39,7 @@ $copy_2 = get_sub_field('copy_2');
           while ( $loop->have_posts() ) : $loop->the_post();
           $location = get_field('location');
           ?>
-            <li><?php echo $i . '. '; the_title(); ?></li>
+            <li><a href="<?php the_permalink(); ?>"><?php echo $i . '. '; the_title(); ?></a></li>
           <?php $i++; endwhile; endif; ?>
         </ul>
       </div>

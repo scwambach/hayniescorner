@@ -15,9 +15,9 @@ header {
     width: 200%;
     height: 540px;
     position: absolute;
-    bottom: -30px;
+    bottom: -35px;
     left: 50%;
-    @include transform(translateX(-50%) rotate(-2deg));
+    @include transform(translateX(-50%) rotate(-1.5deg));
     @include box-shadow(0 0 30px 0 rgba($black, 0.3));
     @include scale-down($ipad-port) {
       bottom: -15px;
