@@ -6,26 +6,37 @@
 }
 .inner {
   &.red {
+    background-color: $blue;
     .wrap {
       .content { background-color: $red; }
     }
   }
   &.blue {
+    background-color: $red;
     .wrap {
       .content { background-color: $blue; }
     }
   }
   &.green {
+    background-color: $yellow;
     .wrap {
       .content { background-color: $green; }
     }
   }
+  &.yellow {
+    background-color: $green;
+    .wrap {
+      .content { background-color: $yellow; }
+    }
+  }
   &.green-light {
+    background-color: $yellow;
     .wrap {
       .content { background-color: $green-light; }
     }
   }
   &.gray {
+    background-color: $blue;
     .wrap {
       .content { background-color: $gray; }
     }

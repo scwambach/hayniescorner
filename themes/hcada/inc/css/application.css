@@ -3588,21 +3588,42 @@ footer {
     -webkit-clip-path: polygon(1% 0, 99% 2%, 100% 93%, 0 100%);
     clip-path: polygon(1% 0, 99% 2%, 100% 93%, 0 100%); }
 
-/* line 10, ../scss/core/modules/_content-box.scss */
-.inner.red .wrap .content {
-  background-color: #d74727; }
-/* line 15, ../scss/core/modules/_content-box.scss */
-.inner.blue .wrap .content {
+/* line 8, ../scss/core/modules/_content-box.scss */
+.inner.red {
   background-color: #2175b8; }
+  /* line 11, ../scss/core/modules/_content-box.scss */
+  .inner.red .wrap .content {
+    background-color: #d74727; }
+/* line 14, ../scss/core/modules/_content-box.scss */
+.inner.blue {
+  background-color: #d74727; }
+  /* line 17, ../scss/core/modules/_content-box.scss */
+  .inner.blue .wrap .content {
+    background-color: #2175b8; }
 /* line 20, ../scss/core/modules/_content-box.scss */
-.inner.green .wrap .content {
+.inner.green {
+  background-color: #f4bd23; }
+  /* line 23, ../scss/core/modules/_content-box.scss */
+  .inner.green .wrap .content {
+    background-color: #65943f; }
+/* line 26, ../scss/core/modules/_content-box.scss */
+.inner.yellow {
   background-color: #65943f; }
-/* line 25, ../scss/core/modules/_content-box.scss */
-.inner.green-light .wrap .content {
-  background-color: #8db268; }
-/* line 30, ../scss/core/modules/_content-box.scss */
-.inner.gray .wrap .content {
-  background-color: #5b5c5b; }
+  /* line 29, ../scss/core/modules/_content-box.scss */
+  .inner.yellow .wrap .content {
+    background-color: #f4bd23; }
+/* line 32, ../scss/core/modules/_content-box.scss */
+.inner.green-light {
+  background-color: #f4bd23; }
+  /* line 35, ../scss/core/modules/_content-box.scss */
+  .inner.green-light .wrap .content {
+    background-color: #8db268; }
+/* line 38, ../scss/core/modules/_content-box.scss */
+.inner.gray {
+  background-color: #2175b8; }
+  /* line 41, ../scss/core/modules/_content-box.scss */
+  .inner.gray .wrap .content {
+    background-color: #5b5c5b; }
 
 /* line 2, ../scss/widgets/_aspot.scss */
 section.aspot {
@@ -3676,11 +3697,49 @@ section.aspot {
           width: 100%;
           color: #FFFFFF; }
 
-/* line 5, ../scss/widgets/_rich-text.scss */
+/* line 4, ../scss/widgets/_rich-text.scss */
+section.rich-text .inner.bg-image {
+  position: relative; }
+  /* line 6, ../scss/widgets/_rich-text.scss */
+  section.rich-text .inner.bg-image .floating-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; }
+    /* line 12, ../scss/widgets/_rich-text.scss */
+    section.rich-text .inner.bg-image .floating-background:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(33, 117, 184, 0.9); }
+  /* line 23, ../scss/widgets/_rich-text.scss */
+  section.rich-text .inner.bg-image.red .floating-background:after {
+    background-color: rgba(33, 117, 184, 0.9); }
+  /* line 30, ../scss/widgets/_rich-text.scss */
+  section.rich-text .inner.bg-image.blue .floating-background:after {
+    background-color: rgba(215, 71, 39, 0.9); }
+  /* line 37, ../scss/widgets/_rich-text.scss */
+  section.rich-text .inner.bg-image.green .floating-background:after {
+    background-color: rgba(244, 189, 35, 0.9); }
+  /* line 44, ../scss/widgets/_rich-text.scss */
+  section.rich-text .inner.bg-image.yellow .floating-background:after {
+    background-color: rgba(101, 148, 63, 0.9); }
+  /* line 51, ../scss/widgets/_rich-text.scss */
+  section.rich-text .inner.bg-image.green-light .floating-background:after {
+    background-color: rgba(244, 189, 35, 0.9); }
+  /* line 58, ../scss/widgets/_rich-text.scss */
+  section.rich-text .inner.bg-image.gray .floating-background:after {
+    background-color: rgba(33, 117, 184, 0.9); }
+/* line 65, ../scss/widgets/_rich-text.scss */
 section.rich-text .inner .wrap .content {
   position: relative;
-  margin: 70px 0; }
-  /* line 8, ../scss/widgets/_rich-text.scss */
+  margin: 100px 0; }
+  /* line 68, ../scss/widgets/_rich-text.scss */
   section.rich-text .inner .wrap .content .inner {
     padding: 70px; }
     /* line 149, ../scss/core/helpers/_mixins.scss */
