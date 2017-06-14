@@ -2,6 +2,7 @@
 $inv_heading = get_sub_field('inv_heading');
 $inv_copy = get_sub_field('inv_copy');
 $copy_2 = get_sub_field('copy_2');
+$map_title = get_sub_field('map_title');
 ?>
 <div class="inner equal-height">
   <div class="map-container">
@@ -25,6 +26,7 @@ $copy_2 = get_sub_field('copy_2');
     </div>
     <div class="map-key">
       <div class="inner">
+        <h3><?php echo $map_title; ?></h3>
         <ul>
           <?php
           $args = array(
@@ -51,7 +53,9 @@ $copy_2 = get_sub_field('copy_2');
       <?php echo $inv_copy; ?>
     </div>
     <div class="secondary-copy">
-      <?php echo $copy_2; ?>
+      <div class="content content-box">
+        <?php echo $copy_2; ?>
+      </div>
     </div>
   </div>
 </div>
