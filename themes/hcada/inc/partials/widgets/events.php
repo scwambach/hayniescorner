@@ -19,21 +19,12 @@
   $section_id = get_sub_field('section_id');
   $background_image = get_sub_field('background_image')['url'];
 ?>
-
-
-
 <div class="inner <?php if ($background_image) { echo ' bg-image'; } ?>">
   <?php if ($background_image) { ?>
     <div class="floating-background" style="background-image: url(<?php echo $background_image; ?>)"></div>
   <?php } ?>
-
-
-
   <div class="events-list">
-
-
     <?php
-
       while ( $new_loop->have_posts() ) : $new_loop->the_post();
       $title = get_field('heading');
       $date = get_field('event_date');
@@ -48,31 +39,16 @@
       </div>
       <div class="content">
         <h4><?php the_title(); ?></h4>
-        <?php the_content(); ?>
+        <hr>
+        <div class="copy-box">
+          <?php the_content(); ?>
+        </div>
       </div>
     </div>
-
-
-
-
-
     <?php
       endwhile;
       else:
     ?>
-
   </div>
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
 <?php endif; wp_reset_query(); ?>

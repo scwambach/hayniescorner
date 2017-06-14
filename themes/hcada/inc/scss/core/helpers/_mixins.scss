@@ -176,6 +176,12 @@
     border-bottom: 4px dashed $white;
     @include border-image(url('../images/dot.png') 13 round);
   }
+  blockquote {
+    font-style: italic;
+    padding-left: 20px;
+    margin: 40px 0;
+    border-left: 10px solid tint($blue, 30%);
+  }
   img {
     height: auto;
     max-width: 100%;

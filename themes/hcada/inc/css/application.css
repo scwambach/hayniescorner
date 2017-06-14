@@ -4089,27 +4089,33 @@ section.rich-text .inner .wrap .content {
       -webkit-border-image: url("../images/dot.png") 13 round;
       border-image: url("../images/dot.png") 13 round; }
     /* line 179, ../scss/core/helpers/_mixins.scss */
+    section.rich-text .inner .wrap .content .inner blockquote {
+      font-style: italic;
+      padding-left: 20px;
+      margin: 40px 0;
+      border-left: 10px solid #649ecd; }
+    /* line 185, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner img {
       height: auto;
       max-width: 100%; }
-      /* line 182, ../scss/core/helpers/_mixins.scss */
+      /* line 188, ../scss/core/helpers/_mixins.scss */
       section.rich-text .inner .wrap .content .inner img.aligncenter, section.rich-text .inner .wrap .content .inner img.alignleft, section.rich-text .inner .wrap .content .inner img.alignright {
         display: block; }
         @media only screen and (max-width: 768px) {
-          /* line 182, ../scss/core/helpers/_mixins.scss */
+          /* line 188, ../scss/core/helpers/_mixins.scss */
           section.rich-text .inner .wrap .content .inner img.aligncenter, section.rich-text .inner .wrap .content .inner img.alignleft, section.rich-text .inner .wrap .content .inner img.alignright {
             margin-bottom: 20px; } }
       @media only screen and (min-width: 769px) {
-        /* line 188, ../scss/core/helpers/_mixins.scss */
+        /* line 194, ../scss/core/helpers/_mixins.scss */
         section.rich-text .inner .wrap .content .inner img.aligncenter {
           margin: 0 auto 20px; } }
       @media only screen and (min-width: 769px) {
-        /* line 193, ../scss/core/helpers/_mixins.scss */
+        /* line 199, ../scss/core/helpers/_mixins.scss */
         section.rich-text .inner .wrap .content .inner img.alignleft {
           float: left;
           margin: 0 20px 20px 0; } }
       @media only screen and (min-width: 769px) {
-        /* line 199, ../scss/core/helpers/_mixins.scss */
+        /* line 205, ../scss/core/helpers/_mixins.scss */
         section.rich-text .inner .wrap .content .inner img.alignright {
           float: right;
           margin: 0 0 20px 20px; } }
@@ -4213,27 +4219,33 @@ section.get-involved .inner .map-container .map-key {
     -webkit-border-image: url("../images/dot.png") 13 round;
     border-image: url("../images/dot.png") 13 round; }
   /* line 179, ../scss/core/helpers/_mixins.scss */
+  section.get-involved .inner .map-container .map-key blockquote {
+    font-style: italic;
+    padding-left: 20px;
+    margin: 40px 0;
+    border-left: 10px solid #649ecd; }
+  /* line 185, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .map-container .map-key img {
     height: auto;
     max-width: 100%; }
-    /* line 182, ../scss/core/helpers/_mixins.scss */
+    /* line 188, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key img.aligncenter, section.get-involved .inner .map-container .map-key img.alignleft, section.get-involved .inner .map-container .map-key img.alignright {
       display: block; }
       @media only screen and (max-width: 768px) {
-        /* line 182, ../scss/core/helpers/_mixins.scss */
+        /* line 188, ../scss/core/helpers/_mixins.scss */
         section.get-involved .inner .map-container .map-key img.aligncenter, section.get-involved .inner .map-container .map-key img.alignleft, section.get-involved .inner .map-container .map-key img.alignright {
           margin-bottom: 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 188, ../scss/core/helpers/_mixins.scss */
+      /* line 194, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .map-container .map-key img.aligncenter {
         margin: 0 auto 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 193, ../scss/core/helpers/_mixins.scss */
+      /* line 199, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .map-container .map-key img.alignleft {
         float: left;
         margin: 0 20px 20px 0; } }
     @media only screen and (min-width: 769px) {
-      /* line 199, ../scss/core/helpers/_mixins.scss */
+      /* line 205, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .map-container .map-key img.alignright {
         float: right;
         margin: 0 0 20px 20px; } }
@@ -4332,27 +4344,33 @@ section.get-involved .inner .copy-container .inner, section.get-involved .inner 
     -webkit-border-image: url("../images/dot.png") 13 round;
     border-image: url("../images/dot.png") 13 round; }
   /* line 179, ../scss/core/helpers/_mixins.scss */
+  section.get-involved .inner .copy-container .inner blockquote, section.get-involved .inner .copy-container .secondary-copy blockquote {
+    font-style: italic;
+    padding-left: 20px;
+    margin: 40px 0;
+    border-left: 10px solid #649ecd; }
+  /* line 185, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner img, section.get-involved .inner .copy-container .secondary-copy img {
     height: auto;
     max-width: 100%; }
-    /* line 182, ../scss/core/helpers/_mixins.scss */
+    /* line 188, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .copy-container .inner img.aligncenter, section.get-involved .inner .copy-container .inner img.alignleft, section.get-involved .inner .copy-container .inner img.alignright, section.get-involved .inner .copy-container .secondary-copy img.aligncenter, section.get-involved .inner .copy-container .secondary-copy img.alignleft, section.get-involved .inner .copy-container .secondary-copy img.alignright {
       display: block; }
       @media only screen and (max-width: 768px) {
-        /* line 182, ../scss/core/helpers/_mixins.scss */
+        /* line 188, ../scss/core/helpers/_mixins.scss */
         section.get-involved .inner .copy-container .inner img.aligncenter, section.get-involved .inner .copy-container .inner img.alignleft, section.get-involved .inner .copy-container .inner img.alignright, section.get-involved .inner .copy-container .secondary-copy img.aligncenter, section.get-involved .inner .copy-container .secondary-copy img.alignleft, section.get-involved .inner .copy-container .secondary-copy img.alignright {
           margin-bottom: 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 188, ../scss/core/helpers/_mixins.scss */
+      /* line 194, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .copy-container .inner img.aligncenter, section.get-involved .inner .copy-container .secondary-copy img.aligncenter {
         margin: 0 auto 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 193, ../scss/core/helpers/_mixins.scss */
+      /* line 199, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .copy-container .inner img.alignleft, section.get-involved .inner .copy-container .secondary-copy img.alignleft {
         float: left;
         margin: 0 20px 20px 0; } }
     @media only screen and (min-width: 769px) {
-      /* line 199, ../scss/core/helpers/_mixins.scss */
+      /* line 205, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .copy-container .inner img.alignright, section.get-involved .inner .copy-container .secondary-copy img.alignright {
         float: right;
         margin: 0 0 20px 20px; } }
@@ -4476,34 +4494,50 @@ section.events .inner {
     -webkit-border-image: url("../images/dot.png") 13 round;
     border-image: url("../images/dot.png") 13 round; }
   /* line 179, ../scss/core/helpers/_mixins.scss */
+  section.events .inner blockquote {
+    font-style: italic;
+    padding-left: 20px;
+    margin: 40px 0;
+    border-left: 10px solid #649ecd; }
+  /* line 185, ../scss/core/helpers/_mixins.scss */
   section.events .inner img {
     height: auto;
     max-width: 100%; }
-    /* line 182, ../scss/core/helpers/_mixins.scss */
+    /* line 188, ../scss/core/helpers/_mixins.scss */
     section.events .inner img.aligncenter, section.events .inner img.alignleft, section.events .inner img.alignright {
       display: block; }
       @media only screen and (max-width: 768px) {
-        /* line 182, ../scss/core/helpers/_mixins.scss */
+        /* line 188, ../scss/core/helpers/_mixins.scss */
         section.events .inner img.aligncenter, section.events .inner img.alignleft, section.events .inner img.alignright {
           margin-bottom: 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 188, ../scss/core/helpers/_mixins.scss */
+      /* line 194, ../scss/core/helpers/_mixins.scss */
       section.events .inner img.aligncenter {
         margin: 0 auto 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 193, ../scss/core/helpers/_mixins.scss */
+      /* line 199, ../scss/core/helpers/_mixins.scss */
       section.events .inner img.alignleft {
         float: left;
         margin: 0 20px 20px 0; } }
     @media only screen and (min-width: 769px) {
-      /* line 199, ../scss/core/helpers/_mixins.scss */
+      /* line 205, ../scss/core/helpers/_mixins.scss */
       section.events .inner img.alignright {
         float: right;
         margin: 0 0 20px 20px; } }
-  /* line 7, ../scss/widgets/_events.scss */
+  /* line 8, ../scss/widgets/_events.scss */
+  section.events .inner .copy-box a {
+    color: #f4bd23; }
+    /* line 10, ../scss/widgets/_events.scss */
+    section.events .inner .copy-box a:hover {
+      color: #c3971c; }
+  /* line 14, ../scss/widgets/_events.scss */
+  section.events .inner .copy-box hr {
+    border-top: 2px dashed #FFFFFF;
+    border-bottom: 2px dashed #FFFFFF; }
+  /* line 19, ../scss/widgets/_events.scss */
   section.events .inner.bg-image {
     position: relative; }
-    /* line 9, ../scss/widgets/_events.scss */
+    /* line 21, ../scss/widgets/_events.scss */
     section.events .inner.bg-image .floating-background {
       position: absolute;
       height: 100%;
@@ -4512,7 +4546,7 @@ section.events .inner {
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed; }
-      /* line 15, ../scss/widgets/_events.scss */
+      /* line 27, ../scss/widgets/_events.scss */
       section.events .inner.bg-image .floating-background:after {
         content: '';
         display: block;
@@ -4520,27 +4554,85 @@ section.events .inner {
         width: 100%;
         height: 100%;
         background-color: rgba(91, 92, 91, 0.9); }
-  /* line 25, ../scss/widgets/_events.scss */
+  /* line 37, ../scss/widgets/_events.scss */
   section.events .inner .events-list {
     margin: 0 auto;
     max-width: 1500px; }
-    /* line 28, ../scss/widgets/_events.scss */
+    @media only screen and (min-width: 1101px) {
+      /* line 40, ../scss/widgets/_events.scss */
+      section.events .inner .events-list .slick-list {
+        margin: 0 60px; } }
+    /* line 45, ../scss/widgets/_events.scss */
     section.events .inner .events-list .event-item {
-      margin: 100px 50px 100px 0;
       outline: none;
       background-color: #2175b8; }
-      /* line 32, ../scss/widgets/_events.scss */
-      section.events .inner .events-list .event-item:nth-child(2n) {
-        margin: 100px 0 100px 50px; }
-      /* line 35, ../scss/widgets/_events.scss */
+      @media only screen and (min-width: 1101px) {
+        /* line 45, ../scss/widgets/_events.scss */
+        section.events .inner .events-list .event-item {
+          margin: 100px 50px; } }
+      @media only screen and (max-width: 1100px) {
+        /* line 45, ../scss/widgets/_events.scss */
+        section.events .inner .events-list .event-item {
+          margin: 50px 50px 120px; } }
+      /* line 54, ../scss/widgets/_events.scss */
+      section.events .inner .events-list .event-item:nth-child(4n-3) {
+        -webkit-clip-path: polygon(3% 0, 94% 3%, 100% 94%, 0% 98%);
+        clip-path: polygon(3% 0, 94% 3%, 100% 94%, 0% 98%); }
+      /* line 57, ../scss/widgets/_events.scss */
+      section.events .inner .events-list .event-item:nth-child(4n-2) {
+        -webkit-clip-path: polygon(0 4%, 97% 0%, 95% 98%, 4% 100%);
+        clip-path: polygon(0 4%, 97% 0%, 95% 98%, 4% 100%); }
+      /* line 60, ../scss/widgets/_events.scss */
+      section.events .inner .events-list .event-item:nth-child(4n-1) {
+        -webkit-clip-path: polygon(0 2%, 100% 0%, 97% 98%, 2% 100%);
+        clip-path: polygon(0 2%, 100% 0%, 97% 98%, 2% 100%); }
+      /* line 63, ../scss/widgets/_events.scss */
+      section.events .inner .events-list .event-item:nth-child(4n) {
+        -webkit-clip-path: polygon(1% 0%, 98% 2%, 95% 100%, 4% 98%);
+        clip-path: polygon(1% 0%, 98% 2%, 95% 100%, 4% 98%); }
+      /* line 66, ../scss/widgets/_events.scss */
       section.events .inner .events-list .event-item .event-image {
         height: 350px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover; }
-      /* line 39, ../scss/widgets/_events.scss */
+      /* line 70, ../scss/widgets/_events.scss */
       section.events .inner .events-list .event-item .content {
         padding: 50px; }
+    /* line 75, ../scss/widgets/_events.scss */
+    section.events .inner .events-list button.slick-prev, section.events .inner .events-list button.slick-next {
+      height: 100px;
+      width: 36px;
+      z-index: 3; }
+      /* line 79, ../scss/widgets/_events.scss */
+      section.events .inner .events-list button.slick-prev:before, section.events .inner .events-list button.slick-next:before {
+        font-size: 100px;
+        font-size: 6.25rem;
+        line-height: 100px;
+        line-height: 6.25rem;
+        font-family: 'FontAwesome'; }
+    /* line 85, ../scss/widgets/_events.scss */
+    section.events .inner .events-list button.slick-prev {
+      left: 35px; }
+      /* line 87, ../scss/widgets/_events.scss */
+      section.events .inner .events-list button.slick-prev:before {
+        content: '\f104'; }
+    /* line 91, ../scss/widgets/_events.scss */
+    section.events .inner .events-list button.slick-next {
+      right: 35px; }
+      /* line 93, ../scss/widgets/_events.scss */
+      section.events .inner .events-list button.slick-next:before {
+        content: '\f105'; }
+    /* line 98, ../scss/widgets/_events.scss */
+    section.events .inner .events-list .slick-dots {
+      bottom: 25px; }
+      /* line 102, ../scss/widgets/_events.scss */
+      section.events .inner .events-list .slick-dots li button:before {
+        color: #FFFFFF;
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 20px;
+        line-height: 1.25rem; }
 
 /* line 1, ../scss/pages/_business.scss */
 .single-business {

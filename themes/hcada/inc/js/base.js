@@ -37,13 +37,13 @@
       minHeight = minHeight + elementPadding;
       $(cnt).children().not('.button').css('height', minHeight);
   }
-  if ($('.equal-height, .events-list .slick-track').children().length) {
+  if ($('.equal-height').children().length) {
     setTimeout(function() {
-      $('.equal-height, .events-list .slick-track').each(function() { equalHeight(this); });
+      $('.equal-height').each(function() { equalHeight(this); });
     }, 100);
 
     $(window).resize(function() {
-      $('.equal-height, .events-list .slick-track').each(function() {
+      $('.equal-height').each(function() {
         equalHeight(this);
       });
     })
@@ -94,24 +94,20 @@
 
 
 $('.events-list').slick({
-  dots: true,
+  dots: false,
   infinite: false,
   speed: 300,
   slidesToShow: 2,
   slidesToScroll: 2,
   responsive: [
     {
-      breakpoint: 768,
+      breakpoint: 1100,
       settings: {
-        slidesToShow: 2.2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1.1,
-        slidesToScroll: 1
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false,
+        adaptiveHeight: true
       }
     }
     // You can unslick at a given breakpoint now by adding:

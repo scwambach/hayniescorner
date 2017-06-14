@@ -4,6 +4,18 @@ section {
       background-color: $gray;
       @include rich-mix($white, $white, 15px);
       position: relative;
+      .copy-box {
+        a {
+          color: $yellow;
+          &:hover {
+            color: shade($yellow, 20%);
+          }
+        }
+        hr {
+          border-top: 2px dashed $white;
+          border-bottom: 2px dashed $white;
+        }
+      }
       &.bg-image {
         position: relative;
         .floating-background {
@@ -25,12 +37,31 @@ section {
       .events-list {
         margin: 0 auto;
         max-width: 1500px;
+        .slick-list {
+          @include scale-up(1101px) {
+            margin: 0 60px;
+          }
+        }
         .event-item {
-          margin: 100px 50px 100px 0;
           outline: none;
           background-color: $blue;
-          &:nth-child(2n) {
-            margin: 100px 0 100px 50px;
+          @include scale-up(1101px) {
+            margin: 100px 50px;
+          }
+          @include scale-down(1100px) {
+            margin: 50px 50px 120px;
+          }
+          &:nth-child(4n-3) {
+            @include clip(polygon(3% 0, 94% 3%, 100% 94%, 0% 98%));
+          }
+          &:nth-child(4n-2) {
+            @include clip(polygon(0 4%, 97% 0%, 95% 98%, 4% 100%));
+          }
+          &:nth-child(4n-1) {
+            @include clip(polygon(0 2%, 100% 0%, 97% 98%, 2% 100%));
+          }
+          &:nth-child(4n) {
+            @include clip(polygon(1% 0%, 98% 2%, 95% 100%, 4% 98%));
           }
           .event-image {
             height: 350px;
@@ -38,6 +69,42 @@ section {
           }
           .content {
             padding: 50px;
+          }
+        }
+        button {
+          &.slick-prev, &.slick-next {
+            height: 100px;
+            width: 36px;
+            z-index: 3;
+            &:before {
+              @include font-size(100);
+              @include line-height(100);
+              font-family: 'FontAwesome';
+            }
+          }
+          &.slick-prev {
+            left: 35px;
+            &:before {
+              content: '\f104';
+            }
+          }
+          &.slick-next {
+            right: 35px;
+            &:before {
+              content: '\f105';
+            }
+          }
+        }
+        .slick-dots {
+          bottom: 25px;
+          li {
+            button {
+              &:before {
+                color: $white;
+                @include font-size(20);
+                @include line-height(20);
+              }
+            }
           }
         }
       }
