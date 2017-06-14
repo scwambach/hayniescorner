@@ -1,0 +1,46 @@
+section {
+  &.events {
+    .inner {
+      background-color: $gray;
+      @include rich-mix($white, $white, 15px);
+      position: relative;
+      &.bg-image {
+        position: relative;
+        .floating-background {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          @include background-cover(center);
+          background-attachment: fixed;
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($gray, 0.9);
+          }
+        }
+      }
+      .events-list {
+        margin: 0 auto;
+        max-width: 1500px;
+        .event-item {
+          margin: 100px 50px 100px 0;
+          outline: none;
+          background-color: $blue;
+          &:nth-child(2n) {
+            margin: 100px 0 100px 50px;
+          }
+          .event-image {
+            height: 350px;
+            @include background-cover(center);
+          }
+          .content {
+            padding: 50px;
+          }
+        }
+      }
+    }
+  }
+}

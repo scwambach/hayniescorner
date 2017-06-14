@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700');
 @import 'libs/font-awesome';
+@import 'libs/slick';
+@import 'libs/slick-theme';
 @import "compass";
 @import 'core/settings';
 @import 'core/helpers/mixins';
@@ -13,4 +15,5 @@
 @import 'widgets/aspot';
 @import 'widgets/rich-text';
 @import 'widgets/get-involved';
+@import 'widgets/events';
 @import 'pages/business';
