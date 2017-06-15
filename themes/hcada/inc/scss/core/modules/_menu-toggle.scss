@@ -38,11 +38,13 @@
     @include transition-delay(0.2s);
   }
   &:before {
+    @include scale-up($ipad-port + 1) {
+      opacity: 0;
+    }
     @include scale-up($mobile + 1) {
-      content: 'MENU';
+      content: 'BUSINESSES';
       color: $gray;
       font-weight: 100;
-      opacity: 0;
       @include transition-duration(0.2s);
       display: inline-block;
       padding-right: 5px;

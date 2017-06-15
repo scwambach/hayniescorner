@@ -24,6 +24,25 @@ html {
   padding: 0 $main-gutter;
 }
 
+.back-to-top {
+  color: $white;
+  opacity: 0;
+  @include font-size(80);
+  @include line-height(80);
+  cursor: pointer;
+  position: fixed;
+  bottom: 30px;
+  right: -100px;
+  @include transition-duration(0.2s);
+  &.over {
+    right: 30px;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 //**********************//
 //***** TYPOGRAPHY *****//
 //**********************//

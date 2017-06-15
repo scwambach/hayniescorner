@@ -55,7 +55,7 @@ section {
             @include clip(polygon(3% 0, 94% 3%, 100% 94%, 0% 98%));
           }
           &:nth-child(4n-2) {
-            @include clip(polygon(0 4%, 97% 0%, 95% 98%, 4% 100%));
+            @include clip(polygon(0 4%, 97% 0%, 95% 100%, 4% 99%));
           }
           &:nth-child(4n-1) {
             @include clip(polygon(0 2%, 100% 0%, 97% 98%, 2% 100%));

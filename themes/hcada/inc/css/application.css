@@ -3341,69 +3341,93 @@ html {
     content: '';
     clear: both; }
 
-/* line 30, ../scss/core/_base.scss */
+/* line 27, ../scss/core/_base.scss */
+.back-to-top {
+  color: #FFFFFF;
+  opacity: 0;
+  font-size: 80px;
+  font-size: 5rem;
+  line-height: 80px;
+  line-height: 5rem;
+  cursor: pointer;
+  position: fixed;
+  bottom: 30px;
+  right: -100px;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s; }
+  /* line 37, ../scss/core/_base.scss */
+  .back-to-top.over {
+    right: 30px;
+    opacity: 0.6; }
+    /* line 40, ../scss/core/_base.scss */
+    .back-to-top.over:hover {
+      opacity: 1; }
+
+/* line 49, ../scss/core/_base.scss */
 h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, form {
   margin: 0 0 20px; }
 
-/* line 34, ../scss/core/_base.scss */
+/* line 53, ../scss/core/_base.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold; }
 
-/* line 38, ../scss/core/_base.scss */
+/* line 57, ../scss/core/_base.scss */
 ul, ol {
   padding-left: 20px; }
 
-/* line 42, ../scss/core/_base.scss */
+/* line 61, ../scss/core/_base.scss */
 h1 {
   font-size: 32px;
   font-size: 2rem;
   line-height: 36px;
   line-height: 2.25rem; }
 
-/* line 46, ../scss/core/_base.scss */
+/* line 65, ../scss/core/_base.scss */
 h2 {
   font-size: 28px;
   font-size: 1.75rem;
   line-height: 32px;
   line-height: 2rem; }
 
-/* line 50, ../scss/core/_base.scss */
+/* line 69, ../scss/core/_base.scss */
 h3 {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 28px;
   line-height: 1.75rem; }
 
-/* line 54, ../scss/core/_base.scss */
+/* line 73, ../scss/core/_base.scss */
 h4 {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 26px;
   line-height: 1.625rem; }
 
-/* line 58, ../scss/core/_base.scss */
+/* line 77, ../scss/core/_base.scss */
 h5 {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 22px;
   line-height: 1.375rem; }
 
-/* line 62, ../scss/core/_base.scss */
+/* line 81, ../scss/core/_base.scss */
 h6 {
   font-size: 16px;
   font-size: 1rem;
   line-height: 20px;
   line-height: 1.25rem; }
 
-/* line 67, ../scss/core/_base.scss */
+/* line 86, ../scss/core/_base.scss */
 a {
   color: #d74727;
   text-decoration: none; }
-  /* line 70, ../scss/core/_base.scss */
+  /* line 89, ../scss/core/_base.scss */
   a:hover {
     color: #97321b; }
 
-/* line 76, ../scss/core/_base.scss */
+/* line 95, ../scss/core/_base.scss */
 .center-block {
   position: relative;
   border: 1px solid;
@@ -3423,7 +3447,7 @@ a {
     top: 0;
     display: block;
     background-color: rgba(0, 0, 0, 0.53); }
-  /* line 82, ../scss/core/_base.scss */
+  /* line 101, ../scss/core/_base.scss */
   .center-block i {
     color: #FFFFFF;
     font-size: 50px;
@@ -3439,7 +3463,7 @@ a {
     width: 100%;
     left: 0; }
 
-/* line 93, ../scss/core/_base.scss */
+/* line 112, ../scss/core/_base.scss */
 .boxes {
   margin-right: -20px; }
   /* line 2, ../scss/core/helpers/_layout.scss */
@@ -3447,24 +3471,24 @@ a {
     display: table;
     content: '';
     clear: both; }
-  /* line 96, ../scss/core/_base.scss */
+  /* line 115, ../scss/core/_base.scss */
   .boxes .box {
     width: 33.333%;
     float: left;
     box-sizing: border-box;
     padding: 0 20px 20px 0; }
-    /* line 98, ../scss/core/_base.scss */
+    /* line 117, ../scss/core/_base.scss */
     .boxes .box .inner {
       border: 1px solid #000000;
       height: 20px; }
-    /* line 102, ../scss/core/_base.scss */
+    /* line 121, ../scss/core/_base.scss */
     .boxes .box + .box {
       width: 66.666%;
       float: left;
       box-sizing: border-box;
       padding: 0 20px 20px 0; }
 
-/* line 108, ../scss/core/_base.scss */
+/* line 127, ../scss/core/_base.scss */
 .button {
   background-color: #d74727;
   color: #FFFFFF;
@@ -3480,7 +3504,7 @@ a {
     background-color: #df6c52;
     color: #FFFFFF; }
 
-/* line 111, ../scss/core/_base.scss */
+/* line 130, ../scss/core/_base.scss */
 .button-inline {
   background-color: #d74727;
   color: #FFFFFF;
@@ -3502,7 +3526,7 @@ a {
     background-color: #df6c52;
     color: #FFFFFF; }
 
-/* line 115, ../scss/core/_base.scss */
+/* line 134, ../scss/core/_base.scss */
 .video-container {
   padding-bottom: 56.25%;
   position: relative;
@@ -3519,7 +3543,7 @@ a {
     height: 100%;
     border: 0; }
 
-/* line 119, ../scss/core/_base.scss */
+/* line 138, ../scss/core/_base.scss */
 #wpadminbar {
   right: 100%;
   left: inherit;
@@ -3527,7 +3551,7 @@ a {
   -o-transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s; }
-  /* line 123, ../scss/core/_base.scss */
+  /* line 142, ../scss/core/_base.scss */
   #wpadminbar:after {
     content: "ADMIN BAR";
     height: 32px;
@@ -3539,20 +3563,20 @@ a {
     padding: 0px 22px;
     cursor: pointer; }
     @media only screen and (max-width: 1024px) {
-      /* line 123, ../scss/core/_base.scss */
+      /* line 142, ../scss/core/_base.scss */
       #wpadminbar:after {
         opacity: 0.2; } }
-  /* line 137, ../scss/core/_base.scss */
+  /* line 156, ../scss/core/_base.scss */
   #wpadminbar:hover {
     right: 0; }
 
-/* line 142, ../scss/core/_base.scss */
+/* line 161, ../scss/core/_base.scss */
 .acf-map {
   width: 100%;
   height: 400px; }
 
 /* fixes potential theme css conflict */
-/* line 148, ../scss/core/_base.scss */
+/* line 167, ../scss/core/_base.scss */
 .acf-map img {
   max-width: inherit !important; }
 
@@ -3662,13 +3686,16 @@ header {
       /* line 35, ../scss/core/modules/_menu-toggle.scss */
       header .menu-toggle span:after {
         margin-top: 7px; }
+    @media only screen and (min-width: 769px) {
+      /* line 40, ../scss/core/modules/_menu-toggle.scss */
+      header .menu-toggle:before {
+        opacity: 0; } }
     @media only screen and (min-width: 481px) {
       /* line 40, ../scss/core/modules/_menu-toggle.scss */
       header .menu-toggle:before {
-        content: 'MENU';
+        content: 'BUSINESSES';
         color: #5b5c5b;
         font-weight: 100;
-        opacity: 0;
         -moz-transition-duration: 0.2s;
         -o-transition-duration: 0.2s;
         -webkit-transition-duration: 0.2s;
@@ -3684,17 +3711,17 @@ header {
         right: 100%;
         line-height: 1;
         margin-top: 2px; } }
-    /* line 56, ../scss/core/modules/_menu-toggle.scss */
+    /* line 58, ../scss/core/modules/_menu-toggle.scss */
     header .menu-toggle:hover:before {
       opacity: 1; }
-    /* line 60, ../scss/core/modules/_menu-toggle.scss */
+    /* line 62, ../scss/core/modules/_menu-toggle.scss */
     header .menu-toggle:hover span {
       background-color: rgba(91, 92, 91, 0);
       -moz-transition-delay: 0.2s;
       -o-transition-delay: 0.2s;
       -webkit-transition-delay: 0.2s;
       transition-delay: 0.2s; }
-    /* line 64, ../scss/core/modules/_menu-toggle.scss */
+    /* line 66, ../scss/core/modules/_menu-toggle.scss */
     header .menu-toggle span:before {
       -moz-transition-property: margin, -moz-transform;
       -o-transition-property: margin, -o-transform;
@@ -3710,7 +3737,7 @@ header {
       transition-delay: 0.2s, 0s;
       -webkit-transform-origin: 100% 100%;
       transform-origin: 100% 100%; }
-    /* line 71, ../scss/core/modules/_menu-toggle.scss */
+    /* line 73, ../scss/core/modules/_menu-toggle.scss */
     header .menu-toggle:hover span:before {
       margin-top: 0;
       -moz-transform: rotate(22.5deg) skewX(22.5deg);
@@ -3721,7 +3748,7 @@ header {
       -o-transition-delay: 0s, 0.2s;
       -webkit-transition-delay: 0s, 0.2s;
       transition-delay: 0s, 0.2s; }
-    /* line 76, ../scss/core/modules/_menu-toggle.scss */
+    /* line 78, ../scss/core/modules/_menu-toggle.scss */
     header .menu-toggle span:after {
       -moz-transition-property: margin, -moz-transform;
       -o-transition-property: margin, -o-transform;
@@ -3737,7 +3764,7 @@ header {
       transition-delay: 0.2s, 0s;
       -webkit-transform-origin: 100% 0%;
       transform-origin: 100% 0%; }
-    /* line 83, ../scss/core/modules/_menu-toggle.scss */
+    /* line 85, ../scss/core/modules/_menu-toggle.scss */
     header .menu-toggle:hover span:after {
       margin-top: 0;
       -moz-transform: rotate(-22.5deg) skewX(-22.5deg);
@@ -3748,7 +3775,12 @@ header {
       -o-transition-delay: 0s, 0.2s;
       -webkit-transition-delay: 0s, 0.2s;
       transition-delay: 0s, 0.2s; }
-  /* line 50, ../scss/core/_header.scss */
+  @media only screen and (min-width: 769px) {
+    /* line 50, ../scss/core/_header.scss */
+    header.over .menu-toggle {
+      position: fixed;
+      top: 10px; } }
+  /* line 58, ../scss/core/_header.scss */
   header nav.business-nav {
     position: fixed;
     height: 100%;
@@ -3762,10 +3794,10 @@ header {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
-    /* line 61, ../scss/core/_header.scss */
+    /* line 69, ../scss/core/_header.scss */
     header nav.business-nav.open {
       left: 0; }
-    /* line 64, ../scss/core/_header.scss */
+    /* line 72, ../scss/core/_header.scss */
     header nav.business-nav .close-menu {
       font-size: 23px;
       font-size: 1.4375rem;
@@ -3781,25 +3813,25 @@ header {
       -o-transition-duration: 0.2s;
       -webkit-transition-duration: 0.2s;
       transition-duration: 0.2s; }
-      /* line 74, ../scss/core/_header.scss */
+      /* line 82, ../scss/core/_header.scss */
       header nav.business-nav .close-menu:hover {
         background-color: rgba(0, 0, 0, 0.7);
         color: #FFFFFF; }
-    /* line 79, ../scss/core/_header.scss */
+    /* line 87, ../scss/core/_header.scss */
     header nav.business-nav ul {
       list-style-type: none;
       padding: 0;
       margin: 0; }
-    /* line 84, ../scss/core/_header.scss */
+    /* line 92, ../scss/core/_header.scss */
     header nav.business-nav > ul {
       border-bottom: 1px solid #000000; }
-      /* line 86, ../scss/core/_header.scss */
+      /* line 94, ../scss/core/_header.scss */
       header nav.business-nav > ul > li {
         border-top: 1px solid #000000; }
-        /* line 88, ../scss/core/_header.scss */
+        /* line 96, ../scss/core/_header.scss */
         header nav.business-nav > ul > li a {
           cursor: pointer; }
-          /* line 90, ../scss/core/_header.scss */
+          /* line 98, ../scss/core/_header.scss */
           header nav.business-nav > ul > li a.top-item {
             display: block;
             padding: 40px 20px;
@@ -3815,7 +3847,7 @@ header {
             -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
             position: relative; }
-            /* line 100, ../scss/core/_header.scss */
+            /* line 108, ../scss/core/_header.scss */
             header nav.business-nav > ul > li a.top-item i {
               right: 40px;
               position: absolute;
@@ -3828,22 +3860,22 @@ header {
               font-size: 3.125rem;
               line-height: 50px;
               line-height: 3.125rem; }
-            /* line 106, ../scss/core/_header.scss */
+            /* line 114, ../scss/core/_header.scss */
             header nav.business-nav > ul > li a.top-item:hover {
               color: #FFFFFF; }
-        /* line 111, ../scss/core/_header.scss */
+        /* line 119, ../scss/core/_header.scss */
         header nav.business-nav > ul > li .drop-down {
           display: none; }
-        /* line 116, ../scss/core/_header.scss */
+        /* line 124, ../scss/core/_header.scss */
         header nav.business-nav > ul > li:nth-child(4n-3) .top-item:hover {
           background-color: rgba(215, 71, 39, 0.7); }
-        /* line 123, ../scss/core/_header.scss */
+        /* line 131, ../scss/core/_header.scss */
         header nav.business-nav > ul > li:nth-child(4n-2) .top-item:hover {
           background-color: rgba(244, 189, 35, 0.7); }
-        /* line 130, ../scss/core/_header.scss */
+        /* line 138, ../scss/core/_header.scss */
         header nav.business-nav > ul > li:nth-child(4n-1) .top-item:hover {
           background-color: rgba(33, 117, 184, 0.7); }
-        /* line 137, ../scss/core/_header.scss */
+        /* line 145, ../scss/core/_header.scss */
         header nav.business-nav > ul > li:nth-child(4n) .top-item:hover {
           background-color: rgba(101, 148, 63, 0.7); }
 
@@ -3935,42 +3967,125 @@ section.aspot {
       /* line 18, ../scss/widgets/_aspot.scss */
       section.aspot .scroll-image {
         transform: initial !important; } }
-  /* line 27, ../scss/widgets/_aspot.scss */
-  section.aspot nav {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.3);
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 0; }
-    /* line 34, ../scss/widgets/_aspot.scss */
-    section.aspot nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0; }
-      /* line 2, ../scss/core/helpers/_layout.scss */
-      section.aspot nav ul:before, section.aspot nav ul:after {
-        display: table;
-        content: '';
-        clear: both; }
-      /* line 39, ../scss/widgets/_aspot.scss */
-      section.aspot nav ul li {
-        display: block;
-        width: 20%;
-        float: left;
-        box-sizing: border-box;
-        padding: 0 0 0 0;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 2px; }
-        /* line 45, ../scss/widgets/_aspot.scss */
-        section.aspot nav ul li + li {
-          border-left: 1px solid #FFFFFF; }
-        /* line 48, ../scss/widgets/_aspot.scss */
-        section.aspot nav ul li a {
-          display: inline-block;
-          width: 100%;
-          color: #FFFFFF; }
+
+/* line 30, ../scss/widgets/_aspot.scss */
+nav.aspot-nav {
+  background: #65943f;
+  width: 100%;
+  padding: 10px 0;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s; }
+  @media only screen and (min-width: 769px) {
+    /* line 30, ../scss/widgets/_aspot.scss */
+    nav.aspot-nav {
+      left: 0; }
+      /* line 37, ../scss/widgets/_aspot.scss */
+      nav.aspot-nav .menu-home-nav-container {
+        display: block !important; } }
+  @media only screen and (max-width: 768px) {
+    /* line 30, ../scss/widgets/_aspot.scss */
+    nav.aspot-nav {
+      bottom: 0; }
+      /* line 43, ../scss/widgets/_aspot.scss */
+      nav.aspot-nav .menu-home-nav-container {
+        display: none; } }
+  @media only screen and (min-width: 769px) {
+    /* line 47, ../scss/widgets/_aspot.scss */
+    nav.aspot-nav.top {
+      bottom: 0; } }
+  @media only screen and (min-width: 769px) {
+    /* line 52, ../scss/widgets/_aspot.scss */
+    nav.aspot-nav.over {
+      position: fixed;
+      top: 0;
+      background-color: #FFFFFF;
+      z-index: 1; }
+      /* line 60, ../scss/widgets/_aspot.scss */
+      nav.aspot-nav.over ul li a {
+        color: #5b5c5b; }
+      /* line 63, ../scss/widgets/_aspot.scss */
+      nav.aspot-nav.over ul li + li {
+        border-left: 1px solid #5b5c5b; } }
+  /* line 70, ../scss/widgets/_aspot.scss */
+  nav.aspot-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    /* line 2, ../scss/core/helpers/_layout.scss */
+    nav.aspot-nav ul:before, nav.aspot-nav ul:after {
+      display: table;
+      content: '';
+      clear: both; }
+    @media only screen and (max-width: 768px) {
+      /* line 70, ../scss/widgets/_aspot.scss */
+      nav.aspot-nav ul {
+        padding-top: 30px; } }
+    /* line 78, ../scss/widgets/_aspot.scss */
+    nav.aspot-nav ul li {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 2px; }
+      @media only screen and (min-width: 769px) {
+        /* line 78, ../scss/widgets/_aspot.scss */
+        nav.aspot-nav ul li {
+          width: 20%;
+          float: left;
+          box-sizing: border-box;
+          padding: 0 0 0 0;
+          text-align: center; } }
+      @media only screen and (max-width: 768px) {
+        /* line 86, ../scss/widgets/_aspot.scss */
+        nav.aspot-nav ul li + li {
+          border-top: 1px solid #FFFFFF; } }
+      @media only screen and (min-width: 769px) {
+        /* line 86, ../scss/widgets/_aspot.scss */
+        nav.aspot-nav ul li + li {
+          border-left: 1px solid #FFFFFF; } }
+      /* line 94, ../scss/widgets/_aspot.scss */
+      nav.aspot-nav ul li a {
+        display: inline-block;
+        width: 100%;
+        color: #FFFFFF; }
+        @media only screen and (max-width: 768px) {
+          /* line 94, ../scss/widgets/_aspot.scss */
+          nav.aspot-nav ul li a {
+            display: block;
+            padding: 10px 0; } }
+
+/* line 107, ../scss/widgets/_aspot.scss */
+.page-menu-toggle {
+  color: #FFFFFF;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  margin-bottom: -5px; }
+  /* line 113, ../scss/widgets/_aspot.scss */
+  .page-menu-toggle:hover {
+    color: #FFFFFF; }
+  /* line 116, ../scss/widgets/_aspot.scss */
+  .page-menu-toggle i {
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    vertical-align: middle;
+    margin: -8px 0 0 10px; }
+  /* line 124, ../scss/widgets/_aspot.scss */
+  .page-menu-toggle.open i {
+    -moz-transform: rotate(226deg);
+    -ms-transform: rotate(226deg);
+    -webkit-transform: rotate(226deg);
+    transform: rotate(226deg); }
+  @media only screen and (min-width: 769px) {
+    /* line 107, ../scss/widgets/_aspot.scss */
+    .page-menu-toggle {
+      display: none; } }
 
 /* line 4, ../scss/widgets/_rich-text.scss */
 section.rich-text .inner.bg-image {
@@ -4580,8 +4695,8 @@ section.events .inner {
         clip-path: polygon(3% 0, 94% 3%, 100% 94%, 0% 98%); }
       /* line 57, ../scss/widgets/_events.scss */
       section.events .inner .events-list .event-item:nth-child(4n-2) {
-        -webkit-clip-path: polygon(0 4%, 97% 0%, 95% 98%, 4% 100%);
-        clip-path: polygon(0 4%, 97% 0%, 95% 98%, 4% 100%); }
+        -webkit-clip-path: polygon(0 4%, 97% 0%, 95% 100%, 4% 99%);
+        clip-path: polygon(0 4%, 97% 0%, 95% 100%, 4% 99%); }
       /* line 60, ../scss/widgets/_events.scss */
       section.events .inner .events-list .event-item:nth-child(4n-1) {
         -webkit-clip-path: polygon(0 2%, 100% 0%, 97% 98%, 2% 100%);

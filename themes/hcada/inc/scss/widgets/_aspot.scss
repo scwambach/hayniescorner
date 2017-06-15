@@ -24,34 +24,108 @@ section {
         transform: initial !important;
       }
     }
-    nav {
-      position: absolute;
-      background: rgba($black, 0.3);
-      bottom: 0;
+  }
+}
+nav {
+  &.aspot-nav {
+    background: $green;
+    width: 100%;
+    padding: 10px 0;
+    @include transition-duration(0.2s);
+    @include scale-up($ipad-port + 1) {
       left: 0;
-      width: 100%;
-      padding: 10px 0;
-      ul {
-        list-style-type: none;
-        @include clearfix;
-        padding: 0;
-        margin: 0;
-        li {
-          display: block;
-          @include fifth(0, left);
-          text-align: center;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          + li {
-            border-left: 1px solid $white;
-          }
-          a {
-            display: inline-block;
-            width: 100%;
-            color: $white;
+      .menu-home-nav-container {
+        display: block !important;
+      }
+    }
+    @include scale-down($ipad-port) {
+      bottom: 0;
+      .menu-home-nav-container {
+        display: none;
+      }
+    }
+    &.top {
+      @include scale-up($ipad-port + 1) {
+        bottom: 0;
+      }
+    }
+    &.over {
+      @include scale-up($ipad-port + 1) {
+        position: fixed;
+        top: 0;
+        background-color: $white;
+        z-index: 1;
+        ul {
+          li {
+            a {
+              color: $gray;
+            }
+            + li {
+              border-left: 1px solid $gray;
+            }
           }
         }
       }
     }
+    ul {
+      list-style-type: none;
+      @include clearfix;
+      padding: 0;
+      margin: 0;
+      @include scale-down($ipad-port) {
+        padding-top: 30px;
+      }
+      li {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        @include scale-up($ipad-port + 1) {
+          @include fifth(0, left);
+          text-align: center;
+        }
+        + li {
+          @include scale-down($ipad-port) {
+            border-top: 1px solid $white;
+          }
+          @include scale-up($ipad-port + 1) {
+            border-left: 1px solid $white;
+          }
+        }
+        a {
+          display: inline-block;
+          width: 100%;
+          color: $white;;
+          @include scale-down($ipad-port) {
+            display: block;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+}
+.page-menu-toggle {
+  color: $white;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  margin-bottom: -5px;
+  &:hover {
+    color: $white;
+  }
+  i {
+    @include transition-duration(0.2s);
+    @include font-size(24);
+    @include line-height(24);
+    vertical-align: middle;
+    margin: -8px 0 0 10px;
+  }
+  &.open {
+    i {
+      @include transform(rotate(226deg));
+    }
+  }
+  @include scale-up($ipad-port + 1) {
+    display: none;
   }
 }

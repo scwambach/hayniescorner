@@ -26,6 +26,11 @@
     $('.business-nav').removeClass('open')
   })
 
+  $('.page-menu-toggle').click(function(){
+    $('.menu-home-nav-container').slideToggle()
+    $(this).toggleClass('open')
+  })
+
   // Equal Heights Children - Cnt needs height
   function equalHeight(cnt) {
       var elementPadding = $(cnt).children().css('padding-top').slice(0,-2)*1 + $(cnt).children().css('padding-bottom').slice(0,-2)*1;
@@ -49,46 +54,23 @@
     })
   }
 
-  //Sticky Header Classes
-  function popOver() {
-    $('header').removeClass('top');
-    $('main').removeClass('top');
-    $('header').addClass('over');
-    $('main').addClass('over');
-  }
-  function popTop() {
-    $('header').addClass('top');
-    $('main').addClass('top');
-    $('header').removeClass('over');
-    $('main').removeClass('over');
+
+  if ($(window).scrollTop() <= 860) {
+    $('header, nav.aspot-nav, i.back-to-top').removeClass('over')
+    $('header, nav.aspot-nav, i.back-to-top').addClass('top')
+  } else {
+    $('header, nav.aspot-nav, i.back-to-top').removeClass('top')
+    $('header, nav.aspot-nav, i.back-to-top').addClass('over')
   }
 
-  //Menu listener for top of page
-  var position = $(window).scrollTop();
-  var aspot = $('.aspot, .title-bar').innerHeight();
   $(window).scroll(function() {
-    var scrollPoint = $(window).scrollTop();
-    if (scrollPoint > aspot) {
-      var scroll = $(window).scrollTop();
-      if (scroll > position) {
-        popOver();
-      } else {
-        popTop();
-      }
-      position = scroll;
-    } else {
-      popTop();
-    }
-  });
+    if ($(window).scrollTop() <= 860) {
+      $('header, nav.aspot-nav, i.back-to-top').removeClass('over')
+      $('header, nav.aspot-nav, i.back-to-top').addClass('top')
 
-  // Actives menu scrolling class
-  $(window).bind('scroll', function() {
-    if ($(window).scrollTop()) {
-      $('header').addClass('scrolling');
-      $('main').addClass('scrolling');
     } else {
-      $('header').removeClass('scrolling');
-      $('main').removeClass('scrolling');
+      $('header, nav.aspot-nav, i.back-to-top').removeClass('top')
+      $('header, nav.aspot-nav, i.back-to-top').addClass('over')
     }
   });
 

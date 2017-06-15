@@ -46,6 +46,14 @@ header {
     }
   }
   @import 'modules/menu-toggle';
+  &.over {
+    .menu-toggle {
+      @include scale-up($ipad-port + 1) {
+        position: fixed;
+        top: 10px;
+      }
+    }
+  }
   nav {
     &.business-nav {
       position: fixed;
