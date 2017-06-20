@@ -23,12 +23,35 @@
   })
 
   $('.close-menu').click(function() {
-    $('.business-nav').removeClass('open')
+    $('.business-nav, nav.business-nav ul li.top-item').removeClass('open')
+    $('nav.business-nav ul li.top-item .drop-down').slideUp()
   })
 
   $('.page-menu-toggle').click(function(){
     $('.menu-home-nav-container').slideToggle()
     $(this).toggleClass('open')
+  })
+
+  $('nav.aspot-nav ul li a').click(function(){
+    $('.menu-home-nav-container').slideUp()
+    $('.page-menu-toggle').removeClass('open')
+  })
+
+  $('nav.business-nav ul li.top-item').click(function(){
+    if ($(this).hasClass('open')) {
+      $('nav.business-nav ul li.top-item').removeClass('open')
+      $('nav.business-nav ul li.top-item .drop-down').slideUp()
+    } else {
+      $('nav.business-nav ul li.top-item').removeClass('open')
+      $(this).toggleClass('open')
+      $('nav.business-nav ul li.top-item .drop-down').slideUp()
+      $(this).find('.drop-down').slideToggle()
+    }
+  })
+
+  $(window).resize(function() {
+    $('nav.business-nav ul li.top-item').removeClass('open')
+    $('nav.business-nav ul li.top-item .drop-down').slideUp()
   })
 
   // Equal Heights Children - Cnt needs height
@@ -54,25 +77,25 @@
     })
   }
 
-
-  if ($(window).scrollTop() <= 860) {
-    $('header, nav.aspot-nav, i.back-to-top').removeClass('over')
-    $('header, nav.aspot-nav, i.back-to-top').addClass('top')
-  } else {
-    $('header, nav.aspot-nav, i.back-to-top').removeClass('top')
-    $('header, nav.aspot-nav, i.back-to-top').addClass('over')
+  function scrollIf() {
+    var aHeight = $('.aspot').height()
+    if ($(window).scrollTop() <= aHeight + 60) {
+      $('.scroll-item').removeClass('over')
+      $('.scroll-item').addClass('top')
+    } else {
+      $('.scroll-item').removeClass('top')
+      $('.scroll-item').addClass('over')
+    }
   }
 
-  $(window).scroll(function() {
-    if ($(window).scrollTop() <= 860) {
-      $('header, nav.aspot-nav, i.back-to-top').removeClass('over')
-      $('header, nav.aspot-nav, i.back-to-top').addClass('top')
+  scrollIf()
 
-    } else {
-      $('header, nav.aspot-nav, i.back-to-top').removeClass('top')
-      $('header, nav.aspot-nav, i.back-to-top').addClass('over')
-    }
-  });
+  $(window).scroll(function() {
+    scrollIf()
+  })
+  $(window).resize(function(){
+    scrollIf()
+  })
 
 
 $('.events-list').slick({

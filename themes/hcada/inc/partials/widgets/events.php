@@ -23,6 +23,7 @@
   <?php if ($background_image) { ?>
     <div class="floating-background" style="background-image: url(<?php echo $background_image; ?>)"></div>
   <?php } ?>
+  <h2 class="section-title">Events</h2>
   <div class="events-list">
     <?php
       while ( $new_loop->have_posts() ) : $new_loop->the_post();

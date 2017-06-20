@@ -5,32 +5,21 @@ header {
   left: 0;
   width: 100%;
   z-index: 2;
+  padding: 10px 0 30px;
   @include scale-up($ipad-port + 1) {
     text-align: center;
   }
-  &:before {
-    content: '';
-    display: block;
-    background: $white;
-    width: 200%;
-    height: 540px;
-    position: absolute;
-    bottom: -35px;
-    left: 50%;
-    @include transform(translateX(-50%) rotate(-1.5deg));
-    @include box-shadow(0 0 30px 0 rgba($black, 0.3));
+  @include scale-down($ipad-port) {
+    padding-bottom: 15px;
+  }
+  &.top {
+    @include clip(polygon(0 0, 100% 0, 100% 80%, 0 100%));
     @include scale-down($ipad-port) {
-      bottom: -15px;
-    }
-    @include scale-down($mobile) {
-      bottom: -10px;
+      @include clip(polygon(0 0, 100% 0, 100% 85%, 0 100%));
     }
   }
   > a {
     display: inline-block;
-    position: relative;
-    top: 15px;
-    z-index: 3;
     @include scale-down-between($ipad-port, $mobile) {
       top: 10px;
     }
@@ -46,104 +35,150 @@ header {
     }
   }
   @import 'modules/menu-toggle';
-  &.over {
-    .menu-toggle {
-      @include scale-up($ipad-port + 1) {
-        position: fixed;
-        top: 10px;
+}
+nav {
+  &.business-nav {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($white, 0.95);
+    top: 0;
+    left: 100%;
+    z-index: 5;
+    transition-duration: 0.2s;
+    padding: 0;
+    overflow: auto;
+    @include box-sizing(border-box);
+    @include scale-up($ipad-port + 1) {
+      text-align: center;
+    }
+    &.open {
+      left: 0;
+    }
+    .close-menu {
+      @include font-size(18);
+      @include line-height(18);
+      cursor: pointer;
+      padding: 10px 20px;
+      margin: 20px auto;
+      border: 1px solid tint($black, 80%);
+      display: inline-block;
+      text-transform: uppercase;
+      @include transition-duration(0.2s);
+      &:hover {
+        background-color: rgba($black, 0.7);
+        color: $white;
       }
     }
-  }
-  nav {
-    &.business-nav {
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      background-color: rgba($white, 0.95);
-      top: 0;
-      left: 100%;
-      z-index: 5;
-      transition-duration: 0.2s;
+    ul {
+      list-style-type: none;
       padding: 0;
-      @include box-sizing(border-box);
-      &.open {
-        left: 0;
-      }
-      .close-menu {
-        @include font-size(23);
-        @include line-height(23);
-        cursor: pointer;
-        padding: 20px;
-        margin: 20px;
-        border: 1px solid $black;
-        display: inline-block;
-        text-transform: uppercase;
-        @include transition-duration(0.2s);
-        &:hover {
-          background-color: rgba($black, 0.7);
-          color: $white;
-        }
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
-      > ul {
-        border-bottom: 1px solid $black;
-        > li {
-          border-top: 1px solid $black;
-          a {
-            cursor: pointer;
-            &.top-item {
-              display: block;
-              padding: 40px 20px;
-              @include font-size(30);
-              @include line-height(30);
-              font-weight: 700;
-              color: $black;
-              text-transform: uppercase;
+      margin: 0;
+    }
+    > ul {
+      border-bottom: 1px solid $black;
+      > li {
+        border-top: 1px solid $black;
+        &.top-item {
+          @include transition-duration(0.2s);
+          > a {
+            display: block;
+            padding: 40px 20px;
+            @include font-size(30);
+            @include line-height(30);
+            font-weight: 700;
+            color: $black;
+            text-transform: uppercase;
+            @include transition-duration(0.2s);
+            position: relative;
+            @include scale-down($ipad-port) {
+              padding: 20px 20px 12px;
+              @include font-size(26);
+              @include line-height(26);
+            }
+            i {
+              right: 40px;
               @include transition-duration(0.2s);
-              position: relative;
+              @include vertical-center;
+              @include font-size(50);
+              @include line-height(50);
+              @include transform(translateY(-50%) rotate(0deg));
+            }
+            &:hover {
+              color: $white;
+            }
+          }
+          &.open {
+            > a {
               i {
-                right: 40px;
-                @include vertical-center;
-                @include font-size(50);
-                @include line-height(50);
-              }
-              &:hover {
-                color: $white;
+                @include transform(translateY(-50%) rotate(180deg));
               }
             }
           }
-          .drop-down {
-            display: none;
-          }
-          &:nth-child(4n-3) {
-            .top-item {
-              &:hover {
-                background-color: rgba($red, 0.7);
+        }
+        a {
+          cursor: pointer;
+        }
+        .drop-down {
+          display: none;
+          background: $white;
+          ul {
+            border-top: 1px solid tint($black, 70%);
+            li {
+              + li {
+                border-top: 1px solid tint($black, 70%);
+              }
+              a {
+                @include transition-duration(0.2s);
+                @include font-size(30);
+                @include line-height(34);
+                display: block;
+                padding: 15px 20px;
+                color: $black;
+                &:hover {
+                  color: $white;
+                  background-color: $black;
+                }
               }
             }
           }
-          &:nth-child(4n-2) {
-            .top-item {
-              &:hover {
-                background-color: rgba($yellow, 0.7);
+        }
+        &:nth-child(4n-3) {
+          &.top-item {
+            &.open, &:hover {
+              background-color: rgba($red, 0.7);
+              .drop-down {
+                background-color: tint($red, 80%);
               }
             }
           }
-          &:nth-child(4n-1) {
-            .top-item {
-              &:hover {
-                background-color: rgba($blue, 0.7);
+        }
+        &:nth-child(4n-2) {
+          &.top-item {
+            &.open, &:hover {
+              background-color: rgba($yellow, 0.7);
+              .drop-down {
+                background-color: tint($yellow, 80%);
               }
             }
           }
-          &:nth-child(4n) {
-            .top-item {
-              &:hover {
-                background-color: rgba($green, 0.7);
+        }
+        &:nth-child(4n-1) {
+          &.top-item {
+            &.open, &:hover {
+              background-color: rgba($blue, 0.7);
+              .drop-down {
+                background-color: tint($blue, 80%);
+              }
+            }
+          }
+        }
+        &:nth-child(4n) {
+          &.top-item {
+            &.open, &:hover {
+              background-color: rgba($green, 0.7);
+              .drop-down {
+                background-color: tint($green, 80%);
               }
             }
           }

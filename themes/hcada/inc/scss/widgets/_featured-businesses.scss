@@ -1,0 +1,74 @@
+section {
+  &.featured-businesses {
+    @include clearfix;
+    overflow: hidden;
+    .single-business {
+      @include background-cover(center);
+      text-align: center;
+      height: 300px;
+      position: relative;
+      display: block;
+      @include transition-duration(0.2s);
+      @include scale-up($page-width + 1) {
+        @include fourth(0, left);
+      }
+      @include scale-down-between($page-width, $mobile) {
+        @include half(0, left);
+      }
+      &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 101%;
+        height: 101%;
+        @include transition-duration(0.2s);
+        background-color: rgba($black, 0.7);
+      }
+      h2 {
+        padding: 30px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-transform: uppercase;
+        color: $white;
+        @include box-sizing(border-box);
+        @include transition-duration(0.2s);
+        @include transform(scale(1) translateY(-50%) rotate(0deg));
+        @include scale-down($page-width) {
+          @include font-size(18);
+          @include line-height(22);
+        }
+      }
+      &:hover {
+        @include scale-up($ipad-port + 1) {
+          &:before {
+            background-color: rgba($black, 0.5);
+          }
+          h2 {
+            @include transform(scale(1.1) translateY(-50%));
+          }
+        }
+      }
+      &:nth-child(4n-3) {
+        &:before { background-color: rgba($yellow, 0.5); }
+        &:hover { @include scale-up($ipad-port + 1) { &:before { background-color: rgba($yellow, 0.3); } } }
+      }
+      &:nth-child(4n-2) {
+        &:before { background-color: rgba($blue, 0.5); }
+        &:hover { @include scale-up($ipad-port + 1) { &:before { background-color: rgba($blue, 0.3); } } }
+      }
+      &:nth-child(4n-1) {
+        &:before { background-color: rgba($green, 0.5); }
+        &:hover { @include scale-up($ipad-port + 1) { &:before { background-color: rgba($green, 0.3); } } }
+      }
+      &:nth-child(4n) {
+        &:before { background-color: rgba($red, 0.5); }
+        &:hover { @include scale-up($ipad-port + 1) { &:before { background-color: rgba($red, 0.3); } } }
+      }
+    }
+  }
+}

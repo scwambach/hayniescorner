@@ -174,7 +174,7 @@
     border-left: 0px;
     border-top: 4px dashed $white;
     border-bottom: 4px dashed $white;
-    @include border-image(url('../images/dot.png') 13 round);
+    @include border-image(url('../images/dot.png') 13 repeat);
   }
   blockquote {
     font-style: italic;

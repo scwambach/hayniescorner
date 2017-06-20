@@ -27,13 +27,19 @@ html {
 .back-to-top {
   color: $white;
   opacity: 0;
-  @include font-size(80);
-  @include line-height(80);
   cursor: pointer;
   position: fixed;
   bottom: 30px;
   right: -100px;
   @include transition-duration(0.2s);
+  @include scale-up($ipad-port + 1) {
+    @include font-size(80);
+    @include line-height(80);
+  }
+  @include scale-down($ipad-port) {
+    @include font-size(40);
+    @include line-height(40);
+  }
   &.over {
     right: 30px;
     opacity: 0.6;
@@ -156,6 +162,14 @@ a {
   &:hover {
     right: 0;
   }
+}
+
+.section-title {
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 12px;
 }
 
 .acf-map {

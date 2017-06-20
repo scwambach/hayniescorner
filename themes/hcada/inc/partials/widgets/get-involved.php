@@ -22,7 +22,7 @@ $map_title = get_sub_field('map_title');
       $location = get_field('location');
       ?>
       <div class="marker" data-index="<?php echo $i; ?>" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
-      <?php $i++; endwhile; endif; ?>
+      <?php $i++; endwhile; endif; wp_reset_query(); ?>
     </div>
     <div class="map-key">
       <div class="inner">
@@ -42,7 +42,7 @@ $map_title = get_sub_field('map_title');
           $location = get_field('location');
           ?>
             <li><a href="<?php the_permalink(); ?>"><?php echo $i . '. '; the_title(); ?></a></li>
-          <?php $i++; endwhile; endif; ?>
+          <?php $i++; endwhile; endif; wp_reset_query(); ?>
         </ul>
       </div>
     </div>

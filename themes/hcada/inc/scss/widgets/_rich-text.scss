@@ -1,6 +1,11 @@
 section {
   &.rich-text {
     .inner {
+      .wrap {
+        @include scale-down($mobile) {
+          padding: 0;
+        }
+      }
       &.bg-image {
         position: relative;
         .floating-background {
@@ -64,10 +69,15 @@ section {
       .wrap {
         .content {
           position: relative;
-          margin: 100px 0;
+          @include scale-up($mobile + 1) {
+            margin: 100px 0;
+          }
           .inner {
             @include rich-mix($white, $white, 15px);
             padding: 70px;
+            @include scale-down($ipad-port) {
+              padding: 70px 30px;
+            }
           }
         }
       }

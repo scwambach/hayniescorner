@@ -4,6 +4,17 @@ section {
       background-color: $gray;
       @include rich-mix($white, $white, 15px);
       position: relative;
+      .section-title {
+        @include scale-up($mobile + 1) {
+          padding: 100px 0 0;
+          margin-bottom: -40px;
+        }
+        @include scale-down($mobile) {
+          padding: 70px 0 50px;
+          @include font-size(22);
+          @include line-height(22);
+        }
+      }
       .copy-box {
         a {
           color: $yellow;
@@ -38,37 +49,45 @@ section {
         margin: 0 auto;
         max-width: 1500px;
         .slick-list {
-          @include scale-up(1101px) {
+          @include scale-up($page-width + 1) {
             margin: 0 60px;
           }
         }
         .event-item {
           outline: none;
           background-color: $blue;
-          @include scale-up(1101px) {
+          @include scale-up($page-width + 1) {
             margin: 100px 50px;
           }
-          @include scale-down(1100px) {
+          @include scale-down-between($page-width, $mobile) {
             margin: 50px 50px 120px;
           }
-          &:nth-child(4n-3) {
-            @include clip(polygon(3% 0, 94% 3%, 100% 94%, 0% 98%));
-          }
-          &:nth-child(4n-2) {
-            @include clip(polygon(0 4%, 97% 0%, 95% 100%, 4% 99%));
-          }
-          &:nth-child(4n-1) {
-            @include clip(polygon(0 2%, 100% 0%, 97% 98%, 2% 100%));
-          }
-          &:nth-child(4n) {
-            @include clip(polygon(1% 0%, 98% 2%, 95% 100%, 4% 98%));
+          @include scale-up($mobile + 1) {
+            &:nth-child(4n-3) {
+              @include clip(polygon(3% 0, 94% 3%, 100% 94%, 0% 98%));
+            }
+            &:nth-child(4n-2) {
+              @include clip(polygon(0 4%, 97% 0%, 95% 100%, 4% 99%));
+            }
+            &:nth-child(4n-1) {
+              @include clip(polygon(0 2%, 100% 0%, 97% 98%, 2% 100%));
+            }
+            &:nth-child(4n) {
+              @include clip(polygon(1% 0%, 98% 2%, 95% 100%, 4% 98%));
+            }
           }
           .event-image {
             height: 350px;
             @include background-cover(center);
+            @include scale-down($mobile) {
+              height: 250px;
+            }
           }
           .content {
             padding: 50px;
+            @include scale-down($mobile) {
+              padding: 70px 30px;
+            }
           }
         }
         button {

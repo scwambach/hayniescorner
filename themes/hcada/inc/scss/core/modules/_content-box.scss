@@ -1,7 +1,9 @@
 .content-box {
-  @include clip(polygon(0 2%, 100% 0%, 97% 98%, 2% 100%));
-  &.box-alt {
-    @include clip(polygon(1% 0, 99% 2%, 100% 93%, 0 100%));
+  @include scale-up($mobile + 1) {
+    @include clip(polygon(0 2%, 100% 0%, 97% 98%, 2% 100%));
+    &.box-alt {
+      @include clip(polygon(1% 0, 99% 2%, 100% 93%, 0 100%));
+    }
   }
 }
 .inner {
