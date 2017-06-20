@@ -4,7 +4,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   padding: 10px 0 30px;
   @include scale-up($ipad-port + 1) {
     text-align: center;

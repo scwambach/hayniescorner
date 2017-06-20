@@ -60,7 +60,7 @@ nav {
       position: fixed;
       top: 0;
       @include box-shadow(0 0 30px -8px $black);
-      z-index: 1;
+      z-index: 2;
       ul {
         li {
           @include scale-up($ipad-port + 1) {

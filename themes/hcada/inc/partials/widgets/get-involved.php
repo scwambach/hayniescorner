@@ -41,7 +41,7 @@ $map_title = get_sub_field('map_title');
           while ( $loop->have_posts() ) : $loop->the_post();
           $location = get_field('location');
           ?>
-            <li><a href="<?php the_permalink(); ?>"><?php echo $i . '. '; the_title(); ?></a></li>
+            <li><a href="<?php the_permalink(); ?>"><span><?php echo $i . '. '; ?></span> <?php the_title(); ?></a></li>
           <?php $i++; endwhile; endif; wp_reset_query(); ?>
         </ul>
       </div>

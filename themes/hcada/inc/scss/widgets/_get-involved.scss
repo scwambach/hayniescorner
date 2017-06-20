@@ -8,8 +8,18 @@ section {
         }
       }
       .map-container {
+        position: relative;
+        z-index: 1;
         @include scale-down($page-width) {
           display: none;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          height: 50%;
+          width: 100%;
+          display: block;
+          z-index: 2;
         }
         .acf-map {
           height: 50%;
@@ -29,11 +39,21 @@ section {
               li {
                 @include font-size(18);
                 @include line-height(22);
-                @include fourth(10px, left);
-                padding-bottom: 25px;
+                position: relative;
+                @include scale-up($ipad-port + 1) {
+                  @include fourth(30px, left);
+                  padding-bottom: 25px;
+                  &:nth-child(4n + 1) {
+                    clear: left;
+                  }
+                }
                 a {
                   text-decoration: none;
                   font-weight: 800;
+                  span {
+                    position: absolute;
+                    left: -20px;
+                  }
                 }
               }
             }
