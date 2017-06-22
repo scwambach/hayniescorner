@@ -4969,22 +4969,29 @@ section.featured-businesses {
 /* line 2, ../scss/widgets/_contact-form.scss */
 .wpcf7 .wpcf7-form {
   display: block;
-  width: 75%;
   margin: 0 auto; }
-  /* line 7, ../scss/widgets/_contact-form.scss */
+  @media only screen and (min-width: 481px) {
+    /* line 2, ../scss/widgets/_contact-form.scss */
+    .wpcf7 .wpcf7-form {
+      width: 75%; } }
+  /* line 9, ../scss/widgets/_contact-form.scss */
   .wpcf7 .wpcf7-form p label {
-    font-weight: 800;
-    font-size: 25px;
-    font-size: 1.5625rem;
-    line-height: 29px;
-    line-height: 1.8125rem; }
-    /* line 13, ../scss/widgets/_contact-form.scss */
+    font-weight: 300;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 22px;
+    line-height: 1.375rem; }
+    /* line 15, ../scss/widgets/_contact-form.scss */
     .wpcf7 .wpcf7-form p label span.wpcf7-form-control-wrap input, .wpcf7 .wpcf7-form p label span.wpcf7-form-control-wrap textarea {
-      width: 100%;
+      width: 100% !important;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
-      box-sizing: border-box; }
-    /* line 17, ../scss/widgets/_contact-form.scss */
+      box-sizing: border-box;
+      border: 0; }
+    /* line 20, ../scss/widgets/_contact-form.scss */
+    .wpcf7 .wpcf7-form p label span.wpcf7-form-control-wrap textarea {
+      height: 200px !important; }
+    /* line 23, ../scss/widgets/_contact-form.scss */
     .wpcf7 .wpcf7-form p label span.wpcf7-form-control-wrap input {
       height: 50px;
       padding: 0 10px;
@@ -4993,7 +5000,7 @@ section.featured-businesses {
       font-size: 1.375rem;
       line-height: 22px;
       line-height: 1.375rem; }
-  /* line 29, ../scss/widgets/_contact-form.scss */
+  /* line 35, ../scss/widgets/_contact-form.scss */
   .wpcf7 .wpcf7-form input[type='submit'] {
     border: none;
     cursor: pointer;
@@ -5008,52 +5015,316 @@ section.featured-businesses {
     -o-transition-duration: 0.2s;
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s; }
-    /* line 38, ../scss/widgets/_contact-form.scss */
+    /* line 44, ../scss/widgets/_contact-form.scss */
     .wpcf7 .wpcf7-form input[type='submit']:hover {
       background-color: #749f52; }
+  /* line 49, ../scss/widgets/_contact-form.scss */
+  .wpcf7 .wpcf7-form .wpcf7-response-output {
+    bottom: 70px;
+    position: absolute;
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    /* line 52, ../scss/widgets/_contact-form.scss */
+    .wpcf7 .wpcf7-form .wpcf7-response-output.wpcf7-validation-errors {
+      border-color: #d74727;
+      color: #d74727; }
 
-/* line 1, ../scss/pages/_business.scss */
-.single-business {
-  height: 100%; }
-  /* line 3, ../scss/pages/_business.scss */
+@media only screen and (min-width: 769px) {
+  /* line 1, ../scss/pages/_business.scss */
+  .single-business {
+    height: 100%; } }
+@media only screen and (min-width: 769px) {
+  /* line 5, ../scss/pages/_business.scss */
   .single-business main {
-    height: 100%; }
-    /* line 5, ../scss/pages/_business.scss */
+    height: 100%; } }
+/* line 9, ../scss/pages/_business.scss */
+.single-business main .inner-business {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  @media only screen and (min-width: 769px) {
+    /* line 9, ../scss/pages/_business.scss */
     .single-business main .inner-business {
-      height: 100%;
+      height: calc(100% - 128px);
       width: 100%;
-      position: relative;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover; }
-      /* line 10, ../scss/pages/_business.scss */
-      .single-business main .inner-business .bottom-left,
-      .single-business main .inner-business .bottom-right,
-      .single-business main .inner-business .top-left,
-      .single-business main .inner-business .top-right {
-        position: absolute; }
-      /* line 16, ../scss/pages/_business.scss */
-      .single-business main .inner-business .bottom-left {
-        bottom: 50px;
-        left: 0; }
-      /* line 20, ../scss/pages/_business.scss */
-      .single-business main .inner-business .bottom-right {
-        bottom: 50px;
-        right: 0; }
-      /* line 24, ../scss/pages/_business.scss */
-      .single-business main .inner-business .top-left {
-        top: 0;
-        left: 0; }
-      /* line 28, ../scss/pages/_business.scss */
-      .single-business main .inner-business .top-right {
-        top: 0;
-        right: 0; }
+      overflow: auto; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) {
+    /* line 9, ../scss/pages/_business.scss */
+    .single-business main .inner-business {
+      margin-top: 120px; } }
+  @media only screen and (max-width: 480px) {
+    /* line 9, ../scss/pages/_business.scss */
+    .single-business main .inner-business {
+      margin-top: 80px; } }
+  /* line 22, ../scss/pages/_business.scss */
+  .single-business main .inner-business.bottom-left {
+    background-position: bottom left; }
+  /* line 25, ../scss/pages/_business.scss */
+  .single-business main .inner-business.bottom-right {
+    background-position: bottom right; }
+  /* line 28, ../scss/pages/_business.scss */
+  .single-business main .inner-business.top-left {
+    background-position: top left; }
+  /* line 31, ../scss/pages/_business.scss */
+  .single-business main .inner-business.top-right {
+    background-position: top right; }
   /* line 34, ../scss/pages/_business.scss */
+  .single-business main .inner-business.center-left {
+    background-position: center left; }
+  /* line 37, ../scss/pages/_business.scss */
+  .single-business main .inner-business.center-right {
+    background-position: center right; }
+  /* line 40, ../scss/pages/_business.scss */
+  .single-business main .inner-business .featured-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    @media only screen and (min-width: 769px) {
+      /* line 40, ../scss/pages/_business.scss */
+      .single-business main .inner-business .featured-image {
+        display: none; } }
+    @media only screen and (max-width: 768px) {
+      /* line 40, ../scss/pages/_business.scss */
+      .single-business main .inner-business .featured-image {
+        height: 300px; } }
+    /* line 48, ../scss/pages/_business.scss */
+    .single-business main .inner-business .featured-image.bottom-left {
+      background-position: bottom left; }
+    /* line 51, ../scss/pages/_business.scss */
+    .single-business main .inner-business .featured-image.bottom-right {
+      background-position: bottom right; }
+    /* line 54, ../scss/pages/_business.scss */
+    .single-business main .inner-business .featured-image.top-left {
+      background-position: top left; }
+    /* line 57, ../scss/pages/_business.scss */
+    .single-business main .inner-business .featured-image.top-right {
+      background-position: top right; }
+    /* line 60, ../scss/pages/_business.scss */
+    .single-business main .inner-business .featured-image.center-left {
+      background-position: center left; }
+    /* line 63, ../scss/pages/_business.scss */
+    .single-business main .inner-business .featured-image.center-right {
+      background-position: center right; }
+  @media only screen and (min-width: 769px) {
+    /* line 68, ../scss/pages/_business.scss */
+    .single-business main .inner-business .copy-block.bottom-left, .single-business main .inner-business .copy-block.bottom-right, .single-business main .inner-business .copy-block.top-left, .single-business main .inner-business .copy-block.top-right, .single-business main .inner-business .quote-block.bottom-left, .single-business main .inner-business .quote-block.bottom-right, .single-business main .inner-business .quote-block.top-left, .single-business main .inner-business .quote-block.top-right {
+      position: absolute; } }
+  @media only screen and (min-width: 769px) {
+    /* line 76, ../scss/pages/_business.scss */
+    .single-business main .inner-business .copy-block.bottom-left, .single-business main .inner-business .quote-block.bottom-left {
+      bottom: 170px;
+      left: 50px; } }
+  @media only screen and (min-width: 769px) {
+    /* line 82, ../scss/pages/_business.scss */
+    .single-business main .inner-business .copy-block.bottom-right, .single-business main .inner-business .quote-block.bottom-right {
+      bottom: 170px;
+      right: 50px; } }
+  @media only screen and (min-width: 769px) {
+    /* line 88, ../scss/pages/_business.scss */
+    .single-business main .inner-business .copy-block.top-left, .single-business main .inner-business .quote-block.top-left {
+      top: 210px;
+      left: 50px; } }
+  @media only screen and (min-width: 769px) {
+    /* line 94, ../scss/pages/_business.scss */
+    .single-business main .inner-business .copy-block.top-right, .single-business main .inner-business .quote-block.top-right {
+      top: 210px;
+      right: 50px; } }
+/* line 102, ../scss/pages/_business.scss */
+.single-business main .copy-block {
+  color: #FFFFFF;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #d74727;
+  padding: 30px; }
+  /* line 150, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block p, .single-business main .copy-block li, .single-business main .copy-block h1, .single-business main .copy-block h2, .single-business main .copy-block h3, .single-business main .copy-block h4, .single-business main .copy-block h5, .single-business main .copy-block h6 {
+    color: #FFFFFF; }
+  /* line 153, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block p, .single-business main .copy-block li {
+    font-weight: 300; }
+  /* line 156, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block h1, .single-business main .copy-block h2, .single-business main .copy-block h3, .single-business main .copy-block h4, .single-business main .copy-block h5, .single-business main .copy-block h6 {
+    font-weight: 600; }
+  /* line 122, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block h1 {
+    font-size: 55px;
+    font-size: 3.4375rem;
+    line-height: 59px;
+    line-height: 3.6875rem; }
+  /* line 126, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block h2 {
+    font-size: 45px;
+    font-size: 2.8125rem;
+    line-height: 49px;
+    line-height: 3.0625rem; }
+  /* line 130, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block h3 {
+    font-size: 35px;
+    font-size: 2.1875rem;
+    line-height: 39px;
+    line-height: 2.4375rem; }
+  /* line 134, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block h4 {
+    font-size: 30px;
+    font-size: 1.875rem;
+    line-height: 34px;
+    line-height: 2.125rem; }
+  /* line 138, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block h5 {
+    font-size: 25px;
+    font-size: 1.5625rem;
+    line-height: 29px;
+    line-height: 1.8125rem; }
+  /* line 142, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block h6 {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 24px;
+    line-height: 1.5rem; }
+  /* line 160, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block p, .single-business main .copy-block ul, .single-business main .copy-block h1, .single-business main .copy-block h2, .single-business main .copy-block h3, .single-business main .copy-block h4, .single-business main .copy-block h5, .single-business main .copy-block h6 {
+    margin-bottom: 30px; }
+  /* line 163, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block a {
+    color: #FFFFFF;
+    text-decoration: underline;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s; }
+    /* line 167, ../scss/core/helpers/_mixins.scss */
+    .single-business main .copy-block a:hover {
+      color: #b3b3b3; }
+  /* line 171, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block hr {
+    margin: 20px 0;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 4px dashed #FFFFFF;
+    border-bottom: 4px dashed #FFFFFF;
+    -moz-border-image: url("../images/dot.png") 13 repeat;
+    -o-border-image: url("../images/dot.png") 13 repeat;
+    -webkit-border-image: url("../images/dot.png") 13 repeat;
+    border-image: url("../images/dot.png") 13 repeat; }
+  /* line 179, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block blockquote {
+    font-style: italic;
+    padding-left: 20px;
+    margin: 40px 0;
+    border-left: 10px solid #649ecd; }
+  /* line 185, ../scss/core/helpers/_mixins.scss */
+  .single-business main .copy-block img {
+    height: auto;
+    max-width: 100%; }
+    /* line 188, ../scss/core/helpers/_mixins.scss */
+    .single-business main .copy-block img.aligncenter, .single-business main .copy-block img.alignleft, .single-business main .copy-block img.alignright {
+      display: block; }
+      @media only screen and (max-width: 768px) {
+        /* line 188, ../scss/core/helpers/_mixins.scss */
+        .single-business main .copy-block img.aligncenter, .single-business main .copy-block img.alignleft, .single-business main .copy-block img.alignright {
+          margin-bottom: 20px; } }
+    @media only screen and (min-width: 769px) {
+      /* line 194, ../scss/core/helpers/_mixins.scss */
+      .single-business main .copy-block img.aligncenter {
+        margin: 0 auto 20px; } }
+    @media only screen and (min-width: 769px) {
+      /* line 199, ../scss/core/helpers/_mixins.scss */
+      .single-business main .copy-block img.alignleft {
+        float: left;
+        margin: 0 20px 20px 0; } }
+    @media only screen and (min-width: 769px) {
+      /* line 205, ../scss/core/helpers/_mixins.scss */
+      .single-business main .copy-block img.alignright {
+        float: right;
+        margin: 0 0 20px 20px; } }
+  @media only screen and (min-width: 769px) {
+    /* line 102, ../scss/pages/_business.scss */
+    .single-business main .copy-block {
+      max-width: 500px;
+      width: 40%; } }
+/* line 112, ../scss/pages/_business.scss */
+.single-business main .quote-block {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 50px;
+  background-color: #65943f;
+  color: #FFFFFF; }
+  @media only screen and (min-width: 769px) {
+    /* line 112, ../scss/pages/_business.scss */
+    .single-business main .quote-block {
+      max-width: 1000px;
+      width: 45%; } }
+  /* line 121, ../scss/pages/_business.scss */
+  .single-business main .quote-block blockquote {
+    margin: 0;
+    font-size: 30px;
+    font-size: 1.875rem;
+    line-height: 34px;
+    line-height: 2.125rem;
+    position: relative; }
+    /* line 126, ../scss/pages/_business.scss */
+    .single-business main .quote-block blockquote span {
+      font-size: 60px;
+      font-size: 3.75rem;
+      line-height: 4px;
+      line-height: 0.25rem; }
+      /* line 129, ../scss/pages/_business.scss */
+      .single-business main .quote-block blockquote span.lq {
+        top: 25px;
+        left: -20px;
+        position: absolute; }
+      /* line 134, ../scss/pages/_business.scss */
+      .single-business main .quote-block blockquote span.rq {
+        top: 20px;
+        position: relative; }
+/* line 141, ../scss/pages/_business.scss */
+.single-business main .label {
+  background-color: #5b5c5b;
+  width: 100%; }
+  @media only screen and (min-width: 769px) {
+    /* line 141, ../scss/pages/_business.scss */
+    .single-business main .label {
+      position: fixed;
+      bottom: 46px;
+      left: 0;
+      z-index: 4; } }
+  @media only screen and (min-width: 769px) {
+    /* line 150, ../scss/pages/_business.scss */
+    .single-business main .label:before {
+      content: '';
+      height: 5px;
+      background-color: #2175b8;
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%; } }
+  /* line 161, ../scss/pages/_business.scss */
+  .single-business main .label .inner {
+    padding: 30px 20px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+  /* line 165, ../scss/pages/_business.scss */
+  .single-business main .label h1 {
+    color: #FFFFFF;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 5px;
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 26px;
+    line-height: 1.625rem; }
+@media only screen and (min-width: 769px) {
+  /* line 176, ../scss/pages/_business.scss */
   .single-business footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    left: 0; }
-    /* line 39, ../scss/pages/_business.scss */
-    .single-business footer .wrap {
-      max-width: none; }
+    left: 0; } }
+/* line 183, ../scss/pages/_business.scss */
+.single-business footer .wrap {
+  max-width: none; }
