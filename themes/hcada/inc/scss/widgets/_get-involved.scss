@@ -13,22 +13,10 @@ section {
         @include scale-down($page-width) {
           display: none;
         }
-        &:before {
-          content: '';
-          position: absolute;
-          height: 50%;
-          width: 100%;
-          display: block;
-          z-index: 2;
-        }
-        .acf-map {
-          height: 50%;
-        }
         .map-key {
           @include rich-mix($white, $white, 15px);
           padding: 70px;
           background-color: $gray;
-          height: 50%;
           @include box-sizing(border-box);
           .inner {
             ul {

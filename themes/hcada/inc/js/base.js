@@ -8,7 +8,7 @@
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
         if (target.length) {
           $('html,body').animate({
-            scrollTop: target.offset().top
+            scrollTop: target.offset().top - 200
           }, 1000);
           return false;
         }
@@ -27,16 +27,17 @@
     $('nav.business-nav ul li.top-item .drop-down').slideUp()
   })
 
+
   $('.page-menu-toggle').click(function(){
     $('.menu-home-nav-container').slideToggle()
     $(this).toggleClass('open')
   })
 
-  $('nav.aspot-nav ul li a').click(function(){
+  $('nav.aspot-nav ul li a, .back-to-top').click(function(){
     $('.menu-home-nav-container').slideUp()
     $('.page-menu-toggle').removeClass('open')
   })
-
+  
   $('nav.business-nav ul li.top-item').click(function(){
     if ($(this).hasClass('open')) {
       $('nav.business-nav ul li.top-item').removeClass('open')

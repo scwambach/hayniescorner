@@ -78,12 +78,6 @@
     }, 200);
   });
 
-
-
-
-
-
-
   var mapStyles = [
     {
       "elementType": "geometry",

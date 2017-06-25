@@ -40,6 +40,7 @@
       </div>
       <div class="content">
         <h4><?php the_title(); ?></h4>
+        <p class="date"><?php echo $date; ?></p>
         <hr>
         <div class="copy-box">
           <?php the_content(); ?>

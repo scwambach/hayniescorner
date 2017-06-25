@@ -88,6 +88,12 @@ section {
             @include scale-down($mobile) {
               padding: 70px 30px;
             }
+            h4 {
+              margin-bottom: 0;
+            }
+            .date {
+              font-style: italic;
+            }
           }
         }
         button {

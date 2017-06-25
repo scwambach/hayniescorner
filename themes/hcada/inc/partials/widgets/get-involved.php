@@ -21,7 +21,7 @@ $map_title = get_sub_field('map_title');
       while ( $loop->have_posts() ) : $loop->the_post();
       $location = get_field('location');
       ?>
-      <div class="marker" data-index="<?php echo $i; ?>" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+      <div class="marker" data-index="<?php echo $i; ?>" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"><?php the_title(); ?></div>
       <?php $i++; endwhile; endif; wp_reset_query(); ?>
     </div>
     <div class="map-key">

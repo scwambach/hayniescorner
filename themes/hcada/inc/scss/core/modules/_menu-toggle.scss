@@ -59,6 +59,9 @@
         }
       }
     }
+    @include scale-down($ipad-port) {
+      top: 2px;
+    }
   }
 }
 //   &.top {

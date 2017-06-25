@@ -1,122 +1,150 @@
-.single-business {
-  @include scale-up($ipad-port + 1) {
-    height: 100%;
-  }
-  main {
+.inner-business {
+  @include background-cover(center);
+  .featured-image {
+    margin-top: 15%;
     @include scale-up($ipad-port + 1) {
-      height: 100%;
+      display: none;
     }
-    .inner-business {
-      @include scale-up($ipad-port + 1) {
-        height: calc(100% - 128px);
-        width: 100%;
-        overflow: auto;
-      }
-      @include scale-down-between($ipad-port, $mobile) {
-        margin-top: 120px;
-      }
-      @include scale-down($mobile) {
-        margin-top: 80px;
-      }
-      @include background-cover(center);
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  .main-content {
+    @include clearfix;
+    position: relative;
+    @include scale-up($ipad-port + 1) {
+      padding-bottom: 50px;
+    }
+    .copy-block {
       &.bottom-left {
-        background-position: bottom left;
+        @include scale-up($ipad-port + 1) {
+          float: left;
+          margin: 450px 0 250px;
+          padding-left: 50px;
+        }
       }
       &.bottom-right {
-        background-position: bottom right;
+        @include scale-up($ipad-port + 1) {
+          float: right;
+          margin: 450px 0 250px;
+          padding-right: 50px;
+        }
       }
       &.top-left {
-        background-position: top left;
+        @include scale-up($ipad-port + 1) {
+          float: left;
+          margin: 250px 0 450px;
+          padding-left: 50px;
+        }
       }
       &.top-right {
-        background-position: top right;
-      }
-      &.center-left {
-        background-position: center left;
-      }
-      &.center-right {
-        background-position: center right;
-      }
-      .featured-image {
-        @include background-cover(center);
         @include scale-up($ipad-port + 1) {
-          display: none;
-        }
-        @include scale-down($ipad-port) {
-          height: 300px;
-        }
-        &.bottom-left {
-          background-position: bottom left;
-        }
-        &.bottom-right {
-          background-position: bottom right;
-        }
-        &.top-left {
-          background-position: top left;
-        }
-        &.top-right {
-          background-position: top right;
-        }
-        &.center-left {
-          background-position: center left;
-        }
-        &.center-right {
-          background-position: center right;
+          float: right;
+          margin: 250px 0 450px;
+          padding-right: 50px;
         }
       }
-      .copy-block, .quote-block {
-        &.bottom-left,
-        &.bottom-right,
-        &.top-left,
-        &.top-right {
-          @include scale-up($ipad-port + 1) {
-            position: absolute;
-          }
+      &.no-quote {
+        @include scale-up($ipad-port + 1) {
+          margin-bottom: 200px;
         }
-        &.bottom-left {
-          @include scale-up($ipad-port + 1) {
-            bottom: 170px;
-            left: 50px;
-          }
-        }
-        &.bottom-right {
-          @include scale-up($ipad-port + 1) {
-            bottom: 170px;
-            right: 50px;
-          }
-        }
-        &.top-left {
-          @include scale-up($ipad-port + 1) {
-            top: 210px;
-            left: 50px;
-          }
-        }
-        &.top-right {
-          @include scale-up($ipad-port + 1) {
-            top: 210px;
-            right: 50px;
-          }
-        }
+      }
+      &.red {
+        .inner { background-color: $red; }
+      }
+      &.blue {
+        .inner { background-color: $blue; }
+      }
+      &.green {
+        .inner { background-color: $green; }
+      }
+      &.yellow {
+        .inner { background-color: $yellow; }
+      }
+      &.green-light {
+        .inner { background-color: $green-light; }
+      }
+      &.gray {
+        .inner { background-color: $gray; }
       }
     }
     .copy-block {
-      @include rich-mix($white, $white, 30px);
       @include box-sizing(border-box);
-      background-color: $red;
-      padding: 30px;
       @include scale-up($ipad-port + 1) {
         max-width: 500px;
-        width: 40%;
+        width: 50%;
+      }
+      .inner {
+        @include rich-mix($white, $white, 30px);
+        @include box-sizing(border-box);
+        background-color: $red;
+        padding: 30px;
       }
     }
     .quote-block {
       @include box-sizing(border-box);
-      padding: 50px;
-      background-color: $green;
-      color: $white;
       @include scale-up($ipad-port + 1) {
         max-width: 1000px;
-        width: 45%;
+        width: calc(50% - 50px);
+      }
+      &.red {
+        .inner { background-color: $red; }
+      }
+      &.blue {
+        .inner { background-color: $blue; }
+      }
+      &.green {
+        .inner { background-color: $green; }
+      }
+      &.yellow {
+        .inner { background-color: $yellow; }
+      }
+      &.green-light {
+        .inner { background-color: $green-light; }
+      }
+      &.gray {
+        .inner { background-color: $gray; }
+      }
+      &.bottom-left,
+      &.bottom-right,
+      &.top-left,
+      &.top-right {
+        @include scale-up($ipad-port + 1) {
+          position: absolute;
+        }
+      }
+      &.bottom-left {
+        @include scale-up($ipad-port + 1) {
+          bottom: 130px;
+          left: 50px;
+        }
+      }
+      &.bottom-right {
+        @include scale-up($ipad-port + 1) {
+          bottom: 130px;
+          right: 50px;
+        }
+      }
+      &.top-left {
+        @include scale-up($ipad-port + 1) {
+          top: 250px;
+          left: 50px;
+        }
+      }
+      &.top-right {
+        @include scale-up($ipad-port + 1) {
+          top: 250px;
+          right: 50px;
+        }
+      }
+
+      .inner {
+        @include box-sizing(border-box);
+        padding: 50px;
+        background-color: $green;
+        color: $white;
       }
       blockquote {
         margin: 0;
@@ -138,48 +166,67 @@
         }
       }
     }
-    .label {
-      background-color: $gray;
-      width: 100%;
-      @include scale-up($ipad-port + 1) {
-        position: fixed;
-        bottom: 46px;
-        left: 0;
-        z-index: 4;
-      }
-      &:before {
-        @include scale-up($ipad-port + 1) {
-          content: '';
-          height: 5px;
-          background-color: $blue;
-          position: absolute;
-          top: -10px;
-          left: 0;
-          width: 100%;
-        }
-      }
-      .inner {
-        padding: 30px 20px 25px;
-        border-bottom: 1px solid rgba($white, 0.2);
-      }
-      h1 {
-        color: $white;
-        margin: 0;
-        text-transform: uppercase;
-        font-weight: 300;
-        letter-spacing: 5px;
-        @include font-size(22);
-        @include line-height(26);
-      }
-    }
   }
-  footer {
+  .label {
+    background-color: $gray;
+    width: 100%;
     @include scale-up($ipad-port + 1) {
       position: absolute;
       bottom: 0;
-      width: 100%;
       left: 0;
     }
+    &:before {
+      @include scale-up($ipad-port + 1) {
+        content: '';
+        height: 5px;
+        background-color: $blue;
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+      }
+    }
+    .inner {
+      padding: 30px 20px 25px;
+      border-bottom: 1px solid rgba($white, 0.2);
+      @include scale-down($ipad-port) {
+        padding: 20px 30px 15px;
+      }
+    }
+    h1 {
+      color: $white;
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 5px;
+      @include font-size(22);
+      @include line-height(26);
+    }
+  }
+}
+
+.single-business {
+  background-color: $gray;
+  .back-to-top {
+    display: none;
+  }
+  header {
+    @include clip(none);
+    @include box-sizing(border-box);
+    padding: 10px 0 5px 30px;
+    .logo {
+      img {
+        max-width: 200px;
+      }
+    }
+    .menu-toggle {
+      position: absolute;
+      top: 50%;
+      @include transform(translateY(-50%));
+      color: $black;
+    }
+  }
+  footer {
     .wrap {
       max-width: none;
     }
