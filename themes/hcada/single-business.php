@@ -25,10 +25,10 @@ the_post();
   <div class="main-content">
     <div class="copy-block <?php echo $copy_color; ?> <?php echo $copy_position; ?><?php if (!$quote) { echo ' no-quote'; } ?>">
       <div class="inner">
-        <h2>
+        <h1>
           <?php the_title(); ?>
           <hr>
-        </h2>
+        </h1>
         <?php the_content(); ?>
         <hr>
         <a href="https://www.google.com/maps/dir//<?php echo $location; ?>" target="_blank"><strong><?php echo $location; ?></strong></a>
@@ -42,9 +42,9 @@ the_post();
     </div>
     <? } ?>
     <?php if ($owner) { ?>
-      <div class="label">
+      <div class="label <?php echo $copy_color; ?>">
         <div class="inner">
-          <h1><?php echo $owner; ?></h1>
+          <h2><?php echo $owner; ?></h2>
         </div>
       </div>
     <?php } ?>

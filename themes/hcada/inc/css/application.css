@@ -3730,10 +3730,9 @@ header {
 nav.business-nav {
   position: fixed;
   height: 100%;
-  width: 50%;
+  width: 400px;
   background-color: rgba(255, 255, 255, 0.95);
   top: 0;
-  left: 100%;
   z-index: 5;
   transition-duration: 0.2s;
   padding: 0;
@@ -3741,51 +3740,53 @@ nav.business-nav {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 481px) {
     /* line 40, ../scss/core/_header.scss */
     nav.business-nav {
-      text-align: center; } }
+      right: -400px; } }
   @media only screen and (max-width: 480px) {
     /* line 40, ../scss/core/_header.scss */
     nav.business-nav {
-      width: 100%; } }
+      width: 100%;
+      left: 100%; } }
   /* line 58, ../scss/core/_header.scss */
   nav.business-nav.open {
-    left: 50%;
     -moz-box-shadow: 0 0 50px -10px #000000;
     -webkit-box-shadow: 0 0 50px -10px #000000;
     box-shadow: 0 0 50px -10px #000000; }
+    @media only screen and (min-width: 481px) {
+      /* line 58, ../scss/core/_header.scss */
+      nav.business-nav.open {
+        right: 0; } }
     @media only screen and (max-width: 480px) {
       /* line 58, ../scss/core/_header.scss */
       nav.business-nav.open {
         left: 0; } }
-  /* line 65, ../scss/core/_header.scss */
+  /* line 67, ../scss/core/_header.scss */
   nav.business-nav .close-menu {
     cursor: pointer;
     padding: 10px 20px;
     margin: 20px auto;
     text-transform: uppercase;
+    display: block;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s; }
     @media only screen and (min-width: 769px) {
-      /* line 65, ../scss/core/_header.scss */
+      /* line 67, ../scss/core/_header.scss */
       nav.business-nav .close-menu {
-        border: 1px solid #cccccc;
-        display: inline-block;
         font-size: 18px;
         font-size: 1.125rem;
         line-height: 18px;
         line-height: 1.125rem; }
-        /* line 76, ../scss/core/_header.scss */
+        /* line 77, ../scss/core/_header.scss */
         nav.business-nav .close-menu:hover {
           background-color: rgba(0, 0, 0, 0.7);
           color: #FFFFFF; } }
     @media only screen and (max-width: 768px) {
-      /* line 65, ../scss/core/_header.scss */
+      /* line 67, ../scss/core/_header.scss */
       nav.business-nav .close-menu {
-        display: block;
         text-align: right;
         font-size: 16px;
         font-size: 1rem;
@@ -3891,13 +3892,13 @@ nav.business-nav {
             -o-transition-duration: 0.2s;
             -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
-            font-size: 30px;
-            font-size: 1.875rem;
-            line-height: 34px;
-            line-height: 2.125rem;
+            font-size: 22px;
+            font-size: 1.375rem;
+            line-height: 26px;
+            line-height: 1.625rem;
             display: block;
             padding: 15px 20px;
-            color: #FFFFFF; }
+            color: #000000; }
             @media only screen and (max-width: 768px) {
               /* line 159, ../scss/core/_header.scss */
               nav.business-nav > ul > li .drop-down ul li a {
@@ -3910,7 +3911,7 @@ nav.business-nav {
         background-color: rgba(215, 71, 39, 0.7); }
       /* line 180, ../scss/core/_header.scss */
       nav.business-nav > ul > li:nth-child(4n-3).top-item.open .drop-down, nav.business-nav > ul > li:nth-child(4n-3).top-item:hover .drop-down {
-        background-color: rgba(215, 71, 39, 0.4); }
+        background-color: rgba(215, 71, 39, 0.1); }
         /* line 183, ../scss/core/_header.scss */
         nav.business-nav > ul > li:nth-child(4n-3).top-item.open .drop-down li:hover, nav.business-nav > ul > li:nth-child(4n-3).top-item:hover .drop-down li:hover {
           background-color: rgba(215, 71, 39, 0.5); }
@@ -3919,7 +3920,7 @@ nav.business-nav {
         background-color: rgba(244, 189, 35, 0.7); }
       /* line 197, ../scss/core/_header.scss */
       nav.business-nav > ul > li:nth-child(4n-2).top-item.open .drop-down, nav.business-nav > ul > li:nth-child(4n-2).top-item:hover .drop-down {
-        background-color: rgba(244, 189, 35, 0.4); }
+        background-color: rgba(244, 189, 35, 0.1); }
         /* line 200, ../scss/core/_header.scss */
         nav.business-nav > ul > li:nth-child(4n-2).top-item.open .drop-down li:hover, nav.business-nav > ul > li:nth-child(4n-2).top-item:hover .drop-down li:hover {
           background-color: rgba(244, 189, 35, 0.5); }
@@ -3928,7 +3929,7 @@ nav.business-nav {
         background-color: rgba(33, 117, 184, 0.7); }
       /* line 214, ../scss/core/_header.scss */
       nav.business-nav > ul > li:nth-child(4n-1).top-item.open .drop-down, nav.business-nav > ul > li:nth-child(4n-1).top-item:hover .drop-down {
-        background-color: rgba(33, 117, 184, 0.4); }
+        background-color: rgba(33, 117, 184, 0.1); }
         /* line 217, ../scss/core/_header.scss */
         nav.business-nav > ul > li:nth-child(4n-1).top-item.open .drop-down li:hover, nav.business-nav > ul > li:nth-child(4n-1).top-item:hover .drop-down li:hover {
           background-color: rgba(33, 117, 184, 0.5); }
@@ -3937,7 +3938,7 @@ nav.business-nav {
         background-color: rgba(101, 148, 63, 0.7); }
       /* line 231, ../scss/core/_header.scss */
       nav.business-nav > ul > li:nth-child(4n).top-item.open .drop-down, nav.business-nav > ul > li:nth-child(4n).top-item:hover .drop-down {
-        background-color: rgba(101, 148, 63, 0.4); }
+        background-color: rgba(101, 148, 63, 0.1); }
         /* line 234, ../scss/core/_header.scss */
         nav.business-nav > ul > li:nth-child(4n).top-item.open .drop-down li:hover, nav.business-nav > ul > li:nth-child(4n).top-item:hover .drop-down li:hover {
           background-color: rgba(101, 148, 63, 0.5); }
@@ -3999,8 +4000,7 @@ footer {
 /* line 2, ../scss/widgets/_aspot.scss */
 section.aspot {
   position: relative;
-  z-index: 1;
-  overflow: hidden;
+  z-index: 2;
   -moz-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
@@ -4013,7 +4013,8 @@ section.aspot {
     /* line 2, ../scss/widgets/_aspot.scss */
     section.aspot {
       height: 800px;
-      padding-top: 60px; } }
+      padding-top: 60px;
+      overflow: hidden; } }
   @media only screen and (max-width: 768px) {
     /* line 2, ../scss/widgets/_aspot.scss */
     section.aspot {
@@ -4035,16 +4036,10 @@ section.aspot {
       /* line 19, ../scss/widgets/_aspot.scss */
       section.aspot .scroll-image {
         transform: initial !important; } }
-  /* line 28, ../scss/widgets/_aspot.scss */
-  section.aspot.over {
-    padding-bottom: 46px; }
-    @media only screen and (max-width: 768px) {
-      /* line 28, ../scss/widgets/_aspot.scss */
-      section.aspot.over {
-        padding-bottom: 41px; } }
 
-/* line 37, ../scss/widgets/_aspot.scss */
+/* line 31, ../scss/widgets/_aspot.scss */
 nav.aspot-nav {
+  position: absolute;
   background: #65943f;
   width: 100%;
   padding: 10px 0;
@@ -4053,22 +4048,26 @@ nav.aspot-nav {
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s; }
   @media only screen and (min-width: 769px) {
-    /* line 37, ../scss/widgets/_aspot.scss */
+    /* line 31, ../scss/widgets/_aspot.scss */
     nav.aspot-nav {
       left: 0; }
-      /* line 44, ../scss/widgets/_aspot.scss */
+      /* line 39, ../scss/widgets/_aspot.scss */
       nav.aspot-nav .menu-home-nav-container {
         display: block !important;
         height: auto !important; } }
   @media only screen and (max-width: 768px) {
-    /* line 50, ../scss/widgets/_aspot.scss */
+    /* line 45, ../scss/widgets/_aspot.scss */
     nav.aspot-nav .menu-home-nav-container {
       display: none; } }
   @media only screen and (min-width: 769px) {
-    /* line 54, ../scss/widgets/_aspot.scss */
+    /* line 49, ../scss/widgets/_aspot.scss */
     nav.aspot-nav.top {
       bottom: 0; } }
-  /* line 59, ../scss/widgets/_aspot.scss */
+  @media only screen and (max-width: 768px) {
+    /* line 49, ../scss/widgets/_aspot.scss */
+    nav.aspot-nav.top {
+      top: 100%; } }
+  /* line 57, ../scss/widgets/_aspot.scss */
   nav.aspot-nav.over {
     position: fixed;
     top: 0;
@@ -4077,7 +4076,7 @@ nav.aspot-nav {
     box-shadow: 0 0 30px -8px #000000;
     z-index: 2; }
     @media only screen and (min-width: 769px) {
-      /* line 65, ../scss/widgets/_aspot.scss */
+      /* line 63, ../scss/widgets/_aspot.scss */
       nav.aspot-nav.over ul li {
         width: 14.285%;
         float: left;
@@ -4086,7 +4085,7 @@ nav.aspot-nav {
         padding: 0 10px;
         text-align: center; } }
     @media only screen and (min-width: 1501px) {
-      /* line 65, ../scss/widgets/_aspot.scss */
+      /* line 63, ../scss/widgets/_aspot.scss */
       nav.aspot-nav.over ul li {
         width: 20%;
         float: left;
@@ -4094,13 +4093,13 @@ nav.aspot-nav {
         padding: 0 0 0 0;
         padding: 0 10px; } }
     @media only screen and (max-width: 1500px) {
-      /* line 75, ../scss/widgets/_aspot.scss */
+      /* line 73, ../scss/widgets/_aspot.scss */
       nav.aspot-nav.over ul li a {
         font-size: 12px;
         font-size: 0.75rem;
         line-height: 12px;
         line-height: 0.75rem; } }
-  /* line 84, ../scss/widgets/_aspot.scss */
+  /* line 82, ../scss/widgets/_aspot.scss */
   nav.aspot-nav ul {
     list-style-type: none;
     padding: 0;
@@ -4111,14 +4110,14 @@ nav.aspot-nav {
       content: '';
       clear: both; }
     @media only screen and (max-width: 768px) {
-      /* line 84, ../scss/widgets/_aspot.scss */
+      /* line 82, ../scss/widgets/_aspot.scss */
       nav.aspot-nav ul {
         padding-top: 30px; } }
     @media only screen and (min-width: 769px) {
-      /* line 84, ../scss/widgets/_aspot.scss */
+      /* line 82, ../scss/widgets/_aspot.scss */
       nav.aspot-nav ul {
         text-align: center; } }
-    /* line 95, ../scss/widgets/_aspot.scss */
+    /* line 93, ../scss/widgets/_aspot.scss */
     nav.aspot-nav ul li {
       display: block;
       text-transform: uppercase;
@@ -4128,7 +4127,7 @@ nav.aspot-nav {
       -webkit-transition-duration: 0.2s;
       transition-duration: 0.2s; }
       @media only screen and (min-width: 769px) {
-        /* line 95, ../scss/widgets/_aspot.scss */
+        /* line 93, ../scss/widgets/_aspot.scss */
         nav.aspot-nav ul li {
           width: 20%;
           float: left;
@@ -4136,35 +4135,35 @@ nav.aspot-nav {
           padding: 0 0 0 0;
           padding: 0 10px; } }
       @media only screen and (max-width: 768px) {
-        /* line 104, ../scss/widgets/_aspot.scss */
+        /* line 102, ../scss/widgets/_aspot.scss */
         nav.aspot-nav ul li + li {
           border-top: 1px solid #FFFFFF; } }
       @media only screen and (min-width: 769px) {
-        /* line 104, ../scss/widgets/_aspot.scss */
+        /* line 102, ../scss/widgets/_aspot.scss */
         nav.aspot-nav ul li + li {
           border-left: 1px solid #FFFFFF; } }
-      /* line 112, ../scss/widgets/_aspot.scss */
+      /* line 110, ../scss/widgets/_aspot.scss */
       nav.aspot-nav ul li a {
         display: inline-block;
         vertical-align: middle;
         width: 100%;
         color: #FFFFFF; }
         @media only screen and (max-width: 768px) {
-          /* line 112, ../scss/widgets/_aspot.scss */
+          /* line 110, ../scss/widgets/_aspot.scss */
           nav.aspot-nav ul li a {
             display: block;
             padding: 10px 0; } }
 
-/* line 126, ../scss/widgets/_aspot.scss */
+/* line 124, ../scss/widgets/_aspot.scss */
 .page-menu-toggle {
   color: #FFFFFF;
   cursor: pointer;
   display: block;
   margin-bottom: -5px; }
-  /* line 132, ../scss/widgets/_aspot.scss */
+  /* line 130, ../scss/widgets/_aspot.scss */
   .page-menu-toggle:hover {
     color: #FFFFFF; }
-  /* line 135, ../scss/widgets/_aspot.scss */
+  /* line 133, ../scss/widgets/_aspot.scss */
   .page-menu-toggle i {
     font-size: 24px;
     font-size: 1.5rem;
@@ -4173,7 +4172,7 @@ nav.aspot-nav {
     vertical-align: middle;
     margin: -8px 0 0 10px; }
   @media only screen and (min-width: 769px) {
-    /* line 126, ../scss/widgets/_aspot.scss */
+    /* line 124, ../scss/widgets/_aspot.scss */
     .page-menu-toggle {
       display: none; } }
 
@@ -4230,13 +4229,13 @@ section.rich-text .inner .wrap .content {
   section.rich-text .inner .wrap .content .inner {
     color: #FFFFFF;
     padding: 70px; }
-    /* line 150, ../scss/core/helpers/_mixins.scss */
+    /* line 174, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner p, section.rich-text .inner .wrap .content .inner li, section.rich-text .inner .wrap .content .inner h1, section.rich-text .inner .wrap .content .inner h2, section.rich-text .inner .wrap .content .inner h3, section.rich-text .inner .wrap .content .inner h4, section.rich-text .inner .wrap .content .inner h5, section.rich-text .inner .wrap .content .inner h6 {
       color: #FFFFFF; }
-    /* line 153, ../scss/core/helpers/_mixins.scss */
+    /* line 177, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner p, section.rich-text .inner .wrap .content .inner li {
       font-weight: 300; }
-    /* line 156, ../scss/core/helpers/_mixins.scss */
+    /* line 180, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner h1, section.rich-text .inner .wrap .content .inner h2, section.rich-text .inner .wrap .content .inner h3, section.rich-text .inner .wrap .content .inner h4, section.rich-text .inner .wrap .content .inner h5, section.rich-text .inner .wrap .content .inner h6 {
       font-weight: 600; }
     /* line 122, ../scss/core/helpers/_mixins.scss */
@@ -4245,40 +4244,82 @@ section.rich-text .inner .wrap .content {
       font-size: 3.4375rem;
       line-height: 59px;
       line-height: 3.6875rem; }
-    /* line 126, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 122, ../scss/core/helpers/_mixins.scss */
+        section.rich-text .inner .wrap .content .inner h1 {
+          font-size: 40px;
+          font-size: 2.5rem;
+          line-height: 44px;
+          line-height: 2.75rem; } }
+    /* line 130, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner h2 {
       font-size: 45px;
       font-size: 2.8125rem;
       line-height: 49px;
       line-height: 3.0625rem; }
-    /* line 130, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 130, ../scss/core/helpers/_mixins.scss */
+        section.rich-text .inner .wrap .content .inner h2 {
+          font-size: 30px;
+          font-size: 1.875rem;
+          line-height: 34px;
+          line-height: 2.125rem; } }
+    /* line 138, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner h3 {
       font-size: 35px;
       font-size: 2.1875rem;
       line-height: 39px;
       line-height: 2.4375rem; }
-    /* line 134, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 138, ../scss/core/helpers/_mixins.scss */
+        section.rich-text .inner .wrap .content .inner h3 {
+          font-size: 30px;
+          font-size: 1.875rem;
+          line-height: 34px;
+          line-height: 2.125rem; } }
+    /* line 146, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner h4 {
       font-size: 30px;
       font-size: 1.875rem;
       line-height: 34px;
       line-height: 2.125rem; }
-    /* line 138, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 146, ../scss/core/helpers/_mixins.scss */
+        section.rich-text .inner .wrap .content .inner h4 {
+          font-size: 25px;
+          font-size: 1.5625rem;
+          line-height: 29px;
+          line-height: 1.8125rem; } }
+    /* line 154, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner h5 {
       font-size: 25px;
       font-size: 1.5625rem;
       line-height: 29px;
       line-height: 1.8125rem; }
-    /* line 142, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 154, ../scss/core/helpers/_mixins.scss */
+        section.rich-text .inner .wrap .content .inner h5 {
+          font-size: 20px;
+          font-size: 1.25rem;
+          line-height: 24px;
+          line-height: 1.5rem; } }
+    /* line 162, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner h6 {
       font-size: 20px;
       font-size: 1.25rem;
       line-height: 24px;
       line-height: 1.5rem; }
-    /* line 160, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 162, ../scss/core/helpers/_mixins.scss */
+        section.rich-text .inner .wrap .content .inner h6 {
+          font-size: 15px;
+          font-size: 0.9375rem;
+          line-height: 19px;
+          line-height: 1.1875rem; } }
+    /* line 184, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner p, section.rich-text .inner .wrap .content .inner ul, section.rich-text .inner .wrap .content .inner h1, section.rich-text .inner .wrap .content .inner h2, section.rich-text .inner .wrap .content .inner h3, section.rich-text .inner .wrap .content .inner h4, section.rich-text .inner .wrap .content .inner h5, section.rich-text .inner .wrap .content .inner h6 {
       margin-bottom: 15px; }
-    /* line 163, ../scss/core/helpers/_mixins.scss */
+    /* line 187, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner a {
       color: #FFFFFF;
       text-decoration: underline;
@@ -4286,10 +4327,10 @@ section.rich-text .inner .wrap .content {
       -o-transition-duration: 0.2s;
       -webkit-transition-duration: 0.2s;
       transition-duration: 0.2s; }
-      /* line 167, ../scss/core/helpers/_mixins.scss */
+      /* line 191, ../scss/core/helpers/_mixins.scss */
       section.rich-text .inner .wrap .content .inner a:hover {
         color: #b3b3b3; }
-    /* line 171, ../scss/core/helpers/_mixins.scss */
+    /* line 195, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner hr {
       margin: 20px 0;
       border-right: 0px;
@@ -4300,34 +4341,34 @@ section.rich-text .inner .wrap .content {
       -o-border-image: url("../images/dot.png") 13 repeat;
       -webkit-border-image: url("../images/dot.png") 13 repeat;
       border-image: url("../images/dot.png") 13 repeat; }
-    /* line 179, ../scss/core/helpers/_mixins.scss */
+    /* line 203, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner blockquote {
       font-style: italic;
       padding-left: 20px;
       margin: 40px 0;
       border-left: 10px solid #649ecd; }
-    /* line 185, ../scss/core/helpers/_mixins.scss */
+    /* line 209, ../scss/core/helpers/_mixins.scss */
     section.rich-text .inner .wrap .content .inner img {
       height: auto;
       max-width: 100%; }
-      /* line 188, ../scss/core/helpers/_mixins.scss */
+      /* line 212, ../scss/core/helpers/_mixins.scss */
       section.rich-text .inner .wrap .content .inner img.aligncenter, section.rich-text .inner .wrap .content .inner img.alignleft, section.rich-text .inner .wrap .content .inner img.alignright {
         display: block; }
         @media only screen and (max-width: 768px) {
-          /* line 188, ../scss/core/helpers/_mixins.scss */
+          /* line 212, ../scss/core/helpers/_mixins.scss */
           section.rich-text .inner .wrap .content .inner img.aligncenter, section.rich-text .inner .wrap .content .inner img.alignleft, section.rich-text .inner .wrap .content .inner img.alignright {
             margin-bottom: 20px; } }
       @media only screen and (min-width: 769px) {
-        /* line 194, ../scss/core/helpers/_mixins.scss */
+        /* line 218, ../scss/core/helpers/_mixins.scss */
         section.rich-text .inner .wrap .content .inner img.aligncenter {
           margin: 0 auto 20px; } }
       @media only screen and (min-width: 769px) {
-        /* line 199, ../scss/core/helpers/_mixins.scss */
+        /* line 223, ../scss/core/helpers/_mixins.scss */
         section.rich-text .inner .wrap .content .inner img.alignleft {
           float: left;
           margin: 0 20px 20px 0; } }
       @media only screen and (min-width: 769px) {
-        /* line 205, ../scss/core/helpers/_mixins.scss */
+        /* line 229, ../scss/core/helpers/_mixins.scss */
         section.rich-text .inner .wrap .content .inner img.alignright {
           float: right;
           margin: 0 0 20px 20px; } }
@@ -4364,13 +4405,13 @@ section.get-involved .inner .map-container {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
-    /* line 150, ../scss/core/helpers/_mixins.scss */
+    /* line 174, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key p, section.get-involved .inner .map-container .map-key li, section.get-involved .inner .map-container .map-key h1, section.get-involved .inner .map-container .map-key h2, section.get-involved .inner .map-container .map-key h3, section.get-involved .inner .map-container .map-key h4, section.get-involved .inner .map-container .map-key h5, section.get-involved .inner .map-container .map-key h6 {
       color: #FFFFFF; }
-    /* line 153, ../scss/core/helpers/_mixins.scss */
+    /* line 177, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key p, section.get-involved .inner .map-container .map-key li {
       font-weight: 300; }
-    /* line 156, ../scss/core/helpers/_mixins.scss */
+    /* line 180, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key h1, section.get-involved .inner .map-container .map-key h2, section.get-involved .inner .map-container .map-key h3, section.get-involved .inner .map-container .map-key h4, section.get-involved .inner .map-container .map-key h5, section.get-involved .inner .map-container .map-key h6 {
       font-weight: 600; }
     /* line 122, ../scss/core/helpers/_mixins.scss */
@@ -4379,40 +4420,82 @@ section.get-involved .inner .map-container {
       font-size: 3.4375rem;
       line-height: 59px;
       line-height: 3.6875rem; }
-    /* line 126, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 122, ../scss/core/helpers/_mixins.scss */
+        section.get-involved .inner .map-container .map-key h1 {
+          font-size: 40px;
+          font-size: 2.5rem;
+          line-height: 44px;
+          line-height: 2.75rem; } }
+    /* line 130, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key h2 {
       font-size: 45px;
       font-size: 2.8125rem;
       line-height: 49px;
       line-height: 3.0625rem; }
-    /* line 130, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 130, ../scss/core/helpers/_mixins.scss */
+        section.get-involved .inner .map-container .map-key h2 {
+          font-size: 30px;
+          font-size: 1.875rem;
+          line-height: 34px;
+          line-height: 2.125rem; } }
+    /* line 138, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key h3 {
       font-size: 35px;
       font-size: 2.1875rem;
       line-height: 39px;
       line-height: 2.4375rem; }
-    /* line 134, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 138, ../scss/core/helpers/_mixins.scss */
+        section.get-involved .inner .map-container .map-key h3 {
+          font-size: 30px;
+          font-size: 1.875rem;
+          line-height: 34px;
+          line-height: 2.125rem; } }
+    /* line 146, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key h4 {
       font-size: 30px;
       font-size: 1.875rem;
       line-height: 34px;
       line-height: 2.125rem; }
-    /* line 138, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 146, ../scss/core/helpers/_mixins.scss */
+        section.get-involved .inner .map-container .map-key h4 {
+          font-size: 25px;
+          font-size: 1.5625rem;
+          line-height: 29px;
+          line-height: 1.8125rem; } }
+    /* line 154, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key h5 {
       font-size: 25px;
       font-size: 1.5625rem;
       line-height: 29px;
       line-height: 1.8125rem; }
-    /* line 142, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 154, ../scss/core/helpers/_mixins.scss */
+        section.get-involved .inner .map-container .map-key h5 {
+          font-size: 20px;
+          font-size: 1.25rem;
+          line-height: 24px;
+          line-height: 1.5rem; } }
+    /* line 162, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key h6 {
       font-size: 20px;
       font-size: 1.25rem;
       line-height: 24px;
       line-height: 1.5rem; }
-    /* line 160, ../scss/core/helpers/_mixins.scss */
+      @media only screen and (max-width: 768px) {
+        /* line 162, ../scss/core/helpers/_mixins.scss */
+        section.get-involved .inner .map-container .map-key h6 {
+          font-size: 15px;
+          font-size: 0.9375rem;
+          line-height: 19px;
+          line-height: 1.1875rem; } }
+    /* line 184, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key p, section.get-involved .inner .map-container .map-key ul, section.get-involved .inner .map-container .map-key h1, section.get-involved .inner .map-container .map-key h2, section.get-involved .inner .map-container .map-key h3, section.get-involved .inner .map-container .map-key h4, section.get-involved .inner .map-container .map-key h5, section.get-involved .inner .map-container .map-key h6 {
       margin-bottom: 15px; }
-    /* line 163, ../scss/core/helpers/_mixins.scss */
+    /* line 187, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key a {
       color: #FFFFFF;
       text-decoration: underline;
@@ -4420,10 +4503,10 @@ section.get-involved .inner .map-container {
       -o-transition-duration: 0.2s;
       -webkit-transition-duration: 0.2s;
       transition-duration: 0.2s; }
-      /* line 167, ../scss/core/helpers/_mixins.scss */
+      /* line 191, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .map-container .map-key a:hover {
         color: #b3b3b3; }
-    /* line 171, ../scss/core/helpers/_mixins.scss */
+    /* line 195, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key hr {
       margin: 20px 0;
       border-right: 0px;
@@ -4434,34 +4517,34 @@ section.get-involved .inner .map-container {
       -o-border-image: url("../images/dot.png") 13 repeat;
       -webkit-border-image: url("../images/dot.png") 13 repeat;
       border-image: url("../images/dot.png") 13 repeat; }
-    /* line 179, ../scss/core/helpers/_mixins.scss */
+    /* line 203, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key blockquote {
       font-style: italic;
       padding-left: 20px;
       margin: 40px 0;
       border-left: 10px solid #649ecd; }
-    /* line 185, ../scss/core/helpers/_mixins.scss */
+    /* line 209, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .map-container .map-key img {
       height: auto;
       max-width: 100%; }
-      /* line 188, ../scss/core/helpers/_mixins.scss */
+      /* line 212, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .map-container .map-key img.aligncenter, section.get-involved .inner .map-container .map-key img.alignleft, section.get-involved .inner .map-container .map-key img.alignright {
         display: block; }
         @media only screen and (max-width: 768px) {
-          /* line 188, ../scss/core/helpers/_mixins.scss */
+          /* line 212, ../scss/core/helpers/_mixins.scss */
           section.get-involved .inner .map-container .map-key img.aligncenter, section.get-involved .inner .map-container .map-key img.alignleft, section.get-involved .inner .map-container .map-key img.alignright {
             margin-bottom: 20px; } }
       @media only screen and (min-width: 769px) {
-        /* line 194, ../scss/core/helpers/_mixins.scss */
+        /* line 218, ../scss/core/helpers/_mixins.scss */
         section.get-involved .inner .map-container .map-key img.aligncenter {
           margin: 0 auto 20px; } }
       @media only screen and (min-width: 769px) {
-        /* line 199, ../scss/core/helpers/_mixins.scss */
+        /* line 223, ../scss/core/helpers/_mixins.scss */
         section.get-involved .inner .map-container .map-key img.alignleft {
           float: left;
           margin: 0 20px 20px 0; } }
       @media only screen and (min-width: 769px) {
-        /* line 205, ../scss/core/helpers/_mixins.scss */
+        /* line 229, ../scss/core/helpers/_mixins.scss */
         section.get-involved .inner .map-container .map-key img.alignright {
           float: right;
           margin: 0 0 20px 20px; } }
@@ -4497,16 +4580,35 @@ section.get-involved .inner .map-container {
           section.get-involved .inner .map-container .map-key .inner ul li a span {
             position: absolute;
             left: -20px; }
-/* line 52, ../scss/widgets/_get-involved.scss */
+@media only screen and (max-width: 1170px) {
+  /* line 51, ../scss/widgets/_get-involved.scss */
+  section.get-involved .inner .copy-container {
+    height: auto !important; } }
+@media only screen and (min-width: 1171px) {
+  /* line 51, ../scss/widgets/_get-involved.scss */
+  section.get-involved .inner .copy-container {
+    position: relative; } }
+@media only screen and (min-width: 1171px) {
+  /* line 58, ../scss/widgets/_get-involved.scss */
+  section.get-involved .inner .copy-container .content-container {
+    position: absolute;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%; } }
+/* line 65, ../scss/widgets/_get-involved.scss */
 section.get-involved .inner .copy-container .inner, section.get-involved .inner .copy-container .secondary-copy {
   color: #FFFFFF; }
-  /* line 150, ../scss/core/helpers/_mixins.scss */
+  /* line 174, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner p, section.get-involved .inner .copy-container .inner li, section.get-involved .inner .copy-container .inner h1, section.get-involved .inner .copy-container .inner h2, section.get-involved .inner .copy-container .inner h3, section.get-involved .inner .copy-container .inner h4, section.get-involved .inner .copy-container .inner h5, section.get-involved .inner .copy-container .inner h6, section.get-involved .inner .copy-container .secondary-copy p, section.get-involved .inner .copy-container .secondary-copy li, section.get-involved .inner .copy-container .secondary-copy h1, section.get-involved .inner .copy-container .secondary-copy h2, section.get-involved .inner .copy-container .secondary-copy h3, section.get-involved .inner .copy-container .secondary-copy h4, section.get-involved .inner .copy-container .secondary-copy h5, section.get-involved .inner .copy-container .secondary-copy h6 {
     color: #FFFFFF; }
-  /* line 153, ../scss/core/helpers/_mixins.scss */
+  /* line 177, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner p, section.get-involved .inner .copy-container .inner li, section.get-involved .inner .copy-container .secondary-copy p, section.get-involved .inner .copy-container .secondary-copy li {
     font-weight: 300; }
-  /* line 156, ../scss/core/helpers/_mixins.scss */
+  /* line 180, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner h1, section.get-involved .inner .copy-container .inner h2, section.get-involved .inner .copy-container .inner h3, section.get-involved .inner .copy-container .inner h4, section.get-involved .inner .copy-container .inner h5, section.get-involved .inner .copy-container .inner h6, section.get-involved .inner .copy-container .secondary-copy h1, section.get-involved .inner .copy-container .secondary-copy h2, section.get-involved .inner .copy-container .secondary-copy h3, section.get-involved .inner .copy-container .secondary-copy h4, section.get-involved .inner .copy-container .secondary-copy h5, section.get-involved .inner .copy-container .secondary-copy h6 {
     font-weight: 600; }
   /* line 122, ../scss/core/helpers/_mixins.scss */
@@ -4515,40 +4617,82 @@ section.get-involved .inner .copy-container .inner, section.get-involved .inner 
     font-size: 3.4375rem;
     line-height: 59px;
     line-height: 3.6875rem; }
-  /* line 126, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 122, ../scss/core/helpers/_mixins.scss */
+      section.get-involved .inner .copy-container .inner h1, section.get-involved .inner .copy-container .secondary-copy h1 {
+        font-size: 40px;
+        font-size: 2.5rem;
+        line-height: 44px;
+        line-height: 2.75rem; } }
+  /* line 130, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner h2, section.get-involved .inner .copy-container .secondary-copy h2 {
     font-size: 45px;
     font-size: 2.8125rem;
     line-height: 49px;
     line-height: 3.0625rem; }
-  /* line 130, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 130, ../scss/core/helpers/_mixins.scss */
+      section.get-involved .inner .copy-container .inner h2, section.get-involved .inner .copy-container .secondary-copy h2 {
+        font-size: 30px;
+        font-size: 1.875rem;
+        line-height: 34px;
+        line-height: 2.125rem; } }
+  /* line 138, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner h3, section.get-involved .inner .copy-container .secondary-copy h3 {
     font-size: 35px;
     font-size: 2.1875rem;
     line-height: 39px;
     line-height: 2.4375rem; }
-  /* line 134, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 138, ../scss/core/helpers/_mixins.scss */
+      section.get-involved .inner .copy-container .inner h3, section.get-involved .inner .copy-container .secondary-copy h3 {
+        font-size: 30px;
+        font-size: 1.875rem;
+        line-height: 34px;
+        line-height: 2.125rem; } }
+  /* line 146, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner h4, section.get-involved .inner .copy-container .secondary-copy h4 {
     font-size: 30px;
     font-size: 1.875rem;
     line-height: 34px;
     line-height: 2.125rem; }
-  /* line 138, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 146, ../scss/core/helpers/_mixins.scss */
+      section.get-involved .inner .copy-container .inner h4, section.get-involved .inner .copy-container .secondary-copy h4 {
+        font-size: 25px;
+        font-size: 1.5625rem;
+        line-height: 29px;
+        line-height: 1.8125rem; } }
+  /* line 154, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner h5, section.get-involved .inner .copy-container .secondary-copy h5 {
     font-size: 25px;
     font-size: 1.5625rem;
     line-height: 29px;
     line-height: 1.8125rem; }
-  /* line 142, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 154, ../scss/core/helpers/_mixins.scss */
+      section.get-involved .inner .copy-container .inner h5, section.get-involved .inner .copy-container .secondary-copy h5 {
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 24px;
+        line-height: 1.5rem; } }
+  /* line 162, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner h6, section.get-involved .inner .copy-container .secondary-copy h6 {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 24px;
     line-height: 1.5rem; }
-  /* line 160, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 162, ../scss/core/helpers/_mixins.scss */
+      section.get-involved .inner .copy-container .inner h6, section.get-involved .inner .copy-container .secondary-copy h6 {
+        font-size: 15px;
+        font-size: 0.9375rem;
+        line-height: 19px;
+        line-height: 1.1875rem; } }
+  /* line 184, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner p, section.get-involved .inner .copy-container .inner ul, section.get-involved .inner .copy-container .inner h1, section.get-involved .inner .copy-container .inner h2, section.get-involved .inner .copy-container .inner h3, section.get-involved .inner .copy-container .inner h4, section.get-involved .inner .copy-container .inner h5, section.get-involved .inner .copy-container .inner h6, section.get-involved .inner .copy-container .secondary-copy p, section.get-involved .inner .copy-container .secondary-copy ul, section.get-involved .inner .copy-container .secondary-copy h1, section.get-involved .inner .copy-container .secondary-copy h2, section.get-involved .inner .copy-container .secondary-copy h3, section.get-involved .inner .copy-container .secondary-copy h4, section.get-involved .inner .copy-container .secondary-copy h5, section.get-involved .inner .copy-container .secondary-copy h6 {
     margin-bottom: 15px; }
-  /* line 163, ../scss/core/helpers/_mixins.scss */
+  /* line 187, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner a, section.get-involved .inner .copy-container .secondary-copy a {
     color: #FFFFFF;
     text-decoration: underline;
@@ -4556,10 +4700,10 @@ section.get-involved .inner .copy-container .inner, section.get-involved .inner 
     -o-transition-duration: 0.2s;
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s; }
-    /* line 167, ../scss/core/helpers/_mixins.scss */
+    /* line 191, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .copy-container .inner a:hover, section.get-involved .inner .copy-container .secondary-copy a:hover {
       color: #b3b3b3; }
-  /* line 171, ../scss/core/helpers/_mixins.scss */
+  /* line 195, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner hr, section.get-involved .inner .copy-container .secondary-copy hr {
     margin: 20px 0;
     border-right: 0px;
@@ -4570,38 +4714,38 @@ section.get-involved .inner .copy-container .inner, section.get-involved .inner 
     -o-border-image: url("../images/dot.png") 13 repeat;
     -webkit-border-image: url("../images/dot.png") 13 repeat;
     border-image: url("../images/dot.png") 13 repeat; }
-  /* line 179, ../scss/core/helpers/_mixins.scss */
+  /* line 203, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner blockquote, section.get-involved .inner .copy-container .secondary-copy blockquote {
     font-style: italic;
     padding-left: 20px;
     margin: 40px 0;
     border-left: 10px solid #649ecd; }
-  /* line 185, ../scss/core/helpers/_mixins.scss */
+  /* line 209, ../scss/core/helpers/_mixins.scss */
   section.get-involved .inner .copy-container .inner img, section.get-involved .inner .copy-container .secondary-copy img {
     height: auto;
     max-width: 100%; }
-    /* line 188, ../scss/core/helpers/_mixins.scss */
+    /* line 212, ../scss/core/helpers/_mixins.scss */
     section.get-involved .inner .copy-container .inner img.aligncenter, section.get-involved .inner .copy-container .inner img.alignleft, section.get-involved .inner .copy-container .inner img.alignright, section.get-involved .inner .copy-container .secondary-copy img.aligncenter, section.get-involved .inner .copy-container .secondary-copy img.alignleft, section.get-involved .inner .copy-container .secondary-copy img.alignright {
       display: block; }
       @media only screen and (max-width: 768px) {
-        /* line 188, ../scss/core/helpers/_mixins.scss */
+        /* line 212, ../scss/core/helpers/_mixins.scss */
         section.get-involved .inner .copy-container .inner img.aligncenter, section.get-involved .inner .copy-container .inner img.alignleft, section.get-involved .inner .copy-container .inner img.alignright, section.get-involved .inner .copy-container .secondary-copy img.aligncenter, section.get-involved .inner .copy-container .secondary-copy img.alignleft, section.get-involved .inner .copy-container .secondary-copy img.alignright {
           margin-bottom: 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 194, ../scss/core/helpers/_mixins.scss */
+      /* line 218, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .copy-container .inner img.aligncenter, section.get-involved .inner .copy-container .secondary-copy img.aligncenter {
         margin: 0 auto 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 199, ../scss/core/helpers/_mixins.scss */
+      /* line 223, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .copy-container .inner img.alignleft, section.get-involved .inner .copy-container .secondary-copy img.alignleft {
         float: left;
         margin: 0 20px 20px 0; } }
     @media only screen and (min-width: 769px) {
-      /* line 205, ../scss/core/helpers/_mixins.scss */
+      /* line 229, ../scss/core/helpers/_mixins.scss */
       section.get-involved .inner .copy-container .inner img.alignright, section.get-involved .inner .copy-container .secondary-copy img.alignright {
         float: right;
         margin: 0 0 20px 20px; } }
-/* line 55, ../scss/widgets/_get-involved.scss */
+/* line 68, ../scss/widgets/_get-involved.scss */
 section.get-involved .inner .copy-container .inner {
   max-width: 800px;
   -moz-transition-duration: 0.2s;
@@ -4609,62 +4753,60 @@ section.get-involved .inner .copy-container .inner {
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s; }
   @media only screen and (min-width: 1171px) {
-    /* line 55, ../scss/widgets/_get-involved.scss */
+    /* line 68, ../scss/widgets/_get-involved.scss */
     section.get-involved .inner .copy-container .inner {
       padding: 70px; } }
   @media only screen and (max-width: 1170px) {
-    /* line 55, ../scss/widgets/_get-involved.scss */
+    /* line 68, ../scss/widgets/_get-involved.scss */
     section.get-involved .inner .copy-container .inner {
       padding: 70px 30px; } }
-/* line 65, ../scss/widgets/_get-involved.scss */
+/* line 78, ../scss/widgets/_get-involved.scss */
 section.get-involved .inner .copy-container .secondary-copy {
   -moz-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s; }
   @media only screen and (min-width: 1171px) {
-    /* line 65, ../scss/widgets/_get-involved.scss */
+    /* line 78, ../scss/widgets/_get-involved.scss */
     section.get-involved .inner .copy-container .secondary-copy {
       padding: 0 70px 70px; } }
   @media only screen and (max-width: 1170px) {
-    /* line 65, ../scss/widgets/_get-involved.scss */
-    section.get-involved .inner .copy-container .secondary-copy {
-      padding: 0 20px 30px; } }
-  @media only screen and (max-width: 480px) {
-    /* line 65, ../scss/widgets/_get-involved.scss */
+    /* line 78, ../scss/widgets/_get-involved.scss */
     section.get-involved .inner .copy-container .secondary-copy {
       padding: 0; } }
-  /* line 77, ../scss/widgets/_get-involved.scss */
+  /* line 87, ../scss/widgets/_get-involved.scss */
   section.get-involved .inner .copy-container .secondary-copy ul li {
     font-size: 22px;
     font-size: 1.375rem;
     line-height: 26px;
     line-height: 1.625rem;
     margin-bottom: 10px; }
-    /* line 81, ../scss/widgets/_get-involved.scss */
+    /* line 91, ../scss/widgets/_get-involved.scss */
     section.get-involved .inner .copy-container .secondary-copy ul li a {
       text-decoration: none; }
-  /* line 86, ../scss/widgets/_get-involved.scss */
+  /* line 96, ../scss/widgets/_get-involved.scss */
   section.get-involved .inner .copy-container .secondary-copy .content {
     background-color: #d74727;
     padding: 70px; }
-    @media only screen and (max-width: 480px) {
-      /* line 86, ../scss/widgets/_get-involved.scss */
+    @media only screen and (max-width: 1170px) {
+      /* line 96, ../scss/widgets/_get-involved.scss */
       section.get-involved .inner .copy-container .secondary-copy .content {
-        padding: 70px 30px; } }
+        padding: 70px 30px;
+        -webkit-clip-path: none;
+        clip-path: none; } }
 
 /* line 3, ../scss/widgets/_events.scss */
 section.events .inner {
   background-color: #5b5c5b;
   color: #FFFFFF;
   position: relative; }
-  /* line 150, ../scss/core/helpers/_mixins.scss */
+  /* line 174, ../scss/core/helpers/_mixins.scss */
   section.events .inner p, section.events .inner li, section.events .inner h1, section.events .inner h2, section.events .inner h3, section.events .inner h4, section.events .inner h5, section.events .inner h6 {
     color: #FFFFFF; }
-  /* line 153, ../scss/core/helpers/_mixins.scss */
+  /* line 177, ../scss/core/helpers/_mixins.scss */
   section.events .inner p, section.events .inner li {
     font-weight: 300; }
-  /* line 156, ../scss/core/helpers/_mixins.scss */
+  /* line 180, ../scss/core/helpers/_mixins.scss */
   section.events .inner h1, section.events .inner h2, section.events .inner h3, section.events .inner h4, section.events .inner h5, section.events .inner h6 {
     font-weight: 600; }
   /* line 122, ../scss/core/helpers/_mixins.scss */
@@ -4673,40 +4815,82 @@ section.events .inner {
     font-size: 3.4375rem;
     line-height: 59px;
     line-height: 3.6875rem; }
-  /* line 126, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 122, ../scss/core/helpers/_mixins.scss */
+      section.events .inner h1 {
+        font-size: 40px;
+        font-size: 2.5rem;
+        line-height: 44px;
+        line-height: 2.75rem; } }
+  /* line 130, ../scss/core/helpers/_mixins.scss */
   section.events .inner h2 {
     font-size: 45px;
     font-size: 2.8125rem;
     line-height: 49px;
     line-height: 3.0625rem; }
-  /* line 130, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 130, ../scss/core/helpers/_mixins.scss */
+      section.events .inner h2 {
+        font-size: 30px;
+        font-size: 1.875rem;
+        line-height: 34px;
+        line-height: 2.125rem; } }
+  /* line 138, ../scss/core/helpers/_mixins.scss */
   section.events .inner h3 {
     font-size: 35px;
     font-size: 2.1875rem;
     line-height: 39px;
     line-height: 2.4375rem; }
-  /* line 134, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 138, ../scss/core/helpers/_mixins.scss */
+      section.events .inner h3 {
+        font-size: 30px;
+        font-size: 1.875rem;
+        line-height: 34px;
+        line-height: 2.125rem; } }
+  /* line 146, ../scss/core/helpers/_mixins.scss */
   section.events .inner h4 {
     font-size: 30px;
     font-size: 1.875rem;
     line-height: 34px;
     line-height: 2.125rem; }
-  /* line 138, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 146, ../scss/core/helpers/_mixins.scss */
+      section.events .inner h4 {
+        font-size: 25px;
+        font-size: 1.5625rem;
+        line-height: 29px;
+        line-height: 1.8125rem; } }
+  /* line 154, ../scss/core/helpers/_mixins.scss */
   section.events .inner h5 {
     font-size: 25px;
     font-size: 1.5625rem;
     line-height: 29px;
     line-height: 1.8125rem; }
-  /* line 142, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 154, ../scss/core/helpers/_mixins.scss */
+      section.events .inner h5 {
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 24px;
+        line-height: 1.5rem; } }
+  /* line 162, ../scss/core/helpers/_mixins.scss */
   section.events .inner h6 {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 24px;
     line-height: 1.5rem; }
-  /* line 160, ../scss/core/helpers/_mixins.scss */
+    @media only screen and (max-width: 768px) {
+      /* line 162, ../scss/core/helpers/_mixins.scss */
+      section.events .inner h6 {
+        font-size: 15px;
+        font-size: 0.9375rem;
+        line-height: 19px;
+        line-height: 1.1875rem; } }
+  /* line 184, ../scss/core/helpers/_mixins.scss */
   section.events .inner p, section.events .inner ul, section.events .inner h1, section.events .inner h2, section.events .inner h3, section.events .inner h4, section.events .inner h5, section.events .inner h6 {
     margin-bottom: 15px; }
-  /* line 163, ../scss/core/helpers/_mixins.scss */
+  /* line 187, ../scss/core/helpers/_mixins.scss */
   section.events .inner a {
     color: #FFFFFF;
     text-decoration: underline;
@@ -4714,10 +4898,10 @@ section.events .inner {
     -o-transition-duration: 0.2s;
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s; }
-    /* line 167, ../scss/core/helpers/_mixins.scss */
+    /* line 191, ../scss/core/helpers/_mixins.scss */
     section.events .inner a:hover {
       color: #b3b3b3; }
-  /* line 171, ../scss/core/helpers/_mixins.scss */
+  /* line 195, ../scss/core/helpers/_mixins.scss */
   section.events .inner hr {
     margin: 20px 0;
     border-right: 0px;
@@ -4728,34 +4912,34 @@ section.events .inner {
     -o-border-image: url("../images/dot.png") 13 repeat;
     -webkit-border-image: url("../images/dot.png") 13 repeat;
     border-image: url("../images/dot.png") 13 repeat; }
-  /* line 179, ../scss/core/helpers/_mixins.scss */
+  /* line 203, ../scss/core/helpers/_mixins.scss */
   section.events .inner blockquote {
     font-style: italic;
     padding-left: 20px;
     margin: 40px 0;
     border-left: 10px solid #649ecd; }
-  /* line 185, ../scss/core/helpers/_mixins.scss */
+  /* line 209, ../scss/core/helpers/_mixins.scss */
   section.events .inner img {
     height: auto;
     max-width: 100%; }
-    /* line 188, ../scss/core/helpers/_mixins.scss */
+    /* line 212, ../scss/core/helpers/_mixins.scss */
     section.events .inner img.aligncenter, section.events .inner img.alignleft, section.events .inner img.alignright {
       display: block; }
       @media only screen and (max-width: 768px) {
-        /* line 188, ../scss/core/helpers/_mixins.scss */
+        /* line 212, ../scss/core/helpers/_mixins.scss */
         section.events .inner img.aligncenter, section.events .inner img.alignleft, section.events .inner img.alignright {
           margin-bottom: 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 194, ../scss/core/helpers/_mixins.scss */
+      /* line 218, ../scss/core/helpers/_mixins.scss */
       section.events .inner img.aligncenter {
         margin: 0 auto 20px; } }
     @media only screen and (min-width: 769px) {
-      /* line 199, ../scss/core/helpers/_mixins.scss */
+      /* line 223, ../scss/core/helpers/_mixins.scss */
       section.events .inner img.alignleft {
         float: left;
         margin: 0 20px 20px 0; } }
     @media only screen and (min-width: 769px) {
-      /* line 205, ../scss/core/helpers/_mixins.scss */
+      /* line 229, ../scss/core/helpers/_mixins.scss */
       section.events .inner img.alignright {
         float: right;
         margin: 0 0 20px 20px; } }
@@ -5108,77 +5292,31 @@ section.featured-businesses {
       /* line 14, ../scss/pages/_business.scss */
       .inner-business .main-content {
         padding-bottom: 50px; } }
-    @media only screen and (min-width: 769px) {
-      /* line 21, ../scss/pages/_business.scss */
-      .inner-business .main-content .copy-block.bottom-left {
-        float: left;
-        margin: 450px 0 250px;
-        padding-left: 50px; } }
-    @media only screen and (min-width: 769px) {
-      /* line 28, ../scss/pages/_business.scss */
-      .inner-business .main-content .copy-block.bottom-right {
-        float: right;
-        margin: 450px 0 250px;
-        padding-right: 50px; } }
-    @media only screen and (min-width: 769px) {
-      /* line 35, ../scss/pages/_business.scss */
-      .inner-business .main-content .copy-block.top-left {
-        float: left;
-        margin: 250px 0 450px;
-        padding-left: 50px; } }
-    @media only screen and (min-width: 769px) {
-      /* line 42, ../scss/pages/_business.scss */
-      .inner-business .main-content .copy-block.top-right {
-        float: right;
-        margin: 250px 0 450px;
-        padding-right: 50px; } }
-    @media only screen and (min-width: 769px) {
-      /* line 49, ../scss/pages/_business.scss */
-      .inner-business .main-content .copy-block.no-quote {
-        margin-bottom: 200px; } }
-    /* line 55, ../scss/pages/_business.scss */
-    .inner-business .main-content .copy-block.red .inner {
-      background-color: #d74727; }
-    /* line 58, ../scss/pages/_business.scss */
-    .inner-business .main-content .copy-block.blue .inner {
-      background-color: #2175b8; }
-    /* line 61, ../scss/pages/_business.scss */
-    .inner-business .main-content .copy-block.green .inner {
-      background-color: #65943f; }
-    /* line 64, ../scss/pages/_business.scss */
-    .inner-business .main-content .copy-block.yellow .inner {
-      background-color: #f4bd23; }
-    /* line 67, ../scss/pages/_business.scss */
-    .inner-business .main-content .copy-block.green-light .inner {
-      background-color: #8db268; }
-    /* line 70, ../scss/pages/_business.scss */
-    .inner-business .main-content .copy-block.gray .inner {
-      background-color: #5b5c5b; }
-    /* line 73, ../scss/pages/_business.scss */
+    /* line 20, ../scss/pages/_business.scss */
     .inner-business .main-content .copy-block {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box; }
       @media only screen and (min-width: 769px) {
-        /* line 73, ../scss/pages/_business.scss */
+        /* line 20, ../scss/pages/_business.scss */
         .inner-business .main-content .copy-block {
           max-width: 500px;
           width: 50%; } }
-      /* line 79, ../scss/pages/_business.scss */
+      /* line 26, ../scss/pages/_business.scss */
       .inner-business .main-content .copy-block .inner {
         color: #FFFFFF;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         background-color: #d74727;
-        padding: 30px; }
-        /* line 150, ../scss/core/helpers/_mixins.scss */
+        padding: 50px; }
+        /* line 174, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner p, .inner-business .main-content .copy-block .inner li, .inner-business .main-content .copy-block .inner h1, .inner-business .main-content .copy-block .inner h2, .inner-business .main-content .copy-block .inner h3, .inner-business .main-content .copy-block .inner h4, .inner-business .main-content .copy-block .inner h5, .inner-business .main-content .copy-block .inner h6 {
           color: #FFFFFF; }
-        /* line 153, ../scss/core/helpers/_mixins.scss */
+        /* line 177, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner p, .inner-business .main-content .copy-block .inner li {
           font-weight: 300; }
-        /* line 156, ../scss/core/helpers/_mixins.scss */
+        /* line 180, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner h1, .inner-business .main-content .copy-block .inner h2, .inner-business .main-content .copy-block .inner h3, .inner-business .main-content .copy-block .inner h4, .inner-business .main-content .copy-block .inner h5, .inner-business .main-content .copy-block .inner h6 {
           font-weight: 600; }
         /* line 122, ../scss/core/helpers/_mixins.scss */
@@ -5187,40 +5325,82 @@ section.featured-businesses {
           font-size: 3.4375rem;
           line-height: 59px;
           line-height: 3.6875rem; }
-        /* line 126, ../scss/core/helpers/_mixins.scss */
+          @media only screen and (max-width: 768px) {
+            /* line 122, ../scss/core/helpers/_mixins.scss */
+            .inner-business .main-content .copy-block .inner h1 {
+              font-size: 40px;
+              font-size: 2.5rem;
+              line-height: 44px;
+              line-height: 2.75rem; } }
+        /* line 130, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner h2 {
           font-size: 45px;
           font-size: 2.8125rem;
           line-height: 49px;
           line-height: 3.0625rem; }
-        /* line 130, ../scss/core/helpers/_mixins.scss */
+          @media only screen and (max-width: 768px) {
+            /* line 130, ../scss/core/helpers/_mixins.scss */
+            .inner-business .main-content .copy-block .inner h2 {
+              font-size: 30px;
+              font-size: 1.875rem;
+              line-height: 34px;
+              line-height: 2.125rem; } }
+        /* line 138, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner h3 {
           font-size: 35px;
           font-size: 2.1875rem;
           line-height: 39px;
           line-height: 2.4375rem; }
-        /* line 134, ../scss/core/helpers/_mixins.scss */
+          @media only screen and (max-width: 768px) {
+            /* line 138, ../scss/core/helpers/_mixins.scss */
+            .inner-business .main-content .copy-block .inner h3 {
+              font-size: 30px;
+              font-size: 1.875rem;
+              line-height: 34px;
+              line-height: 2.125rem; } }
+        /* line 146, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner h4 {
           font-size: 30px;
           font-size: 1.875rem;
           line-height: 34px;
           line-height: 2.125rem; }
-        /* line 138, ../scss/core/helpers/_mixins.scss */
+          @media only screen and (max-width: 768px) {
+            /* line 146, ../scss/core/helpers/_mixins.scss */
+            .inner-business .main-content .copy-block .inner h4 {
+              font-size: 25px;
+              font-size: 1.5625rem;
+              line-height: 29px;
+              line-height: 1.8125rem; } }
+        /* line 154, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner h5 {
           font-size: 25px;
           font-size: 1.5625rem;
           line-height: 29px;
           line-height: 1.8125rem; }
-        /* line 142, ../scss/core/helpers/_mixins.scss */
+          @media only screen and (max-width: 768px) {
+            /* line 154, ../scss/core/helpers/_mixins.scss */
+            .inner-business .main-content .copy-block .inner h5 {
+              font-size: 20px;
+              font-size: 1.25rem;
+              line-height: 24px;
+              line-height: 1.5rem; } }
+        /* line 162, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner h6 {
           font-size: 20px;
           font-size: 1.25rem;
           line-height: 24px;
           line-height: 1.5rem; }
-        /* line 160, ../scss/core/helpers/_mixins.scss */
+          @media only screen and (max-width: 768px) {
+            /* line 162, ../scss/core/helpers/_mixins.scss */
+            .inner-business .main-content .copy-block .inner h6 {
+              font-size: 15px;
+              font-size: 0.9375rem;
+              line-height: 19px;
+              line-height: 1.1875rem; } }
+        /* line 184, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner p, .inner-business .main-content .copy-block .inner ul, .inner-business .main-content .copy-block .inner h1, .inner-business .main-content .copy-block .inner h2, .inner-business .main-content .copy-block .inner h3, .inner-business .main-content .copy-block .inner h4, .inner-business .main-content .copy-block .inner h5, .inner-business .main-content .copy-block .inner h6 {
           margin-bottom: 30px; }
-        /* line 163, ../scss/core/helpers/_mixins.scss */
+        /* line 187, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner a {
           color: #FFFFFF;
           text-decoration: underline;
@@ -5228,10 +5408,10 @@ section.featured-businesses {
           -o-transition-duration: 0.2s;
           -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s; }
-          /* line 167, ../scss/core/helpers/_mixins.scss */
+          /* line 191, ../scss/core/helpers/_mixins.scss */
           .inner-business .main-content .copy-block .inner a:hover {
             color: #b3b3b3; }
-        /* line 171, ../scss/core/helpers/_mixins.scss */
+        /* line 195, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner hr {
           margin: 20px 0;
           border-right: 0px;
@@ -5242,90 +5422,145 @@ section.featured-businesses {
           -o-border-image: url("../images/dot.png") 13 repeat;
           -webkit-border-image: url("../images/dot.png") 13 repeat;
           border-image: url("../images/dot.png") 13 repeat; }
-        /* line 179, ../scss/core/helpers/_mixins.scss */
+        /* line 203, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner blockquote {
           font-style: italic;
           padding-left: 20px;
           margin: 40px 0;
           border-left: 10px solid #649ecd; }
-        /* line 185, ../scss/core/helpers/_mixins.scss */
+        /* line 209, ../scss/core/helpers/_mixins.scss */
         .inner-business .main-content .copy-block .inner img {
           height: auto;
           max-width: 100%; }
-          /* line 188, ../scss/core/helpers/_mixins.scss */
+          /* line 212, ../scss/core/helpers/_mixins.scss */
           .inner-business .main-content .copy-block .inner img.aligncenter, .inner-business .main-content .copy-block .inner img.alignleft, .inner-business .main-content .copy-block .inner img.alignright {
             display: block; }
             @media only screen and (max-width: 768px) {
-              /* line 188, ../scss/core/helpers/_mixins.scss */
+              /* line 212, ../scss/core/helpers/_mixins.scss */
               .inner-business .main-content .copy-block .inner img.aligncenter, .inner-business .main-content .copy-block .inner img.alignleft, .inner-business .main-content .copy-block .inner img.alignright {
                 margin-bottom: 20px; } }
           @media only screen and (min-width: 769px) {
-            /* line 194, ../scss/core/helpers/_mixins.scss */
+            /* line 218, ../scss/core/helpers/_mixins.scss */
             .inner-business .main-content .copy-block .inner img.aligncenter {
               margin: 0 auto 20px; } }
           @media only screen and (min-width: 769px) {
-            /* line 199, ../scss/core/helpers/_mixins.scss */
+            /* line 223, ../scss/core/helpers/_mixins.scss */
             .inner-business .main-content .copy-block .inner img.alignleft {
               float: left;
               margin: 0 20px 20px 0; } }
           @media only screen and (min-width: 769px) {
-            /* line 205, ../scss/core/helpers/_mixins.scss */
+            /* line 229, ../scss/core/helpers/_mixins.scss */
             .inner-business .main-content .copy-block .inner img.alignright {
               float: right;
               margin: 0 0 20px 20px; } }
-    /* line 86, ../scss/pages/_business.scss */
+        @media only screen and (min-width: 769px) {
+          /* line 26, ../scss/pages/_business.scss */
+          .inner-business .main-content .copy-block .inner {
+            -webkit-clip-path: polygon(0 2%, 100% 0%, 94% 100%, 4% 99%);
+            clip-path: polygon(0 2%, 100% 0%, 94% 100%, 4% 99%); } }
+        @media only screen and (max-width: 768px) {
+          /* line 26, ../scss/pages/_business.scss */
+          .inner-business .main-content .copy-block .inner {
+            padding: 50px 30px; } }
+      @media only screen and (min-width: 769px) {
+        /* line 38, ../scss/pages/_business.scss */
+        .inner-business .main-content .copy-block.bottom-left {
+          float: left;
+          margin: 450px 0 250px;
+          padding-left: 50px; } }
+      @media only screen and (min-width: 769px) {
+        /* line 45, ../scss/pages/_business.scss */
+        .inner-business .main-content .copy-block.bottom-right {
+          float: right;
+          margin: 450px 0 250px;
+          padding-right: 50px; } }
+      @media only screen and (min-width: 769px) {
+        /* line 52, ../scss/pages/_business.scss */
+        .inner-business .main-content .copy-block.top-left {
+          float: left;
+          margin: 250px 0 450px;
+          padding-left: 50px; } }
+      @media only screen and (min-width: 769px) {
+        /* line 59, ../scss/pages/_business.scss */
+        .inner-business .main-content .copy-block.top-right {
+          float: right;
+          margin: 250px 0 450px;
+          padding-right: 50px; } }
+      @media only screen and (min-width: 769px) {
+        /* line 66, ../scss/pages/_business.scss */
+        .inner-business .main-content .copy-block.no-quote {
+          margin-bottom: 200px; } }
+      /* line 72, ../scss/pages/_business.scss */
+      .inner-business .main-content .copy-block.red .inner {
+        background-color: #d74727; }
+      /* line 75, ../scss/pages/_business.scss */
+      .inner-business .main-content .copy-block.blue .inner {
+        background-color: #2175b8; }
+      /* line 78, ../scss/pages/_business.scss */
+      .inner-business .main-content .copy-block.green .inner {
+        background-color: #65943f; }
+      /* line 81, ../scss/pages/_business.scss */
+      .inner-business .main-content .copy-block.yellow .inner {
+        background-color: #f4bd23; }
+      /* line 84, ../scss/pages/_business.scss */
+      .inner-business .main-content .copy-block.green-light .inner {
+        background-color: #8db268; }
+      /* line 87, ../scss/pages/_business.scss */
+      .inner-business .main-content .copy-block.gray .inner {
+        background-color: #5b5c5b; }
+    /* line 90, ../scss/pages/_business.scss */
     .inner-business .main-content .quote-block {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box; }
       @media only screen and (min-width: 769px) {
-        /* line 86, ../scss/pages/_business.scss */
+        /* line 90, ../scss/pages/_business.scss */
         .inner-business .main-content .quote-block {
           max-width: 1000px;
           width: calc(50% - 50px); } }
-      /* line 93, ../scss/pages/_business.scss */
+      /* line 97, ../scss/pages/_business.scss */
       .inner-business .main-content .quote-block.red .inner {
         background-color: #d74727; }
-      /* line 96, ../scss/pages/_business.scss */
+      /* line 100, ../scss/pages/_business.scss */
       .inner-business .main-content .quote-block.blue .inner {
         background-color: #2175b8; }
-      /* line 99, ../scss/pages/_business.scss */
+      /* line 103, ../scss/pages/_business.scss */
       .inner-business .main-content .quote-block.green .inner {
         background-color: #65943f; }
-      /* line 102, ../scss/pages/_business.scss */
+      /* line 106, ../scss/pages/_business.scss */
       .inner-business .main-content .quote-block.yellow .inner {
         background-color: #f4bd23; }
-      /* line 105, ../scss/pages/_business.scss */
+      /* line 109, ../scss/pages/_business.scss */
       .inner-business .main-content .quote-block.green-light .inner {
         background-color: #8db268; }
-      /* line 108, ../scss/pages/_business.scss */
+      /* line 112, ../scss/pages/_business.scss */
       .inner-business .main-content .quote-block.gray .inner {
         background-color: #5b5c5b; }
       @media only screen and (min-width: 769px) {
-        /* line 110, ../scss/pages/_business.scss */
+        /* line 114, ../scss/pages/_business.scss */
         .inner-business .main-content .quote-block.bottom-left, .inner-business .main-content .quote-block.bottom-right, .inner-business .main-content .quote-block.top-left, .inner-business .main-content .quote-block.top-right {
           position: absolute; } }
       @media only screen and (min-width: 769px) {
-        /* line 118, ../scss/pages/_business.scss */
+        /* line 122, ../scss/pages/_business.scss */
         .inner-business .main-content .quote-block.bottom-left {
           bottom: 130px;
           left: 50px; } }
       @media only screen and (min-width: 769px) {
-        /* line 124, ../scss/pages/_business.scss */
+        /* line 128, ../scss/pages/_business.scss */
         .inner-business .main-content .quote-block.bottom-right {
           bottom: 130px;
           right: 50px; } }
       @media only screen and (min-width: 769px) {
-        /* line 130, ../scss/pages/_business.scss */
+        /* line 134, ../scss/pages/_business.scss */
         .inner-business .main-content .quote-block.top-left {
           top: 250px;
           left: 50px; } }
       @media only screen and (min-width: 769px) {
-        /* line 136, ../scss/pages/_business.scss */
+        /* line 140, ../scss/pages/_business.scss */
         .inner-business .main-content .quote-block.top-right {
           top: 250px;
           right: 50px; } }
-      /* line 143, ../scss/pages/_business.scss */
+      /* line 147, ../scss/pages/_business.scss */
       .inner-business .main-content .quote-block .inner {
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
@@ -5333,7 +5568,12 @@ section.featured-businesses {
         padding: 50px;
         background-color: #65943f;
         color: #FFFFFF; }
-      /* line 149, ../scss/pages/_business.scss */
+        @media only screen and (min-width: 769px) {
+          /* line 147, ../scss/pages/_business.scss */
+          .inner-business .main-content .quote-block .inner {
+            -webkit-clip-path: polygon(1% 0, 99% 2%, 100% 93%, 0 100%);
+            clip-path: polygon(1% 0, 99% 2%, 100% 93%, 0 100%); } }
+      /* line 156, ../scss/pages/_business.scss */
       .inner-business .main-content .quote-block blockquote {
         margin: 0;
         font-size: 30px;
@@ -5341,33 +5581,33 @@ section.featured-businesses {
         line-height: 34px;
         line-height: 2.125rem;
         position: relative; }
-        /* line 154, ../scss/pages/_business.scss */
+        /* line 161, ../scss/pages/_business.scss */
         .inner-business .main-content .quote-block blockquote span {
           font-size: 60px;
           font-size: 3.75rem;
           line-height: 4px;
           line-height: 0.25rem; }
-          /* line 157, ../scss/pages/_business.scss */
+          /* line 164, ../scss/pages/_business.scss */
           .inner-business .main-content .quote-block blockquote span.lq {
             top: 25px;
             left: -20px;
             position: absolute; }
-          /* line 162, ../scss/pages/_business.scss */
+          /* line 169, ../scss/pages/_business.scss */
           .inner-business .main-content .quote-block blockquote span.rq {
             top: 20px;
             position: relative; }
-  /* line 170, ../scss/pages/_business.scss */
+  /* line 177, ../scss/pages/_business.scss */
   .inner-business .label {
     background-color: #5b5c5b;
     width: 100%; }
     @media only screen and (min-width: 769px) {
-      /* line 170, ../scss/pages/_business.scss */
+      /* line 177, ../scss/pages/_business.scss */
       .inner-business .label {
         position: absolute;
         bottom: 0;
         left: 0; } }
     @media only screen and (min-width: 769px) {
-      /* line 178, ../scss/pages/_business.scss */
+      /* line 185, ../scss/pages/_business.scss */
       .inner-business .label:before {
         content: '';
         height: 5px;
@@ -5376,16 +5616,34 @@ section.featured-businesses {
         top: -10px;
         left: 0;
         width: 100%; } }
-    /* line 189, ../scss/pages/_business.scss */
+    /* line 197, ../scss/pages/_business.scss */
+    .inner-business .label.red:before {
+      background-color: #d74727; }
+    /* line 200, ../scss/pages/_business.scss */
+    .inner-business .label.blue:before {
+      background-color: #2175b8; }
+    /* line 203, ../scss/pages/_business.scss */
+    .inner-business .label.green:before {
+      background-color: #65943f; }
+    /* line 206, ../scss/pages/_business.scss */
+    .inner-business .label.yellow:before {
+      background-color: #f4bd23; }
+    /* line 209, ../scss/pages/_business.scss */
+    .inner-business .label.green-light:before {
+      background-color: #8db268; }
+    /* line 212, ../scss/pages/_business.scss */
+    .inner-business .label.gray:before {
+      background-color: #5b5c5b; }
+    /* line 214, ../scss/pages/_business.scss */
     .inner-business .label .inner {
       padding: 30px 20px 25px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
       @media only screen and (max-width: 768px) {
-        /* line 189, ../scss/pages/_business.scss */
+        /* line 214, ../scss/pages/_business.scss */
         .inner-business .label .inner {
           padding: 20px 30px 15px; } }
-    /* line 196, ../scss/pages/_business.scss */
-    .inner-business .label h1 {
+    /* line 221, ../scss/pages/_business.scss */
+    .inner-business .label h2 {
       color: #FFFFFF;
       margin: 0;
       text-transform: uppercase;
@@ -5396,13 +5654,13 @@ section.featured-businesses {
       line-height: 26px;
       line-height: 1.625rem; }
 
-/* line 208, ../scss/pages/_business.scss */
+/* line 233, ../scss/pages/_business.scss */
 .single-business {
   background-color: #5b5c5b; }
-  /* line 210, ../scss/pages/_business.scss */
+  /* line 235, ../scss/pages/_business.scss */
   .single-business .back-to-top {
     display: none; }
-  /* line 213, ../scss/pages/_business.scss */
+  /* line 238, ../scss/pages/_business.scss */
   .single-business header {
     -webkit-clip-path: none;
     clip-path: none;
@@ -5410,10 +5668,10 @@ section.featured-businesses {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 10px 0 5px 30px; }
-    /* line 218, ../scss/pages/_business.scss */
+    /* line 243, ../scss/pages/_business.scss */
     .single-business header .logo img {
       max-width: 200px; }
-    /* line 222, ../scss/pages/_business.scss */
+    /* line 247, ../scss/pages/_business.scss */
     .single-business header .menu-toggle {
       position: absolute;
       top: 50%;
@@ -5422,6 +5680,10 @@ section.featured-businesses {
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
       color: #000000; }
-  /* line 230, ../scss/pages/_business.scss */
+  /* line 255, ../scss/pages/_business.scss */
   .single-business footer .wrap {
     max-width: none; }
+    @media only screen and (max-width: 768px) {
+      /* line 255, ../scss/pages/_business.scss */
+      .single-business footer .wrap {
+        padding: 0 30px; } }

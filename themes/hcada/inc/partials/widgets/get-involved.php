@@ -48,13 +48,15 @@ $map_title = get_sub_field('map_title');
     </div>
   </div>
   <div class="copy-container">
-    <div class="inner">
-      <h3><?php echo $inv_heading; ?></h3>
-      <?php echo $inv_copy; ?>
-    </div>
-    <div class="secondary-copy">
-      <div class="content content-box">
-        <?php echo $copy_2; ?>
+    <div class="content-container">
+      <div class="inner">
+        <h3><?php echo $inv_heading; ?></h3>
+        <?php echo $inv_copy; ?>
+      </div>
+      <div class="secondary-copy">
+        <div class="content content-box">
+          <?php echo $copy_2; ?>
+        </div>
       </div>
     </div>
   </div>

@@ -8,7 +8,7 @@
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
         if (target.length) {
           $('html,body').animate({
-            scrollTop: target.offset().top - 200
+            scrollTop: target.offset().top
           }, 1000);
           return false;
         }
@@ -37,7 +37,7 @@
     $('.menu-home-nav-container').slideUp()
     $('.page-menu-toggle').removeClass('open')
   })
-  
+
   $('nav.business-nav ul li.top-item').click(function(){
     if ($(this).hasClass('open')) {
       $('nav.business-nav ul li.top-item').removeClass('open')
@@ -80,7 +80,7 @@
 
   function scrollIf() {
     var aHeight = $('.aspot').height()
-    if ($(window).scrollTop() <= aHeight + 60) {
+    if ($(window).scrollTop() <= aHeight + 20) {
       $('.scroll-item').removeClass('over')
       $('.scroll-item').addClass('top')
     } else {

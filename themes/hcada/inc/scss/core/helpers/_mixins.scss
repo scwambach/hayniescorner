@@ -122,26 +122,50 @@
   h1 {
     @include font-size($largest-size);
     @include line-height($largest-size + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 15);
+      @include line-height(($largest-size - 15) + 4);
+    }
   }
   h2 {
     @include font-size($largest-size - 10);
     @include line-height(($largest-size - 10) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 25);
+      @include line-height(($largest-size - 25) + 4);
+    }
   }
   h3 {
     @include font-size($largest-size - 20);
     @include line-height(($largest-size - 20) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 25);
+      @include line-height(($largest-size - 25) + 4);
+    }
   }
   h4 {
     @include font-size($largest-size - 25);
     @include line-height(($largest-size - 25) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 30);
+      @include line-height(($largest-size - 30) + 4);
+    }
   }
   h5 {
     @include font-size($largest-size - 30);
     @include line-height(($largest-size - 30) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 35);
+      @include line-height(($largest-size - 35) + 4);
+    }
   }
   h6 {
     @include font-size($largest-size - 35);
     @include line-height(($largest-size - 35) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 40);
+      @include line-height(($largest-size - 40) + 4);
+    }
   }
 }
 

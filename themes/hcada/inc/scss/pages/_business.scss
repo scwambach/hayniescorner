@@ -18,6 +18,23 @@
       padding-bottom: 50px;
     }
     .copy-block {
+      @include box-sizing(border-box);
+      @include scale-up($ipad-port + 1) {
+        max-width: 500px;
+        width: 50%;
+      }
+      .inner {
+        @include rich-mix($white, $white, 30px);
+        @include box-sizing(border-box);
+        background-color: $red;
+        padding: 50px;
+        @include scale-up($ipad-port + 1) {
+          @include clip(polygon(0 2%, 100% 0%, 94% 100%, 4% 99%));
+        }
+        @include scale-down($ipad-port) {
+          padding: 50px 30px;
+        }
+      }
       &.bottom-left {
         @include scale-up($ipad-port + 1) {
           float: left;
@@ -68,19 +85,6 @@
       }
       &.gray {
         .inner { background-color: $gray; }
-      }
-    }
-    .copy-block {
-      @include box-sizing(border-box);
-      @include scale-up($ipad-port + 1) {
-        max-width: 500px;
-        width: 50%;
-      }
-      .inner {
-        @include rich-mix($white, $white, 30px);
-        @include box-sizing(border-box);
-        background-color: $red;
-        padding: 30px;
       }
     }
     .quote-block {
@@ -145,6 +149,9 @@
         padding: 50px;
         background-color: $green;
         color: $white;
+        @include scale-up($ipad-port + 1) {
+          @include clip(polygon(1% 0, 99% 2%, 100% 93%, 0 100%));
+        }
       }
       blockquote {
         margin: 0;
@@ -186,6 +193,24 @@
         width: 100%;
       }
     }
+    &.red {
+      &:before { background-color: $red; }
+    }
+    &.blue {
+      &:before { background-color: $blue; }
+    }
+    &.green {
+      &:before { background-color: $green; }
+    }
+    &.yellow {
+      &:before { background-color: $yellow; }
+    }
+    &.green-light {
+      &:before { background-color: $green-light; }
+    }
+    &.gray {
+      &:before { background-color: $gray; }
+    }
     .inner {
       padding: 30px 20px 25px;
       border-bottom: 1px solid rgba($white, 0.2);
@@ -193,7 +218,7 @@
         padding: 20px 30px 15px;
       }
     }
-    h1 {
+    h2 {
       color: $white;
       margin: 0;
       text-transform: uppercase;
@@ -229,6 +254,9 @@
   footer {
     .wrap {
       max-width: none;
+      @include scale-down($ipad-port) {
+        padding: 0 30px;
+      }
     }
   }
 }

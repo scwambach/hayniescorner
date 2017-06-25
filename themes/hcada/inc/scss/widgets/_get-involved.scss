@@ -49,6 +49,19 @@ section {
         }
       }
       .copy-container {
+        @include scale-down($page-width) {
+          height: auto !important;
+        }
+        @include scale-up($page-width + 1) {
+          position: relative;
+        }
+        .content-container {
+          @include scale-up($page-width + 1) {
+            @include vertical-center;
+            left: 0;
+            width: 100%;
+          }
+        }
         .inner, .secondary-copy {
           @include rich-mix($white, $white, 15px);
         }
@@ -68,9 +81,6 @@ section {
             padding: 0 70px 70px;
           }
           @include scale-down($page-width) {
-            padding: 0 20px 30px;
-          }
-          @include scale-down($mobile) {
             padding: 0;
           }
           ul {
@@ -86,8 +96,9 @@ section {
           .content {
             background-color: $red;
             padding: 70px;
-            @include scale-down($mobile) {
+            @include scale-down($page-width) {
               padding: 70px 30px;
+              @include clip(none);
             }
           }
         }

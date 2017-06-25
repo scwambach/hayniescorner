@@ -1,13 +1,13 @@
 section {
   &.aspot {
     position: relative;
-    z-index: 1;
-    overflow: hidden;
+    z-index: 2;
     @include transition-duration(0.2s);
     @include transition-property(height);
     @include scale-up($ipad-port + 1) {
       height: 800px;
       padding-top: 60px;
+      overflow: hidden;
     }
     @include scale-down($ipad-port) {
       height: 450px;
@@ -25,16 +25,11 @@ section {
         transform: initial !important;
       }
     }
-    &.over {
-      padding-bottom: 46px;
-      @include scale-down($ipad-port) {
-        padding-bottom: 41px;
-      }
-    }
   }
 }
 nav {
   &.aspot-nav {
+    position: absolute;
     background: $green;
     width: 100%;
     padding: 10px 0;
@@ -54,6 +49,9 @@ nav {
     &.top {
       @include scale-up($ipad-port + 1) {
         bottom: 0;
+      }
+      @include scale-down($ipad-port) {
+        top: 100%;
       }
     }
     &.over {
