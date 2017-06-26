@@ -30,7 +30,7 @@
   	var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
   	var marker = new google.maps.Marker({
   		position	: latlng,
-      icon: '/wp-content/themes/hcada/inc/images/marker.png',
+      icon: 'http://hayniescorner.com/staging/wp-content/themes/hcada/inc/images/marker.png',
   		map			: map,
       label: {
         color: '#fff',
