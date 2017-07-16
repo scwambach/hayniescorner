@@ -750,12 +750,24 @@
   #ac-pro-version h2 {
     color: #fff; }
   #ac-pro-version h3 {
-    font-size: 34px; }
+    font-size: 34px;
+    line-height: 40px; }
     #ac-pro-version h3 a {
       text-decoration: none;
       color: #fff; }
       #ac-pro-version h3 a span {
         color: #e9426e; }
+  #ac-pro-version sup {
+    text-decoration: line-through;
+    font-size: 13px;
+    color: #ccc; }
+  #ac-pro-version .ac-pro-prices {
+    color: #ffcac0;
+    text-decoration: none; }
+    #ac-pro-version .ac-pro-prices:hover {
+      text-decoration: underline; }
+      #ac-pro-version .ac-pro-prices:hover sup {
+        text-decoration: none; }
   #ac-pro-version .acp-button {
     background: #e9426e;
     border: none;
@@ -781,14 +793,17 @@
     padding-bottom: 3px; }
     #ac-pro-version ul li a {
       color: #fff;
-      text-decoration: none; }
+      text-decoration: none;
+      padding-left: 25px;
+      position: relative;
+      display: block; }
       #ac-pro-version ul li a:before {
         content: '\2713';
         font-weight: bold;
         font-size: 16px;
-        display: inline-block;
-        vertical-align: top;
-        margin-right: 10px; }
+        position: absolute;
+        left: 0;
+        top: 0; }
     #ac-pro-version ul li.acp-integration {
       padding: 0;
       min-height: 23px;

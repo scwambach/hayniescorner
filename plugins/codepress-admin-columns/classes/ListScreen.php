@@ -472,14 +472,21 @@ abstract class AC_ListScreen {
 			$this->set_original_columns( $this->get_stored_default_headings() );
 		}
 
-		return $this->original_columns;
+		return (array) $this->original_columns;
 	}
 
 	/**
 	 * @param array $columns
 	 */
 	public function set_original_columns( $columns ) {
-		$this->original_columns = $columns;
+		$this->original_columns = (array) $columns;
+	}
+
+	/**
+	 * Reset original columns
+	 */
+	public function reset_original_columns() {
+		$this->original_columns = null;
 	}
 
 	/**
