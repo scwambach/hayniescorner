@@ -1,0 +1,241 @@
+// ----- Handle Media Queries ----- //
+@mixin scale-up($viewport-width) {
+  @media only screen and (min-width: $viewport-width) {
+    @content;
+  }
+}
+
+@mixin scale-down($viewport-width) {
+  @media only screen and (max-width: $viewport-width) {
+    @content;
+  }
+}
+
+@mixin scale-up-between($viewport-width-1, $viewport-width-2) {
+  @media screen and (min-width: $viewport-width-1) and (max-width: $viewport-width-2) {
+    @content;
+  }
+}
+
+@mixin scale-down-between($viewport-width-1, $viewport-width-2) {
+  @media screen and (max-width: $viewport-width-1) and (min-width: $viewport-width-2) {
+    @content;
+  }
+}
+
+@mixin scale-height($viewport-height) {
+  @media only screen and (max-height: $viewport-height) {
+    @content;
+  }
+}
+
+
+@mixin video {
+  padding-bottom: 56.25%;
+  position: relative;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+@mixin video-square {
+  padding-bottom: 75%;
+  position: relative;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translateY(-50%) translateX(-50%));
+}
+
+@mixin horizontal-center {
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+@mixin overlay($color, $opacity, $z) {
+  &:before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    z-index: $z;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    background-color: rgba($color, $opacity);
+  }
+}
+
+@mixin background-cover($position) {
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin background-image-cover($image, $position) {
+  background-image: url($image);
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@mixin header-stack($largest-size) {
+  h1 {
+    @include font-size($largest-size);
+    @include line-height($largest-size + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 15);
+      @include line-height(($largest-size - 15) + 4);
+    }
+  }
+  h2 {
+    @include font-size($largest-size - 10);
+    @include line-height(($largest-size - 10) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 25);
+      @include line-height(($largest-size - 25) + 4);
+    }
+  }
+  h3 {
+    @include font-size($largest-size - 20);
+    @include line-height(($largest-size - 20) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 25);
+      @include line-height(($largest-size - 25) + 4);
+    }
+  }
+  h4 {
+    @include font-size($largest-size - 25);
+    @include line-height(($largest-size - 25) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 30);
+      @include line-height(($largest-size - 30) + 4);
+    }
+  }
+  h5 {
+    @include font-size($largest-size - 30);
+    @include line-height(($largest-size - 30) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 35);
+      @include line-height(($largest-size - 35) + 4);
+    }
+  }
+  h6 {
+    @include font-size($largest-size - 35);
+    @include line-height(($largest-size - 35) + 4);
+    @include scale-down($ipad-port) {
+      @include font-size($largest-size - 40);
+      @include line-height(($largest-size - 40) + 4);
+    }
+  }
+}
+
+@mixin rich-mix($color, $link_color, $margin) {
+  color: $color;
+  p, li, h1, h2, h3, h4, h5, h6 {
+    color: $color;
+  }
+  p, li {
+    font-weight: 300;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+  }
+  @include header-stack(55);
+  p, ul, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: $margin;
+  }
+  a {
+    color: $link_color;
+    text-decoration: underline;
+    @include transition-duration(0.2s);
+    &:hover {
+      color: shade($link_color, 30%);
+    }
+  }
+  hr {
+    margin: 20px 0;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 4px dashed $white;
+    border-bottom: 4px dashed $white;
+    @include border-image(url('../images/dot.png') 13 repeat);
+  }
+  blockquote {
+    font-style: italic;
+    padding-left: 20px;
+    margin: 40px 0;
+    border-left: 10px solid tint($blue, 30%);
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+    &.aligncenter, &.alignleft, &.alignright {
+      display: block;
+      @include scale-down($ipad-port) {
+        margin-bottom: 20px;
+      }
+    }
+    &.aligncenter {
+      @include scale-up($ipad-port + 1) {
+        margin: 0 auto 20px;
+      }
+    }
+    &.alignleft {
+      @include scale-up($ipad-port + 1) {
+        float: left;
+        margin: 0 20px 20px 0;
+      }
+    }
+    &.alignright {
+      @include scale-up($ipad-port + 1) {
+        float: right;
+        margin: 0 0 20px 20px;
+      }
+    }
+  }
+}
+
+@mixin clip($path) {
+  -webkit-clip-path: $path;
+  clip-path: $path;
+}

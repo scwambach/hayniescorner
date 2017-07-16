@@ -1,0 +1,18 @@
+.modal {
+  display: none;
+  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  @include overlay($black, 0.53, 3);
+  .inner {
+    max-width: $page-width * 0.8;
+    position: relative;
+    z-index: 10;
+    margin: 10% auto 0;
+    background-color: $white;
+    padding: $main-gutter;
+    box-sizing: border-box;
+  }
+}

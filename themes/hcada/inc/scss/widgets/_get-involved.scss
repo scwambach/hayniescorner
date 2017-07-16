@@ -1,0 +1,108 @@
+section {
+  &.get-involved {
+    .inner {
+      @include clearfix;
+      .copy-container, .map-container {
+        @include scale-up($page-width + 1) {
+          @include half(0, left);
+        }
+      }
+      .map-container {
+        position: relative;
+        z-index: 1;
+        @include scale-down($page-width) {
+          display: none;
+        }
+        .map-key {
+          @include rich-mix($white, $white, 15px);
+          padding: 70px;
+          background-color: $gray;
+          @include box-sizing(border-box);
+          .inner {
+            ul {
+              margin: 0;
+              padding: 0;
+              list-style-type: none;
+              margin-right: -10px;
+              li {
+                @include font-size(18);
+                @include line-height(22);
+                position: relative;
+                @include scale-up($ipad-port + 1) {
+                  @include fourth(30px, left);
+                  padding-bottom: 25px;
+                  &:nth-child(4n + 1) {
+                    clear: left;
+                  }
+                }
+                a {
+                  text-decoration: none;
+                  font-weight: 300;
+                  span {
+                    position: absolute;
+                    left: -20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .copy-container {
+        @include scale-down($page-width) {
+          height: auto !important;
+        }
+        @include scale-up($page-width + 1) {
+          position: relative;
+        }
+        .content-container {
+          @include scale-up($page-width + 1) {
+            @include vertical-center;
+            left: 0;
+            width: 100%;
+          }
+        }
+        .inner, .secondary-copy {
+          @include rich-mix($white, $white, 15px);
+        }
+        .inner {
+          max-width: 800px;
+          @include transition-duration(0.2s);
+          @include scale-up($page-width + 1) {
+            padding: 70px;
+          }
+          @include scale-down($page-width) {
+            padding: 70px 30px;
+          }
+        }
+        .secondary-copy {
+          @include transition-duration(0.2s);
+          @include scale-up($page-width + 1) {
+            padding: 0 70px 70px;
+          }
+          @include scale-down($page-width) {
+            padding: 0;
+          }
+          ul {
+            li {
+              @include font-size(22);
+              @include line-height(26);
+              margin-bottom: 10px;
+              a {
+                text-decoration: none;
+              }
+            }
+          }
+          .content {
+            background-color: $red;
+            padding: 70px;
+            @include scale-down($page-width) {
+              padding: 70px 30px;
+              @include clip(none);
+            }
+          }
+        }
+      }
+    }
+  }
+}
