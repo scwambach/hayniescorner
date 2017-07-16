@@ -32,7 +32,7 @@
       </div>
     </li>
     <li class="top-item">
-      <a>Restaurants <i class="fa fa-angle-down"></i></a>
+      <a>Food/Drink <i class="fa fa-angle-down"></i></a>
       <div class="drop-down">
         <ul>
           <?php
@@ -45,7 +45,7 @@
             'tax_query' =>  array (
               array(
                 'taxonomy' => 'business_type',
-                'terms' => 'restaurant',
+                'terms' => 'food-drink',
                 'field' => 'slug',
                 'operator' => 'IN',
               ),

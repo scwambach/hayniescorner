@@ -35,7 +35,7 @@
   'tax_query' =>  array (
     array(
       'taxonomy' => 'business_type',
-      'terms' => 'restaurant',
+      'terms' => 'food-drink',
       'field' => 'slug',
       'operator' => 'IN',
     ),
