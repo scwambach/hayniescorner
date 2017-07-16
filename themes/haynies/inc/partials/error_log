@@ -1,5 +1,0 @@
-[18-Nov-2016 07:09:37 America/Detroit] PHP Fatal error:  Call to undefined function get_field() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/partials/custom-footer.php on line 2
-[18-Nov-2016 07:09:37 America/Detroit] PHP Fatal error:  Call to undefined function get_field() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/partials/custom-header.php on line 2
-[18-Nov-2016 07:09:38 America/Detroit] PHP Fatal error:  Call to undefined function get_field() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/partials/head.php on line 2
-[18-Nov-2016 07:09:38 America/Detroit] PHP Fatal error:  Call to undefined function wp_nav_menu() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/partials/navigation.php on line 21
-[18-Nov-2016 07:09:39 America/Detroit] PHP Fatal error:  Call to undefined function have_rows() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/partials/widget-loop.php on line 2

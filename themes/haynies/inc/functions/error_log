@@ -1,5 +1,0 @@
-[18-Nov-2016 07:09:35 America/Detroit] PHP Fatal error:  Call to undefined function add_action() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/functions/comments.php on line 2
-[18-Nov-2016 07:09:35 America/Detroit] PHP Fatal error:  Call to undefined function add_action() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/functions/enqueue.php on line 15
-[18-Nov-2016 07:09:36 America/Detroit] PHP Fatal error:  Call to undefined function add_action() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/functions/setup.php on line 2
-[18-Nov-2016 07:09:36 America/Detroit] PHP Fatal error:  Call to undefined function add_filter() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/functions/title.php on line 2
-[18-Nov-2016 07:09:36 America/Detroit] PHP Fatal error:  Call to undefined function add_action() in /home/hayniesc/public_html/wp-content/themes/haynies/inc/functions/widgets.php on line 2
