@@ -223,7 +223,15 @@ class acf_form_post {
 		add_action('edit_form_after_title', array($this, 'edit_form_after_title'));
 		
 		
-		// remove ACF from meta postbox
+		// remove postcustom metabox (removes expensive SQL query)
+		if( acf_get_setting('remove_wp_meta_box') ) {
+			
+			remove_meta_box( 'postcustom', false, 'normal' ); 
+			
+		}
+		
+		
+		// remove ACF values from meta postbox ()
 		add_filter('is_protected_meta', array($this, 'is_protected_meta'), 10, 3);
 		
 	}
@@ -505,19 +513,11 @@ if( typeof acf !== 'undefined' ) {
 		
 		
 		// check post type
-		if( in_array($post->post_type, $reject) ) {
-			
-			$allow = false;
-			
-		}
+		if( in_array($post->post_type, $reject) ) $allow = false;
 		
 		
 		// allow preview
-		if( $post->post_type == 'revision' && $wp_preview === 'dopreview' ) {
-			
-			$allow = true;
-			
-		}
+		if( $post->post_type == 'revision' && $wp_preview == 'dopreview' ) $allow = true;
 		
 		
 		// return
@@ -550,7 +550,7 @@ if( typeof acf !== 'undefined' ) {
 		
 		
 		// validate for published post (allow draft to save without validation)
-		if( get_post_status($post_id) == 'publish' ) {
+		if( $post->post_status == 'publish' ) {
 			
 			// show errors
 			acf_validate_save_post( true );
@@ -560,6 +560,14 @@ if( typeof acf !== 'undefined' ) {
 		
 		// save
 		acf_save_post( $post_id );
+		
+		
+		// save revision
+		if( post_type_supports($post->post_type, 'revisions') ) {
+			
+			acf_save_post_revision( $post_id );
+			
+		}
 				
 		
 		// return
