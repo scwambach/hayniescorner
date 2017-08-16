@@ -1,6 +1,6 @@
 <?php
 $urlImage = get_post_thumbnail_id();
-$urlImage = wp_get_attachment_image_src($urlImage,'full');
+$urlImage = wp_get_attachment_image_src($urlImage,'large');
 $urlImage = $urlImage[0];
 $lrgImage = get_post_thumbnail_id();
 $lrgImage = wp_get_attachment_image_src($lrgImage,'large');
