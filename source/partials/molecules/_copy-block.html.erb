@@ -1,0 +1,9 @@
+<div class="copy-block <%= content.acf.copy_color %> <%= content.acf.copy_position %>">
+  <div class="inner">
+    <h1><%= content.title.rendered %></h1>
+    <hr>
+    <%= content.content.rendered %>
+    <hr>
+    <a href="https://www.google.com/maps/dir/<%= content.acf.location.address %>" target="_blank"><strong><%= content.acf.location.address %></strong></a>
+  </div>
+</div>

@@ -1,0 +1,146 @@
+section {
+  &.aspot {
+    position: relative;
+    z-index: 2;
+    transition-duration: 0.2s;
+    transition-property: height;
+    @include scale-up($ipad-port + 1) {
+      height: 800px;
+      padding-top: 60px;
+      overflow: hidden;
+    }
+    @include scale-down($ipad-port) {
+      height: 450px;
+      margin-top: 60px;
+    }
+    @include scale-down($mobile) {
+      height: 300px;
+    }
+    .scroll-image {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      @include background-cover(center bottom);
+      @include scale-down($ipad-port) {
+        transform: initial !important;
+      }
+    }
+  }
+}
+nav {
+  &.aspot-nav {
+    position: absolute;
+    background: $green;
+    width: 100%;
+    padding: 10px 0;
+    transition-duration: 0.2s;
+    @include scale-up($ipad-port + 1) {
+      left: 0;
+      .menu-home-nav-container {
+        display: block !important;
+        height: auto !important;
+      }
+    }
+    @include scale-down($ipad-port) {
+      .menu-home-nav-container {
+        display: none;
+      }
+    }
+    &.top {
+      @include scale-up($ipad-port + 1) {
+        bottom: 0;
+      }
+      @include scale-down($ipad-port) {
+        top: 100%;
+      }
+    }
+    &.over {
+      position: fixed;
+      top: 0;
+      box-shadow: 0 0 30px -8px $black;
+      z-index: 2;
+      ul {
+        li {
+          @include scale-up($ipad-port + 1) {
+            @include seventh(0, left);
+            padding: 0 10px;
+            text-align: center;
+          }
+          @include scale-up(1501px) {
+            @include fifth(0, left);
+            padding: 0 10px;
+          }
+          a {
+            @include scale-down(1500px) {
+              @include font-size(12);
+              @include line-height(12);
+            }
+          }
+        }
+      }
+    }
+    ul {
+      list-style-type: none;
+      @include clearfix;
+      padding: 0;
+      margin: 0;
+      @include scale-down($ipad-port) {
+        padding-top: 30px;
+      }
+      @include scale-up($ipad-port + 1) {
+        text-align: center;
+      }
+      li {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition-duration: 0.2s;
+        @include scale-up($ipad-port + 1) {
+          @include fifth(0, left);
+          padding: 0 10px;
+        }
+        + li {
+          @include scale-down($ipad-port) {
+            border-top: 1px solid $white;
+          }
+          @include scale-up($ipad-port + 1) {
+            border-left: 1px solid $white;
+          }
+        }
+        a {
+          display: inline-block;
+          vertical-align: middle;
+          width: 100%;
+          color: $white;
+          @include scale-down($ipad-port) {
+            display: block;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+}
+.page-menu-toggle {
+  color: $white;
+  // text-align: center;
+  cursor: pointer;
+  display: block;
+  margin-bottom: -5px;
+  &:hover {
+    color: $white;
+  }
+  i {
+    @include font-size(24);
+    @include line-height(24);
+    vertical-align: middle;
+    margin: -8px 0 0 10px;
+  }
+  &.open {
+    i {
+    }
+  }
+  @include scale-up($ipad-port + 1) {
+    display: none;
+  }
+}

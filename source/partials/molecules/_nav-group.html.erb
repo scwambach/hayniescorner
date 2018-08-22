@@ -1,0 +1,12 @@
+<li class="top-item">
+  <a><%= title %> <i class="fa fa-angle-down"></i></a>
+  <div class="drop-down">
+    <ul>
+      <% content.each do |bus| %>
+      <% if bus[1]._embedded['wp:term'][0][0].slug == group_name %>
+      <li><a href="/discover/<%= bus[1].slug %>"><%= bus[1].title.rendered %></a></li>
+      <% end %>
+      <% end %>
+    </ul>
+  </div>
+</li>

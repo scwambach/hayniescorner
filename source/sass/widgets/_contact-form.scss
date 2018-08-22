@@ -1,0 +1,60 @@
+.wpcf7 {
+  .wpcf7-form {
+    display: block;
+    margin: 0 auto;
+    @include scale-up($mobile + 1) {
+      width: 75%;
+    }
+    p {
+      label {
+        font-weight: 300;
+        @include font-size(18);
+        @include line-height(22);
+        span {
+          &.wpcf7-form-control-wrap {
+            input, textarea {
+              width: 100% !important;
+              box-sizing: border-box;
+              border: 0;
+            }
+            textarea {
+              height: 200px !important;
+              padding: 10px;
+              color: $black;
+              @include font-size(22);
+              @include line-height(22);
+            }
+            input {
+              height: 50px;
+              padding: 0 10px;
+              color: $black;
+              @include font-size(22);
+              @include line-height(22);
+            }
+          }
+        }
+      }
+    }
+    .button {
+      border: none;
+      cursor: pointer;
+      background-color: $green;
+      color: $white;
+      @include font-size(18);
+      @include line-height(18);
+      padding: 10px 20px;
+      transition-duration: 0.2s;
+      &:hover {
+        background-color: tint($green, 10%);
+      }
+    }
+    .wpcf7-response-output {
+      bottom: 70px;
+      @include horizontal-center;
+      &.wpcf7-validation-errors {
+        border-color: $red;
+        color: $red;
+      }
+    }
+  }
+}
