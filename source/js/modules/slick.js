@@ -1,6 +1,13 @@
 require('slick-carousel');
 const $ = require('jquery');
 
+const $wrapper = $('.events-list');
+
+$wrapper.find('.event-item')
+  .sort((a, b) => Number(a.getAttribute('data-date'))
+  - Number(b.getAttribute('data-date')))
+  .appendTo($wrapper);
+
 $('.events-list').slick({
   dots: false,
   infinite: false,

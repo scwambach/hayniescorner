@@ -8,7 +8,7 @@
         today_date = Date.today.strftime("%Y%m%d").to_i
         if event_date > today_date
       %>
-      <div class="event-item">
+      <div class="event-item" data-date=<%= event_date%>>
         <div class="event-image" style="background-image: url(<%= event[1]._embedded['wp:featuredmedia'][0].source_url %>)"></div>
         <div class="content">
           <h4><%= event[1].title.rendered %></h4>

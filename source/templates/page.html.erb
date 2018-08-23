@@ -22,9 +22,27 @@
     <% content = data.api.pages.home %>
     <%= partial 'partials/organisms/hero', locals: { content: content } %>
     <% content.acf.page_sections.each_with_index do |section, i| %>
-    <section id="<%= section.section_id %>" class="widget clearfix <%= section.acf_fc_layout.gsub('_', '-') %>">
-    <%= partial "partials/organisms/#{section.acf_fc_layout}", locals: { content: section } %>
-    </section>
+      <% if section.section_id == 'events' %>
+        <%
+          event_count = 0
+          data.api.events.each do |event|
+          event_date = event[1].acf.event_date.gsub('-', '').to_i
+          today_date = Date.today.strftime("%Y%m%d").to_i
+          if event_date > today_date
+          event_count += 1
+          end
+          end
+          if event_count != 0
+        %>
+          <section id="<%= section.section_id %>" class="widget clearfix <%= section.acf_fc_layout.gsub('_', '-') %>">
+          <%= partial "partials/organisms/#{section.acf_fc_layout}", locals: { content: section } %>
+          </section>
+        <% end %>
+      <% else %>
+        <section id="<%= section.section_id %>" class="widget clearfix <%= section.acf_fc_layout.gsub('_', '-') %>">
+        <%= partial "partials/organisms/#{section.acf_fc_layout}", locals: { content: section } %>
+        </section>
+      <% end %>
     <% end %>
     <%= partial 'partials/organisms/footer' %>
   </body>
