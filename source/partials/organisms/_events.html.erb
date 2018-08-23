@@ -2,27 +2,7 @@
   <div class="floating-background" style="background-image: url(http://admin.hayniescorner.com/wp-content/uploads/2017/06/IMG_2722.jpg)"></div>
     <h2 class="section-title">Events</h2>
     <div class="events-list">
-      <%
-        data.api.events.sort{|a,b| a[1].acf.event_date <=> a[1].acf.event_date}.each do |event|
-        event_date = event[1].acf.event_date.gsub('-', '').to_i
-        today_date = Date.today.strftime("%Y%m%d").to_i
-        if event_date > today_date
-      %>
-      <div class="event-item" data-date=<%= event_date%>>
-        <div class="event-image" style="background-image: url(<%= event[1]._embedded['wp:featuredmedia'][0].source_url %>)"></div>
-        <div class="content">
-          <h4><%= event[1].title.rendered %></h4>
-          <p class="date"><%= eventDate(event[1].acf.event_date) %></p>
-          <hr>
-          <div class="copy-box">
-            <%= event[1].content.rendered %>
-          </div>
-        </div>
-      </div>
-      <%
-        end
-        end
-      %>
+
     </div>
   </div>
 </div>

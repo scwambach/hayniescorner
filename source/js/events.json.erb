@@ -1,0 +1,27 @@
+[
+  <%
+    event_count = 0
+    data.api.events.each do |event|
+    event_date = event[1].acf.event_date.gsub('-', '').to_i
+    today_date = Date.today.strftime("%Y%m%d").to_i
+    if event_date > today_date
+    event_count += 1
+    end
+    end
+    event_index = 0
+    data.api.events.each do |event|
+    event_date = event[1].acf.event_date.gsub('-', '').to_i
+    today_date = Date.today.strftime("%Y%m%d").to_i
+    if event_date > today_date
+    event_index += 1
+  %>{
+    "title" : "<%= event[1].title.rendered %>",
+    "date" : "<%= eventDate(event[1].acf.event_date) %>",
+    "dateInt" : "<%=event[1].acf.event_date.gsub('-', '') %>",
+    "image" : "<%= event[1]._embedded['wp:featuredmedia'][0].source_url %>",
+    "content" : <%= event[1].content.rendered.inspect %>
+  }<%= ', ' if event_index != event_count %><%
+    end
+    end
+  %>
+]
