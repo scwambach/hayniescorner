@@ -110,7 +110,7 @@ end
 configure :development do
   activate :external_pipeline,
     name: :gulp,
-    command: 'gulp',
+    command: 'gulp --colors',
     source: '.tmp',
     latency: 1
   ignore 'styles/site'

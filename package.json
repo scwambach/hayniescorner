@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "develop": "gulp clean && gulp posts && bundle exec middleman",
+    "build": "gulp clean && gulp posts && bundle exec middleman build"
   },
   "repository": {
     "type": "git",

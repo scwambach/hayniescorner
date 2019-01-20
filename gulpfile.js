@@ -61,7 +61,13 @@ function collection(url, temp, dir) {
       checkDir(temp);
       checkDir(dir);
       for (let i = 0; i < jsonObj.length; i += 1) {
+
         const slug = jsonObj[i].slug;
+        const wp_id = jsonObj[i].id;
+        jsonObj[i].wp_id = wp_id;
+
+        delete jsonObj[i].id;
+        delete jsonObj[i]._links;
         fs.writeFile(`${temp}${slug}.json`, JSON.stringify(jsonObj[i]), function (err) {
           if (err) throw err;
         });
@@ -82,6 +88,27 @@ function singleton(url, slug, temp, dir) {
       const jsonObj = JSON.parse(xhr.responseText);
       checkDir(temp);
       checkDir(dir);
+
+      jsonObj.wp_items = [];
+
+      if(jsonObj.items) {
+        for (let i = 0; i < jsonObj.items.length; i += 1) {
+          const wp_object_id = jsonObj.items[i].object_id;
+          delete jsonObj.items[i].object_id;
+          jsonObj.wp_items.push({
+            "data": jsonObj.items[i],
+            "wp_object_id": wp_object_id,
+          });
+        }
+        delete jsonObj.items;
+      }
+
+      if(jsonObj.count) {
+        const wp_count = jsonObj.count;
+        jsonObj.wp_count = wp_count;
+
+        delete jsonObj.count;
+      }
 
       fs.writeFile(`${temp}${slug}.json`, JSON.stringify(jsonObj), function (err) {
         if (err) throw err;
@@ -190,10 +217,10 @@ gulp.task('browser-sync', function() {
   });
 });
 
-gulp.task('default', ['browser-sync', 'clean', 'posts', 'imageOptim', 'js', 'sass', 'fonts', 'slickFonts'], function() {
+gulp.task('default', ['browser-sync', 'imageOptim', 'js', 'sass', 'fonts', 'slickFonts'], function() {
   gulp.watch(`${css}/**/*.{css,scss,sass}`, ['sass']);
   gulp.watch(`${js}/**/*.js`, ['js']);
   gulp.watch(`${src}/images/**/*.{png,jpg,svg,gif}`);
 });
 
-gulp.task('build', ['clean', 'posts', 'js', 'sass', 'imageOptim']);
+gulp.task('build', ['js', 'sass', 'imageOptim']);
