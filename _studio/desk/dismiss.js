@@ -2,7 +2,7 @@ export const dismissMainDocs = (schemaType) =>
   schemaType !== 'post' && schemaType !== 'project';
 
 export const dismissDocs = (schemaType) =>
-  schemaType !== 'affiliate' &&
+  schemaType !== 'business' &&
   schemaType !== 'contactInfo' &&
   schemaType !== 'event' &&
   schemaType !== 'feature' &&

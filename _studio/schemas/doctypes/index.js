@@ -1,5 +1,6 @@
-import affiliate from './affiliate';
 import blogCategory from './blogCategory';
+import business from './business';
+import businessCategory from './businessCategory';
 import contactInfo from './contactInfo';
 import event from './event';
 import feature from './feature';
@@ -16,8 +17,9 @@ import svg from './svg';
 import testimonial from './testimonial';
 
 export {
-  affiliate,
   blogCategory,
+  business,
+  businessCategory,
   contactInfo,
   event,
   feature,

@@ -5,8 +5,9 @@ import { heroBanner } from './components';
 import { buttons } from './modules';
 
 import {
-  affiliate,
   blogCategory,
+  business,
+  businessCategory,
   contactInfo,
   event,
   feature,
@@ -26,8 +27,9 @@ import {
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    affiliate,
     blogCategory,
+    business,
+    businessCategory,
     buttons,
     contactInfo,
     event,

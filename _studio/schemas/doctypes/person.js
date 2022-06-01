@@ -37,7 +37,7 @@ export default {
       name: 'company',
       title: 'Company',
       type: 'reference',
-      to: [{ type: 'affiliate' }],
+      to: [{ type: 'business' }],
     },
     {
       name: 'socials',

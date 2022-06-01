@@ -37,11 +37,6 @@ export const resources = S.listItem()
           .schemaType('iconItem')
           .child(S.documentTypeList('iconItem'))
           .icon(FaRegStar),
-        // ************** Affiliates
-        S.listItem()
-          .title('Affiliates')
-          .child(S.documentTypeList('affiliate').title('Affiliates'))
-          .icon(GrGroup),
         // ************** SVGs
         S.listItem()
           .title('SVG Library')

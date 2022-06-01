@@ -13,6 +13,7 @@ import {
   globalSettings,
   resources,
 } from './desk';
+import { businesses } from './desk/sections/businesses';
 
 const remoteURL = 'https://scw-project-starter.vercel.app';
 const localURL = 'http://localhost:3000';
@@ -57,4 +58,6 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
 };
 
 export default () =>
-  S.list().title('Base').items([allPages, events, resources, globalSettings]);
+  S.list()
+    .title('Base')
+    .items([allPages, businesses, events, resources, globalSettings]);
