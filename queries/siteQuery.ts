@@ -7,9 +7,14 @@ export const siteQuery = groq`{
     customIcon -> {
       ...,
     },
-    defined(iconImage) => {${imageQuery({ name: 'iconImage' })}},
-    defined(mainLogo) => {${imageQuery({ name: 'mainLogo' })}},
-    defined(altLogo) => {${imageQuery({ name: 'altLogo' })}},
+    mainLogo -> {
+      ...,
+    },
+    defined(mainLogoImage) => {${imageQuery({ name: 'mainLogoImage' })}},
+    footerLogo -> {
+      ...,
+    },
+    defined(footerLogoImage) => {${imageQuery({ name: 'footerLogoImage' })}},
     siteDescription,
     siteTitle,
     mainEmail,

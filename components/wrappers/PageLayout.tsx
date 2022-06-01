@@ -20,7 +20,14 @@ const PageLayout = ({ children, content, global }: PageLayoutProps) => {
     <Layout>
       <main className="bg-white">
         <Seo {...seoProps} />
-        <Header items={menuItems} />
+        <Header
+          items={menuItems}
+          logo={
+            global.site.mainLogo
+              ? global.site.mainLogo.customStyleCode.code
+              : global.site.mainLogoImage
+          }
+        />
         {children}
         <Footer />
       </main>

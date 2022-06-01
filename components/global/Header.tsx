@@ -3,6 +3,7 @@ import { breakpoints } from '@styles';
 import { Logo, Container, LinkObject } from '@components';
 
 interface HeaderProps {
+  logo?: any;
   items: {
     _key: string;
     classes: string;
@@ -23,18 +24,23 @@ interface HeaderProps {
   }[];
 }
 
-const Header = ({ items }: HeaderProps) => {
+const Header = ({ items, logo }: HeaderProps) => {
   const [activeIndex, setActiveIndex] = useState<number>();
   const [activeSubIndex, setActiveSubIndex] = useState<number>();
   return (
-    <header className="header">
+    <header className="header bg-black text-white">
       <Container maxWidth={breakpoints.xxl}>
         <div className="flex justify-between items-center">
           <LinkObject url="/">
-            <Logo classes="w-20" />
+            <span
+              style={{}}
+              dangerouslySetInnerHTML={{
+                __html: logo,
+              }}
+            />
           </LinkObject>
           <nav className="navigation">
-            <ul className="flex">
+            <ul className="flex text-navItem uppercase font-bold tracking-widest">
               {items.map((item, index) => {
                 const { _key, link, subItems = [], classes } = item;
                 return (

@@ -20,7 +20,9 @@ export default {
     },
     ...iconSelector({
       customIconTitle: 'Main Logo',
+      customIconName: 'mainLogo',
       iconImageTitle: 'Main Logo Image',
+      iconImageName: 'mainLogoImage',
       minimal: true,
     }),
     ...iconSelector({
