@@ -20,9 +20,16 @@ export default {
           customIcon && !faToggle ? (
             <>
               <style>
-                {`.iconTypePreview svg {
-          width: 100%;
-        }`}
+                {`
+              .iconTypePreview {
+                width: 35px;
+                height: 35px;
+                overflow: hidden;
+              }
+              .iconTypePreview svg {
+              width: auto;
+              height: 35px;
+            }`}
               </style>
               <div
                 className="iconTypePreview"

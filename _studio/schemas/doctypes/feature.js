@@ -1,13 +1,5 @@
-import React from 'react';
-import * as Icons from '@meronex/icons/fa';
-import { blockContent, link } from '../commonFields';
+import { blockContent, links } from '../commonFields';
 import DefaultSource from 'part:sanity-plugin-media/asset-source';
-
-export const DynamicFaIcon = (name) => {
-  const IconComponent = Icons[name];
-
-  return IconComponent;
-};
 
 export default {
   name: 'feature',
@@ -25,7 +17,7 @@ export default {
       },
     },
     { ...blockContent() },
-    { ...link },
+    { ...links() },
   ],
   preview: {
     select: {

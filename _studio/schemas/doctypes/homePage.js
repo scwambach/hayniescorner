@@ -6,6 +6,7 @@ import {
   backgroundImage,
   iconSelector,
   blockContent,
+  links,
   link,
 } from '../commonFields';
 
@@ -51,30 +52,10 @@ export default {
           type: 'array',
           of: [
             {
-              name: 'feature',
+              name: 'featureObj',
               title: 'Feature',
-              type: 'object',
-              fields: [
-                {
-                  name: 'featureObj',
-                  title: 'Feature',
-                  type: 'reference',
-                  to: [{ type: 'feature' }],
-                },
-              ],
-              preview: {
-                select: {
-                  title: 'featureObj.title',
-                  media: 'featureObj.image',
-                },
-                prepare({ title, media }) {
-                  return {
-                    title,
-                    subtitle: 'Feature',
-                    media,
-                  };
-                },
-              },
+              type: 'reference',
+              to: [{ type: 'feature' }],
             },
           ],
         },
@@ -93,42 +74,64 @@ export default {
         { name: 'title', title: 'Heading', type: 'string' },
         ...backgroundImage({ required: true }),
         { ...blockContent() },
-        { ...link },
+        { ...links() },
         {
           name: 'items',
           title: 'Items',
           type: 'array',
           of: [
             {
-              name: 'item',
-              title: 'Item',
+              name: 'iconItem',
+              title: 'Icon Item',
+              type: 'reference',
+              to: [{ type: 'iconItem' }],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'linkTiles',
+      title: 'Link Tiles',
+      fieldset: 'pageBody',
+      type: 'object',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+      fields: [
+        {
+          name: 'tiles',
+          title: 'Tiles',
+          type: 'array',
+          of: [
+            {
+              name: 'tile',
+              title: 'Tile',
               type: 'object',
-              fields: [
-                {
-                  name: 'iconItem',
-                  title: 'Icon Item',
-                  type: 'reference',
-                  to: [{ type: 'iconItem' }],
-                },
-              ],
+              fields: [...iconSelector(), { ...link }],
               preview: {
                 select: {
-                  title: 'iconItem.title',
-                  subtitle: 'iconItem.copy',
-                  iconImage: 'iconItem.iconImage',
-                  customIcon: 'iconItem.customIcon.customStyleCode',
-                  media: 'iconItem.icon',
+                  title: 'link.copy',
+                  iconImage: 'iconImage',
+                  customIcon: 'customIcon.customStyleCode',
                 },
-                prepare({ title, subtitle, iconImage, customIcon }) {
+                prepare({ title, iconImage, customIcon }) {
                   return {
-                    title: title || subtitle,
-                    subtitle: title ? subtitle : null,
+                    title: `${title}`,
                     media: customIcon ? (
                       <>
                         <style>
-                          {`.iconTypePreview svg {
-                          width: 100%;
-                        }`}
+                          {`
+                            .iconTypePreview {
+                              width: 35px;
+                              height: 35px;
+                              overflow: hidden;
+                            }
+                            .iconTypePreview svg {
+                            width: auto;
+                            height: 35px;
+                          }`}
                         </style>
                         <div
                           className="iconTypePreview"
@@ -144,6 +147,31 @@ export default {
                   };
                 },
               },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'closerFeatures',
+      title: 'Closer Features',
+      type: 'object',
+      fieldset: 'pageBody',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+      fields: [
+        {
+          name: 'features',
+          title: 'Features',
+          type: 'array',
+          of: [
+            {
+              name: 'featureObj',
+              title: 'Feature',
+              type: 'reference',
+              to: [{ type: 'feature' }],
             },
           ],
         },
