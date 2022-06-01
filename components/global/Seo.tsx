@@ -11,7 +11,7 @@ const Seo = ({ content, global }: SeoProps) => {
   return (
     <Head>
       <title>
-        {content.slug.current === '/'
+        {!content.slug
           ? global.site.siteTitle
           : `${content.title} | ${global.site.siteTitle}`}
       </title>
@@ -32,14 +32,13 @@ const Seo = ({ content, global }: SeoProps) => {
       <meta
         name="twitter:url"
         content={
-          process.env.SITE_URL +
-          (content.slug.current === '/' ? '' : content.slug.current)
+          process.env.SITE_URL + (!content.slug ? '' : content.slug.current)
         }
       />
       <meta
         name="twitter:title"
         content={
-          content.slug.current === '/'
+          !content.slug
             ? global.site.siteTitle
             : `${content.title} | ${global.site.siteTitle}`
         }
@@ -47,14 +46,13 @@ const Seo = ({ content, global }: SeoProps) => {
       <link
         rel="canonical"
         href={
-          process.env.SITE_URL +
-          (content.slug.current === '/' ? '' : content.slug.current)
+          process.env.SITE_URL + (!content.slug ? '' : content.slug.current)
         }
       />
       <meta
         property="og:title"
         content={
-          content.slug.current === '/'
+          !content.slug
             ? global.site.siteTitle
             : `${content.title} | ${global.site.siteTitle}`
         }

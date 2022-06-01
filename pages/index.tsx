@@ -1,7 +1,7 @@
 import React from 'react';
 import { homeQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
-import { BannerXenon, PageLayout } from '@components';
+import { BannerCitra, PageLayout } from '@components';
 
 type Props = {
   content: any;
@@ -11,7 +11,7 @@ type Props = {
 const IndexPage = ({ content, global }: Props) => {
   return (
     <PageLayout content={content} global={global}>
-      <BannerXenon {...content.heroBanner} priority align="text-center" />
+      <BannerCitra {...content.heroBanner} priority align="text-center" />
     </PageLayout>
   );
 };
