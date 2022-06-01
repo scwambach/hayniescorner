@@ -1,0 +1,32 @@
+{
+  "short_name": "Project Starter",
+  "name": "Project Starter",
+  "lang": "en",
+  "description": "Pellentesque tempor laoreet ex, aliquet tincidunt tellus. Nullam purus leo.",
+  "start_url": "https://scw-project-starter.vercel.app/",
+  "theme_color": "#025e73",
+  "background_color": "#025e73",
+  "dir": "ltr",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/pwa/apple-icon-180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/pwa/manifest-icon-192.maskable.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa/manifest-icon-512.maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "prefer_related_applications": false
+}

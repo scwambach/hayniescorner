@@ -1,0 +1,28 @@
+.header {
+  .navigation {
+    > ul {
+      > li {
+        ul {
+          display: none;
+        }
+
+        &.open,
+        &:hover {
+          ul {
+            @media screen and (min-width: $md) {
+              display: block;
+            }
+          }
+        }
+
+        &.sub-open {
+          ul {
+            @media screen and (max-width: ($md - 1)) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

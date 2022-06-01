@@ -1,0 +1,37 @@
+.button {
+  background-color: $color1;
+
+  button,
+  input[type='submit'] {
+    appearance: none;
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  > * {
+    padding: 10px 15px;
+    display: inline-block;
+  }
+
+  + .button {
+    @media screen and (min-width: ($md + 1)) {
+      margin-left: 20px;
+    }
+
+    @media screen and (max-width: $md) {
+      margin-top: 10px;
+    }
+  }
+
+  .buttons-white-copy & {
+    color: $white;
+  }
+}
