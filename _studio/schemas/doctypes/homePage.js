@@ -29,6 +29,7 @@ export default {
     {
       fieldset: 'pageBody',
       name: 'heroBanner',
+      title: 'Hero Banner',
       type: 'object',
       options: {
         collapsible: true,

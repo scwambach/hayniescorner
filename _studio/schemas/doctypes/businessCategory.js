@@ -7,5 +7,5 @@ export default {
   type: 'document',
   fieldsets: fieldSets,
   icon: AiOutlineStar,
-  fields: [{ ...objectTitle }, { ...slug() }],
+  fields: [{ ...objectTitle }, { ...slug({ fieldset: null }) }],
 };

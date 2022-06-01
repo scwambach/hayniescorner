@@ -1,6 +1,6 @@
 import React from 'react';
 import DefaultSource from 'part:sanity-plugin-media/asset-source';
-import { iconSelector, objectTitle, url } from '../commonFields';
+import { iconSelector, objectTitle, slug, url } from '../commonFields';
 
 export default {
   name: 'business',
@@ -8,6 +8,7 @@ export default {
   type: 'document',
   fields: [
     { ...objectTitle },
+    { ...slug({ fieldset: null }) },
     {
       name: 'type',
       title: 'Type',
@@ -29,13 +30,15 @@ export default {
   preview: {
     select: {
       title: 'title',
+      subtitle: 'type.title',
       customIcon: 'customIcon.customStyleCode',
       iconImage: 'iconImage',
       media: 'image',
     },
-    prepare({ title, customIcon, media, iconImage }) {
+    prepare({ title, subtitle, customIcon, media, iconImage }) {
       return {
-        title: `${title}`,
+        title,
+        subtitle,
         media: media ? (
           media
         ) : customIcon ? (

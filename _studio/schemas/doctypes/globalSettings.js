@@ -23,6 +23,13 @@ export default {
       iconImageTitle: 'Main Logo Image',
       minimal: true,
     }),
+    ...iconSelector({
+      customIconTitle: 'Footer Logo',
+      customIconName: 'footerLogo',
+      iconImageTitle: 'Footer Logo Image',
+      iconImageName: 'footerLogoImage',
+      minimal: true,
+    }),
     {
       name: 'mainEmail',
       title: 'Main Email',

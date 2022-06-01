@@ -1,5 +1,5 @@
 import AiOutlineMenu from '@meronex/icons/ai/AiOutlineMenu';
-import { navItem } from '../commonFields';
+import { navItem, slug } from '../commonFields';
 
 export default {
   name: 'navMenu',

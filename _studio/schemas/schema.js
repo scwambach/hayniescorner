@@ -5,11 +5,15 @@ import { heroBanner } from './components';
 import { buttons } from './modules';
 
 import {
+  aboutPage,
   blogCategory,
   business,
   businessCategory,
+  businessesPage,
   contactInfo,
+  contactPage,
   event,
+  eventsPage,
   feature,
   globalSettings,
   homePage,
@@ -22,17 +26,22 @@ import {
   social,
   svg,
   testimonial,
+  volunteerPage,
 } from './doctypes';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
+    aboutPage,
     blogCategory,
     business,
     businessCategory,
+    businessesPage,
     buttons,
     contactInfo,
+    contactPage,
     event,
+    eventsPage,
     feature,
     globalSettings,
     heroBanner,
@@ -46,5 +55,6 @@ export default createSchema({
     social,
     svg,
     testimonial,
+    volunteerPage,
   ]),
 });
