@@ -3,6 +3,8 @@ import { ImageProps } from '@components';
 export interface BannerProps {
   backgroundColor?: string;
   backgroundImage?: ImageProps;
+  backgroundColorStart?: string;
+  backgroundColorEnd?: string;
   componentClasses?: string;
   containerClasses?: string;
   foregroundImage?: ImageProps;

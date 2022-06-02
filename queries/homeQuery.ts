@@ -12,14 +12,8 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
   },
   heroBanner {
     ${imageQuery({ name: 'backgroundImage' })},
-    ${headingQuery()},
-    features[] -> {
-      _id,
-      copy,
-      title,
-      icon,
-      "customIcon": customIcon -> customStyleCode.code,
-      ${imageQuery({ name: 'iconImage' })}
-    }
+    customIcon -> {
+      ...,
+    },
   }
 }`;

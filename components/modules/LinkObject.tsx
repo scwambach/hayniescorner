@@ -39,7 +39,7 @@ const LinkObject = ({
             target={newTab ? '_blank' : '_self'}
             rel={newTab ? 'noopener noreferrer' : null}
           >
-            {children || copy}
+            <span className="relative">{children || copy}</span>
           </a>
         </Link>
       ) : anchor ? (
@@ -50,7 +50,7 @@ const LinkObject = ({
           className={classes}
           href={url}
         >
-          {children || copy}
+          <span className="relative">{children || copy}</span>
         </a>
       ) : (
         <a
@@ -79,7 +79,7 @@ const LinkObject = ({
           target={newTab ? '_blank' : '_self'}
           rel={newTab ? 'noopener noreferrer' : null}
         >
-          {children || copy}
+          <span className="relative">{children || copy}</span>
         </a>
       )}
     </>

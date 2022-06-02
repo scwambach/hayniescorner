@@ -67,3 +67,12 @@ body {
     }
   }
 }
+
+svg {
+  g {
+    &.circle {
+      transform-origin: center;
+      animation: rotating 70s linear infinite;
+    }
+  }
+}

@@ -41,4 +41,25 @@
       }
     }
   }
+
+  &.logo {
+    img {
+      filter: grayscale(1);
+    }
+    .svg {
+      svg {
+        margin: 0 auto;
+      }
+    }
+    .layer2 {
+      background: linear-gradient(
+        30deg,
+        rgba(26, 64, 89, 1) 0%,
+        rgba(26, 64, 89, 1) 26%,
+        rgba(36, 91, 115, 1) 42%,
+        rgba(43, 110, 134, 1) 55%,
+        rgba(69, 177, 201, 1) 100%
+      );
+    }
+  }
 }

@@ -7,6 +7,7 @@ export { BannerMorpheus } from './blocks/banners/BannerMorpheus';
 export { BannerOrbis } from './blocks/banners/BannerOrbis';
 export { BannerOxygen } from './blocks/banners/BannerOxygen';
 export { BannerXenon } from './blocks/banners/BannerXenon';
+export { LogoBanner } from './blocks/LogoBanner';
 export { Button } from './modules/Button';
 export { Container } from './modules/Container';
 export { DynamicIcon } from './modules/DynamicIcon';

@@ -5,8 +5,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      margin: {
+        small: '10px',
+      },
       borderRadius: {
         cards: '20px',
+      },
+      letterSpacing: {
+        logo: '3px',
+        nav: '2.5px',
       },
       fontSize: {
         banner: '60px',
@@ -25,6 +32,7 @@ module.exports = {
         footer: '14px',
         formHeading: '30px',
         iconHeading: '25px',
+        logoBold: '14px',
         logo: '14px',
         navItem: '12px',
         sectionHeading: '45px',
@@ -66,6 +74,7 @@ module.exports = {
       },
       padding: {
         wrap: '0 40px',
+        logoBanner: '173px',
         wrapMobile: '0 20px',
         video: '56.25%',
       },
@@ -74,6 +83,7 @@ module.exports = {
         overlay: 'rgba(0,0,0,0.5)',
         white: '#ffffff',
         black: '#1A4059',
+        gradBase: '#095495',
         color1: '#EE6E24',
         color2: '#F0874C',
         color3: '#F19C1B',
@@ -82,6 +92,7 @@ module.exports = {
         color5: '#A5CD39',
         color6: '#6ACBE1',
         color7: '#45B1C9',
+        color8: '#aa88bf',
       },
       fontFamily: {
         display: ['GP Black'],

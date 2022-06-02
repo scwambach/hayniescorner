@@ -6,7 +6,7 @@ const Overlay = () => {
   const [fade, setFade] = useState<number>(25);
   return (
     <>
-      <div className="fixed top-0 left-0">
+      <div className="fixed top-0 left-0 z-50">
         <button
           className="text-white"
           onClick={() => {

@@ -83,9 +83,14 @@ const BackgroundWrapper = ({
           )}
 
           {backgroundColor && (video || backgroundImage) && (
-            <div
-              className={`absolute inset-0 ${backgroundColor} mix-blend-multiply`}
-            />
+            <>
+              <div
+                className={`absolute layer1 inset-0 ${backgroundColor} mix-blend-multiply opacity-70`}
+              />
+              <div
+                className={`absolute layer2 inset-0 ${backgroundColor} opacity-60`}
+              />
+            </>
           )}
           <div className="content relative mx-auto">{children}</div>
         </div>
