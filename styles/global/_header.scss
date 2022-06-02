@@ -1,11 +1,12 @@
 .header {
   .navigation {
-    margin-right: 20px;
     > ul {
       > li {
-        margin-left: 11px;
         &:nth-child(5n - 4) {
           a {
+            @media screen and (max-width: $lg) {
+              background-color: $color1;
+            }
             &:before {
               background-color: $color1;
             }
@@ -13,6 +14,9 @@
         }
         &:nth-child(5n - 3) {
           a {
+            @media screen and (max-width: $lg) {
+              background-color: $color2;
+            }
             &:before {
               background-color: $color2;
             }
@@ -20,6 +24,9 @@
         }
         &:nth-child(5n - 2) {
           a {
+            @media screen and (max-width: $lg) {
+              background-color: $color5;
+            }
             &:before {
               background-color: $color5;
             }
@@ -27,6 +34,9 @@
         }
         &:nth-child(5n - 1) {
           a {
+            @media screen and (max-width: $lg) {
+              background-color: $color8;
+            }
             &:before {
               background-color: $color8;
             }
@@ -34,15 +44,15 @@
         }
         &:nth-child(5n) {
           a {
+            @media screen and (max-width: $lg) {
+              background-color: $color9;
+            }
             &:before {
               background-color: $color9;
             }
           }
         }
         a {
-          padding: 30px 0;
-          min-width: 103px;
-
           &:hover {
             @media screen and (min-width: ($md + 1)) {
               &:before {
@@ -52,27 +62,19 @@
           }
 
           &:before {
-            content: '';
-            display: block;
-            height: calc(100% - 60px);
-            transition-duration: 0.3s;
-            transition-timing-function: ease-in-out;
-            width: 100%;
-            z-index: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
+            @media screen and (min-width: ($lg + 1)) {
+              content: '';
+              display: block;
+              height: calc(100% - 60px);
+              transition-duration: 0.3s;
+              transition-timing-function: ease-in-out;
+              width: 100%;
+              z-index: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
           }
-
-          span {
-            text-shadow: 0 0 0;
-            transition-duration: 0.3s;
-            transition-timing-function: ease-in-out;
-          }
-        }
-
-        ul {
-          display: none;
         }
 
         &.open,
@@ -89,6 +91,33 @@
             @media screen and (max-width: ($md - 1)) {
               display: block;
             }
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    &.toggle {
+      .bar {
+        transform-origin: center;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+      }
+      &.open {
+        .bar {
+          &:nth-child(1),
+          &:nth-child(3) {
+            width: 20px;
+          }
+          &:nth-child(1) {
+            transform: rotate(-45deg);
+          }
+          &:nth-child(3) {
+            transform: rotate(45deg) translateX(-4px) translateY(-21px);
+          }
+          &:nth-child(2) {
+            transform: scale(0) translateY(-21px);
           }
         }
       }

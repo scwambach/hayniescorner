@@ -6,7 +6,16 @@ module.exports = {
   theme: {
     extend: {
       margin: {
-        small: '10px',
+        five: '5px',
+        ten: '10px',
+        fifteen: '15px',
+        twenty: '20px',
+        twentyFive: '25px',
+        thirty: '30px',
+        thirtyFive: '35px',
+        forty: '40px',
+        fortyFive: '45px',
+        navItem: '11px',
       },
       borderRadius: {
         cards: '20px',
@@ -46,7 +55,7 @@ module.exports = {
         video: '100%',
       },
       minWidth: {
-        menuItem: '104px',
+        menuItem: '103px',
       },
       maxWidth: {
         xs: '360px',
@@ -77,6 +86,15 @@ module.exports = {
         logoBanner: '173px',
         wrapMobile: '0 20px',
         video: '56.25%',
+        five: '5px',
+        ten: '10px',
+        fifteen: '15px',
+        twenty: '20px',
+        twentyFive: '25px',
+        thirty: '30px',
+        thirtyFive: '35px',
+        forty: '40px',
+        fortyFive: '45px',
       },
       colors: {
         transparent: 'rgba(0,0,0,0)',

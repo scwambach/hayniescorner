@@ -27,6 +27,7 @@ interface HeaderProps {
 const Header = ({ items, logo }: HeaderProps) => {
   const [activeIndex, setActiveIndex] = useState<number>();
   const [activeSubIndex, setActiveSubIndex] = useState<number>();
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
   return (
     <header className="header text-white fixed top-0 left-0 w-full z-10">
       <Container maxWidth={breakpoints.xxl}>
@@ -39,7 +40,7 @@ const Header = ({ items, logo }: HeaderProps) => {
                   __html: logo,
                 }}
               />
-              <span className="my-2 ml-5 mt-small tracking-logo">
+              <span className="my-2 ml-5 mt-ten tracking-logo">
                 <span className="font-bold uppercase text-logoBold">
                   Haynie's Corner
                 </span>
@@ -50,13 +51,29 @@ const Header = ({ items, logo }: HeaderProps) => {
               </span>
             </div>
           </LinkObject>
-          <nav className="navigation">
-            <ul className="flex text-navItem uppercase font-bold tracking-nav">
+          <nav className="navigation lg:mr-twenty">
+            <button
+              className={`toggle block w-10 mr-0 ml-auto my-8 lg:hidden ${
+                menuOpen ? 'open' : 'close'
+              }`}
+              onClick={() => {
+                setMenuOpen(!menuOpen);
+              }}
+            >
+              <span className="bar block bg-white h-1 w-full" />
+              <span className="bar block bg-white mt-five h-1 w-full" />
+              <span className="bar block bg-white mt-five h-1 w-full" />
+            </button>
+            <ul
+              className={`hidden lg:flex text-navItem uppercase font-bold tracking-nav ${
+                menuOpen ? 'open' : 'close'
+              }`}
+            >
               {items.map((item, index) => {
                 const { _key, link, subItems = [], classes } = item;
                 return (
                   <li
-                    className={`relative ${
+                    className={`relative lg:ml-navItem ${
                       subItems.length > 0 ? 'hasSub' : ''
                     }${
                       subItems.length > 0 && activeIndex === index
@@ -72,12 +89,12 @@ const Header = ({ items, logo }: HeaderProps) => {
                       {...link}
                       setActiveIndex={setActiveIndex}
                       index={index}
-                      classes={`nav-item relative block text-center${
+                      classes={`nav-item relative block p-5 lg:p-0 lg:py-thirty lg:min-w-menuItem text-center${
                         classes ? ` ${classes}` : ''
                       }`}
                     />
                     {subItems.length > 0 && (
-                      <ul className="subNav absolute top-full bg-white min-w-max right-0 z-10">
+                      <ul className="subNav hidden absolute top-full bg-white min-w-max right-0 z-10">
                         {subItems.map((subItem) => (
                           <li key={subItem._key}>
                             <LinkObject
