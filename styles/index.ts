@@ -8,15 +8,16 @@ export const breakpoints = {
 };
 
 export const colors = {
-  black: '#001219',
   white: '#ffffff',
-  color1: '#005f73',
-  color2: '#0a9396',
-  color3: '#94d2bd',
-  color4: '#e9d8a6',
-  color5: '#ee9b00',
-  color6: '#ca6702',
-  color7: '#bb3e03',
-  color8: '#ae2012',
-  color9: '#9b2226',
+  black: '#1A4059',
+  gradBase: '#095495',
+  color1: '#EE6E24',
+  color2: '#F0874C',
+  color3: '#F19C1B',
+  color4: '#F5C00E',
+  color5: '#C8D92B',
+  color6: '#A5CD39',
+  color7: '#6ACBE1',
+  color8: '#45B1C9',
+  color9: '#aa88bf',
 };

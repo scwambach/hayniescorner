@@ -11,6 +11,7 @@ interface BackgroundWrapperProps {
   priority?: boolean;
   thin?: boolean;
   video?: string;
+  gradient?: boolean;
   backgroundClasses?: string;
   backgroundColor?: string;
 }
@@ -22,6 +23,7 @@ const BackgroundWrapper = ({
   alt,
   priority,
   video,
+  gradient,
   backgroundColor,
 }: BackgroundWrapperProps) => {
   const [visible, setVisible] = useState(false);
@@ -85,10 +87,12 @@ const BackgroundWrapper = ({
           {backgroundColor && (video || backgroundImage) && (
             <>
               <div
-                className={`absolute layer1 inset-0 ${backgroundColor} mix-blend-multiply opacity-70`}
+                className={`absolute layer1 inset-0 ${backgroundColor} mix-blend-multiply opacity-80`}
               />
               <div
-                className={`absolute layer2 inset-0 ${backgroundColor} opacity-60`}
+                className={`absolute ${
+                  gradient ? 'layer2 ' : ''
+                }inset-0  ${backgroundColor} opacity-50`}
               />
             </>
           )}

@@ -43,7 +43,7 @@ const Overlay = () => {
         <>
           {currentOverlay !== '' && currentOverlay !== 'none' && (
             <img
-              className="fixed top-0 left-1/2 -translate-x-1/2 z-50"
+              className="fixed top-0 left-1/2 -translate-x-1/2 z-40"
               src={`/overlays/${currentOverlay}.jpg`}
               style={{
                 pointerEvents: 'none',
