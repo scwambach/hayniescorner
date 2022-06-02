@@ -65,7 +65,7 @@ const Header = ({ items, logo }: HeaderProps) => {
               <span className="bar block bg-white mt-five h-1 w-full" />
             </button>
             <ul
-              className={`hidden lg:flex text-navItem uppercase font-bold tracking-nav ${
+              className={`lg:flex text-navItem uppercase font-bold tracking-nav ${
                 menuOpen ? 'open' : 'close'
               }`}
             >
@@ -73,7 +73,7 @@ const Header = ({ items, logo }: HeaderProps) => {
                 const { _key, link, subItems = [], classes } = item;
                 return (
                   <li
-                    className={`relative lg:ml-navItem ${
+                    className={`relative transition-all ease-in-out opacity-0 lg:opacity-100 lg:ml-navItem ${
                       subItems.length > 0 ? 'hasSub' : ''
                     }${
                       subItems.length > 0 && activeIndex === index
