@@ -5,7 +5,7 @@ interface FooterProps {}
 
 const Footer = (props: FooterProps) => {
   return (
-    <footer className="bg-black text-color6">
+    <footer className="bg-black text-color7">
       <Container maxWidth={breakpoints.xl}>
         <div className="py-12 md:flex md:items-center md:justify-between">
           <div className="mt-8 md:mt-0 md:order-1">
