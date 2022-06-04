@@ -1,6 +1,14 @@
 .header {
   .navigation {
+    @media screen and (max-width: $lg) {
+      width: 50px;
+    }
     > ul {
+      @media screen and (max-width: $lg) {
+        min-width: 100px;
+        right: 20px;
+        position: absolute;
+      }
       > li {
         @media screen and (max-width: $lg) {
           pointer-events: none;
@@ -9,40 +17,40 @@
         &:nth-child(5n - 4) {
           a {
             @media screen and (max-width: $lg) {
-              background-color: $color1;
+              background-color: $red;
             }
             &:before {
-              background-color: $color1;
+              background-color: $red;
             }
           }
         }
         &:nth-child(5n - 3) {
           a {
             @media screen and (max-width: $lg) {
-              background-color: $color2;
+              background-color: $orange;
             }
             &:before {
-              background-color: $color2;
+              background-color: $orange;
             }
           }
         }
         &:nth-child(5n - 2) {
           a {
             @media screen and (max-width: $lg) {
-              background-color: $color5;
+              background-color: $color6;
             }
             &:before {
-              background-color: $color5;
+              background-color: $color6;
             }
           }
         }
         &:nth-child(5n - 1) {
           a {
             @media screen and (max-width: $lg) {
-              background-color: $color8;
+              background-color: $blue;
             }
             &:before {
-              background-color: $color8;
+              background-color: $blue;
             }
           }
         }
