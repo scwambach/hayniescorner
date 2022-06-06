@@ -87,7 +87,7 @@ const BackgroundWrapper = ({
           {backgroundColor && (video || backgroundImage) && (
             <>
               <div
-                className={`absolute layer1 inset-0 ${backgroundColor} mix-blend-multiply opacity-80`}
+                className={`absolute layer1 inset-0 ${backgroundColor} mix-blend-multiply`}
               />
               <div
                 className={`absolute ${
