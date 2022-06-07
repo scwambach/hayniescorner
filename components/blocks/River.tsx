@@ -25,6 +25,7 @@ interface RiverProps {
   shadowColor?: string;
   cap?: boolean;
   foot?: boolean;
+  reverse?: boolean;
 }
 
 const River = ({
@@ -33,12 +34,15 @@ const River = ({
   shadowColor = colors.color5,
   cap = false,
   foot = false,
+  reverse = false,
 }: RiverProps) => {
   return (
     <section
       className={`river relative ${
-        cap ? 'hasCap ' : ''
-      }text-white py-16 md:py-5 lg:py-sectionPadding`}
+        cap
+          ? 'hasCap lg:pt-sectionPadding lg:pb-sectionPaddingBottom '
+          : 'lg:py-sectionPadding '
+      }text-white py-16 md:py-5`}
       style={{
         backgroundColor: bgColor,
       }}
@@ -47,7 +51,7 @@ const River = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1366.636"
-          className="cap hidden md:block absolute w-full h-auto left-0"
+          className="cap hidden md:block mega:hidden absolute w-full h-auto left-0"
           height="65.87"
           viewBox="0 0 1366.636 65.87"
         >
@@ -63,18 +67,22 @@ const River = ({
           <div
             key={_id}
             className={`md:flex md:justify-between items-center featureRow${
-              !isEven(index) ? ' md:flex-row-reverse reverse' : ''
-            }`}
+              !isEven(reverse ? index + 1 : index) ? ' md:flex-row-reverse' : ''
+            }${reverse ? ' reverse' : ''}`}
           >
             <div className="image relative">
               <div className="imgShadow hidden wlg:block absolute z-0">
-                <Shadow color={shadowColor} reverse={!isEven(index)} />
+                <Shadow
+                  color={shadowColor}
+                  reverse={!isEven(reverse ? index + 1 : index)}
+                />
               </div>
               <div className="relative rounded-2xl md:rounded-none overflow-hidden md:overflow-auto z-10 riverImage md:h-full w-full md:w-featImage">
                 <ProgressiveImage
                   isBackground
                   alt={title}
-                  imgWidth={breakpoints.xl}
+                  imgHeight={600}
+                  imgWidth={600}
                   {...image}
                 />
               </div>
@@ -92,7 +100,7 @@ const River = ({
                     <Button
                       key={link._key}
                       index={index}
-                      classes="w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto"
+                      classes="w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto bg-color1"
                     >
                       <LinkObject {...link} />
                     </Button>

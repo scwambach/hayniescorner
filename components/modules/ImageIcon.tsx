@@ -2,8 +2,6 @@ import { ProgressiveImage, ImageProps, DynamicIcon } from '@components';
 
 type Props = {
   customIcon: string;
-  icon: string;
-  color: string;
   blockType?: string;
   size?: number;
   iconImage: ImageProps;
@@ -11,9 +9,7 @@ type Props = {
 
 const ImageIcon = ({
   customIcon,
-  icon,
   iconImage,
-  color,
   size,
   blockType = 'block',
 }: Props) => {
@@ -32,8 +28,6 @@ const ImageIcon = ({
             __html: customIcon,
           }}
         />
-      ) : icon ? (
-        <DynamicIcon name={icon} color={color} size={size} />
       ) : (
         <ProgressiveImage {...iconImage} />
       )}

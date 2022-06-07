@@ -11,6 +11,7 @@
     + .featureRow {
       margin-top: 100px;
     }
+
     .riverImage {
       @media screen and (min-width: ($md + 1)) {
         mask-size: contain;
@@ -19,7 +20,37 @@
       }
 
       @media screen and (max-width: $md) {
-        padding-top: 56%;
+        padding-top: 75%;
+      }
+    }
+
+    &.reverse {
+      &:nth-child(2n) {
+        .riverImage {
+          @media screen and (min-width: ($md + 1)) {
+            mask-image: url('/imageShape.svg');
+          }
+        }
+
+        .imgShadow {
+          left: -50px;
+          top: 50%;
+          transform: translateY(calc(-50% + 20px));
+        }
+      }
+
+      &:nth-child(2n - 1) {
+        .riverImage {
+          @media screen and (min-width: ($md + 1)) {
+            mask-image: url('/imageShape2.svg');
+          }
+        }
+
+        .imgShadow {
+          left: 50px;
+          top: 50%;
+          transform: translateY(calc(-50% + 10px));
+        }
       }
     }
 

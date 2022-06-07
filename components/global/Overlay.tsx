@@ -4,6 +4,7 @@ const Overlay = () => {
   const [currentOverlay, setCurrentOverlay] = useState<string>('');
   const [active, setActive] = useState<boolean>(false);
   const [fade, setFade] = useState<number>(25);
+  const [position, setPosition] = useState<number>(0);
   return (
     <>
       <div className="fixed top-0 left-0 z-50">
@@ -22,6 +23,15 @@ const Overlay = () => {
               defaultValue={fade}
               onChange={(e) => {
                 setFade(Math.round(parseInt(e.target.value)));
+              }}
+            />
+            <input
+              type="range"
+              defaultValue={position}
+              min={-200}
+              max={200}
+              onChange={(e) => {
+                setPosition(Math.round(parseInt(e.target.value)));
               }}
             />
             <select
@@ -43,10 +53,11 @@ const Overlay = () => {
         <>
           {currentOverlay !== '' && currentOverlay !== 'none' && (
             <img
-              className="fixed top-0 left-1/2 -translate-x-1/2 z-40"
+              className="absolute top-0 left-1/2 -translate-x-1/2 z-40"
               src={`/overlays/${currentOverlay}.jpg`}
               style={{
                 pointerEvents: 'none',
+                top: `${position}px`,
                 opacity: `${fade / 100}`,
               }}
             />

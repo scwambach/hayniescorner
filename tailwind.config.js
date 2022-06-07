@@ -24,6 +24,7 @@ module.exports = {
         logo: '3px',
         nav: '2.5px',
         featureHeading: '2.2px',
+        eventTypeHeading: '5.2px',
       },
       fontSize: {
         banner: '60px',
@@ -59,6 +60,7 @@ module.exports = {
         menuItem: '103px',
       },
       lineHeight: {
+        base: '1',
         featBody: '1.67',
       },
       maxWidth: {
@@ -69,6 +71,8 @@ module.exports = {
         wlg: '1064px',
         xl: '1280px',
         xxl: '1348px',
+        mega: '2400px',
+        eventTypeHeading: '300px',
         businessCard: '566px',
         date: '96px',
         event: '566px',
@@ -86,6 +90,7 @@ module.exports = {
         wlg: '1064px',
         xl: '1280px',
         xxl: '1348px',
+        mega: '2400px',
       },
       padding: {
         wrap: '0 40px',
@@ -101,7 +106,9 @@ module.exports = {
         thirtyFive: '35px',
         forty: '40px',
         fortyFive: '45px',
+        eventList: '93px 20px 93px 73px',
         sectionPadding: '93px',
+        sectionPaddingBottom: '120px',
       },
       colors: {
         transparent: 'rgba(0,0,0,0)',
