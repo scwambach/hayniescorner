@@ -9,7 +9,7 @@ interface ButtonProps {
 const Button = ({ children, classes, index }: ButtonProps) => {
   return (
     <span
-      className={`button relative text-base border text-center border-transparent transition-all rounded-md shadow-sm ${classes}`}
+      className={`button uppercase font-black tracking-nav relative text-sm lg:text-button border text-center border-transparent transition-all rounded-md shadow-sm ${classes}`}
     >
       {children}
     </span>

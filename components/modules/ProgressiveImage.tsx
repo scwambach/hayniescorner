@@ -71,7 +71,7 @@ const ProgressiveImage = ({
       priority={priority}
       quality={quality}
       placeholder="blur"
-      className={`${
+      className={`progressiveImage ${
         isBackground
           ? 'max-h-full min-h-full transition-all ease-in-out max-w-full min-w-full object-cover object-center pointer-events-none '
           : ''

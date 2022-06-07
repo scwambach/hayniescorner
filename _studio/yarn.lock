@@ -5463,7 +5463,7 @@ isnumeric@^0.2.0:
 
 isobject@^2.0.0:
   version "2.1.0"
-  resolved "https://registry.npmjs.org/isobject/-/isobject-2.1.0.tgz#f065561096a3f1da2ef46272f815c840d87e0c89"
+  resolved "https://registry.npmjs.org/isobject/-/isobject-2.1.0.tgz#f065561064a3f1da2ef46272f815c840d87e0c89"
   dependencies:
     isarray "1.0.0"
 
@@ -5570,7 +5570,7 @@ json-parse-even-better-errors@^2.3.0:
 
 json-reduce@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.npmjs.org/json-reduce/-/json-reduce-2.0.0.tgz#c5529625eb1096c05f912a56dca264d53459c685"
+  resolved "https://registry.npmjs.org/json-reduce/-/json-reduce-2.0.0.tgz#c5529625eb1064c05f912a56dca264d53459c685"
 
 json-schema-traverse@^0.3.0:
   version "0.3.1"

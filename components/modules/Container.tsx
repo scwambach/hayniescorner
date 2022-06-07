@@ -7,7 +7,9 @@ interface Props {
 const Container = ({ maxWidth, edges = false, children }: Props) => {
   return (
     <div
-      className={`w-full mx-auto${!edges ? ' p-wrapMobile lg:p-wrap' : ''}`}
+      className={`w-full mx-auto${
+        !edges ? ' px-5 sm:p-wrapMobile lg:p-wrap' : ''
+      }`}
       style={{
         maxWidth: typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`,
       }}

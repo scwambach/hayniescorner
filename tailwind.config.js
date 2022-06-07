@@ -23,6 +23,7 @@ module.exports = {
       letterSpacing: {
         logo: '3px',
         nav: '2.5px',
+        featureHeading: '2.2px',
       },
       fontSize: {
         banner: '60px',
@@ -57,11 +58,15 @@ module.exports = {
       minWidth: {
         menuItem: '103px',
       },
+      lineHeight: {
+        featBody: '1.67',
+      },
       maxWidth: {
         xs: '360px',
         sm: '480px',
         md: '768px',
         lg: '1024px',
+        wlg: '1064px',
         xl: '1280px',
         xxl: '1348px',
         businessCard: '566px',
@@ -78,13 +83,14 @@ module.exports = {
         sm: '480px',
         md: '768px',
         lg: '1024px',
+        wlg: '1064px',
         xl: '1280px',
         xxl: '1348px',
       },
       padding: {
         wrap: '0 40px',
         logoBanner: '173px',
-        wrapMobile: '0 20px',
+        wrapMobile: '0 50px',
         video: '56.25%',
         five: '5px',
         ten: '10px',
@@ -95,6 +101,7 @@ module.exports = {
         thirtyFive: '35px',
         forty: '40px',
         fortyFive: '45px',
+        sectionPadding: '93px',
       },
       colors: {
         transparent: 'rgba(0,0,0,0)',

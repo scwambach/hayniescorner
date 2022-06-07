@@ -9,7 +9,7 @@ interface LinkObjectProps {
   index?: number;
   newTab?: boolean;
   setActiveIndex?: any;
-  url: string;
+  url?: string;
 }
 
 const LinkObject = ({

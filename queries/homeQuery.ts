@@ -1,7 +1,5 @@
-import { portableTextQuery } from './portableTextQuery';
 import { groq } from 'next-sanity';
 import imageQuery from './imageQuery';
-import headingQuery from './headingQuery';
 
 export const homeQuery = groq`*[_type == "homePage"][0] {
   title,
@@ -15,5 +13,14 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
     customIcon -> {
       ...,
     },
+  },
+  aboutFeatures {
+    features[] -> {
+      _id,
+      title,
+      blockContent,
+      ${imageQuery({ name: 'image' })},
+      links,
+    }
   }
 }`;

@@ -1,66 +1,126 @@
-import { breakpoints } from '@styles';
 import {
-  BannerMercury,
-  BannerProps,
-  ComponentProps,
   Container,
-  Heading,
+  ImageProps,
+  LinkProps,
+  ProgressiveImage,
+  PortableTextModule,
+  Button,
+  LinkObject,
 } from '@components';
-import { hasHeading, isEven } from '@utils';
+import { Shadow } from '@components/svg/Shadow';
+import { breakpoints, colors } from '@styles';
+import { isEven } from '@utils';
 
-interface Feature extends BannerProps {
-  _key: string;
+interface FeatureProps {
+  _id: string;
+  blockContent?: any | any[];
+  image: ImageProps;
+  links?: LinkProps[];
+  title: string;
 }
 
-interface RiverProps extends ComponentProps {
-  contained?: boolean;
-  features: Feature[];
-  flipImageSide?: boolean;
+interface RiverProps {
+  features: FeatureProps[];
+  bgColor?: string;
+  shadowColor?: string;
+  cap?: boolean;
+  foot?: boolean;
 }
 
 const River = ({
-  backgroundColor = 'bg-white',
-  contained,
-  containerClasses = 'py-24 transition-all ease-in-out flex flex-col justify-center text-center max-w-lg m-auto',
   features,
-  flipImageSide,
-  heading,
-  message,
-  priority,
-  subHeading,
+  bgColor = colors.color6,
+  shadowColor = colors.color5,
+  cap = false,
+  foot = false,
 }: RiverProps) => {
-  const headingProps = {
-    containerClasses,
-    heading,
-    headingClasses:
-      'mb-7 text-3xl md:text-4xl lg:text-5xl leading-none font-display',
-    level: 2,
-    message,
-    messageClasses: 'text-base md:text-2xl',
-    subHeading,
-    subHeadingClasses:
-      'mb-7 text-2xl md:text-3xl lg:text-4xl leading-none font-display',
-  };
-
   return (
     <section
-      className={`river relative overflow-hidden font-body ${backgroundColor}`}
+      className={`river relative ${
+        cap ? 'hasCap ' : ''
+      }text-white py-16 md:py-5 lg:py-sectionPadding`}
+      style={{
+        backgroundColor: bgColor,
+      }}
     >
-      <Container maxWidth={contained ? breakpoints.xxl : '100%'} edges>
-        {hasHeading(headingProps) && <Heading {...headingProps} />}
-        {features.map((feature, index) => {
-          const orderNumber = flipImageSide ? index + 1 : index;
-          return (
-            <BannerMercury
-              key={feature._key}
-              {...feature}
-              index={orderNumber + 1}
-              priority={priority}
-              backgroundColor={isEven(index) ? 'bg-color2' : 'bg-color1 '}
-            />
-          );
-        })}
+      {cap && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1366.636"
+          className="cap hidden md:block absolute w-full h-auto left-0"
+          height="65.87"
+          viewBox="0 0 1366.636 65.87"
+        >
+          <path
+            d="M0,0,1366-65.87V0H0Z"
+            transform="translate(0.636 65.87)"
+            fill={bgColor}
+          />
+        </svg>
+      )}
+      <Container maxWidth={breakpoints.wlg}>
+        {features.map(({ _id, blockContent, image, links, title }, index) => (
+          <div
+            key={_id}
+            className={`md:flex md:justify-between items-center featureRow${
+              !isEven(index) ? ' md:flex-row-reverse reverse' : ''
+            }`}
+          >
+            <div className="image relative">
+              <div className="imgShadow hidden wlg:block absolute z-0">
+                <Shadow color={shadowColor} reverse={!isEven(index)} />
+              </div>
+              <div className="relative rounded-2xl md:rounded-none overflow-hidden md:overflow-auto z-10 riverImage md:h-full w-full md:w-featImage">
+                <ProgressiveImage
+                  isBackground
+                  alt={title}
+                  imgWidth={breakpoints.xl}
+                  {...image}
+                />
+              </div>
+            </div>
+            <div className="copy pt-12 max-w-xs md:max-w-none md:py-12">
+              <h2 className="font-black uppercase text-xl lg:text-featHeading tracking-featureHeading mb-7">
+                {title}
+              </h2>
+              <div className="font-semibold text-base lg:text-featBody leading-featBody">
+                <PortableTextModule text={blockContent} />
+              </div>
+              {links && (
+                <div className="mt-7">
+                  {links.map((link, index) => (
+                    <Button
+                      key={link._key}
+                      index={index}
+                      classes="w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto"
+                    >
+                      <LinkObject {...link} />
+                    </Button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
       </Container>
+      {foot && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1366.636"
+          className={`foot rotate-180 absolute w-full h-auto left-0 ${bgColor.replace(
+            'bg-',
+            'text-'
+          )}`}
+          height="65.87"
+          viewBox="0 0 1366.636 65.87"
+        >
+          <path
+            d="M0,0,1366-65.87V0H0Z"
+            transform="translate(0.636 65.87)"
+            fill="currentColor"
+          />
+        </svg>
+      )}
     </section>
   );
 };

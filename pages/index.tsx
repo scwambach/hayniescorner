@@ -1,7 +1,8 @@
 import React from 'react';
 import { homeQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
-import { LogoBanner, PageLayout } from '@components';
+import { colors } from '@styles';
+import { LogoBanner, PageLayout, River } from '@components';
 
 type Props = {
   content: any;
@@ -12,6 +13,7 @@ const IndexPage = ({ content, global }: Props) => {
   return (
     <PageLayout content={content} global={global}>
       <LogoBanner {...content.heroBanner} priority align="text-center" />
+      <River {...content.aboutFeatures} cap bgColor={colors.color6} />
     </PageLayout>
   );
 };
