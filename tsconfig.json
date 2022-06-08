@@ -23,8 +23,8 @@
       "@queries/*": ["queries/*"],
       "@styles": ["styles"],
       "@styles/*": ["styles/*"],
-      "@svgs": ["svgs"],
-      "@svgs/*": ["svgs/*"]
+      "@svgs": ["components/svg"],
+      "@svgs/*": ["components/svg/*"]
     },
     "incremental": true
   },

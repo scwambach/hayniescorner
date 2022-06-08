@@ -37,6 +37,15 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
     links,
     title,
   },
+  linkTiles {
+    heading,
+    tiles[] {
+      _key,
+      link,
+      "customIcon": customIcon -> customStyleCode.code,
+      ${imageQuery({ name: 'iconImage' })},
+    }
+  },
   closerFeatures {
     features[] -> {
       _id,

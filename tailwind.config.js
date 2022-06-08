@@ -25,6 +25,7 @@ module.exports = {
         nav: '2.5px',
         featureHeading: '2.2px',
         eventTypeHeading: '5.2px',
+        sectionHeading: '3.5px',
       },
       fontSize: {
         banner: '60px',

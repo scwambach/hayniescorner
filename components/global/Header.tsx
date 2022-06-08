@@ -29,7 +29,7 @@ const Header = ({ items, logo }: HeaderProps) => {
   const [activeSubIndex, setActiveSubIndex] = useState<number>();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   return (
-    <header className="header text-white fixed top-0 left-0 w-full z-10">
+    <header className="header text-white fixed top-0 left-0 w-full z-50">
       <Container maxWidth={breakpoints.xxl}>
         <div className="flex justify-between items-start">
           <LinkObject url="/">

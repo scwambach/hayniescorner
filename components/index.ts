@@ -18,6 +18,7 @@ export { IconListBanner } from './blocks/IconListBanner';
 export { ImageIcon } from './modules/ImageIcon';
 export { Layout } from './wrappers/Layout';
 export { LinkObject } from './modules/LinkObject';
+export { LinkTiles } from './blocks/LinkTiles';
 export { Logo } from './svg/Logo';
 export { LogoBanner } from './blocks/LogoBanner';
 export { LogoWhite } from './svg/LogoWhite';

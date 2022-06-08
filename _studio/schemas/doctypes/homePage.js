@@ -102,6 +102,11 @@ export default {
       },
       fields: [
         {
+          name: 'heading',
+          title: 'Heading',
+          type: 'string',
+        },
+        {
           name: 'tiles',
           title: 'Tiles',
           type: 'array',
