@@ -26,6 +26,12 @@
 
     &.reverse {
       &:nth-child(2n) {
+        @media (max-width: $lg) and (min-width: ($md + 1)) {
+          max-width: 762px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
         .riverImage {
           @media screen and (min-width: ($md + 1)) {
             mask-image: url('/imageShape.svg');
@@ -40,6 +46,21 @@
       }
 
       &:nth-child(2n - 1) {
+        @media screen and (min-width: ($md + 1)) {
+          max-width: 762px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media screen and (min-width: ($lg + 1)) {
+          max-width: 922px;
+        }
+
+        .copy {
+          @media screen and (min-width: ($lg + 1)) {
+            max-width: calc(100% - 500px);
+          }
+        }
         .riverImage {
           @media screen and (min-width: ($md + 1)) {
             mask-image: url('/imageShape2.svg');
@@ -54,31 +75,55 @@
       }
     }
 
-    &:nth-child(2n) {
-      .riverImage {
+    &.regular {
+      &:nth-child(2n) {
         @media screen and (min-width: ($md + 1)) {
-          mask-image: url('/imageShape2.svg');
+          max-width: 762px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media screen and (min-width: ($lg + 1)) {
+          max-width: 922px;
+        }
+
+        .copy {
+          @media screen and (min-width: ($lg + 1)) {
+            max-width: calc(100% - 500px);
+          }
+        }
+
+        .riverImage {
+          @media screen and (min-width: ($md + 1)) {
+            mask-image: url('/imageShape2.svg');
+          }
+        }
+
+        .imgShadow {
+          left: 50px;
+          top: 50%;
+          transform: translateY(calc(-50% + 10px));
         }
       }
 
-      .imgShadow {
-        left: 50px;
-        top: 50%;
-        transform: translateY(calc(-50% + 10px));
-      }
-    }
-
-    &:nth-child(2n - 1) {
-      .riverImage {
-        @media screen and (min-width: ($md + 1)) {
-          mask-image: url('/imageShape.svg');
+      &:nth-child(2n - 1) {
+        @media (max-width: $lg) and (min-width: ($md + 1)) {
+          max-width: 762px;
+          margin-left: auto;
+          margin-right: auto;
         }
-      }
 
-      .imgShadow {
-        left: -50px;
-        top: 50%;
-        transform: translateY(calc(-50% + 20px));
+        .riverImage {
+          @media screen and (min-width: ($md + 1)) {
+            mask-image: url('/imageShape.svg');
+          }
+        }
+
+        .imgShadow {
+          left: -50px;
+          top: 50%;
+          transform: translateY(calc(-50% + 20px));
+        }
       }
     }
 

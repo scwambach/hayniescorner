@@ -73,7 +73,7 @@ module.exports = {
         xl: '1280px',
         xxl: '1348px',
         mega: '2400px',
-        eventTypeHeading: '300px',
+        eventTypeHeading: '280px',
         businessCard: '566px',
         date: '96px',
         event: '566px',

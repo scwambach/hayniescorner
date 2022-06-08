@@ -42,7 +42,9 @@ const River = ({
         cap
           ? 'hasCap lg:pt-sectionPadding lg:pb-sectionPaddingBottom '
           : 'lg:py-sectionPadding '
-      }text-white py-16 md:py-5`}
+      }text-white py-16 md:py-5${
+        reverse ? ' reverse-block' : ' regular-block'
+      }`}
       style={{
         backgroundColor: bgColor,
       }}
@@ -68,7 +70,7 @@ const River = ({
             key={_id}
             className={`md:flex md:justify-between items-center featureRow${
               !isEven(reverse ? index + 1 : index) ? ' md:flex-row-reverse' : ''
-            }${reverse ? ' reverse' : ''}`}
+            }${reverse ? ' reverse' : ' regular'}`}
           >
             <div className="image relative">
               <div className="imgShadow hidden wlg:block absolute z-0">
@@ -100,7 +102,9 @@ const River = ({
                     <Button
                       key={link._key}
                       index={index}
-                      classes="w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto bg-color1"
+                      classes={`w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto ${
+                        isEven(index) ? 'bg-color1' : 'bg-orange'
+                      }`}
                     >
                       <LinkObject {...link} />
                     </Button>

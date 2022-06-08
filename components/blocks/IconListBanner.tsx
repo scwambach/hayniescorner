@@ -45,7 +45,7 @@ const IconListBanner = ({
         <div className="py-16 md:py-sectionPadding text-white">
           <Container maxWidth={breakpoints.lg}>
             <div className="xmd:flex xmd:ml-4 w-full items-center justify-between">
-              <div className="copy max-w-xs mx-auto mb-12 xmd:mb-0 xmd:max-w-eventTypeHeading">
+              <div className="copy max-w-xs mx-auto xmd:mx-0 mb-12 xmd:mb-0 xmd:max-w-eventTypeHeading">
                 <h3 className="font-black uppercase leading-base tracking-eventTypeHeading text-4xl lg:text-eventTypeHeading mb-5">
                   {title}
                 </h3>
@@ -69,7 +69,7 @@ const IconListBanner = ({
                 )}
               </div>
 
-              <div className="bg-orange mx-auto content-box rounded-2xl px-7 py-10 md:p-eventListMobile lg:p-eventList w-full flex flex-col h-full max-w-featList">
+              <div className="bg-orange mx-auto xmd:mx-0 content-box rounded-2xl px-7 py-10 md:p-eventListMobile lg:p-eventList w-full flex flex-col h-full max-w-featList">
                 <svg className="clip-svg absolute w-0 h-0">
                   <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
                     <path d="M0.037,0,0.966,0.036 A0.035,0.033,0,0,1,1,0.069 v0.863 a0.035,0.033,0,0,1,-0.034,0.033 L0.037,1 A0.035,0.033,0,0,1,0,0.967 V0.033 A0.035,0.033,0,0,1,0.037,0"></path>
