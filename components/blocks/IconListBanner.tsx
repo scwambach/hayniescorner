@@ -42,11 +42,11 @@ const IconListBanner = ({
   return (
     <section className="iconListBanner relative overflow-hidden">
       <BackgroundWrapper {...backgroundProps}>
-        <div className="py-16 md:py-5 lg:py-sectionPadding text-white">
+        <div className="py-16 md:py-sectionPadding text-white">
           <Container maxWidth={breakpoints.lg}>
-            <div className="flex lg:ml-4 w-full items-center justify-between">
-              <div className="copy lg:max-w-eventTypeHeading">
-                <h3 className="font-black uppercase leading-base tracking-eventTypeHeading lg:text-eventTypeHeading mb-5">
+            <div className="xmd:flex xmd:ml-4 w-full items-center justify-between">
+              <div className="copy max-w-xs mx-auto mb-12 xmd:mb-0 xmd:max-w-eventTypeHeading">
+                <h3 className="font-black uppercase leading-base tracking-eventTypeHeading text-4xl lg:text-eventTypeHeading mb-5">
                   {title}
                 </h3>
                 {blockContent && (
@@ -60,7 +60,7 @@ const IconListBanner = ({
                       <Button
                         key={link._key}
                         index={index}
-                        classes="w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto bg-color7 whitespace-nowrap"
+                        classes="w-full block xmd:inline-block mx-auto xmd:mx-0 sm:w-full xmd:w-auto bg-color7 whitespace-nowrap"
                       >
                         <LinkObject {...link} />
                       </Button>
@@ -69,7 +69,7 @@ const IconListBanner = ({
                 )}
               </div>
 
-              <div className="bg-orange content-box rounded-2xl p-eventList w-full flex flex-col h-full max-w-featList">
+              <div className="bg-orange mx-auto content-box rounded-2xl px-7 py-10 md:p-eventListMobile lg:p-eventList w-full flex flex-col h-full max-w-featList">
                 <svg className="clip-svg absolute w-0 h-0">
                   <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
                     <path d="M0.037,0,0.966,0.036 A0.035,0.033,0,0,1,1,0.069 v0.863 a0.035,0.033,0,0,1,-0.034,0.033 L0.037,1 A0.035,0.033,0,0,1,0,0.967 V0.033 A0.035,0.033,0,0,1,0.037,0"></path>
@@ -78,17 +78,17 @@ const IconListBanner = ({
                 {items.map((item, index) => (
                   <div
                     key={item._id}
-                    className={`flex w-full items-center${
+                    className={`sm:flex w-full text-center sm:text-left sm:justify-between items-center${
                       index !== 0 ? ' mt-7' : ''
                     }`}
                   >
-                    <div className="w-14 flex justify-center">
+                    <div className="itemIcon mx-auto mb-3 sm:m-0 flex justify-center">
                       <ImageIcon
                         customIcon={item.customIcon}
                         iconImage={item.iconImage}
                       />
                     </div>
-                    <div className="font-semibold uppercase text-iconHeading ml-6">
+                    <div className="itemTitle font-semibold uppercase text-iconHeading">
                       {item.title}
                     </div>
                   </div>
