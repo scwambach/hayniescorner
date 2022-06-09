@@ -26,6 +26,7 @@ module.exports = {
         featureHeading: '2.2px',
         eventTypeHeading: '5.2px',
         sectionHeading: '3.5px',
+        tile: '2.5px',
       },
       fontSize: {
         banner: '60px',
@@ -71,6 +72,7 @@ module.exports = {
         xmd: '860px',
         lg: '1024px',
         wlg: '1064px',
+        sxl: '1150px',
         xl: '1280px',
         xxl: '1348px',
         mega: '2400px',
@@ -91,6 +93,7 @@ module.exports = {
         xmd: '860px',
         lg: '1024px',
         wlg: '1064px',
+        sxl: '1150px',
         xl: '1280px',
         xxl: '1348px',
         mega: '2400px',

@@ -35,7 +35,10 @@ export default {
         collapsible: true,
         collapsed: true,
       },
-      fields: [...backgroundImage({ required: true }), ...iconSelector()],
+      fields: [
+        ...backgroundImage({ required: true }),
+        ...iconSelector({ requireIcon: true, hideImage: true }),
+      ],
     },
     {
       name: 'aboutFeatures',
@@ -51,11 +54,13 @@ export default {
           name: 'features',
           title: 'Features',
           type: 'array',
+          validation: (Rule) => Rule.required().min(1),
           of: [
             {
               name: 'featureObj',
               title: 'Feature',
               type: 'reference',
+              validation: (Rule) => Rule.required(),
               to: [{ type: 'feature' }],
             },
           ],
@@ -72,7 +77,12 @@ export default {
         collapsed: true,
       },
       fields: [
-        { name: 'title', title: 'Heading', type: 'string' },
+        {
+          name: 'title',
+          title: 'Heading',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
         ...backgroundImage({ required: true }),
         { ...blockContent() },
         { ...links() },
@@ -80,11 +90,13 @@ export default {
           name: 'items',
           title: 'Items',
           type: 'array',
+          validation: (Rule) => Rule.required().min(3),
           of: [
             {
               name: 'iconItem',
               title: 'Icon Item',
               type: 'reference',
+              validation: (Rule) => Rule.required(),
               to: [{ type: 'iconItem' }],
             },
           ],
@@ -110,6 +122,7 @@ export default {
           name: 'tiles',
           title: 'Tiles',
           type: 'array',
+          validation: (Rule) => Rule.required().min(2).max(3),
           of: [
             {
               name: 'tile',
@@ -172,10 +185,12 @@ export default {
           name: 'features',
           title: 'Features',
           type: 'array',
+          validation: (Rule) => Rule.required().min(1),
           of: [
             {
               name: 'featureObj',
               title: 'Feature',
+              validation: (Rule) => Rule.required(),
               type: 'reference',
               to: [{ type: 'feature' }],
             },

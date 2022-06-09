@@ -26,21 +26,23 @@ const LinkTiles = ({ heading, tiles }: LinkTilesProps) => {
       <Tile1 />
       <Tile2 />
       <Tile3 />
-      <Container maxWidth={breakpoints.xl}>
-        <h3 className="text-blue uppercase text-center tracking-sectionHeading font-black text-3xl md:text-sectionHeading">
+      <Container maxWidth={breakpoints.sxl}>
+        <h3 className="text-blue uppercase text-center tracking-sectionHeading font-black text-3xl md:text-sectionHeading mb-20">
           {heading}
         </h3>
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row md:justify-between gap-10 sxl:gap-0">
           {tiles.map(({ _key, link, customIcon, iconImage }) => (
             <LinkObject
               key={_key}
-              classes="tile text-tileHeading text-white font-black tracking-sectionHeading uppercase relative"
+              classes="tile w-full rounded-2xl sxl:rounded-0 flex justify-center items-center relative p-2 py-10 sxl:p-0"
               {...link}
             >
-              <div className="icon flex justify-center">
+              <div className="icon flex justify-center sxl:mt-6 mb-8">
                 <ImageIcon customIcon={customIcon} iconImage={iconImage} />
               </div>
-              {link.copy}
+              <span className="block text-tileHeading leading-base text-white text-center uppercase font-black tracking-tile">
+                {link.copy}
+              </span>
             </LinkObject>
           ))}
         </div>
