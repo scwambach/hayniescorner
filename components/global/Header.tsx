@@ -42,7 +42,7 @@ const Header = ({ items, logo }: HeaderProps) => {
               />
               <span className="my-2 ml-5 mt-ten tracking-logo">
                 <span className="font-bold uppercase text-logoBold">
-                  Haynie's Corner
+                  Haynie&apos;s Corner
                 </span>
                 <br />
                 <div className="font-medium uppercase text-logo">

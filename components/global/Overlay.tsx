@@ -55,6 +55,7 @@ const Overlay = () => {
             <img
               className="absolute top-0 left-1/2 -translate-x-1/2 z-40"
               src={`/overlays/${currentOverlay}.jpg`}
+              alt="image overlay"
               style={{
                 pointerEvents: 'none',
                 top: `${position}px`,

@@ -29,9 +29,6 @@ export { ProgressiveImage } from './modules/ProgressiveImage';
 export { Pwa } from './global/Pwa';
 export { River } from './blocks/River';
 export { Seo } from './global/Seo';
-export { Testimonial } from './modules/Testimonial';
-export { Testimonials } from './blocks/Testimonials';
-export { TestimonialTile } from './modules/TestimonialTile';
 export { VideoModal } from './modules/VideoModal';
 
 export type {
