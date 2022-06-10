@@ -22,14 +22,23 @@ const PageLayout = ({ children, content, global }: PageLayoutProps) => {
         <Seo {...seoProps} />
         <Header
           items={menuItems}
-          logo={
+          iconImage={global.site.mainLogoImage}
+          customIcon={
             global.site.mainLogo
               ? global.site.mainLogo.customStyleCode.code
-              : global.site.mainLogoImage
+              : null
           }
         />
         {children}
-        <Footer />
+        <Footer
+          socials={global.socials}
+          iconImage={global.site.footerLogoImage}
+          customIcon={
+            global.site.footerLogo
+              ? global.site.footerLogo.customStyleCode.code
+              : null
+          }
+        />
       </main>
     </Layout>
   );

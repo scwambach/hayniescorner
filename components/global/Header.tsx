@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { breakpoints } from '@styles';
-import { Container, LinkObject } from '@components';
+import { Container, LinkObject, ImageIcon, ImageProps } from '@components';
 
 interface HeaderProps {
-  logo?: any;
+  iconImage?: ImageProps;
+  customIcon?: string;
   items: {
     _key: string;
     classes: string;
@@ -24,7 +25,7 @@ interface HeaderProps {
   }[];
 }
 
-const Header = ({ items, logo }: HeaderProps) => {
+const Header = ({ items, iconImage, customIcon }: HeaderProps) => {
   const [activeIndex, setActiveIndex] = useState<number>();
   const [activeSubIndex, setActiveSubIndex] = useState<number>();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -34,12 +35,7 @@ const Header = ({ items, logo }: HeaderProps) => {
         <div className="flex justify-between items-start">
           <LinkObject url="/">
             <div className="flex my-4 items-center">
-              <span
-                style={{}}
-                dangerouslySetInnerHTML={{
-                  __html: logo,
-                }}
-              />
+              <ImageIcon iconImage={iconImage} customIcon={customIcon} />
               <span className="my-2 ml-5 mt-ten tracking-logo">
                 <span className="font-bold uppercase text-logoBold">
                   Haynie&apos;s Corner

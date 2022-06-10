@@ -1,18 +1,49 @@
-import { Container } from '@components/modules/Container';
-import { breakpoints } from '@styles';
+import {
+  Container,
+  ImageIcon,
+  ImageProps,
+  DynamicIcon,
+  LinkObject,
+} from '@components';
+import { breakpoints, colors } from '@styles';
 
-interface FooterProps {}
+interface FooterProps {
+  iconImage?: ImageProps;
+  customIcon?: string;
+  socials?: {
+    _id: string;
+    icon: string;
+    url: string;
+  }[];
+}
 
-const Footer = (props: FooterProps) => {
+const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
   return (
-    <footer className="bg-black text-color7">
+    <footer className="bg-black text-color7 text-footer">
       <Container maxWidth={breakpoints.xl}>
         <div className="py-12 md:flex md:items-center md:justify-between">
-          <div className="mt-8 md:mt-0 md:order-1">
-            <p className="text-center text-footer">
-              &copy; 2022 Wambach Web Development All rights reserved.
-            </p>
-          </div>
+          <p>&copy; 2022 | Haynie's Corner Arts Disctrict Association</p>
+          <LinkObject url="/">
+            <ImageIcon iconImage={iconImage} customIcon={customIcon} />
+          </LinkObject>
+          <p className="flex items-center justify-between gap-2">
+            <span>Follow us!</span>
+            {socials.map((soc) => (
+              <div key={soc._id}>
+                <LinkObject newTab={true} url={soc.url}>
+                  <DynamicIcon
+                    name={soc.icon}
+                    color={colors.color7}
+                    size={16}
+                  />
+                </LinkObject>
+              </div>
+            ))}
+            |&nbsp;&nbsp;
+            <LinkObject url="https://sproutyourdesign.com" newTab={true}>
+              Site Design by Sprout Design
+            </LinkObject>
+          </p>
         </div>
       </Container>
     </footer>

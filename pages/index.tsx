@@ -1,4 +1,3 @@
-import React from 'react';
 import { homeQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
 import { colors } from '@styles';
