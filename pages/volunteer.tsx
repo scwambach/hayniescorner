@@ -14,24 +14,15 @@ type Props = {
   global: any;
 };
 
-const IndexPage = ({ content, global }: Props) => {
+const VolunteerPage = ({ content, global }: Props) => {
   return (
     <PageLayout content={content} global={global}>
-      <LogoBanner {...content.heroBanner} priority align="text-center" />
-      <River {...content.aboutFeatures} cap bgColor={colors.color6} />
-      <IconListBanner {...content.eventTypes} bgColor={colors.color6} />
-      <LinkTiles {...content.linkTiles} />
-      <River
-        {...content.closerFeatures}
-        reverse
-        bgColor={colors.blue}
-        shadowColor={colors.color7}
-      />
+      <h1 className="text-7xl pt-52 bg-black text-white">Volunteer Page</h1>
     </PageLayout>
   );
 };
 
-export default IndexPage;
+export default VolunteerPage;
 
 export async function getStaticProps({ res, err, query, preview = false }) {
   const doc = await getClient(query?.preview === '').fetch(homeQuery);
