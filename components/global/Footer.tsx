@@ -1,10 +1,5 @@
-import {
-  Container,
-  ImageIcon,
-  ImageProps,
-  DynamicIcon,
-  LinkObject,
-} from '@components';
+import { Container, ImageProps, DynamicIcon, LinkObject } from '@components';
+import ImageIcon from '@components/modules/ImageIcon';
 import { breakpoints, colors } from '@styles';
 
 interface FooterProps {
@@ -19,14 +14,14 @@ interface FooterProps {
 
 const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
   return (
-    <footer className="bg-black text-color7 text-footer">
+    <footer className="bg-black text-color7 text-footer py-10">
       <Container maxWidth={breakpoints.xl}>
-        <div className="py-12 md:flex md:items-center md:justify-between">
-          <p>&copy; 2022 | Haynie's Corner Arts Disctrict Association</p>
-          <LinkObject url="/">
+        <div className="py-12 text-center lg:text-left flex flex-col lg:flex-row items-center lg:justify-between">
+          <p>&copy; 2022 | Haynie&apos;s Corner Arts Disctrict Association</p>
+          <LinkObject url="/" classes="my-10 lg:my-0">
             <ImageIcon iconImage={iconImage} customIcon={customIcon} />
           </LinkObject>
-          <p className="flex items-center justify-between gap-2">
+          <div className="flex items-center justify-center lg:justify-between gap-2">
             <span>Follow us!</span>
             {socials.map((soc) => (
               <div key={soc._id}>
@@ -39,11 +34,11 @@ const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
                 </LinkObject>
               </div>
             ))}
-            |&nbsp;&nbsp;
+            &nbsp;&nbsp;|&nbsp;&nbsp;
             <LinkObject url="https://sproutyourdesign.com" newTab={true}>
               Site Design by Sprout Design
             </LinkObject>
-          </p>
+          </div>
         </div>
       </Container>
     </footer>
