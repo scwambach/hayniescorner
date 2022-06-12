@@ -1,13 +1,19 @@
-import { Layout, Seo, Header, Footer } from '@components';
+import { PageBanner, Layout, Seo, Header, Footer } from '@components';
 
 interface PageLayoutProps {
   children: any | any[];
   content?: any;
   global?: any;
   preview?: boolean;
+  subPage?: boolean;
 }
 
-const PageLayout = ({ children, content, global }: PageLayoutProps) => {
+const PageLayout = ({
+  children,
+  content,
+  global,
+  subPage,
+}: PageLayoutProps) => {
   const seoProps = {
     content,
     global,
@@ -18,10 +24,11 @@ const PageLayout = ({ children, content, global }: PageLayoutProps) => {
 
   return (
     <Layout>
-      <main className="bg-white">
+      <main className={`bg-black${subPage ? ' pt-headerHeight' : ''}`}>
         <Seo {...seoProps} />
         <Header
           items={menuItems}
+          subPage={subPage}
           iconImage={global.site.mainLogoImage}
           customIcon={
             global.site.mainLogo
@@ -29,6 +36,7 @@ const PageLayout = ({ children, content, global }: PageLayoutProps) => {
               : null
           }
         />
+        {subPage && <PageBanner />}
         {children}
         <Footer
           socials={global.socials}

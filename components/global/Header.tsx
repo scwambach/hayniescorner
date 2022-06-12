@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { breakpoints } from '@styles';
 import { Container, LinkObject, ImageIcon, ImageProps } from '@components';
 
 interface HeaderProps {
   iconImage?: ImageProps;
   customIcon?: string;
+  subPage?: boolean;
   items: {
     _key: string;
     classes: string;
@@ -25,12 +26,30 @@ interface HeaderProps {
   }[];
 }
 
-const Header = ({ items, iconImage, customIcon }: HeaderProps) => {
+const Header = ({ items, iconImage, customIcon, subPage }: HeaderProps) => {
   const [activeIndex, setActiveIndex] = useState<number>();
   const [activeSubIndex, setActiveSubIndex] = useState<number>();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [scrollingDown, setScrollingDown] = useState(false);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.oldScroll < window.scrollY && window.scrollY > 100) {
+        setScrollingDown(true);
+      } else if (window.scrollY < 100) {
+        setScrollingDown(false);
+      }
+
+      window.oldScroll = window.scrollY;
+    };
+  }, []);
+
   return (
-    <header className="header text-white fixed top-0 left-0 w-full z-40">
+    <header
+      className={`header text-white transition-all ease-in-out fixed ${
+        subPage || scrollingDown ? 'bg-black ' : ''
+      }top-0 left-0 w-full z-30`}
+    >
       <Container maxWidth={breakpoints.xxl}>
         <div className="flex justify-between items-start">
           <LinkObject url="/">

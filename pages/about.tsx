@@ -1,13 +1,6 @@
 import { homeQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
-import { colors } from '@styles';
-import {
-  LogoBanner,
-  PageLayout,
-  River,
-  IconListBanner,
-  LinkTiles,
-} from '@components';
+import { PageLayout } from '@components';
 
 type Props = {
   content: any;
@@ -16,7 +9,7 @@ type Props = {
 
 const AboutPage = ({ content, global }: Props) => {
   return (
-    <PageLayout content={content} global={global}>
+    <PageLayout content={content} global={global} subPage>
       <h1 className="text-7xl pt-52 bg-black text-white">About Page</h1>
     </PageLayout>
   );

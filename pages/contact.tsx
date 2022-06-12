@@ -1,14 +1,6 @@
 import { homeQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
-import { colors } from '@styles';
-import {
-  LogoBanner,
-  PageLayout,
-  River,
-  IconListBanner,
-  LinkTiles,
-  BannerOxygen,
-} from '@components';
+import { PageLayout } from '@components';
 
 type Props = {
   content: any;
@@ -18,7 +10,6 @@ type Props = {
 const ContactPage = ({ content, global }: Props) => {
   return (
     <PageLayout content={content} global={global}>
-      <BannerOxygen heading="Contact" />
       <h1 className="text-7xl pt-52 bg-black text-white">Contact Page</h1>
     </PageLayout>
   );
