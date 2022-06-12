@@ -1,7 +1,7 @@
 import { businessesQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
 import { PageLayout } from '@components';
-
+import { BusinessListing } from '@components';
 type Props = {
   content: any;
   global: any;
@@ -14,7 +14,7 @@ const BusinessesPage = ({ content, global }: Props) => {
       global={global}
       subPage={{ banner: content.heroBanner, color: 'bg-red' }}
     >
-      {/* content */}
+      <BusinessListing sections={content.sections.businessTypes} />
     </PageLayout>
   );
 };

@@ -25,6 +25,7 @@ export default {
       name: 'heroBanner',
       title: 'Banner',
       fieldset: 'pageBody',
+      validation: (Rule) => Rule.required().min(1),
       type: 'object',
       options: {
         collapsed: true,
@@ -34,6 +35,7 @@ export default {
         ...backgroundImage({ required: true }),
         {
           name: 'heading',
+          validation: (Rule) => Rule.required().min(1),
           title: 'Heading',
           type: 'string',
         },
@@ -42,6 +44,7 @@ export default {
     {
       name: 'sections',
       title: 'Sections',
+      validation: (Rule) => Rule.required(),
       type: 'object',
       fieldset: 'pageBody',
       options: {
@@ -51,6 +54,7 @@ export default {
       fields: [
         {
           name: 'businessTypes',
+          validation: (Rule) => Rule.required().min(1),
           title: 'Business Types',
           type: 'array',
           of: [

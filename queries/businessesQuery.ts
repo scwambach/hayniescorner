@@ -10,5 +10,20 @@ export const businessesQuery = groq`*[_type == "businessesPage"][0] {
   heroBanner {
     ${imageQuery({ name: 'backgroundImage' })},
     heading
+  },
+  sections {
+    businessTypes[]  {
+      _key,
+      "type": *[_type == 'businessCategory' && (_id == ^._ref)][0] {
+        _id,
+        title,
+      },
+      "businesses": *[_type == 'business' && references(^._ref)] | order(title asc) {
+        title, 
+        image,
+        url,
+        _id
+      }
+    }
   }
 }`;

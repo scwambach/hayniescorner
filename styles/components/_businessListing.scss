@@ -1,0 +1,34 @@
+.businesslisting {
+  .type {
+    &:nth-child(3n - 2) {
+      background-color: $red;
+      svg {
+        path {
+          fill: $red;
+        }
+      }
+    }
+    &:nth-child(3n - 1) {
+      background-color: $brightOrange;
+      svg {
+        path {
+          fill: $brightOrange;
+        }
+      }
+    }
+    &:nth-child(3n) {
+      background-color: $yellow;
+      svg {
+        transform: scaleX(-1);
+        path {
+          fill: $yellow;
+        }
+      }
+    }
+
+    svg {
+      bottom: 100%;
+      z-index: 10;
+    }
+  }
+}
