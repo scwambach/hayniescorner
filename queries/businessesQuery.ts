@@ -20,7 +20,7 @@ export const businessesQuery = groq`*[_type == "businessesPage"][0] {
       },
       "businesses": *[_type == 'business' && references(^._ref)] | order(title asc) {
         title, 
-        image,
+        ${imageQuery({ name: 'image' })},
         url,
         _id
       }
