@@ -1,4 +1,7 @@
 .banner {
+  img {
+    filter: grayscale(1);
+  }
   .buttons {
     .button {
       + .button {
@@ -7,45 +10,13 @@
     }
   }
 
-  &.durango {
-    .imageIcon {
-      padding-bottom: 20px;
-      min-height: 110px;
-
-      img,
-      svg {
-        display: block;
-        width: auto;
-        height: 80px !important;
-
-        @media (max-width: $sm) and (min-width: ($xs + 1)) {
-          height: 20vw !important;
-        }
-      }
-
-      svg {
-        display: block;
-        margin: 0 auto;
-
-        * {
-          stroke: $white;
-        }
-      }
-    }
-  }
-
-  &.citra {
-    &:first-of-type {
-      .citra-image {
-        margin-top: 0;
-      }
+  &.subpage {
+    h1 {
+      text-shadow: $textShadow;
     }
   }
 
   &.logo {
-    img {
-      filter: grayscale(1);
-    }
     .svg {
       svg {
         max-width: 80%;

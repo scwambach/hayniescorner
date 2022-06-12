@@ -128,6 +128,7 @@ module.exports = {
         color2: '#F0874C',
         color3: '#F19C1B',
         orange: '#f89c26',
+        brightOrange: '#F89C1C',
         color4: '#F5C00E',
         yellow: '#ffc10e',
         color5: '#C8D92B',

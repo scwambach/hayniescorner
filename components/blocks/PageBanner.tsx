@@ -1,30 +1,32 @@
-import { Container, Heading, ComponentProps } from '@components';
-import { hasHeading } from '@utils';
+import { Container, ImageProps, ComponentProps } from '@components';
+import BackgroundWrapper from '@components/wrappers/BackgroundWrapper';
 import { breakpoints } from '@styles';
 
-interface PageBannerProps extends ComponentProps {}
+interface PageBannerProps extends ComponentProps {
+  backgroundImage: ImageProps;
+  backgroundColor: string;
+  heading: string;
+}
 
-const PageBanner = (props: PageBannerProps) => {
+const PageBanner = ({
+  backgroundImage,
+  backgroundColor,
+  heading,
+}: PageBannerProps) => {
+  const backgroundProps = {
+    backgroundImage,
+    backgroundColor,
+  };
   return (
-    <div className="pagebanner relative font-body">
-      <Container maxWidth={breakpoints.xxl}>
-        <code>
-          <pre
-            style={{
-              fontFamily: 'monospace',
-              display: 'block',
-              padding: '50px',
-              color: '#88ffbf',
-              backgroundColor: 'black',
-              textAlign: 'left',
-              whiteSpace: 'pre-wrap',
-            }}
-          >
-            {JSON.stringify(props, null, '    ')}
-          </pre>
-        </code>
-      </Container>
-    </div>
+    <section className="banner subpage relative font-body text-center text-white">
+      <BackgroundWrapper {...backgroundProps}>
+        <Container maxWidth={breakpoints.xxl}>
+          <h1 className="font-black text-banner uppercase tracking-sectionHeading py-32">
+            {heading}
+          </h1>
+        </Container>
+      </BackgroundWrapper>
+    </section>
   );
 };
 

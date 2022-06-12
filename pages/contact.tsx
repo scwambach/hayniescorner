@@ -1,4 +1,4 @@
-import { homeQuery, siteQuery } from '@queries';
+import { contactQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
 import { PageLayout } from '@components';
 
@@ -9,8 +9,12 @@ type Props = {
 
 const ContactPage = ({ content, global }: Props) => {
   return (
-    <PageLayout content={content} global={global}>
-      <h1 className="text-7xl pt-52 bg-black text-white">Contact Page</h1>
+    <PageLayout
+      content={content}
+      global={global}
+      subPage={{ banner: content.heroBanner, color: 'bg-color9' }}
+    >
+      {/* content */}
     </PageLayout>
   );
 };
@@ -18,7 +22,7 @@ const ContactPage = ({ content, global }: Props) => {
 export default ContactPage;
 
 export async function getStaticProps({ res, err, query, preview = false }) {
-  const doc = await getClient(query?.preview === '').fetch(homeQuery);
+  const doc = await getClient(query?.preview === '').fetch(contactQuery);
   const global = await getClient(query?.preview === '').fetch(siteQuery);
 
   if (!doc) {

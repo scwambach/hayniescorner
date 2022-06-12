@@ -24,6 +24,7 @@ export default {
     {
       name: 'heroBanner',
       title: 'Banner',
+      validation: (Rule) => Rule.required(),
       fieldset: 'pageBody',
       type: 'object',
       options: {
@@ -35,12 +36,14 @@ export default {
         {
           name: 'heading',
           title: 'Heading',
+          validation: (Rule) => Rule.required(),
           type: 'string',
         },
       ],
     },
     {
       name: 'formHeading',
+      validation: (Rule) => Rule.required(),
       title: 'Form Heading',
       fieldset: 'pageBody',
       type: 'string',

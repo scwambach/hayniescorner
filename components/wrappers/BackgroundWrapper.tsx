@@ -91,8 +91,8 @@ const BackgroundWrapper = ({
               />
               <div
                 className={`absolute ${
-                  gradient ? 'layer2 ' : ''
-                }inset-0  ${backgroundColor} opacity-50`}
+                  gradient ? 'layer2 opacity-50 ' : 'opacity-70 '
+                }inset-0  ${backgroundColor}`}
               />
             </>
           )}

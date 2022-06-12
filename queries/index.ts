@@ -3,3 +3,8 @@ export { homeQuery } from './homeQuery';
 export { imageQuery, assetQuery } from './imageQuery';
 export { portableTextQuery } from './portableTextQuery';
 export { siteQuery } from './siteQuery';
+export { volunteerQuery } from './volunteerQuery';
+export { aboutQuery } from './aboutQuery';
+export { businessesQuery } from './businessesQuery';
+export { contactQuery } from './contactQuery';
+export { eventsQuery } from './eventsQuery';

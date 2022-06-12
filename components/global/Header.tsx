@@ -5,7 +5,7 @@ import { Container, LinkObject, ImageIcon, ImageProps } from '@components';
 interface HeaderProps {
   iconImage?: ImageProps;
   customIcon?: string;
-  subPage?: boolean;
+  subPage?: any;
   items: {
     _key: string;
     classes: string;

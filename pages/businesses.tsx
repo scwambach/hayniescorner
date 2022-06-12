@@ -1,4 +1,4 @@
-import { homeQuery, siteQuery } from '@queries';
+import { businessesQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
 import { PageLayout } from '@components';
 
@@ -9,8 +9,12 @@ type Props = {
 
 const BusinessesPage = ({ content, global }: Props) => {
   return (
-    <PageLayout content={content} global={global} subPage>
-      <h1 className="text-7xl pt-52 bg-black text-white">Businesses Page</h1>
+    <PageLayout
+      content={content}
+      global={global}
+      subPage={{ banner: content.heroBanner, color: 'bg-red' }}
+    >
+      {/* content */}
     </PageLayout>
   );
 };
@@ -18,7 +22,7 @@ const BusinessesPage = ({ content, global }: Props) => {
 export default BusinessesPage;
 
 export async function getStaticProps({ res, err, query, preview = false }) {
-  const doc = await getClient(query?.preview === '').fetch(homeQuery);
+  const doc = await getClient(query?.preview === '').fetch(businessesQuery);
   const global = await getClient(query?.preview === '').fetch(siteQuery);
 
   if (!doc) {

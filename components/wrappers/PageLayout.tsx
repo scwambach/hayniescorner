@@ -5,7 +5,7 @@ interface PageLayoutProps {
   content?: any;
   global?: any;
   preview?: boolean;
-  subPage?: boolean;
+  subPage?: { banner: any; color: string };
 }
 
 const PageLayout = ({
@@ -36,7 +36,9 @@ const PageLayout = ({
               : null
           }
         />
-        {subPage && <PageBanner />}
+        {subPage && (
+          <PageBanner {...subPage.banner} backgroundColor={subPage.color} />
+        )}
         {children}
         <Footer
           socials={global.socials}
