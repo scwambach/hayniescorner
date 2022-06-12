@@ -21,7 +21,7 @@ const PageBanner = ({
     <section className="banner subpage relative font-body text-center text-white">
       <BackgroundWrapper {...backgroundProps}>
         <Container maxWidth={breakpoints.xxl}>
-          <h1 className="font-black text-banner uppercase tracking-sectionHeading py-32">
+          <h1 className="font-black text-4xl md:text-banner uppercase tracking-sectionHeading leading-tight  py-16 md:py-32">
             {heading}
           </h1>
         </Container>
