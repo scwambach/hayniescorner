@@ -1,5 +1,6 @@
 export { Accordion } from './blocks/Accordion';
 export { BusinessListing } from './blocks/BusinessListing';
+export { EventListing } from './blocks/EventListing';
 export { BackgroundWrapper } from './wrappers/BackgroundWrapper';
 export { Button } from './modules/Button';
 export { Container } from './modules/Container';

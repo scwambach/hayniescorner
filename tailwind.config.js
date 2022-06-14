@@ -72,6 +72,7 @@ module.exports = {
       maxWidth: {
         xs: '360px',
         sm: '480px',
+        smd: '640px',
         md: '768px',
         xmd: '860px',
         lg: '1024px',
@@ -93,6 +94,7 @@ module.exports = {
       screens: {
         xs: '360px',
         sm: '480px',
+        smd: '640px',
         md: '768px',
         xmd: '860px',
         lg: '1024px',
