@@ -18,6 +18,7 @@ const IndexPage = ({ content, global }: Props) => {
   return (
     <PageLayout content={content} global={global}>
       <LogoBanner {...content.heroBanner} priority align="text-center" />
+
       <River {...content.aboutFeatures} cap bgColor={colors.color6} />
       <IconListBanner {...content.eventTypes} bgColor={colors.color6} />
       <LinkTiles {...content.linkTiles} />

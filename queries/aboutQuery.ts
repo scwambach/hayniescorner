@@ -10,5 +10,17 @@ export const aboutQuery = groq`*[_type == "aboutPage"][0] {
   heroBanner {
     ${imageQuery({ name: 'backgroundImage' })},
     heading
-  }
+  },
+  aboutFeatures {
+    features[] {
+      feature -> {
+        _id,
+        title,
+        blockContent,
+        ${imageQuery({ name: 'image' })},
+        links,
+      },
+      extraLinks,
+    }
+  },
 }`;

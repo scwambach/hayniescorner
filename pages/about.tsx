@@ -1,6 +1,7 @@
 import { aboutQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
-import { PageLayout } from '@components';
+import { PageLayout, River } from '@components';
+import { colors } from '@styles';
 
 type Props = {
   content: any;
@@ -14,7 +15,12 @@ const AboutPage = ({ content, global }: Props) => {
       global={global}
       subPage={{ banner: content.heroBanner, color: 'bg-color6' }}
     >
-      {/* content */}
+      <River
+        {...content.aboutFeatures}
+        cap
+        bgColor={colors.black}
+        shadowColor={colors.color6}
+      />
     </PageLayout>
   );
 };

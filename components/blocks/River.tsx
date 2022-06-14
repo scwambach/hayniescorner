@@ -12,11 +12,14 @@ import { breakpoints, colors } from '@styles';
 import { isEven } from '@utils';
 
 interface FeatureProps {
-  _id: string;
-  blockContent?: any | any[];
-  image: ImageProps;
-  links?: LinkProps[];
-  title: string;
+  feature: {
+    _id: string;
+    blockContent?: any | any[];
+    image: ImageProps;
+    links?: LinkProps[];
+    title: string;
+  };
+  extraLinks?: LinkProps[];
 }
 
 interface RiverProps {
@@ -67,55 +70,77 @@ const River = ({
         </svg>
       )}
       <Container maxWidth={breakpoints.wlg}>
-        {features.map(({ _id, blockContent, image, links, title }, index) => (
-          <div
-            key={_id}
-            className={`md:flex md:justify-between items-center featureRow${
-              !isEven(reverse ? index + 1 : index) ? ' md:flex-row-reverse' : ''
-            }${reverse ? ' reverse' : ' regular'}`}
-          >
-            <div className="image relative">
-              <div className="imgShadow hidden wlg:block absolute z-0">
-                <SVG.Shadow
-                  color={shadowColor}
-                  reverse={!isEven(reverse ? index + 1 : index)}
-                />
-              </div>
-              <div className="riverImage relative rounded-2xl md:rounded-none overflow-hidden md:overflow-auto z-10 md:h-full w-full md:w-featImage">
-                <ProgressiveImage
-                  isBackground
-                  alt={title}
-                  imgHeight={600}
-                  imgWidth={600}
-                  {...image}
-                />
-              </div>
-            </div>
-            <div className="copy pt-12 max-w-xs md:max-w-none md:py-12">
-              <h2 className="font-black uppercase text-xl lg:text-featHeading tracking-featureHeading mb-7">
-                {title}
-              </h2>
-              <div className="font-semibold text-base lg:text-featBody leading-featBody">
-                <PortableTextModule text={blockContent} />
-              </div>
-              {links && (
-                <div className="mt-7">
-                  {links.map((link, index) => (
-                    <Button
-                      key={link._key}
-                      index={index}
-                      classes={`w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto ${
-                        isEven(index) ? 'bg-color1' : 'bg-orange'
-                      }`}
-                    >
-                      <LinkObject {...link} />
-                    </Button>
-                  ))}
+        {features.map(
+          (
+            {
+              extraLinks,
+              feature: { _id, blockContent, image, links = [], title },
+            },
+            index
+          ) => {
+            const allLinks = [];
+
+            if (links) {
+              allLinks.push(...links);
+            }
+            if (extraLinks) {
+              allLinks.push(...extraLinks);
+            }
+
+            return (
+              <div
+                key={_id}
+                className={`md:flex md:justify-between items-center featureRow${
+                  !isEven(reverse ? index + 1 : index)
+                    ? ' md:flex-row-reverse'
+                    : ''
+                }${reverse ? ' reverse' : ' regular'}`}
+              >
+                <div className="image relative">
+                  <div className="imgShadow hidden wlg:block absolute z-0">
+                    <SVG.Shadow
+                      color={shadowColor}
+                      reverse={!isEven(reverse ? index + 1 : index)}
+                    />
+                  </div>
+                  <div className="riverImage relative rounded-2xl md:rounded-none overflow-hidden md:overflow-auto z-10 md:h-full w-full md:w-featImage">
+                    <ProgressiveImage
+                      isBackground
+                      alt={title}
+                      imgHeight={600}
+                      imgWidth={600}
+                      {...image}
+                    />
+                  </div>
                 </div>
-              )}
-            </div>
-          </div>
-        ))}
+                <div className="copy pt-12 max-w-xs md:max-w-none md:py-12">
+                  <h2 className="font-black uppercase text-xl lg:text-featHeading tracking-featureHeading mb-7">
+                    {title}
+                  </h2>
+                  <div className="font-semibold text-base lg:text-featBody leading-featBody">
+                    <PortableTextModule text={blockContent} />
+                  </div>
+
+                  {allLinks.length > 0 && (
+                    <div className="mt-7">
+                      {allLinks.map((link, index) => (
+                        <Button
+                          key={link._key}
+                          index={index}
+                          classes={`w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto ${
+                            isEven(index) ? 'bg-color1' : 'bg-orange'
+                          }`}
+                        >
+                          <LinkObject {...link} />
+                        </Button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          }
+        )}
       </Container>
       {foot && (
         <svg

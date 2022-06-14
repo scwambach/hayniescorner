@@ -59,9 +59,29 @@ export default {
             {
               name: 'featureObj',
               title: 'Feature',
-              type: 'reference',
-              validation: (Rule) => Rule.required(),
-              to: [{ type: 'feature' }],
+              type: 'object',
+              fields: [
+                {
+                  name: 'feature',
+                  title: 'Feature',
+                  type: 'reference',
+                  validation: (Rule) => Rule.required(),
+                  to: [{ type: 'feature' }],
+                },
+                { ...links({ name: 'extraLinks', title: 'Extra Links' }) },
+              ],
+              preview: {
+                select: {
+                  title: 'feature.title',
+                  media: 'feature.image',
+                },
+                prepare({ title, media }) {
+                  return {
+                    title,
+                    media,
+                  };
+                },
+              },
             },
           ],
         },
@@ -190,9 +210,29 @@ export default {
             {
               name: 'featureObj',
               title: 'Feature',
-              validation: (Rule) => Rule.required(),
-              type: 'reference',
-              to: [{ type: 'feature' }],
+              type: 'object',
+              fields: [
+                {
+                  name: 'feature',
+                  title: 'Feature',
+                  type: 'reference',
+                  validation: (Rule) => Rule.required(),
+                  to: [{ type: 'feature' }],
+                },
+                { ...links({ name: 'extraLinks', title: 'Extra Links' }) },
+              ],
+              preview: {
+                select: {
+                  title: 'feature.title',
+                  media: 'feature.image',
+                },
+                prepare({ title, media }) {
+                  return {
+                    title,
+                    media,
+                  };
+                },
+              },
             },
           ],
         },

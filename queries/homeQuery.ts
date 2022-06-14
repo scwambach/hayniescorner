@@ -16,12 +16,15 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
     },
   },
   aboutFeatures {
-    features[] -> {
-      _id,
-      title,
-      blockContent,
-      ${imageQuery({ name: 'image' })},
-      links,
+    features[] {
+      feature -> {
+        _id,
+        title,
+        blockContent,
+        ${imageQuery({ name: 'image' })},
+        links,
+      },
+      extraLinks,
     }
   },
   eventTypes {
@@ -47,12 +50,15 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
     }
   },
   closerFeatures {
-    features[] -> {
-      _id,
-      title,
-      blockContent,
-      ${imageQuery({ name: 'image' })},
-      links,
+    features[] {
+      feature -> {
+        _id,
+        title,
+        blockContent,
+        ${imageQuery({ name: 'image' })},
+        links,
+      },
+      extraLinks,
     }
   }
 }`;
