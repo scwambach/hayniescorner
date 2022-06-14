@@ -58,7 +58,13 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
                   >
                     <div className="relative">
                       <div className="cardImage">
-                        <ProgressiveImage {...business.image} isBackground />
+                        <ProgressiveImage
+                          {...business.image}
+                          imgWidth={600}
+                          imgHeight={400}
+                          alt={business.title}
+                          isBackground
+                        />
                       </div>
                       <div className="relative z-10 overflow-hidden h-0 pt-businessCard">
                         <h3 className="text-businessTitle absolute px-10 bottom-10 w-full font-black uppercase tracking-sectionHeading leading-base">

@@ -41,7 +41,7 @@ const IconListBanner = ({
   };
   return (
     <section className="iconListBanner relative overflow-hidden">
-      <BackgroundWrapper {...backgroundProps}>
+      <BackgroundWrapper {...backgroundProps} alt={title}>
         <div className="py-16 md:py-sectionPadding text-white">
           <Container maxWidth={breakpoints.lg}>
             <div className="xmd:flex xmd:ml-4 w-full items-center justify-between">

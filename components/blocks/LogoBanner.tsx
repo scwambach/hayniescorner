@@ -24,7 +24,11 @@ const LogoBanner = ({
 
   return (
     <section className={`banner logo relative font-body`}>
-      <BackgroundWrapper gradient {...backgroundProps}>
+      <BackgroundWrapper
+        gradient
+        {...backgroundProps}
+        alt="Photo of Haynie's Corner"
+      >
         {logo && (
           <div
             className="svg py-logoBanner m-auto"
