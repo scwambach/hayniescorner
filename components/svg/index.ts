@@ -4,3 +4,6 @@ export { LogoWhite } from './LogoWhite';
 export { Shadow } from './Shadow';
 export { RiverImage1, RiverImage2 } from './RiverImages';
 export { Box } from './Box';
+export { Cap } from './Cap';
+export { ListBox } from './ListBox';
+export { Tile1, Tile2, Tile3 } from './Tiles';

@@ -4,7 +4,7 @@ import {
   Container,
   LinkObject,
 } from '@components';
-import * as Card from '@svgs';
+import * as SVG from '@svgs';
 import { breakpoints } from '@styles';
 import { noOrphans } from '@utils';
 
@@ -35,15 +35,7 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
             key={_key}
             className="type py-16 md:pb-36 lg:pt-sectionPadding lg:pb-52 mega:pb-sectionPaddingBottom relative"
           >
-            <svg
-              className="cap hidden md:block mega:hidden absolute h-auto left-0"
-              viewBox="0 0 1366.636 65.87"
-            >
-              <path
-                d="M0,0,1366-65.87V0H0Z"
-                transform="translate(0.636 65.87)"
-              />
-            </svg>
+            <SVG.Cap />
             <Container maxWidth={breakpoints.bl}>
               <h2 className="font-black uppercase leading-tight mb-14 tracking-sectionHeading text-businessType">
                 {type.title}
@@ -78,11 +70,11 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
             </Container>
           </div>
         ))}
-        <Card.Card1 />
-        <Card.Card2 />
-        <Card.Card3 />
-        <Card.Card4 />
-        <Card.Card5 />
+        <SVG.Card1 />
+        <SVG.Card2 />
+        <SVG.Card3 />
+        <SVG.Card4 />
+        <SVG.Card5 />
       </div>
     </section>
   );

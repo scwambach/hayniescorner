@@ -27,7 +27,6 @@ interface RiverProps {
   bgColor?: string;
   shadowColor?: string;
   cap?: boolean;
-  foot?: boolean;
   reverse?: boolean;
 }
 
@@ -36,7 +35,6 @@ const River = ({
   bgColor = colors.color6,
   shadowColor = colors.color5,
   cap = false,
-  foot = false,
   reverse = false,
 }: RiverProps) => {
   return (
@@ -54,21 +52,7 @@ const River = ({
     >
       <SVG.RiverImage1 />
       <SVG.RiverImage2 />
-      {cap && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1366.636"
-          className="cap hidden md:block mega:hidden absolute h-auto left-0"
-          height="65.87"
-          viewBox="0 0 1366.636 65.87"
-        >
-          <path
-            d="M0,0,1366-65.87V0H0Z"
-            transform="translate(0.636 65.87)"
-            fill={bgColor}
-          />
-        </svg>
-      )}
+      {cap && <SVG.Cap bgColor={bgColor} />}
       <Container maxWidth={breakpoints.wlg}>
         {features.map(
           (
@@ -142,24 +126,6 @@ const River = ({
           }
         )}
       </Container>
-      {foot && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1366.636"
-          className={`foot rotate-180 absolute w-full h-auto left-0 ${bgColor.replace(
-            'bg-',
-            'text-'
-          )}`}
-          height="65.87"
-          viewBox="0 0 1366.636 65.87"
-        >
-          <path
-            d="M0,0,1366-65.87V0H0Z"
-            transform="translate(0.636 65.87)"
-            fill="currentColor"
-          />
-        </svg>
-      )}
     </section>
   );
 };

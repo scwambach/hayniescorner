@@ -7,7 +7,7 @@ import {
 } from '@components';
 
 import { breakpoints } from '@styles';
-import * as Tile from '@svgs/Tiles';
+import * as SVG from '@svgs';
 
 interface LinkTilesProps {
   heading?: string;
@@ -22,9 +22,9 @@ interface LinkTilesProps {
 const LinkTiles = ({ heading, tiles }: LinkTilesProps) => {
   return (
     <section className="linkTiles relative py-16  lg:py-sectionPadding bg-black">
-      <Tile.Tile1 />
-      <Tile.Tile2 />
-      <Tile.Tile3 />
+      <SVG.Tile1 />
+      <SVG.Tile2 />
+      <SVG.Tile3 />
       <Container maxWidth={breakpoints.sxl}>
         <h3 className="text-blue uppercase text-center tracking-sectionHeading font-black text-3xl md:text-sectionHeading mb-20">
           {heading}
