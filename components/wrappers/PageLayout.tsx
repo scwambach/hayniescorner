@@ -24,7 +24,11 @@ const PageLayout = ({
 
   return (
     <Layout>
-      <main className={`bg-black${subPage ? ' pt-headerHeight' : ''}`}>
+      <main
+        className={`bg-black overflow-hidden${
+          subPage ? ' pt-headerHeight' : ''
+        }`}
+      >
         <Seo {...seoProps} />
         <Header
           items={menuItems}

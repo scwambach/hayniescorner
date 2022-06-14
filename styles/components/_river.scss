@@ -1,7 +1,4 @@
 .river {
-  .cap {
-    bottom: calc(100% - 1px);
-  }
   .foot {
     top: calc(100% - 1px);
     transform: scaleX(-1) rotate(180deg);
@@ -27,9 +24,7 @@
         }
 
         .riverImage {
-          @media screen and (min-width: ($md + 1)) {
-            clip-path: url('#riverImage1');
-          }
+          clip-path: url('#riverImage1');
         }
 
         .imgShadow {
@@ -56,9 +51,7 @@
           }
         }
         .riverImage {
-          @media screen and (min-width: ($md + 1)) {
-            clip-path: url('#riverImage2');
-          }
+          clip-path: url('#riverImage2');
         }
 
         .imgShadow {
@@ -88,9 +81,7 @@
         }
 
         .riverImage {
-          @media screen and (min-width: ($md + 1)) {
-            clip-path: url('#riverImage2');
-          }
+          clip-path: url('#riverImage2');
         }
 
         .imgShadow {
@@ -108,9 +99,7 @@
         }
 
         .riverImage {
-          @media screen and (min-width: ($md + 1)) {
-            clip-path: url('#riverImage1');
-          }
+          clip-path: url('#riverImage1');
         }
 
         .imgShadow {

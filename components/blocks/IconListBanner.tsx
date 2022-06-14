@@ -69,12 +69,12 @@ const IconListBanner = ({
                 )}
               </div>
 
-              <div className="bg-orange mx-auto xmd:mx-0 content-box rounded-2xl px-7 py-10 md:p-eventListMobile lg:p-eventList w-full flex flex-col h-full max-w-featList">
-                <svg className="clip-svg absolute w-0 h-0">
-                  <clipPath id="listBox" clipPathUnits="objectBoundingBox">
-                    <path d="M0.037,0,0.966,0.036 A0.035,0.033,0,0,1,1,0.069 v0.863 a0.035,0.033,0,0,1,-0.034,0.033 L0.037,1 A0.035,0.033,0,0,1,0,0.967 V0.033 A0.035,0.033,0,0,1,0.037,0"></path>
-                  </clipPath>
-                </svg>
+              <svg className="clip-svg absolute w-0 h-0">
+                <clipPath id="listBox" clipPathUnits="objectBoundingBox">
+                  <path d="M0.037,0,0.966,0.036 A0.035,0.033,0,0,1,1,0.069 v0.863 a0.035,0.033,0,0,1,-0.034,0.033 L0.037,1 A0.035,0.033,0,0,1,0,0.967 V0.033 A0.035,0.033,0,0,1,0.037,0"></path>
+                </clipPath>
+              </svg>
+              <div className="bg-orange mx-auto xmd:mx-0 content-box rounded-2xl px-7 py-16 md:p-eventListMobile lg:p-eventList w-full flex flex-col h-full max-w-featList">
                 {items.map((item, index) => (
                   <div
                     key={item._id}

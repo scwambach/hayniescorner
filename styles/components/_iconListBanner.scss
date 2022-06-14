@@ -1,8 +1,6 @@
 .iconListBanner {
   .content-box {
-    @media screen and (min-width: ($md + 1)) {
-      clip-path: url('#listBox');
-    }
+    clip-path: url('#listBox');
 
     .itemIcon {
       width: 56px;

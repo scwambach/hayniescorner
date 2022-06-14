@@ -36,7 +36,7 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
             className="type py-16 md:pb-36 lg:pt-sectionPadding lg:pb-52 mega:pb-sectionPaddingBottom relative"
           >
             <svg
-              className="cap hidden md:block mega:hidden absolute w-full h-auto left-0"
+              className="cap hidden md:block mega:hidden absolute h-auto left-0"
               viewBox="0 0 1366.636 65.87"
             >
               <path
@@ -67,7 +67,7 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
                         />
                       </div>
                       <div className="relative z-10 overflow-hidden h-0 pt-businessCard">
-                        <h3 className="text-businessTitle absolute px-10 bottom-10 w-full font-black uppercase tracking-sectionHeading leading-base">
+                        <h3 className="text-xl md:text-businessTitle absolute px-10 bottom-10 w-full font-black uppercase tracking-sectionHeading leading-base">
                           {noOrphans(business.title)}
                         </h3>
                       </div>

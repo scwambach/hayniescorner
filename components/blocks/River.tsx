@@ -58,7 +58,7 @@ const River = ({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1366.636"
-          className="cap hidden md:block mega:hidden absolute w-full h-auto left-0"
+          className="cap hidden md:block mega:hidden absolute h-auto left-0"
           height="65.87"
           viewBox="0 0 1366.636 65.87"
         >

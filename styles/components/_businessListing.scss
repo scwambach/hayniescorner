@@ -26,11 +26,6 @@
       }
     }
 
-    svg {
-      bottom: 100%;
-      z-index: 10;
-    }
-
     .card {
       &:nth-child(8n-7) {
         clip-path: url('#card1');
