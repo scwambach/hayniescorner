@@ -30,5 +30,32 @@
       bottom: 100%;
       z-index: 10;
     }
+
+    .card {
+      &:nth-child(8n-7) {
+        clip-path: url('#card1');
+      }
+      &:nth-child(8n-6) {
+        clip-path: url('#card2');
+      }
+      &:nth-child(8n-5) {
+        clip-path: url('#card3');
+      }
+      &:nth-child(8n-4) {
+        clip-path: url('#card4');
+      }
+      &:nth-child(8n-3) {
+        clip-path: url('#card5');
+      }
+      &:nth-child(8n-2) {
+        clip-path: url('#card4');
+      }
+      &:nth-child(8n-1) {
+        clip-path: url('#card3');
+      }
+      &:nth-child(8n) {
+        clip-path: url('#card2');
+      }
+    }
   }
 }

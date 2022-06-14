@@ -7,8 +7,7 @@ import {
 } from '@components';
 
 import { breakpoints } from '@styles';
-import { Tile1, Tile2, Tile3 } from '@svgs/Tiles';
-import { link } from 'fs';
+import * as Tile from '@svgs/Tiles';
 
 interface LinkTilesProps {
   heading?: string;
@@ -23,18 +22,18 @@ interface LinkTilesProps {
 const LinkTiles = ({ heading, tiles }: LinkTilesProps) => {
   return (
     <section className="linkTiles relative py-16  lg:py-sectionPadding bg-black">
-      <Tile1 />
-      <Tile2 />
-      <Tile3 />
+      <Tile.Tile1 />
+      <Tile.Tile2 />
+      <Tile.Tile3 />
       <Container maxWidth={breakpoints.sxl}>
         <h3 className="text-blue uppercase text-center tracking-sectionHeading font-black text-3xl md:text-sectionHeading mb-20">
           {heading}
         </h3>
-        <div className="flex flex-col md:flex-row md:justify-between gap-10 sxl:gap-0">
+        <div className="flex flex-col md:flex-row md:justify-between gap-10 sxl:gap-10">
           {tiles.map(({ _key, link, customIcon, iconImage }) => (
             <LinkObject
               key={_key}
-              classes="tile w-full rounded-2xl sxl:rounded-0 flex justify-center items-center relative p-2 py-10 sxl:p-0"
+              classes="tile  w-full rounded-2xl sxl:rounded-0 flex justify-center items-center relative p-2 py-10 sxl:py-sixty"
               {...link}
             >
               <div className="icon flex justify-center sxl:mt-6 mb-8">

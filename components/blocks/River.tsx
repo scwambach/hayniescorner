@@ -79,7 +79,7 @@ const River = ({
                   reverse={!isEven(reverse ? index + 1 : index)}
                 />
               </div>
-              <div className="relative rounded-2xl md:rounded-none overflow-hidden md:overflow-auto z-10 riverImage md:h-full w-full md:w-featImage">
+              <div className="riverImage relative rounded-2xl md:rounded-none overflow-hidden md:overflow-auto z-10 md:h-full w-full md:w-featImage">
                 <ProgressiveImage
                   isBackground
                   alt={title}

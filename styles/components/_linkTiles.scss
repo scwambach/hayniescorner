@@ -3,32 +3,20 @@
     &:nth-child(3n - 2) {
       background: $red;
 
-      @media screen and (min-width: ($sxl + 1)) {
-        height: 357px;
-        width: 326px;
-        clip-path: url('#tile1');
-      }
+      clip-path: url('#tile1');
     }
 
     &:nth-child(3n - 1) {
       background: $orange;
 
-      @media screen and (min-width: ($sxl + 1)) {
-        height: 345px;
-        width: 353px;
-        clip-path: url('#tile2');
-        top: 10px;
-      }
+      clip-path: url('#tile2');
+      top: 5px;
     }
 
     &:nth-child(3n) {
       background: $yellow;
 
-      @media screen and (min-width: ($sxl + 1)) {
-        height: 358px;
-        width: 335px;
-        clip-path: url('#tile3');
-      }
+      clip-path: url('#tile3');
     }
   }
 }
