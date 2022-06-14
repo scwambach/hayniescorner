@@ -13,12 +13,6 @@
     }
 
     .riverImage {
-      @media screen and (min-width: ($md + 1)) {
-        mask-size: contain;
-        mask-repeat: no-repeat;
-        mask-position: center;
-      }
-
       @media screen and (max-width: $md) {
         padding-top: 75%;
       }
@@ -34,7 +28,7 @@
 
         .riverImage {
           @media screen and (min-width: ($md + 1)) {
-            mask-image: url('/imageShape.svg');
+            clip-path: url('#riverImage1');
           }
         }
 
@@ -63,7 +57,7 @@
         }
         .riverImage {
           @media screen and (min-width: ($md + 1)) {
-            mask-image: url('/imageShape2.svg');
+            clip-path: url('#riverImage2');
           }
         }
 
@@ -95,7 +89,7 @@
 
         .riverImage {
           @media screen and (min-width: ($md + 1)) {
-            mask-image: url('/imageShape2.svg');
+            clip-path: url('#riverImage2');
           }
         }
 
@@ -115,7 +109,7 @@
 
         .riverImage {
           @media screen and (min-width: ($md + 1)) {
-            mask-image: url('/imageShape.svg');
+            clip-path: url('#riverImage1');
           }
         }
 

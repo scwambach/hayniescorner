@@ -7,7 +7,7 @@ import {
   Button,
   LinkObject,
 } from '@components';
-import { Shadow } from '@components/svg/Shadow';
+import * as SVG from '@svgs';
 import { breakpoints, colors } from '@styles';
 import { isEven } from '@utils';
 
@@ -49,6 +49,8 @@ const River = ({
         backgroundColor: bgColor,
       }}
     >
+      <SVG.RiverImage1 />
+      <SVG.RiverImage2 />
       {cap && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +76,7 @@ const River = ({
           >
             <div className="image relative">
               <div className="imgShadow hidden wlg:block absolute z-0">
-                <Shadow
+                <SVG.Shadow
                   color={shadowColor}
                   reverse={!isEven(reverse ? index + 1 : index)}
                 />
