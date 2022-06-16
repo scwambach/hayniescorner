@@ -22,6 +22,7 @@
     "next-pwa": "^5.5.2",
     "next-sanity": "^0.5.2",
     "next-sanity-image": "^3.2.1",
+    "nextjs-progressbar": "^0.0.14",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-fittext": "^1.0.0",

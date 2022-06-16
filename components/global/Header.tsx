@@ -68,6 +68,7 @@ const Header = ({ items, iconImage, customIcon, subPage }: HeaderProps) => {
           </LinkObject>
           <nav className="navigation lg:mr-twenty">
             <button
+              name="Menu Toggle"
               className={`toggle block w-10 mr-0 ml-auto my-8 lg:hidden ${
                 menuOpen ? 'open' : 'close'
               }`}
