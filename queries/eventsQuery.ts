@@ -11,8 +11,8 @@ export const eventsQuery = groq`*[_type == "eventsPage"][0] {
     ${imageQuery({ name: 'backgroundImage' })},
     heading
   },
-  "events": *[_type == "event" && ((_id in path('drafts.**')) == false) && date < $todayDate] | order(date desc) {
-    _id, 
+  "events": *[_type == "event" && ((_id in path('drafts.**')) == false) && date >= $todayDate] | order(date asc) {
+    _id,
     title,
     ${imageQuery({ name: 'image' })},
     description,
