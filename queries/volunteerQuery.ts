@@ -12,5 +12,10 @@ export const volunteerQuery = groq`*[_type == "volunteerPage"][0] {
     ${imageQuery({ name: 'backgroundImage' })},
     heading
   },
-  formHeading
+  formHeading,
+  "availableEvents": *[_type == "event" && ((_id in path('drafts.**')) == false) && date >= $todayDate] | order(date asc) {
+    _id,
+    title,
+    date
+  }
 }`;
