@@ -1,6 +1,6 @@
 import { contactQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
-import { PageLayout } from '@components';
+import { ContactInfo, PageLayout } from '@components';
 
 type Props = {
   content: any;
@@ -14,7 +14,7 @@ const ContactPage = ({ content, global }: Props) => {
       global={global}
       subPage={{ banner: content.heroBanner, color: 'bg-color9' }}
     >
-      {/* content */}
+      <ContactInfo email={global.site.mainEmail} />
     </PageLayout>
   );
 };

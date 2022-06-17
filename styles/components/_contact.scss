@@ -1,0 +1,21 @@
+.contactinfo {
+  .map {
+    > div {
+      position: relative;
+
+      &:before {
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color9;
+        position: absolute;
+        display: block;
+        z-index: 1;
+        mix-blend-mode: color;
+        pointer-events: none;
+      }
+    }
+  }
+}
