@@ -12,13 +12,17 @@ const ContactInfo = ({ email }: ContactInfoProps) => {
       <SVG.Cap bgColor={colors.color9} />
       <Container maxWidth={breakpoints.wlg}>
         <div className="lg:flex">
-          <div className="lg:w-1/3">
+          <div className="lg:w-1/3" data-aos="fade-up">
             <div className="flex flex-col md:flex-row lg:flex-col gap-20">
-              <div>
+              <div data-aos="fade-up" data-aos-delay="100">
                 <h2 className="mb-5 font-black uppercase tracking-sectionHeading text-featHeading">
                   Visit
                 </h2>
-                <p className="font-semibold text-featBody leading-featBody">
+                <p
+                  className="font-semibold text-featBody leading-featBody"
+                  data-aos="fade-up"
+                  data-aos-delay="150"
+                >
                   <LinkObject
                     newTab
                     url="https://www.google.com/maps/place/Haynies+Corner,+Evansville,+IN+47713"
@@ -29,11 +33,19 @@ const ContactInfo = ({ email }: ContactInfoProps) => {
                   </LinkObject>
                 </p>
               </div>
-              <div>
-                <h3 className="font-black lg:mt-20 uppercase tracking-sectionHeading text-featHeading">
+              <div data-aos="fade-up" data-aos-delay="200">
+                <h3
+                  className="font-black lg:mt-20 uppercase tracking-sectionHeading text-featHeading"
+                  data-aos="fade-up"
+                  data-aos-delay="250"
+                >
                   Contact
                 </h3>
-                <p className="font-semibold text-featBody leading-featBody">
+                <p
+                  className="font-semibold text-featBody leading-featBody"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
                   General Inquiries
                   <br />
                   <LinkObject
@@ -57,7 +69,11 @@ const ContactInfo = ({ email }: ContactInfoProps) => {
               </div>
             </div>
           </div>
-          <div className="mt-20 lg:mt-0 lg:w-2/3">
+          <div
+            className="mt-20 lg:mt-0 lg:w-2/3"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
             <h2 className="mb-5 font-black uppercase tracking-sectionHeading text-featHeading">
               Find Us
             </h2>

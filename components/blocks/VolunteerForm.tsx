@@ -46,6 +46,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
               id="emailAddress"
               label="Email Address"
               type="email"
+              delay={50}
               required={!!phone ? false : true}
               func={setEmail}
             />
@@ -54,10 +55,16 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
               id="phoneNumber"
               label="Phone Number"
               type="tel"
+              delay={100}
               required={!!email ? false : true}
               func={setPhone}
             />
-            <label htmlFor="volunteerFor" className="relative mb-12 block">
+            <label
+              htmlFor="volunteerFor"
+              className="relative mb-12 block"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
               <span className="mb-5 block">I would like to volunteer for:</span>
               <select
                 id="volunteerFor"
@@ -78,11 +85,13 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
               <ArrowDown />
             </label>
           </fieldset>
-          <Button classes="text-white block lg:inline-block bg-red">
-            <button type="submit" className="uppercase">
-              Submit
-            </button>
-          </Button>
+          <div data-aos="fade-up" data-aos-delay="150">
+            <Button classes="text-white block lg:inline-block bg-red">
+              <button type="submit" className="uppercase">
+                Submit
+              </button>
+            </Button>
+          </div>
         </form>
       ) : (
         <h2 className="font-black text-white uppercase tracking-featureHeading text-2xl md:text-3xl lg:text-banner leading-tight lg:leading-tight mb-10">

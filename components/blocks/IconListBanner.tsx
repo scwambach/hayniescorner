@@ -22,6 +22,7 @@ interface IconItem {
 interface IconListBannerProps {
   backgroundImage: ImageProps;
   backgroundColor: string;
+  delay?: number;
   blockContent?: any | any[];
   items: IconItem[];
   title: string;
@@ -33,6 +34,7 @@ const IconListBanner = ({
   links = [],
   items,
   blockContent,
+  delay = 0,
   backgroundImage,
   backgroundColor = 'bg-orange',
 }: IconListBannerProps) => {
@@ -43,7 +45,11 @@ const IconListBanner = ({
   return (
     <section className="iconListBanner relative overflow-hidden">
       <BackgroundWrapper {...backgroundProps} alt={title}>
-        <div className="py-16 md:py-sectionPadding text-white">
+        <div
+          className="py-16 md:py-sectionPadding text-white "
+          data-aos="fade-up"
+          data-aos-delay={`${delay * 50}`}
+        >
           <Container maxWidth={breakpoints.lg}>
             <div className="xmd:flex xmd:ml-4 w-full items-center justify-between">
               <div className="copy max-w-xs mx-auto xmd:mx-0 mb-12 xmd:mb-0 xmd:max-w-eventTypeHeading">
@@ -57,15 +63,17 @@ const IconListBanner = ({
                 )}
                 {links && (
                   <div className="mt-7">
-                    {links.map((link, index) => (
-                      <Button
-                        key={link._key}
-                        index={index}
-                        classes="w-full block xmd:inline-block mx-auto xmd:mx-0 sm:w-full xmd:w-auto bg-color7 whitespace-nowrap"
-                      >
-                        <LinkObject {...link} />
-                      </Button>
-                    ))}
+                    {links.map((link, index) => {
+                      return (
+                        <Button
+                          key={link._key}
+                          index={index}
+                          classes="w-full block xmd:inline-block mx-auto xmd:mx-0 sm:w-full xmd:w-auto bg-color7 whitespace-nowrap"
+                        >
+                          <LinkObject {...link} />
+                        </Button>
+                      );
+                    })}
                   </div>
                 )}
               </div>

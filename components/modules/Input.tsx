@@ -5,11 +5,25 @@ interface InputProps {
   type: string;
   required: any;
   func?: any;
+  delay?: number;
 }
 
-const Input = ({ id, label, required, type, func, className }: InputProps) => {
+const Input = ({
+  id,
+  label,
+  required,
+  type,
+  func,
+  className,
+  delay = 0,
+}: InputProps) => {
   return (
-    <label htmlFor={id} className={className}>
+    <label
+      htmlFor={id}
+      className={className}
+      data-aos="fade-up"
+      data-aos-delay={`${delay}`}
+    >
       <span className="block mb-5">{label}</span>
       <input
         id={id}

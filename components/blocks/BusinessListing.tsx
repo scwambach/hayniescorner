@@ -41,31 +41,40 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
                 {type.title}
               </h2>
               <div className="grid lg:grid-cols-2 gap-10">
-                {businesses.map((business) => (
-                  <LinkObject
-                    classes="card block w-full"
-                    url={business.url}
-                    newTab={true}
-                    key={business._id}
-                  >
-                    <div className="relative">
-                      <div className="cardImage">
-                        <ProgressiveImage
-                          {...business.image}
-                          imgWidth={600}
-                          imgHeight={400}
-                          alt={business.title}
-                          isBackground
-                        />
-                      </div>
-                      <div className="relative z-10 overflow-hidden h-0 pt-businessCard">
-                        <h3 className="text-xl md:text-businessTitle absolute px-10 bottom-10 w-full font-black uppercase tracking-sectionHeading leading-base">
-                          {noOrphans(business.title)}
-                        </h3>
-                      </div>
+                {businesses.map((business, index) => {
+                  const numberOrder = index * 50;
+
+                  return (
+                    <div
+                      className="card block w-full"
+                      data-aos="fade-up"
+                      data-aos-delay={`${numberOrder}`}
+                    >
+                      <LinkObject
+                        url={business.url}
+                        newTab={true}
+                        key={business._id}
+                      >
+                        <div className="relative">
+                          <div className="cardImage">
+                            <ProgressiveImage
+                              {...business.image}
+                              imgWidth={600}
+                              imgHeight={400}
+                              alt={business.title}
+                              isBackground
+                            />
+                          </div>
+                          <div className="relative z-10 overflow-hidden h-0 pt-businessCard">
+                            <h3 className="text-xl md:text-businessTitle absolute px-10 bottom-10 w-full font-black uppercase tracking-sectionHeading leading-base">
+                              {noOrphans(business.title)}
+                            </h3>
+                          </div>
+                        </div>
+                      </LinkObject>
                     </div>
-                  </LinkObject>
-                ))}
+                  );
+                })}
               </div>
             </Container>
           </div>

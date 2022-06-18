@@ -1,11 +1,22 @@
 import '../styles/globals.css';
 import '../styles/main.scss';
+import '../styles/aos.scss';
 import type { AppProps } from 'next/app';
 import Overlay from '@components/global/Overlay';
 import NextNprogress from 'nextjs-progressbar';
 import { colors } from '@styles';
+import AOS from 'aos';
+import { useEffect } from 'react';
 
 function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    AOS.init({
+      disable: 'phone',
+      easing: 'ease-in-out',
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <>
       <NextNprogress

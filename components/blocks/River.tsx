@@ -26,6 +26,7 @@ interface RiverProps {
   features: FeatureProps[];
   bgColor?: string;
   shadowColor?: string;
+  delay?: number;
   cap?: boolean;
   reverse?: boolean;
 }
@@ -34,6 +35,7 @@ const River = ({
   features,
   bgColor = colors.color6,
   shadowColor = colors.color5,
+  delay = 0,
   cap = false,
   reverse = false,
 }: RiverProps) => {
@@ -71,8 +73,12 @@ const River = ({
               allLinks.push(...extraLinks);
             }
 
+            const numberOrder = (delay || index) * 50;
+
             return (
               <div
+                data-aos="fade-up"
+                data-aos-delay={`${numberOrder}`}
                 key={_id}
                 className={`md:flex md:justify-between items-center featureRow${
                   !isEven(reverse ? index + 1 : index)
