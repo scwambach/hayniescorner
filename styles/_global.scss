@@ -81,3 +81,10 @@ svg {
   width: 101%;
   bottom: calc(100% - 2px);
 }
+
+.fader {
+  @media screen and (max-width: $md) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

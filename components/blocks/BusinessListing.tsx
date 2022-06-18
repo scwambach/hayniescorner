@@ -48,7 +48,7 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
 
                   return (
                     <div
-                      className="card block w-full"
+                      className="fader card block w-full"
                       data-aos="fade-up"
                       key={business._id}
                       data-aos-delay={`${numberOrder}`}

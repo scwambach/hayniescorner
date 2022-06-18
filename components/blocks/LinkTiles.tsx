@@ -37,7 +37,7 @@ const LinkTiles = ({ heading, tiles, delay = 0 }: LinkTilesProps) => {
             return (
               <div
                 key={_key}
-                className="tile w-full"
+                className="fader tile w-full"
                 data-aos="fade-up"
                 data-aos-delay={`${numberOrder}`}
               >

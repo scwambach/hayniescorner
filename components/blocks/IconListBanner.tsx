@@ -46,7 +46,7 @@ const IconListBanner = ({
     <section className="iconListBanner relative overflow-hidden">
       <BackgroundWrapper {...backgroundProps} alt={title}>
         <div
-          className="py-16 md:py-sectionPadding text-white "
+          className="fader py-16 md:py-sectionPadding text-white "
           data-aos="fade-up"
           data-aos-delay={`${delay * 100}`}
         >

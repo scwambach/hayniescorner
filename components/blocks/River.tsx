@@ -80,7 +80,7 @@ const River = ({
                 data-aos="fade-up"
                 data-aos-delay={`${numberOrder}`}
                 key={_id}
-                className={`md:flex md:justify-between items-center featureRow${
+                className={`fader md:flex md:justify-between items-center featureRow${
                   !isEven(reverse ? index + 1 : index)
                     ? ' md:flex-row-reverse'
                     : ''

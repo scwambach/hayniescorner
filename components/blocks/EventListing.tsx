@@ -60,7 +60,7 @@ const EventListing = ({ events = [], past }: EventListingProps) => {
                 return (
                   <div
                     key={_id}
-                    className="relative mb-44 "
+                    className="fader relative mb-44 "
                     data-aos="fade-up"
                     data-aos-delay={`${index * 100}`}
                   >

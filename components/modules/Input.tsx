@@ -20,7 +20,7 @@ const Input = ({
   return (
     <label
       htmlFor={id}
-      className={className}
+      className={`fader ${className}`}
       data-aos="fade-up"
       data-aos-delay={`${delay}`}
     >

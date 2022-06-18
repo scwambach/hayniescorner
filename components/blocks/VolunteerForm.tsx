@@ -61,7 +61,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
             />
             <label
               htmlFor="volunteerFor"
-              className="relative mb-12 block"
+              className="fader relative mb-12 block"
               data-aos="fade-up"
               data-aos-delay="150"
             >
@@ -85,7 +85,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
               <ArrowDown />
             </label>
           </fieldset>
-          <div data-aos="fade-up" data-aos-delay="150">
+          <div className="fader" data-aos="fade-up" data-aos-delay="150">
             <Button classes="text-white block lg:inline-block bg-red">
               <button type="submit" className="uppercase">
                 Submit
