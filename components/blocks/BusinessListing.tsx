@@ -48,13 +48,10 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
                     <div
                       className="card block w-full"
                       data-aos="fade-up"
+                      key={business._id}
                       data-aos-delay={`${numberOrder}`}
                     >
-                      <LinkObject
-                        url={business.url}
-                        newTab={true}
-                        key={business._id}
-                      >
+                      <LinkObject url={business.url} newTab={true}>
                         <div className="relative">
                           <div className="cardImage">
                             <ProgressiveImage
