@@ -48,7 +48,7 @@ const IconListBanner = ({
         <div
           className="py-16 md:py-sectionPadding text-white "
           data-aos="fade-up"
-          data-aos-delay={`${delay * 50}`}
+          data-aos-delay={`${delay * 100}`}
         >
           <Container maxWidth={breakpoints.lg}>
             <div className="xmd:flex xmd:ml-4 w-full items-center justify-between">

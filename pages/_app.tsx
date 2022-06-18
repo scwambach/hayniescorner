@@ -14,6 +14,7 @@ function App({ Component, pageProps }: AppProps) {
       disable: 'phone',
       easing: 'ease-in-out',
       once: true,
+      // duration: 600,
     });
     AOS.refresh();
   }, []);

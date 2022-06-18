@@ -73,7 +73,7 @@ const River = ({
               allLinks.push(...extraLinks);
             }
 
-            const numberOrder = (delay || index) * 50;
+            const numberOrder = (delay || index) * 100;
 
             return (
               <div

@@ -32,7 +32,7 @@ const LinkTiles = ({ heading, tiles, delay = 0 }: LinkTilesProps) => {
         </h3>
         <div className="flex flex-col md:flex-row md:justify-between gap-10 sxl:gap-10">
           {tiles.map(({ _key, link, customIcon, iconImage }, index) => {
-            const numberOrder = (delay || index) * 50;
+            const numberOrder = (delay || index) * 100;
 
             return (
               <div

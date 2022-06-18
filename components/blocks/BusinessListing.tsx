@@ -42,7 +42,7 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
               </h2>
               <div className="grid lg:grid-cols-2 gap-10">
                 {businesses.map((business, index) => {
-                  const numberOrder = index * 50;
+                  const numberOrder = index * 100;
 
                   return (
                     <div
