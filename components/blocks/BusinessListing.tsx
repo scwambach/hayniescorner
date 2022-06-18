@@ -50,6 +50,7 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
                     <div
                       className="fader card block w-full"
                       data-aos="fade-up"
+                      data-aos-anchor={`#${type.slug}`}
                       key={business._id}
                       data-aos-delay={`${numberOrder}`}
                     >

@@ -9,7 +9,7 @@ import {
 } from '@components';
 import * as SVG from '@svgs';
 import { breakpoints, colors } from '@styles';
-import { isEven } from '@utils';
+import { isEven, slugify } from '@utils';
 
 interface FeatureProps {
   feature: {
@@ -77,6 +77,7 @@ const River = ({
 
             return (
               <div
+                id={`${title ? slugify(title) : 'riverItem'}`}
                 data-aos="fade-up"
                 data-aos-delay={`${numberOrder}`}
                 key={_id}
@@ -104,15 +105,32 @@ const River = ({
                   </div>
                 </div>
                 <div className="copy pt-12 max-w-xs md:max-w-none md:py-12">
-                  <h2 className="font-black uppercase text-xl lg:text-featHeading tracking-featureHeading mb-7">
+                  <h2
+                    className="font-black uppercase text-xl lg:text-featHeading tracking-featureHeading mb-7"
+                    data-aos-anchor={`#${title ? slugify(title) : 'riverItem'}`}
+                    data-aos="fade-up"
+                    data-aos-delay={`${numberOrder + 50}`}
+                  >
                     {title}
                   </h2>
-                  <div className="font-semibold text-base lg:text-featBody leading-featBody">
+                  <div
+                    className="font-semibold text-base lg:text-featBody leading-featBody"
+                    data-aos-anchor={`#${title ? slugify(title) : 'riverItem'}`}
+                    data-aos="fade-up"
+                    data-aos-delay={`${numberOrder + 100}`}
+                  >
                     <PortableTextModule text={blockContent} />
                   </div>
 
                   {allLinks.length > 0 && (
-                    <div className="mt-7">
+                    <div
+                      className="mt-7"
+                      data-aos-anchor={`#${
+                        title ? slugify(title) : 'riverItem'
+                      }`}
+                      data-aos="fade-up"
+                      data-aos-delay={`${numberOrder + 150}`}
+                    >
                       {allLinks.map((link, index) => (
                         <Button
                           key={link._key}
