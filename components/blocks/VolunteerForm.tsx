@@ -1,6 +1,7 @@
-import { Button, Input } from '@components';
+import { Button, Input, LinkObject } from '@components';
 import { ArrowDown } from '@svgs';
 import { useState } from 'react';
+import Axios from 'axios';
 
 interface VolunteerFormProps {
   events: {
@@ -15,21 +16,63 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [position, setPosition] = useState<string>('');
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<boolean>(false);
 
   const mailer = {
+    recipient: 'hayniescornerartdistrict@gmail.com',
+    subject: 'HCAD Volunteer Form',
     name,
     email,
     phone,
     position,
   };
 
+  const postForm = () => {
+    Axios.post('/api/mailer', mailer)
+      .then((response) => {
+        console.log('response', response);
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        Axios.post('/api/errorAlert', error)
+          .then((response) => {
+            console.log('response', response);
+          })
+          .catch((err) => {
+            console.log('error', err);
+          });
+        console.log('error', error);
+        setSubmitted(false);
+        setSubmitError(true);
+      });
+  };
+
   return (
     <div className="form volunteer">
-      {events.length > 0 ? (
+      {!submitted && submitError && (
+        <h2 className="font-black mt-20 text-red tracking-featureHeading text-2xl md:text-3xl leading-tight lg:leading-tight mb-10">
+          Looks like something went wrong. Don't worry, the developer has been
+          notified and will correctly the problem soon. Please try again at a
+          later date or send email directly to us{' '}
+          <LinkObject classes="underline hover:text-color9" url="/contact">
+            HERE!
+          </LinkObject>
+        </h2>
+      )}
+      {submitted && !submitError && (
+        <h2 className="font-black mt-20 text-white  tracking-featureHeading text-2xl md:text-6xl leading-tight lg:leading-tight mb-10">
+          <span className="inline-block mb-5">
+            Thank you for filling out the volunteer&nbsp;form!
+          </span>
+          We will reach out to you as soon&nbsp;as&nbsp;we&nbsp;can!
+        </h2>
+      )}
+      {events.length > 0 && !submitted && !submitError && (
         <form
           onSubmit={(e) => {
-            console.log(mailer);
             e.preventDefault();
+            postForm();
           }}
         >
           <fieldset className="font-semibold text-featBody">
@@ -93,11 +136,6 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
             </Button>
           </div>
         </form>
-      ) : (
-        <h2 className="font-black text-white uppercase tracking-featureHeading text-2xl md:text-3xl lg:text-banner leading-tight lg:leading-tight mb-10">
-          There currently aren&apos;t any events scheduled at the moment. Please
-          check back soon!
-        </h2>
       )}
     </div>
   );
