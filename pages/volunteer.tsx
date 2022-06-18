@@ -1,5 +1,6 @@
 import { volunteerQuery, siteQuery } from '@queries';
-import { getClient } from '@utils';
+import { useRouter } from 'next/router';
+import { getClient, usePreviewSubscription } from '@utils';
 import { Container, PageLayout, VolunteerForm } from '@components';
 import * as SVG from '@svgs';
 import { breakpoints, colors } from '@styles';
@@ -10,21 +11,28 @@ type Props = {
 };
 
 const VolunteerPage = ({ content, global }: Props) => {
+  const router = useRouter();
+
+  const { data = {} } = usePreviewSubscription(volunteerQuery, {
+    initialData: content,
+    enabled: router.query.preview === '',
+  });
+
   return (
     <PageLayout
-      content={content}
+      content={data}
       global={global}
-      subPage={{ banner: content.heroBanner, color: 'bg-color7' }}
+      subPage={{ banner: data.heroBanner, color: 'bg-color7' }}
     >
       <section className="type py-16 md:pb-36 lg:pt-sectionPadding lg:pb-52 mega:pb-sectionPaddingBottom relative bg-color7">
         <SVG.Cap bgColor={colors.color7} />
         <Container maxWidth={breakpoints.lg}>
-          {content.availableEvents.length > 0 && (
+          {data.availableEvents.length > 0 && (
             <h2 className="text-white text-center font-black uppercase text-xl lg:text-featHeading tracking-featureHeading mb-7">
-              {content.formHeading}
+              {data.formHeading}
             </h2>
           )}
-          <VolunteerForm events={content.availableEvents} />
+          <VolunteerForm events={data.availableEvents} />
         </Container>
       </section>
     </PageLayout>

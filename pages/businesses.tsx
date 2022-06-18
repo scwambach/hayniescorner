@@ -1,20 +1,29 @@
 import { businessesQuery, siteQuery } from '@queries';
-import { getClient } from '@utils';
+import { getClient, usePreviewSubscription } from '@utils';
+import { useRouter } from 'next/router';
 import { PageLayout } from '@components';
 import { BusinessListing } from '@components';
+
 type Props = {
   content: any;
   global: any;
 };
 
 const BusinessesPage = ({ content, global }: Props) => {
+  const router = useRouter();
+
+  const { data = {} } = usePreviewSubscription(businessesQuery, {
+    initialData: content,
+    enabled: router.query.preview === '',
+  });
+
   return (
     <PageLayout
-      content={content}
+      content={data}
       global={global}
-      subPage={{ banner: content.heroBanner, color: 'bg-red' }}
+      subPage={{ banner: data.heroBanner, color: 'bg-red' }}
     >
-      <BusinessListing sections={content.sections.businessTypes} />
+      <BusinessListing sections={data.sections.businessTypes} />
     </PageLayout>
   );
 };

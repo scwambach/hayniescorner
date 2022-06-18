@@ -1,6 +1,7 @@
 import { aboutQuery, siteQuery } from '@queries';
-import { getClient } from '@utils';
+import { getClient, usePreviewSubscription } from '@utils';
 import { PageLayout, River } from '@components';
+import { useRouter } from 'next/router';
 import { colors } from '@styles';
 
 type Props = {
@@ -9,14 +10,21 @@ type Props = {
 };
 
 const AboutPage = ({ content, global }: Props) => {
+  const router = useRouter();
+
+  const { data = {} } = usePreviewSubscription(aboutQuery, {
+    initialData: content,
+    enabled: router.query.preview === '',
+  });
+
   return (
     <PageLayout
-      content={content}
+      content={data}
       global={global}
-      subPage={{ banner: content.heroBanner, color: 'bg-color6' }}
+      subPage={{ banner: data.heroBanner, color: 'bg-color6' }}
     >
       <River
-        {...content.aboutFeatures}
+        {...data.aboutFeatures}
         cap
         bgColor={colors.black}
         shadowColor={colors.color6}

@@ -1,5 +1,6 @@
 import { eventsQuery, siteQuery } from '@queries';
-import { getClient } from '@utils';
+import { useRouter } from 'next/router';
+import { getClient, usePreviewSubscription } from '@utils';
 import { EventListing, PageLayout } from '@components';
 
 type Props = {
@@ -8,13 +9,20 @@ type Props = {
 };
 
 const EventsPage = ({ content, global }: Props) => {
+  const router = useRouter();
+
+  const { data = {} } = usePreviewSubscription(eventsQuery, {
+    initialData: content,
+    enabled: router.query.preview === '',
+  });
+
   return (
     <PageLayout
-      content={content}
+      content={data}
       global={global}
-      subPage={{ banner: content.heroBanner, color: 'bg-brightOrange' }}
+      subPage={{ banner: data.heroBanner, color: 'bg-brightOrange' }}
     >
-      <EventListing events={content.events} />
+      <EventListing events={data.events} />
     </PageLayout>
   );
 };

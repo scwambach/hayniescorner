@@ -1,5 +1,6 @@
 import { homeQuery, siteQuery } from '@queries';
-import { getClient } from '@utils';
+import { useRouter } from 'next/router';
+import { getClient, usePreviewSubscription } from '@utils';
 import { colors } from '@styles';
 import {
   LogoBanner,
@@ -15,19 +16,22 @@ type Props = {
 };
 
 const IndexPage = ({ content, global }: Props) => {
-  return (
-    <PageLayout content={content} global={global}>
-      <LogoBanner {...content.heroBanner} priority align="text-center" />
+  const router = useRouter();
 
-      <River {...content.aboutFeatures} cap bgColor={colors.color6} delay={1} />
-      <IconListBanner
-        {...content.eventTypes}
-        bgColor={colors.color6}
-        delay={2}
-      />
-      <LinkTiles {...content.linkTiles} />
+  const { data = {} } = usePreviewSubscription(homeQuery, {
+    initialData: content,
+    enabled: router.query.preview === '',
+  });
+
+  return (
+    <PageLayout content={data} global={global}>
+      <LogoBanner {...data.heroBanner} priority align="text-center" />
+
+      <River {...data.aboutFeatures} cap bgColor={colors.color6} delay={1} />
+      <IconListBanner {...data.eventTypes} bgColor={colors.color6} delay={2} />
+      <LinkTiles {...data.linkTiles} />
       <River
-        {...content.closerFeatures}
+        {...data.closerFeatures}
         reverse
         bgColor={colors.blue}
         shadowColor={colors.color7}

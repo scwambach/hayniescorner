@@ -1,5 +1,6 @@
 import { contactQuery, siteQuery } from '@queries';
-import { getClient } from '@utils';
+import { getClient, usePreviewSubscription } from '@utils';
+import { useRouter } from 'next/router';
 import { ContactInfo, PageLayout } from '@components';
 
 type Props = {
@@ -8,11 +9,18 @@ type Props = {
 };
 
 const ContactPage = ({ content, global }: Props) => {
+  const router = useRouter();
+
+  const { data = {} } = usePreviewSubscription(contactQuery, {
+    initialData: content,
+    enabled: router.query.preview === '',
+  });
+
   return (
     <PageLayout
-      content={content}
+      content={data}
       global={global}
-      subPage={{ banner: content.heroBanner, color: 'bg-color9' }}
+      subPage={{ banner: data.heroBanner, color: 'bg-color9' }}
     >
       <ContactInfo email={global.site.mainEmail} />
     </PageLayout>
