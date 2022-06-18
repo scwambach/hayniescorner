@@ -15,7 +15,7 @@ import {
 } from './desk';
 import { businesses } from './desk/sections/businesses';
 
-const remoteURL = 'https://scw-project-starter.vercel.app';
+const remoteURL = 'https://hayniescorner.vercel.app';
 const localURL = 'http://localhost:3000';
 
 const appUrl = window.location.hostname === 'localhost' ? localURL : remoteURL;
@@ -36,7 +36,22 @@ const WebPreview = ({ document }) => {
     document.displayed._id === 'homePage' ||
     document.displayed._id === 'drafts.homePage'
       ? ''
-      : document.displayed?.slug?.current
+      : document.displayed._id === 'eventsPage' ||
+        document.displayed._id === 'drafts.eventsPage'
+      ? '/events'
+      : document.displayed._id === 'aboutPage' ||
+        document.displayed._id === 'drafts.aboutPage'
+      ? '/about'
+      : document.displayed._id === 'businessesPage' ||
+        document.displayed._id === 'drafts.businessesPage'
+      ? '/businesses'
+      : document.displayed._id === 'volunteerPage' ||
+        document.displayed._id === 'drafts.volunteerPage'
+      ? '/volunteer'
+      : document.displayed._id === 'contactPage' ||
+        document.displayed._id === 'drafts.contactPage'
+      ? '/contact'
+      : ''
   }?preview`;
   return <PreviewModule document={document} url={previewUrl} />;
 };

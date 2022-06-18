@@ -10,8 +10,11 @@ type Props = {
 
 const EventsPage = ({ content, global }: Props) => {
   const router = useRouter();
+  const today = new Date().toISOString();
+  const todayDate = today.split('T')[0];
 
   const { data = {} } = usePreviewSubscription(eventsQuery, {
+    params: { todayDate },
     initialData: content,
     enabled: router.query.preview === '',
   });
