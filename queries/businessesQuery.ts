@@ -17,6 +17,7 @@ export const businessesQuery = groq`*[_type == "businessesPage"][0] {
       "type": *[_type == 'businessCategory' && (_id == ^._ref)][0] {
         _id,
         title,
+        "slug": slug.current
       },
       "businesses": *[_type == 'business' && references(^._ref)] | order(title asc) {
         title, 

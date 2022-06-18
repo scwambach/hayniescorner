@@ -19,6 +19,7 @@ interface SectionProps {
   type: {
     _id: string;
     title: string;
+    slug: string;
   };
 }
 
@@ -32,6 +33,7 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
       <div className="businesslisting text-center text-white">
         {sections.map(({ type, _key, businesses }) => (
           <div
+            id={type.slug}
             key={_key}
             className="type py-16 md:pb-36 lg:pt-sectionPadding lg:pb-52 mega:pb-sectionPaddingBottom relative"
           >
