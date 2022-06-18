@@ -2,6 +2,8 @@ import { Button, Input, LinkObject } from '@components';
 import { ArrowDown } from '@svgs';
 import { useState } from 'react';
 import Axios from 'axios';
+import ClipLoader from 'react-spinners/ClipLoader';
+import { colors } from '@styles';
 
 interface VolunteerFormProps {
   events: {
@@ -18,6 +20,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
   const [position, setPosition] = useState<string>('');
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [submitError, setSubmitError] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const mailer = {
     recipient: 'hayniescornerartdistrict@gmail.com',
@@ -33,6 +36,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
       .then((response) => {
         console.log('response', response);
         setSubmitted(true);
+        setLoading(false);
       })
       .catch((error) => {
         Axios.post('/api/errorAlert', error)
@@ -45,12 +49,18 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
         console.log('error', error);
         setSubmitted(false);
         setSubmitError(true);
+        setLoading(false);
       });
   };
 
   return (
     <div className="form volunteer">
-      {!submitted && submitError && (
+      {loading && (
+        <div className="flex justify-center py-20">
+          <ClipLoader size={150} color={colors.white} />
+        </div>
+      )}
+      {!loading && !submitted && submitError && (
         <h2 className="font-black mt-20 text-red tracking-featureHeading text-2xl md:text-3xl leading-tight lg:leading-tight mb-10">
           Looks like something went wrong. Don&apos;t worry, the developer has
           been notified and will correctly the problem soon. Please try again at
@@ -60,7 +70,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
           </LinkObject>
         </h2>
       )}
-      {submitted && !submitError && (
+      {!loading && submitted && !submitError && (
         <h2 className="font-black mt-20 text-white  tracking-featureHeading text-2xl md:text-6xl leading-tight lg:leading-tight mb-10">
           <span className="inline-block mb-5">
             Thank you for filling out the volunteer&nbsp;form!
@@ -68,9 +78,10 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
           We will reach out to you as soon&nbsp;as&nbsp;we&nbsp;can!
         </h2>
       )}
-      {events.length > 0 && !submitted && !submitError && (
+      {!loading && events.length > 0 && !submitted && !submitError && (
         <form
           onSubmit={(e) => {
+            setLoading(true);
             e.preventDefault();
             postForm();
           }}
