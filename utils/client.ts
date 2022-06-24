@@ -1,5 +1,4 @@
 import { createClient, createPreviewSubscriptionHook } from 'next-sanity';
-import dayjs from 'dayjs';
 import imageUrlBuilder from '@sanity/image-url';
 
 export const config = {
@@ -13,7 +12,7 @@ export const config = {
   dataset: process.env.SANITY_DATASET,
   projectId: process.env.SANITY_ID,
   useCdn: process.env.NODE_ENV === 'production',
-  apiVersion: dayjs(new Date()).format('YYYY-MM-DD'),
+  apiVersion: '2021-10-21', // Learn more: https://www.sanity.io/docs/api-versioning
   /**
    * Set useCdn to `false` if your application require the freshest possible
    * data always (potentially slightly slower and a bit more expensive).
