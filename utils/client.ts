@@ -13,6 +13,7 @@ export const config = {
   dataset: process.env.SANITY_DATASET,
   projectId: process.env.SANITY_ID,
   useCdn: process.env.NODE_ENV === 'production',
+  token: process.env.SANITY_TOKEN,
   apiVersion: dayjs(new Date()).format('YYYY-MM-DD'),
   /**
    * Set useCdn to `false` if your application require the freshest possible
