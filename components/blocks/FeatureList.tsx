@@ -76,11 +76,3 @@ const FeatureList = ({
 
 export { FeatureList };
 export default FeatureList;
-// {feature.link && (
-//   <span className="button mt-5 transition-all ease-in-out inline-block">
-//     <LinkObject
-//       {...feature.link}
-//       classes="inline-block text-white"
-//     />
-//   </span>
-// )}

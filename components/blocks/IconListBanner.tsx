@@ -61,7 +61,7 @@ const IconListBanner = ({
             <div className="xmd:flex xmd:ml-4 w-full items-center justify-between">
               <div className="copy max-w-xs mx-auto xmd:mx-0 mb-12 xmd:mb-0 xmd:max-w-eventTypeHeading">
                 <h3
-                  className="font-black uppercase leading-base tracking-eventTypeHeading text-4xl lg:text-eventTypeHeading mb-5"
+                  className="fader font-black uppercase leading-base tracking-eventTypeHeading text-4xl lg:text-eventTypeHeading mb-5"
                   data-aos="fade-up"
                   data-aos-anchor={`#${slugify(title)}`}
                   data-aos-delay={`${delayNum + 50}`}
@@ -70,7 +70,7 @@ const IconListBanner = ({
                 </h3>
                 {blockContent && (
                   <div
-                    className="text-eventTypeBody leading-6"
+                    className="fader text-eventTypeBody leading-6"
                     data-aos="fade-up"
                     data-aos-anchor={`#${slugify(title)}`}
                     data-aos-delay={`${delayNum + 100}`}
@@ -80,7 +80,7 @@ const IconListBanner = ({
                 )}
                 {links && (
                   <div
-                    className="mt-7"
+                    className="fader mt-7"
                     data-aos="fade-up"
                     data-aos-anchor={`#${slugify(title)}`}
                     data-aos-delay={`${delayNum + 150}`}
@@ -102,7 +102,7 @@ const IconListBanner = ({
 
               <ListBox />
               <div
-                className="bg-orange mx-auto xmd:mx-0 content-box rounded-2xl px-7 py-16 md:p-eventListMobile lg:p-eventList w-full flex flex-col h-full max-w-featList"
+                className="fader bg-orange mx-auto xmd:mx-0 content-box rounded-2xl px-7 py-16 md:p-eventListMobile lg:p-eventList w-full flex flex-col h-full max-w-featList"
                 data-aos="fade-up"
                 data-aos-delay={`${delayNum + 200}`}
               >
@@ -111,7 +111,7 @@ const IconListBanner = ({
                   return (
                     <div
                       key={item._id}
-                      className={`sm:flex w-full text-center sm:text-left sm:justify-between items-center${
+                      className={`fader sm:flex w-full text-center sm:text-left sm:justify-between items-center${
                         index !== 0 ? ' mt-7' : ''
                       }`}
                       data-aos="fade-up"
