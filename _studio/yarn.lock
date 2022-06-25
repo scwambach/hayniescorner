@@ -1182,9 +1182,10 @@
   version "1.2.3"
   resolved "https://registry.npmjs.org/@sanity/asset-utils/-/asset-utils-1.2.3.tgz#a90c7895c6506405d64c2363db131923ba1fa6ef"
 
-"@sanity/base@2.30.1", "@sanity/base@^2.29.5":
+"@sanity/base@2.30.1", "@sanity/base@^2.30.1":
   version "2.30.1"
-  resolved "https://registry.npmjs.org/@sanity/base/-/base-2.30.1.tgz#95e8b38cb45585a5a27b97713de5411ef7b8c801"
+  resolved "https://registry.yarnpkg.com/@sanity/base/-/base-2.30.1.tgz#95e8b38cb45585a5a27b97713de5411ef7b8c801"
+  integrity sha512-sAEB2gP1+njnD7ZxiubWarUeER1ZdiOX8cr1dikc8koO2dyXQGt/CaQHBwMHeZ7cTHoUFL3o6e9MEHDXkXz0rw==
   dependencies:
     "@juggle/resize-observer" "^3.3.1"
     "@popperjs/core" "^2.5.4"
@@ -1280,9 +1281,10 @@
     object-assign "^4.1.1"
     rxjs "^6.0.0"
 
-"@sanity/code-input@^2.29.5":
+"@sanity/code-input@^2.30.1":
   version "2.30.1"
-  resolved "https://registry.npmjs.org/@sanity/code-input/-/code-input-2.30.1.tgz#d67c535e34eb4899a54d8578ec6c777211ecd2e9"
+  resolved "https://registry.yarnpkg.com/@sanity/code-input/-/code-input-2.30.1.tgz#d67c535e34eb4899a54d8578ec6c777211ecd2e9"
+  integrity sha512-Ay7yP7lI3LmTCRZK5Esi1ygR872n8h81fCnQ5Bp3sJAnCDsDPszuHJcu7ecTYQ1l8GdTildcf0Ux3OBciwfl6Q==
   dependencies:
     "@reach/auto-id" "^0.13.2"
     "@sanity/base" "2.30.1"
@@ -1380,9 +1382,10 @@
     "@sanity/generate-help-url" "^3.0.0"
     lodash "^4.17.15"
 
-"@sanity/default-layout@^2.29.5":
+"@sanity/default-layout@^2.30.1":
   version "2.30.1"
-  resolved "https://registry.npmjs.org/@sanity/default-layout/-/default-layout-2.30.1.tgz#12407789a2ce5df2a988ecba00cbfdf99c619192"
+  resolved "https://registry.yarnpkg.com/@sanity/default-layout/-/default-layout-2.30.1.tgz#12407789a2ce5df2a988ecba00cbfdf99c619192"
+  integrity sha512-UptxUPSLv57VJePyYP1+IJEobMgxcpYml3rOk/ADhzN9NCYWdPp8sSJYS6GMaty7VNiszouOMBESsGYnKGTTXw==
   dependencies:
     "@portabletext/react" "^1.0.0"
     "@sanity/asset-utils" "^1.2.0"
@@ -1398,9 +1401,10 @@
     react-rx "^1.0.0-beta.6"
     rxjs "^6.5.3"
 
-"@sanity/default-login@^2.29.5":
+"@sanity/default-login@^2.30.1":
   version "2.30.1"
-  resolved "https://registry.npmjs.org/@sanity/default-login/-/default-login-2.30.1.tgz#ae5fec30a4f11f95b7ef2ea9e78f97093043123d"
+  resolved "https://registry.yarnpkg.com/@sanity/default-login/-/default-login-2.30.1.tgz#ae5fec30a4f11f95b7ef2ea9e78f97093043123d"
+  integrity sha512-hhjcEt8zFbJzd9Cj+jeiNrO0BBZXbPSXD7QLJQUqR6v4hBbu3p57DsytIJvdSvmo7cCym+NfwtZ0Cq/AoePxVg==
   dependencies:
     "@sanity/base" "2.30.1"
     "@sanity/client" "^3.2.0"
@@ -1410,9 +1414,10 @@
     prop-types "^15.6.0"
     rxjs "^6.5.3"
 
-"@sanity/desk-tool@^2.29.5":
+"@sanity/desk-tool@^2.30.1":
   version "2.30.1"
-  resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-2.30.1.tgz#c2f277c02788ff0adfc1b2d86d81c89cfef29d9c"
+  resolved "https://registry.yarnpkg.com/@sanity/desk-tool/-/desk-tool-2.30.1.tgz#c2f277c02788ff0adfc1b2d86d81c89cfef29d9c"
+  integrity sha512-ue90IOTAtuwpMcxuUsNjRQyig0bvKLCWguHg/pQCLarnFsKa7AfHYWMqJ/x+0stSX8BnINBMdOqjifFAYpxeUw==
   dependencies:
     "@reach/auto-id" "^0.13.2"
     "@sanity/client" "^3.2.0"
@@ -1805,9 +1810,10 @@
     date-fns "^2.16.1"
     lodash "^4.17.15"
 
-"@sanity/vision@^2.29.5":
+"@sanity/vision@^2.30.1":
   version "2.30.1"
-  resolved "https://registry.npmjs.org/@sanity/vision/-/vision-2.30.1.tgz#69a9862d4ba78e1b90976696e9f4e069b6affe8d"
+  resolved "https://registry.yarnpkg.com/@sanity/vision/-/vision-2.30.1.tgz#69a9862d4ba78e1b90976696e9f4e069b6affe8d"
+  integrity sha512-nxvYJD0QFGpOfssHmelhyc4awAmC1QOLROAFXa+cKP4v1ccq2QBA7ld7TpdDESawzLD75nqV72pRugEztentGg==
   dependencies:
     "@juggle/resize-observer" "^3.3.1"
     "@sanity/icons" "^1.2.6"
@@ -3729,9 +3735,10 @@ date-now@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/date-now/-/date-now-1.0.1.tgz#bb7d086438debe4182a485fb3df3fbfb99d6153c"
 
-dayjs@^1.11.0:
+dayjs@^1.11.3:
   version "1.11.3"
-  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.3.tgz#4754eb694a624057b9ad2224b67b15d552589258"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.3.tgz#4754eb694a624057b9ad2224b67b15d552589258"
+  integrity sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==
 
 debounce@1.0.0:
   version "1.0.0"
@@ -7603,7 +7610,8 @@ react-copy-to-clipboard@^5.0.4:
 
 react-dom@^17.0:
   version "17.0.2"
-  resolved "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
+  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -7821,7 +7829,8 @@ react-virtuoso@^2.11.0:
 
 react@^17.0, react@^17.0.0:
   version "17.0.2"
-  resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -8226,9 +8235,10 @@ sanity-plugin-autocomplete-tags@^1.0.2:
     react-select "^5.0.0"
     webpack "^5.1.0"
 
-sanity-plugin-media@^1.4.4:
+sanity-plugin-media@^1.4.10:
   version "1.4.10"
-  resolved "https://registry.npmjs.org/sanity-plugin-media/-/sanity-plugin-media-1.4.10.tgz#4240888498c06ad7a3e69e78950a9af66fec1861"
+  resolved "https://registry.yarnpkg.com/sanity-plugin-media/-/sanity-plugin-media-1.4.10.tgz#4240888498c06ad7a3e69e78950a9af66fec1861"
+  integrity sha512-biJx3X7ou7pJ0/a7io2zzmuyDEUcqMgQNDPY6VnOnAQ8m8EWtBwoXkfmSGZicmqVWOaqPDayLpntAFidmKldSw==
   dependencies:
     "@hookform/resolvers" "2.0.0-beta.3"
     "@reduxjs/toolkit" "^1.8.1"
@@ -8272,7 +8282,8 @@ scheduler@^0.19.1:
 
 scheduler@^0.20.2:
   version "0.20.2"
-  resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
+  integrity sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
