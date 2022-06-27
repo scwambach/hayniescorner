@@ -8,13 +8,14 @@ import { customImageBuilder, getClient } from '@utils';
 interface ProgressiveImageProps extends ImageProps {
   alt?: string;
   classes?: string;
+  grayScale?: boolean;
   imgHeight?: number;
   imgWidth?: number;
   isBackground?: boolean;
   mobileCrop?: boolean;
-  thin?: boolean;
   priority?: boolean;
   quality?: number;
+  thin?: boolean;
   title?: string;
 }
 
@@ -28,6 +29,7 @@ const ProgressiveImage = ({
   lqip,
   thin,
   mobileCrop,
+  grayScale = false,
   priority = false,
   quality = 90,
   reference,
@@ -48,6 +50,7 @@ const ProgressiveImage = ({
       quality,
       thin,
       windowWidth,
+      grayScale,
     });
   };
 

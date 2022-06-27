@@ -16,6 +16,7 @@ const PageBanner = ({
   const backgroundProps = {
     backgroundImage,
     backgroundColor,
+    grayScale: true,
   };
   return (
     <section className="banner subpage relative font-body text-center text-white">

@@ -5,26 +5,28 @@ import { breakpoints } from '@styles';
 import { InView } from 'react-intersection-observer';
 
 interface BackgroundWrapperProps {
-  backgroundImage?: ImageProps;
   alt?: string;
+  backgroundClasses?: string;
+  backgroundColor?: string;
+  backgroundImage?: ImageProps;
   children?: any | any[];
+  gradient?: boolean;
+  grayScale?: boolean;
   priority?: boolean;
   thin?: boolean;
   video?: string;
-  gradient?: boolean;
-  backgroundClasses?: string;
-  backgroundColor?: string;
 }
 
 const BackgroundWrapper = ({
-  backgroundImage,
-  thin,
-  children,
   alt,
-  priority,
-  video,
-  gradient,
   backgroundColor,
+  backgroundImage,
+  children,
+  gradient,
+  grayScale,
+  priority,
+  thin,
+  video,
 }: BackgroundWrapperProps) => {
   const [visible, setVisible] = useState(false);
   const [hasWindow, setHasWindow] = useState(false);
@@ -50,6 +52,7 @@ const BackgroundWrapper = ({
                 priority={priority}
                 alt={alt || 'Hero Banner Image'}
                 imgWidth={breakpoints.xxl}
+                grayScale={grayScale}
                 {...backgroundImage}
               />
             </div>

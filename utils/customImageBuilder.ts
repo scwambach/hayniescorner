@@ -4,6 +4,7 @@ export const customImageBuilder = ({
   imgHeight,
   imgWidth,
   isBackground,
+  grayScale,
   mobileCrop,
   quality,
   thin,
@@ -17,6 +18,7 @@ export const customImageBuilder = ({
           .height(Math.round(breakpoints.sm * 1.5))
           .quality(quality)
           .format('webp')
+          .saturation(grayScale ? -100 : undefined)
           .fit('clip');
       }
 
@@ -26,6 +28,7 @@ export const customImageBuilder = ({
           .height(Math.round(breakpoints.md * 1.1))
           .quality(quality)
           .format('webp')
+          .saturation(grayScale ? -100 : undefined)
           .fit('clip');
       }
 
@@ -35,6 +38,7 @@ export const customImageBuilder = ({
           .height(imgHeight)
           .quality(quality)
           .format('webp')
+          .saturation(grayScale ? -100 : undefined)
           .fit('clip');
       }
     }
@@ -54,6 +58,7 @@ export const customImageBuilder = ({
           .height(Math.round(breakpoints.sm))
           .quality(quality)
           .format('webp')
+          .saturation(grayScale ? -100 : undefined)
           .fit('clip');
       }
 
@@ -63,6 +68,7 @@ export const customImageBuilder = ({
           .height(200)
           .quality(quality)
           .format('webp')
+          .saturation(grayScale ? -100 : undefined)
           .fit('clip');
       }
 
@@ -72,6 +78,7 @@ export const customImageBuilder = ({
           .height(200)
           .quality(quality)
           .format('webp')
+          .saturation(grayScale ? -100 : undefined)
           .fit('clip');
       }
     }
@@ -82,6 +89,7 @@ export const customImageBuilder = ({
         .height(Math.round(breakpoints.sm * 1.5))
         .quality(quality)
         .format('webp')
+        .saturation(grayScale ? -100 : undefined)
         .fit('clip');
     }
 
@@ -91,6 +99,7 @@ export const customImageBuilder = ({
         .height(Math.round(breakpoints.md * 1.1))
         .quality(quality)
         .format('webp')
+        .saturation(grayScale ? -100 : undefined)
         .fit('clip');
     }
 
@@ -100,10 +109,15 @@ export const customImageBuilder = ({
         .height(700)
         .quality(quality)
         .format('webp')
+        .saturation(grayScale ? -100 : undefined)
         .fit('clip');
     }
 
-    return imageUrlBuilder.width(imgWidth).quality(quality).format('webp');
+    return imageUrlBuilder
+      .width(imgWidth)
+      .quality(quality)
+      .format('webp')
+      .saturation(grayScale ? -100 : undefined);
   }
 
   if (windowWidth < breakpoints.sm && imgWidth > breakpoints.sm) {
@@ -111,6 +125,7 @@ export const customImageBuilder = ({
       .width(Math.round(breakpoints.sm))
       .quality(quality)
       .format('webp')
+      .saturation(grayScale ? -100 : undefined)
       .fit('clip');
   }
 
@@ -119,6 +134,7 @@ export const customImageBuilder = ({
       .width(Math.round(breakpoints.md))
       .quality(quality)
       .format('webp')
+      .saturation(grayScale ? -100 : undefined)
       .fit('clip');
   }
 
@@ -127,8 +143,13 @@ export const customImageBuilder = ({
       .width(Math.round(breakpoints.lg))
       .quality(quality)
       .format('webp')
+      .saturation(grayScale ? -100 : undefined)
       .fit('clip');
   }
 
-  return imageUrlBuilder.width(imgWidth).quality(quality).format('webp');
+  return imageUrlBuilder
+    .width(imgWidth)
+    .quality(quality)
+    .format('webp')
+    .saturation(grayScale ? -100 : undefined);
 };

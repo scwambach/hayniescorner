@@ -17,6 +17,7 @@ const LogoBanner = ({
     backgroundColor,
     backgroundImage,
     priority,
+    grayScale: true,
     video,
   };
 
