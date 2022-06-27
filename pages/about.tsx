@@ -8,7 +8,7 @@ type Props = {
   content: any;
   global: any;
 };
-
+//test
 const AboutPage = ({ content, global }: Props) => {
   const router = useRouter();
 
