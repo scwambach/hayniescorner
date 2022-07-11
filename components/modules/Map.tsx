@@ -1,5 +1,5 @@
 import { GoogleMap, useLoadScript } from '@react-google-maps/api';
-import { LinkObject } from '@components';
+import { mapStyle } from '@utils';
 
 const Map = () => {
   const mapContainerStyle = {
@@ -22,16 +22,13 @@ const Map = () => {
 
   return (
     <div className="map">
-      <LinkObject
-        newTab
-        url="https://www.google.com/maps/place/Haynies+Corner,+Evansville,+IN+47713"
-      />
       <GoogleMap
         center={center}
         zoom={14.5}
         mapContainerStyle={mapContainerStyle}
         options={{
           disableDefaultUI: true,
+          styles: mapStyle,
         }}
       />
     </div>

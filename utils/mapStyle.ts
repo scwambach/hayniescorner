@@ -1,45 +1,78 @@
 const mapStyle = [
   {
-    featureType: 'all',
-    elementType: 'geometry',
-    stylers: [
-      {
-        color: '#cea2df',
-      },
-    ],
-  },
-  {
-    featureType: 'all',
+    featureType: 'administrative',
     elementType: 'labels.text.fill',
     stylers: [
       {
-        gamma: 0.01,
-      },
-      {
-        lightness: 20,
+        color: '#6e4d84',
       },
     ],
   },
   {
-    featureType: 'all',
+    featureType: 'landscape',
+    elementType: 'all',
+    stylers: [
+      {
+        color: '#f3e1ff',
+      },
+    ],
+  },
+  {
+    featureType: 'poi',
+    elementType: 'all',
+    stylers: [
+      {
+        visibility: 'on',
+      },
+      {
+        hue: '#b100ff',
+      },
+    ],
+  },
+  {
+    featureType: 'road',
+    elementType: 'all',
+    stylers: [
+      {
+        saturation: -100,
+      },
+      {
+        lightness: 45,
+      },
+      {
+        color: '#ffffff',
+      },
+    ],
+  },
+  {
+    featureType: 'road',
+    elementType: 'labels.text',
+    stylers: [
+      {
+        color: '#6b4980',
+      },
+    ],
+  },
+  {
+    featureType: 'road',
     elementType: 'labels.text.stroke',
     stylers: [
       {
-        saturation: -31,
-      },
-      {
-        lightness: -33,
-      },
-      {
-        weight: 2,
-      },
-      {
-        gamma: 0.8,
+        visibility: 'off',
       },
     ],
   },
   {
-    featureType: 'all',
+    featureType: 'road.highway',
+    elementType: 'all',
+    stylers: [
+      {
+        visibility: 'simplified',
+      },
+    ],
+  },
+  {
+    featureType: 'road.arterial',
     elementType: 'labels.icon',
     stylers: [
       {
@@ -48,158 +81,11 @@ const mapStyle = [
     ],
   },
   {
-    featureType: 'landscape',
-    elementType: 'geometry',
+    featureType: 'transit',
+    elementType: 'all',
     stylers: [
       {
-        lightness: 30,
-      },
-      {
-        saturation: 30,
-      },
-    ],
-  },
-  {
-    featureType: 'landscape',
-    elementType: 'geometry.fill',
-    stylers: [
-      {
-        color: '#f9edfe',
-      },
-    ],
-  },
-  {
-    featureType: 'poi',
-    elementType: 'geometry',
-    stylers: [
-      {
-        saturation: 20,
-      },
-    ],
-  },
-  {
-    featureType: 'poi',
-    elementType: 'geometry.fill',
-    stylers: [
-      {
-        color: '#ebccfd',
-      },
-    ],
-  },
-  {
-    featureType: 'poi.park',
-    elementType: 'geometry',
-    stylers: [
-      {
-        lightness: 20,
-      },
-      {
-        saturation: -20,
-      },
-    ],
-  },
-  {
-    featureType: 'road',
-    elementType: 'geometry',
-    stylers: [
-      {
-        lightness: 10,
-      },
-      {
-        saturation: -30,
-      },
-    ],
-  },
-  {
-    featureType: 'road',
-    elementType: 'geometry.fill',
-    stylers: [
-      {
-        color: '#ffffff',
-      },
-    ],
-  },
-  {
-    featureType: 'road',
-    elementType: 'geometry.stroke',
-    stylers: [
-      {
-        saturation: '1',
-      },
-      {
-        lightness: '-30',
-      },
-      {
-        color: '#efd4fd',
-      },
-      {
-        weight: '1',
-      },
-    ],
-  },
-  {
-    featureType: 'road',
-    elementType: 'labels.text.fill',
-    stylers: [
-      {
-        color: '#836891',
-      },
-      {
-        lightness: '0',
-      },
-      {
-        gamma: '0.76',
-      },
-      {
-        saturation: '100',
-      },
-      {
-        invert_lightness: true,
-      },
-    ],
-  },
-  {
-    featureType: 'road',
-    elementType: 'labels.text.stroke',
-    stylers: [
-      {
-        color: '#ffffff',
-      },
-      {
-        saturation: '18',
-      },
-      {
-        weight: '3.71',
-      },
-    ],
-  },
-  {
-    featureType: 'road.arterial',
-    elementType: 'geometry.fill',
-    stylers: [
-      {
-        color: '#ffffff',
-      },
-    ],
-  },
-  {
-    featureType: 'road.arterial',
-    elementType: 'geometry.stroke',
-    stylers: [
-      {
-        color: '#efd4fd',
-      },
-      {
-        lightness: '-30',
-      },
-    ],
-  },
-  {
-    featureType: 'road.local',
-    elementType: 'geometry.fill',
-    stylers: [
-      {
-        color: '#ffffff',
+        visibility: 'off',
       },
     ],
   },
@@ -208,16 +94,10 @@ const mapStyle = [
     elementType: 'all',
     stylers: [
       {
-        lightness: -20,
+        color: '#cdabe2',
       },
-    ],
-  },
-  {
-    featureType: 'water',
-    elementType: 'geometry.fill',
-    stylers: [
       {
-        color: '#cbb0d9',
+        visibility: 'on',
       },
     ],
   },
