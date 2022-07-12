@@ -25,7 +25,6 @@ export { PageBanner } from './blocks/PageBanner';
 export { PageLayout } from './wrappers/PageLayout';
 export { PortableTextModule } from './modules/PortableTextModule';
 export { ProgressiveImage } from './modules/ProgressiveImage';
-export { Pwa } from './global/Pwa';
 export { River } from './blocks/River';
 export { Seo } from './global/Seo';
 export { VideoModal } from './modules/VideoModal';

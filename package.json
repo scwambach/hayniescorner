@@ -9,7 +9,6 @@
     "email": "mjml -r emails/contact.mjml --config.minify --config.minifyOptions='{\"minifyCSS\": true, \"removeEmptyAttributes\": false}' -o emails/contact.html",
     "fullstack": "concurrently \"yarn dev\" \"cd _studio && yarn start\"",
     "lint": "next lint",
-    "pwa": "pwa-asset-generator ./public/favicon.png ./public/pwa",
     "start": "next start"
   },
   "dependencies": {
@@ -22,7 +21,6 @@
     "axios": "^0.27.2",
     "dayjs": "^1.11.3",
     "next": "12.1.6",
-    "next-pwa": "^5.5.4",
     "next-sanity": "^0.5.2",
     "next-sanity-image": "^3.2.1",
     "nextjs-progressbar": "^0.0.14",

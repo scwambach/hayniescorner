@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import React from 'react';
-import { Pwa } from '@components';
 
 interface SeoProps {
   content: any;
@@ -57,7 +56,6 @@ const Seo = ({ content, global }: SeoProps) => {
             : `${content.title} | ${global.site.siteTitle}`
         }
       />
-      <Pwa siteTitle={global.site.siteTitle} />
     </Head>
   );
 };
