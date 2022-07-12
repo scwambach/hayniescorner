@@ -37,5 +37,10 @@ export default {
       title: 'Main Email',
       type: 'string',
     },
+    {
+      name: 'donationUrl',
+      title: 'Donation Url',
+      type: 'string',
+    },
   ],
 };

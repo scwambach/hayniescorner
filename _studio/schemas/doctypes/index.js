@@ -9,6 +9,7 @@ import event from './event';
 import eventsPage from './eventsPage';
 import feature from './feature';
 import globalSettings from './globalSettings';
+import headingBlock from './headingBlock';
 import homePage from './homePage';
 import iconItem from './iconItem';
 import navMenu from './navMenu';
@@ -33,6 +34,7 @@ export {
   eventsPage,
   feature,
   globalSettings,
+  headingBlock,
   homePage,
   iconItem,
   navMenu,

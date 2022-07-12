@@ -1,14 +1,10 @@
 import S from '@sanity/desk-tool/structure-builder';
-import ZoChatBubbleDots from '@meronex/icons/zo/ZoChatBubbleDots';
-import FaBullhorn from '@meronex/icons/fa/FaBullhorn';
-import BsFillPeopleFill from '@meronex/icons/bs/BsFillPeopleFill';
-import MdcFormSelect from '@meronex/icons/mdc/MdcFormSelect';
-import MdEventNote from '@meronex/icons/md/MdEventNote';
-import GrGroup from '@meronex/icons/gr/GrGroup';
 import OiImage from '@meronex/icons/oi/OiImage';
 import GrResources from '@meronex/icons/gr/GrResources';
 import FaStar from '@meronex/icons/fa/FaStar';
 import { FaRegStar } from '@meronex/icons/fa';
+import { AiOutlineBlock } from '@meronex/icons/ai';
+import BsFillPeopleFill from '@meronex/icons/bs/BsFillPeopleFill';
 
 export const resources = S.listItem()
   .title('Resources')
@@ -17,10 +13,10 @@ export const resources = S.listItem()
       .title('Resources')
       .items([
         // ************** People
-        // S.listItem()
-        //   .title('People')
-        //   .child(S.documentTypeList('person').title('People'))
-        //   .icon(BsFillPeopleFill),
+        S.listItem()
+          .title('People')
+          .child(S.documentTypeList('person').title('People'))
+          .icon(BsFillPeopleFill),
         // ************** Tesimonials
         // S.listItem()
         //   .title('Tesimonials')
@@ -37,6 +33,11 @@ export const resources = S.listItem()
           .schemaType('iconItem')
           .child(S.documentTypeList('iconItem'))
           .icon(FaRegStar),
+        S.listItem()
+          .title('Heading Blocks')
+          .schemaType('headingBlock')
+          .child(S.documentTypeList('headingBlock'))
+          .icon(AiOutlineBlock),
         // ************** SVGs
         S.listItem()
           .title('SVG Library')

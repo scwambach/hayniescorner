@@ -192,6 +192,27 @@ export default {
       ],
     },
     {
+      name: 'arts',
+      fieldset: 'pageBody',
+      title: 'Arts Banner',
+      type: 'object',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+      fields: [
+        {
+          name: 'title',
+          title: 'Heading',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        ...backgroundImage({ required: true }),
+        { ...blockContent() },
+        { ...links() },
+      ],
+    },
+    {
       name: 'closerFeatures',
       title: 'Closer Features',
       type: 'object',

@@ -1,11 +1,13 @@
 import React from 'react';
 import DefaultSource from 'part:sanity-plugin-media/asset-source';
 import { iconSelector, objectTitle, slug, url } from '../commonFields';
+import MdStoreMallDirectory from '@meronex/icons/md/MdStoreMallDirectory';
 
 export default {
   name: 'business',
   title: 'Business',
   type: 'document',
+  icon: MdStoreMallDirectory,
   fields: [
     { ...objectTitle },
     { ...slug({ fieldset: null }) },

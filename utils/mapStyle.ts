@@ -25,7 +25,70 @@ const mapStyle = [
         visibility: 'on',
       },
       {
-        hue: '#b100ff',
+        saturation: '-60',
+      },
+      {
+        hue: '#e400ff',
+      },
+    ],
+  },
+  {
+    featureType: 'poi.park',
+    elementType: 'geometry',
+    stylers: [
+      {
+        color: '#ebccff',
+      },
+    ],
+  },
+  {
+    featureType: 'poi.park',
+    elementType: 'labels',
+    stylers: [
+      {
+        color: '#6b4980',
+      },
+      {
+        saturation: '51',
+      },
+    ],
+  },
+  {
+    featureType: 'poi.park',
+    elementType: 'labels.text.stroke',
+    stylers: [
+      {
+        color: '#ffffff',
+      },
+    ],
+  },
+  {
+    featureType: 'poi.school',
+    elementType: 'all',
+    stylers: [
+      {
+        color: '#ebccff',
+      },
+    ],
+  },
+  {
+    featureType: 'poi.school',
+    elementType: 'labels',
+    stylers: [
+      {
+        color: '#6b4980',
+      },
+      {
+        saturation: '21',
+      },
+    ],
+  },
+  {
+    featureType: 'poi.school',
+    elementType: 'labels.text.stroke',
+    stylers: [
+      {
+        color: '#ffffff',
       },
     ],
   },
