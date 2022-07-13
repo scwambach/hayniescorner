@@ -1,4 +1,5 @@
 import aboutPage from './aboutPage';
+import artsPage from './artsPage';
 import blogCategory from './blogCategory';
 import business from './business';
 import businessCategory from './businessCategory';
@@ -24,6 +25,7 @@ import volunteerPage from './volunteerPage';
 
 export {
   aboutPage,
+  artsPage,
   blogCategory,
   business,
   businessCategory,

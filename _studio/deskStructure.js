@@ -36,6 +36,9 @@ const WebPreview = ({ document }) => {
     document.displayed._id === 'homePage' ||
     document.displayed._id === 'drafts.homePage'
       ? ''
+      : document.displayed._id === 'artsPage' ||
+        document.displayed._id === 'drafts.artsPage'
+      ? '/arts'
       : document.displayed._id === 'eventsPage' ||
         document.displayed._id === 'drafts.eventsPage'
       ? '/events'

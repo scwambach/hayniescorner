@@ -6,6 +6,7 @@ import { buttons } from './modules';
 
 import {
   aboutPage,
+  artsPage,
   blogCategory,
   business,
   businessCategory,
@@ -34,6 +35,7 @@ export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
     aboutPage,
+    artsPage,
     blogCategory,
     business,
     businessCategory,

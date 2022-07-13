@@ -1,6 +1,6 @@
-import { blockContent, links } from '../commonFields';
+import { blockContent } from '../commonFields';
 import { AiOutlineBlock } from '@meronex/icons/ai';
-
+import FaHeading from '@meronex/icons/fa/FaHeading';
 export default {
   name: 'headingBlock',
   title: 'Heading Block',
@@ -27,4 +27,16 @@ export default {
       }),
     },
   ],
+  preview: {
+    select: {
+      title: 'heading',
+      media: 'image',
+    },
+    prepare({ title, media }) {
+      return {
+        title: title || 'Heading Block',
+        media: media || FaHeading,
+      };
+    },
+  },
 };

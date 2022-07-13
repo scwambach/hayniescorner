@@ -1,14 +1,14 @@
 import {
-  fieldSets,
-  pageDescription,
-  mainImage,
   backgroundImage,
+  fieldSets,
   links,
+  mainImage,
+  pageDescription,
 } from '../commonFields';
 
 export default {
-  name: 'aboutPage',
-  title: 'About page',
+  name: 'artsPage',
+  title: 'Arts Page',
   type: 'document',
   fieldsets: fieldSets,
   fields: [
@@ -41,8 +41,8 @@ export default {
       ],
     },
     {
-      name: 'aboutFeatures',
-      title: 'About Features',
+      name: 'artFeatures',
+      title: 'Features',
       type: 'object',
       fieldset: 'pageBody',
       options: {
@@ -51,55 +51,8 @@ export default {
       },
       fields: [
         {
-          name: 'features',
-          title: 'Features',
-          type: 'array',
-          validation: (Rule) => Rule.required().min(1),
-          of: [
-            {
-              name: 'featureObj',
-              title: 'Feature',
-              type: 'object',
-              fields: [
-                {
-                  name: 'feature',
-                  title: 'Feature',
-                  type: 'reference',
-                  validation: (Rule) => Rule.required(),
-                  to: [{ type: 'feature' }],
-                },
-                { ...links({ name: 'extraLinks', title: 'Extra Links' }) },
-              ],
-              preview: {
-                select: {
-                  title: 'feature.title',
-                  media: 'feature.image',
-                },
-                prepare({ title, media }) {
-                  return {
-                    title,
-                    media,
-                  };
-                },
-              },
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'hcadaSection',
-      title: 'HCADA Section',
-      fieldset: 'pageBody',
-      type: 'object',
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
-      fields: [
-        {
-          name: 'features',
-          title: 'Features',
+          name: 'upperfeatures',
+          title: 'Upper Features',
           type: 'array',
           validation: (Rule) => Rule.required().min(1),
           of: [
@@ -138,22 +91,9 @@ export default {
           type: 'reference',
           to: [{ type: 'headingBlock' }],
         },
-        { ...links() },
-      ],
-    },
-    {
-      name: 'footerFeatures',
-      title: 'Footer Features',
-      type: 'object',
-      fieldset: 'pageBody',
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
-      fields: [
         {
-          name: 'features',
-          title: 'Features',
+          name: 'lowerfeatures',
+          title: 'Lower Features',
           type: 'array',
           validation: (Rule) => Rule.required().min(1),
           of: [

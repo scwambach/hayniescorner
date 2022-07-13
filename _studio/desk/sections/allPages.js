@@ -7,6 +7,7 @@ import MdEventNote from '@meronex/icons/md/MdEventNote';
 import MdStoreMallDirectory from '@meronex/icons/md/MdStoreMallDirectory';
 import EnHand from '@meronex/icons/en/EnHand';
 import AiOutlineMail from '@meronex/icons/ai/AiOutlineMail';
+import FaPaintBrush from '@meronex/icons/fa/FaPaintBrush';
 
 export const allPages = S.listItem()
   .title('Pages')
@@ -24,6 +25,16 @@ export const allPages = S.listItem()
               .views(viewArray)
           )
           .icon(AiOutlineHome),
+        S.listItem()
+          .title('Arts Page')
+          .child(
+            S.document()
+              .schemaType('artsPage')
+              .title('Arts Page')
+              .documentId('artsPage')
+              .views(viewArray)
+          )
+          .icon(FaPaintBrush),
         S.listItem()
           .title('Businesses Page')
           .child(
