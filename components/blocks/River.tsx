@@ -29,12 +29,14 @@ interface RiverProps {
   delay?: number;
   cap?: boolean;
   reverse?: boolean;
+  buttonColors?: string[];
 }
 
 const River = ({
   features,
   bgColor = colors.color6,
   shadowColor = colors.color5,
+  buttonColors,
   delay = 0,
   cap = false,
   reverse = false,
@@ -136,7 +138,13 @@ const River = ({
                           key={link._key}
                           index={index}
                           classes={`w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto ${
-                            isEven(index) ? 'bg-color1' : 'bg-orange'
+                            isEven(index)
+                              ? buttonColors
+                                ? buttonColors[0]
+                                : 'bg-color1'
+                              : buttonColors
+                              ? buttonColors[1]
+                              : 'bg-orange'
                           }`}
                         >
                           <LinkObject {...link} />

@@ -21,7 +21,7 @@ const LinkObject = ({
   index,
   newTab,
   setActiveIndex,
-  url,
+  url = '/',
 }: LinkObjectProps) => {
   const isSelf = () => {
     return url.indexOf('http') < 0;

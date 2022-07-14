@@ -44,6 +44,7 @@ module.exports = {
         eventTitle: '30px',
         eventTypeBody: '15px',
         eventTypeHeading: '60px',
+        headingBlock: '20px',
         featBody: '18px',
         featHeading: '30px',
         footer: '14px',

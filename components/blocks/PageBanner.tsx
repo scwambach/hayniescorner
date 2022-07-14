@@ -20,7 +20,7 @@ const PageBanner = ({
   };
   return (
     <section className="banner subpage relative font-body text-center text-white">
-      <BackgroundWrapper {...backgroundProps} alt={heading}>
+      <BackgroundWrapper {...backgroundProps} hardLight alt={heading}>
         <Container maxWidth={breakpoints.xxl}>
           <h1 className="font-black text-4xl md:text-banner uppercase tracking-sectionHeading leading-tight  py-16 md:py-32">
             {heading}

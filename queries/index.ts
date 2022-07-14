@@ -1,4 +1,5 @@
 export { aboutQuery } from './aboutQuery';
+export { artsQuery } from './artsQuery';
 export { businessesQuery } from './businessesQuery';
 export { contactQuery } from './contactQuery';
 export { eventsQuery } from './eventsQuery';
