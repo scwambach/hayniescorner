@@ -37,7 +37,7 @@ const IconListBanner = ({
   blockContent,
   delay = 0,
   backgroundImage,
-  backgroundColor = 'bg-orange',
+  backgroundColor = 'bg-darkOrange',
 }: IconListBannerProps) => {
   const backgroundProps = {
     backgroundImage,
@@ -51,7 +51,7 @@ const IconListBanner = ({
       className="iconListBanner relative overflow-hidden"
       id={slugify(title)}
     >
-      <BackgroundWrapper {...backgroundProps} alt={title}>
+      <BackgroundWrapper {...backgroundProps} grayScale alt={title}>
         <div
           className="fader py-16 md:py-sectionPadding text-white "
           data-aos="fade-up"

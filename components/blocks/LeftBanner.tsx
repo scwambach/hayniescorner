@@ -35,7 +35,7 @@ const LeftBanner = ({
       className="leftbanner relative overflow-hidden"
       id={slugify(title)}
     >
-      <BackgroundWrapper {...backgroundProps} grayScale alt={title}>
+      <BackgroundWrapper {...backgroundProps} hardLight grayScale alt={title}>
         <div
           className="fader py-16 md:py-sectionPaddingBottom text-white "
           data-aos="fade-up"

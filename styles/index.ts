@@ -14,7 +14,8 @@ export const breakpoints = {
 export const colors = {
   white: '#ffffff',
   black: '#1A4059',
-  red: '#f26e24',
+  red: '#ED5858',
+  darkOrange: '#f26e24',
   color1: '#EE6E24',
   color2: '#F0874C',
   color3: '#F19C1B',
@@ -23,6 +24,7 @@ export const colors = {
   yellow: '#ffc10e',
   color5: '#C8D92B',
   color6: '#A5CD39',
+  seaFoam: '#39CDB6',
   color7: '#6ACBE1',
   color8: '#45B1C9',
   blue: '#2eb1c9',
