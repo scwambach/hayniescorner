@@ -8,6 +8,7 @@ import {
   River,
   IconListBanner,
   LinkTiles,
+  LeftBanner,
 } from '@components';
 
 type Props = {
@@ -30,6 +31,7 @@ const IndexPage = ({ content, global }: Props) => {
       <River {...data.aboutFeatures} cap bgColor={colors.color6} delay={1} />
       <IconListBanner {...data.eventTypes} bgColor={colors.color6} delay={2} />
       <LinkTiles {...data.linkTiles} />
+      <LeftBanner {...data.arts} />
       <River
         {...data.closerFeatures}
         reverse

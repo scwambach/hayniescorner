@@ -49,6 +49,12 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
       ${imageQuery({ name: 'iconImage' })},
     }
   },
+  arts {
+    ${imageQuery({ name: 'backgroundImage' })},
+    blockContent,
+    links,
+    title
+  },
   closerFeatures {
     features[] {
       feature -> {

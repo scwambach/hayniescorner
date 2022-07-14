@@ -61,7 +61,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
         </div>
       )}
       {!loading && !submitted && submitError && (
-        <h2 className="font-black mt-20 text-red tracking-featureHeading text-2xl md:text-3xl leading-tight lg:leading-tight mb-10">
+        <h2 className="font-black mt-20 text-darkOrange tracking-featureHeading text-2xl md:text-3xl leading-tight lg:leading-tight mb-10">
           Looks like something went wrong. Don&apos;t worry, the developer has
           been notified and will correctly the problem soon. Please try again at
           a later date or send email directly to us
@@ -140,7 +140,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
             </label>
           </fieldset>
           <div className="fader" data-aos="fade-up" data-aos-delay="150">
-            <Button classes="text-white block lg:inline-block bg-red">
+            <Button classes="text-white block lg:inline-block bg-darkOrange">
               <button type="submit" className="uppercase">
                 Submit
               </button>

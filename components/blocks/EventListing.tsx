@@ -134,7 +134,7 @@ const EventListing = ({ events = [], past }: EventListingProps) => {
         </div>
         {!past && (
           <LinkObject
-            classes="font-black uppercase tracking-sectionHeading text-2xl lg:text-3xl lg:transition-all lg:hover:text-red inline-block border-b-4 lg:hover:border-b-red relative xmd:left-10 block mx-auto md:mx-0"
+            classes="font-black uppercase tracking-sectionHeading text-2xl lg:text-3xl lg:transition-all lg:hover:text-darkOrange inline-block border-b-4 lg:hover:border-b-darkOrange relative xmd:left-10 block mx-auto md:mx-0"
             url="/past-events"
             copy="See Past Events"
           />

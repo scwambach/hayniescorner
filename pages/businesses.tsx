@@ -21,7 +21,7 @@ const BusinessesPage = ({ content, global }: Props) => {
     <PageLayout
       content={data}
       global={global}
-      subPage={{ banner: data.heroBanner, color: 'bg-red' }}
+      subPage={{ banner: data.heroBanner, color: 'bg-darkOrange' }}
     >
       <BusinessListing sections={data.sections.businessTypes} />
     </PageLayout>
