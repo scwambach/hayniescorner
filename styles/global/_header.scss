@@ -1,4 +1,9 @@
 .header {
+  .logo-copy-container {
+    @media (max-width: $sxl) and (min-width: ($lg + 1)) {
+      display: none;
+    }
+  }
   .navigation {
     @media screen and (max-width: $lg) {
       width: 50px;
@@ -14,7 +19,7 @@
           pointer-events: none;
         }
 
-        &:nth-child(5n - 4) {
+        &:nth-child(7n - 6) {
           a {
             @media screen and (max-width: $lg) {
               background-color: $red;
@@ -24,7 +29,19 @@
             }
           }
         }
-        &:nth-child(5n - 3) {
+
+        &:nth-child(7n - 5) {
+          a {
+            @media screen and (max-width: $lg) {
+              background-color: $darkOrange;
+            }
+            &:before {
+              background-color: $darkOrange;
+            }
+          }
+        }
+
+        &:nth-child(7n - 4) {
           a {
             @media screen and (max-width: $lg) {
               background-color: $orange;
@@ -34,7 +51,7 @@
             }
           }
         }
-        &:nth-child(5n - 2) {
+        &:nth-child(7n - 3) {
           a {
             @media screen and (max-width: $lg) {
               background-color: $color6;
@@ -44,7 +61,17 @@
             }
           }
         }
-        &:nth-child(5n - 1) {
+        &:nth-child(7n - 2) {
+          a {
+            @media screen and (max-width: $lg) {
+              background-color: $seaFoam;
+            }
+            &:before {
+              background-color: $seaFoam;
+            }
+          }
+        }
+        &:nth-child(7n - 1) {
           a {
             @media screen and (max-width: $lg) {
               background-color: $blue;
@@ -54,7 +81,7 @@
             }
           }
         }
-        &:nth-child(5n) {
+        &:nth-child(7n) {
           a {
             @media screen and (max-width: $lg) {
               background-color: $color9;

@@ -55,7 +55,7 @@ const Header = ({ items, iconImage, customIcon, subPage }: HeaderProps) => {
           <LinkObject url="/">
             <div className="flex my-4 items-center">
               <ImageIcon iconImage={iconImage} customIcon={customIcon} />
-              <span className="my-2 ml-5 mt-ten tracking-logo">
+              <span className="my-2 ml-5 mt-ten tracking-logo logo-copy-container">
                 <span className="font-bold uppercase text-logoBold">
                   Haynie&apos;s Corner
                 </span>

@@ -1,10 +1,10 @@
 .businesslisting {
   .type {
     &:nth-child(3n - 2) {
-      background-color: $red;
+      background-color: $darkOrange;
       svg {
         path {
-          fill: $red;
+          fill: $darkOrange;
         }
       }
     }

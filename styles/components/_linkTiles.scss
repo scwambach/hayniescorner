@@ -1,7 +1,7 @@
 .linkTiles {
   .tile {
     &:nth-child(3n - 2) {
-      background: $red;
+      background: $darkOrange;
 
       clip-path: url('#tile1');
     }
