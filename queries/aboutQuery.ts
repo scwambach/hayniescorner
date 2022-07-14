@@ -23,4 +23,34 @@ export const aboutQuery = groq`*[_type == "aboutPage"][0] {
       extraLinks,
     }
   },
+  hcadaSection {
+    features[] {
+      feature -> {
+        _id,
+        title,
+        blockContent,
+        ${imageQuery({ name: 'image' })},
+        links,
+      },
+      extraLinks,
+    },
+    headingBlock -> {
+      heading,
+      message,
+      ${imageQuery({ name: 'image' })}
+    },
+    links
+  },
+  footerFeatures {
+    features[] {
+      feature -> {
+        _id,
+        title,
+        blockContent,
+        ${imageQuery({ name: 'image' })},
+        links,
+      },
+      extraLinks,
+    },
+  }
 }`;

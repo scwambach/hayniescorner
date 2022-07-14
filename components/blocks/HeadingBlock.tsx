@@ -37,16 +37,16 @@ const HeadingBlock = ({
         <div
           data-aos="fade-up"
           data-aos-delay={`${delayNum}`}
-          className={`block-container text-white max-w-smd wlg:max-w-none px-14 mx-auto wlg:px-36 py-20 ${
-            image ? 'wlg:flex wlg:items-center' : ''
+          className={`fader block-container text-white max-w-smd wlg:max-w-none px-14 mx-auto wlg:px-36 py-20 ${
+            image.url ? 'wlg:flex wlg:items-center' : ''
           }`}
           style={{
             backgroundColor: blockColor,
           }}
         >
-          {image && (
+          {image.url && (
             <div
-              className="image mx-auto relative pb-5 wlg:pb-0 wlg:w-1/3"
+              className="fader image mx-auto relative pb-5 wlg:pb-0 wlg:w-1/3"
               data-aos="fade-up"
               data-aos-anchor={`#${slugify(heading)}`}
               data-aos-delay={`${delayNum + 50}`}
@@ -56,10 +56,14 @@ const HeadingBlock = ({
               </div>
             </div>
           )}
-          <div className="copy wlg:w-2/3 text-center wlg:text-left wlg:pl-20 mx-auto">
-            {heading && !image && (
+          <div
+            className={`fader copy text-center mx-auto${
+              image.url ? ' wlg:text-left wlg:w-2/3 wlg:pl-20' : ''
+            }`}
+          >
+            {heading && !image.url && (
               <h4
-                className="font-black uppercase tracking-sectionHeading font"
+                className="fader font-black uppercase tracking-featureHeading text-iconHeading wlg:text-featHeading mb-5"
                 data-aos="fade-up"
                 data-aos-anchor={`#${slugify(heading)}`}
                 data-aos-delay={`${delayNum + 50}`}
@@ -71,11 +75,11 @@ const HeadingBlock = ({
               <div
                 data-aos="fade-up"
                 data-aos-anchor={`#${slugify(heading)}`}
-                data-aos-delay={`${image ? delayNum + 100 : delayNum + 50}`}
-                className={`message${
-                  image
-                    ? ' font-black uppercase tracking-featureHeading wlg:text-headingBlock'
-                    : ''
+                data-aos-delay={`${image.url ? delayNum + 100 : delayNum + 50}`}
+                className={`fader message uppercase${
+                  image.url
+                    ? ' font-black tracking-featureHeading wlg:text-headingBlock'
+                    : ' font-semibold tracking-wider'
                 }`}
               >
                 <PortableTextModule text={message} />
