@@ -1,6 +1,5 @@
 import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
-
 import { heroBanner } from './components';
 import { buttons } from './modules';
 
@@ -17,6 +16,7 @@ import {
   eventsPage,
   feature,
   globalSettings,
+  hcadaPage,
   headingBlock,
   homePage,
   iconItem,
@@ -47,6 +47,7 @@ export default createSchema({
     eventsPage,
     feature,
     globalSettings,
+    hcadaPage,
     headingBlock,
     heroBanner,
     homePage,

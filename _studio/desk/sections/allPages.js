@@ -1,13 +1,15 @@
 import S from '@sanity/desk-tool/structure-builder';
 import AiOutlineHome from '@meronex/icons/ai/AiOutlineHome';
 import FdPageCopy from '@meronex/icons/fd/FdPageCopy';
-import { viewArray } from '../../deskStructure';
 import FaQuestion from '@meronex/icons/fa/FaQuestion';
 import MdEventNote from '@meronex/icons/md/MdEventNote';
 import MdStoreMallDirectory from '@meronex/icons/md/MdStoreMallDirectory';
 import EnHand from '@meronex/icons/en/EnHand';
 import AiOutlineMail from '@meronex/icons/ai/AiOutlineMail';
 import FaPaintBrush from '@meronex/icons/fa/FaPaintBrush';
+import FaRegClipboard from '@meronex/icons/fa/FaRegClipboard';
+import FaRegHandPaper from '@meronex/icons/fa/FaRegHandPaper';
+import { viewArray } from '../../deskStructure';
 
 export const allPages = S.listItem()
   .title('Pages')
@@ -66,6 +68,16 @@ export const allPages = S.listItem()
           )
           .icon(FaQuestion),
         S.listItem()
+          .title('HCADA Page')
+          .child(
+            S.document()
+              .schemaType('hcadaPage')
+              .title('HCADA Page')
+              .documentId('hcadaPage')
+              .views(viewArray)
+          )
+          .icon(FaRegClipboard),
+        S.listItem()
           .title('Volunteer Page')
           .child(
             S.document()
@@ -75,6 +87,16 @@ export const allPages = S.listItem()
               .views(viewArray)
           )
           .icon(EnHand),
+        S.listItem()
+          .title('Sponsorship Page')
+          .child(
+            S.document()
+              .schemaType('volunteerPage')
+              .title('Sponsorship Page')
+              .documentId('sponsorshipPage')
+              .views(viewArray)
+          )
+          .icon(FaRegHandPaper),
         S.listItem()
           .title('Contact Page')
           .child(

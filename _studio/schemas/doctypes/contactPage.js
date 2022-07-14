@@ -3,6 +3,7 @@ import {
   pageDescription,
   mainImage,
   backgroundImage,
+  links,
 } from '../commonFields';
 
 export default {
@@ -39,5 +40,6 @@ export default {
         },
       ],
     },
+    { ...links({ fieldset: 'pageBody' }) },
   ],
 };

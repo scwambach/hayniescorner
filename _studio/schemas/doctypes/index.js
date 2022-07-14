@@ -10,6 +10,7 @@ import event from './event';
 import eventsPage from './eventsPage';
 import feature from './feature';
 import globalSettings from './globalSettings';
+import hcadaPage from './hcadaPage';
 import headingBlock from './headingBlock';
 import homePage from './homePage';
 import iconItem from './iconItem';
@@ -36,6 +37,7 @@ export {
   eventsPage,
   feature,
   globalSettings,
+  hcadaPage,
   headingBlock,
   homePage,
   iconItem,

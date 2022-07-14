@@ -25,7 +25,7 @@ export default {
       name: 'heroBanner',
       title: 'Banner',
       fieldset: 'pageBody',
-      validation: (Rule) => Rule.required().min(1),
+      validation: (Rule) => Rule.required(),
       type: 'object',
       options: {
         collapsed: true,
@@ -35,7 +35,7 @@ export default {
         ...backgroundImage({ required: true }),
         {
           name: 'heading',
-          validation: (Rule) => Rule.required().min(1),
+          validation: (Rule) => Rule.required(),
           title: 'Heading',
           type: 'string',
         },

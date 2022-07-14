@@ -88,6 +88,7 @@ export default {
         {
           name: 'headingBlock',
           title: 'Heading Block',
+          validation: (Rule) => Rule.required(),
           type: 'reference',
           to: [{ type: 'headingBlock' }],
         },

@@ -33,6 +33,11 @@ export default {
       minimal: true,
     }),
     {
+      name: 'address',
+      title: 'Address',
+      type: 'string',
+    },
+    {
       name: 'mainEmail',
       title: 'Main Email',
       type: 'string',

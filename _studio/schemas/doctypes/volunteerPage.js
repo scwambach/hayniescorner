@@ -3,6 +3,7 @@ import {
   pageDescription,
   mainImage,
   backgroundImage,
+  blockContent,
 } from '../commonFields';
 
 export default {
@@ -47,6 +48,13 @@ export default {
       title: 'Form Heading',
       fieldset: 'pageBody',
       type: 'string',
+    },
+    {
+      ...blockContent({
+        name: 'formMessage',
+        title: 'Form Message',
+        fieldset: 'pageBody',
+      }),
     },
   ],
 };
