@@ -15,3 +15,4 @@ export { mapStyle } from './mapStyle';
 export { newRatio } from './newRatio';
 export { noOrphans } from './noOrphans';
 export { slugify } from './slugify';
+export { parseCompanies } from './parseCompanies';

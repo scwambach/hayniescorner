@@ -19,6 +19,7 @@ export { Map } from './modules/Map';
 export { LinkTiles } from './blocks/LinkTiles';
 export { Logo } from './svg/Logo';
 export { LeftBanner } from './blocks/LeftBanner';
+export { Board } from './blocks/Board';
 export { LogoBanner } from './blocks/LogoBanner';
 export { LogoWhite } from './svg/LogoWhite';
 export { MainContext } from './wrappers/Layout';

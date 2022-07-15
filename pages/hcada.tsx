@@ -1,8 +1,9 @@
-import { aboutQuery, siteQuery } from '@queries';
+import { hcadaQuery, siteQuery } from '@queries';
 import { getClient, usePreviewSubscription } from '@utils';
-import { PageLayout, River } from '@components';
+import { Board, PageLayout, River } from '@components';
 import { useRouter } from 'next/router';
 import { colors } from '@styles';
+import HeadingBlock from '@components/blocks/HeadingBlock';
 
 type Props = {
   content: any;
@@ -12,7 +13,7 @@ type Props = {
 const HcadaPage = ({ content, global }: Props) => {
   const router = useRouter();
 
-  const { data = {} } = usePreviewSubscription(aboutQuery, {
+  const { data = {} } = usePreviewSubscription(hcadaQuery, {
     initialData: content,
     enabled: router.query.preview === '',
   });
@@ -21,13 +22,27 @@ const HcadaPage = ({ content, global }: Props) => {
     <PageLayout
       content={data}
       global={global}
-      subPage={{ banner: data.heroBanner, color: 'bg-color6' }}
+      subPage={{ banner: data.heroBanner, color: 'bg-seaFoam' }}
     >
       <River
-        {...data.aboutFeatures}
+        {...data.upperFeatures}
         cap
         bgColor={colors.black}
-        shadowColor={colors.color6}
+        shadowColor={colors.seaFoam}
+      />
+      <HeadingBlock
+        {...data.boardSection.headingBlock}
+        bgColor={colors.black}
+        blockColor={colors.seaFoam}
+      />
+
+      <Board {...data.boardSection} />
+
+      <River
+        {...data.lowerFeatures}
+        reverse
+        bgColor={colors.black}
+        shadowColor={colors.seaFoam}
       />
     </PageLayout>
   );
@@ -36,7 +51,7 @@ const HcadaPage = ({ content, global }: Props) => {
 export default HcadaPage;
 
 export async function getStaticProps({ res, err, query, preview = false }) {
-  const doc = await getClient(query?.preview === '').fetch(aboutQuery);
+  const doc = await getClient(query?.preview === '').fetch(hcadaQuery);
   const global = await getClient(query?.preview === '').fetch(siteQuery);
 
   if (!doc) {

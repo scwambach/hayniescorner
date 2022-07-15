@@ -41,103 +41,134 @@ export default {
       ],
     },
     {
-      name: 'upperfeatures',
-      fieldset: 'pageBody',
+      name: 'upperFeatures',
       title: 'Upper Features',
-      type: 'array',
-      validation: (Rule) => Rule.required().min(1),
-      of: [
+      type: 'object',
+      fieldset: 'pageBody',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+      fields: [
         {
-          name: 'featureObj',
-          title: 'Feature',
-          type: 'object',
-          fields: [
+          name: 'features',
+          title: 'Features',
+          type: 'array',
+          validation: (Rule) => Rule.required().min(1),
+          of: [
             {
-              name: 'feature',
+              name: 'featureObj',
               title: 'Feature',
-              type: 'reference',
-              validation: (Rule) => Rule.required(),
-              to: [{ type: 'feature' }],
+              type: 'object',
+              fields: [
+                {
+                  name: 'feature',
+                  title: 'Feature',
+                  type: 'reference',
+                  validation: (Rule) => Rule.required(),
+                  to: [{ type: 'feature' }],
+                },
+                { ...links({ name: 'extraLinks', title: 'Extra Links' }) },
+              ],
+              preview: {
+                select: {
+                  title: 'feature.title',
+                  media: 'feature.image',
+                },
+                prepare({ title, media }) {
+                  return {
+                    title,
+                    media,
+                  };
+                },
+              },
             },
-            { ...links({ name: 'extraLinks', title: 'Extra Links' }) },
           ],
-          preview: {
-            select: {
-              title: 'feature.title',
-              media: 'feature.image',
-            },
-            prepare({ title, media }) {
-              return {
-                title,
-                media,
-              };
-            },
-          },
         },
       ],
     },
     {
-      name: 'headingBlock',
-      title: 'Heading Block',
-      validation: (Rule) => Rule.required(),
+      name: 'boardSection',
+      title: 'About the Board',
       fieldset: 'pageBody',
-      type: 'reference',
-      to: [{ type: 'headingBlock' }],
-    },
-    {
-      name: 'boardHeading',
-      title: 'Board Heading',
-      fieldset: 'pageBody',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'boardMembers',
-      title: 'Board Members',
-      fieldset: 'pageBody',
-      type: 'array',
-      of: [
+      type: 'object',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+      fields: [
         {
-          name: 'member',
-          title: 'Member',
+          name: 'headingBlock',
+          title: 'Heading Block',
+          validation: (Rule) => Rule.required(),
           type: 'reference',
-          to: [{ type: 'person' }],
+          to: [{ type: 'headingBlock' }],
+        },
+        {
+          name: 'boardHeading',
+          title: 'Board Heading',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'boardMembers',
+          title: 'Board Members',
+          type: 'array',
+          of: [
+            {
+              name: 'member',
+              title: 'Member',
+              type: 'reference',
+              to: [{ type: 'person' }],
+            },
+          ],
         },
       ],
     },
     {
-      name: 'lowerfeatures',
+      name: 'lowerFeatures',
       title: 'Lower Features',
+      type: 'object',
       fieldset: 'pageBody',
-      type: 'array',
-      validation: (Rule) => Rule.required().min(1),
-      of: [
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+      fields: [
         {
-          name: 'featureObj',
-          title: 'Feature',
-          type: 'object',
-          fields: [
+          name: 'features',
+          title: 'Features',
+          type: 'array',
+          validation: (Rule) => Rule.required().min(1),
+          of: [
             {
-              name: 'feature',
+              name: 'featureObj',
               title: 'Feature',
-              type: 'reference',
-              validation: (Rule) => Rule.required(),
-              to: [{ type: 'feature' }],
+              type: 'object',
+              fields: [
+                {
+                  name: 'feature',
+                  title: 'Feature',
+                  type: 'reference',
+                  validation: (Rule) => Rule.required(),
+                  to: [{ type: 'feature' }],
+                },
+                { ...links({ name: 'extraLinks', title: 'Extra Links' }) },
+              ],
+              preview: {
+                select: {
+                  title: 'feature.title',
+                  media: 'feature.image',
+                },
+                prepare({ title, media }) {
+                  return {
+                    title,
+                    media,
+                  };
+                },
+              },
             },
-            { ...links({ name: 'extraLinks', title: 'Extra Links' }) },
           ],
-          preview: {
-            select: {
-              title: 'feature.title',
-              media: 'feature.image',
-            },
-            prepare({ title, media }) {
-              return {
-                title,
-                media,
-              };
-            },
-          },
         },
       ],
     },

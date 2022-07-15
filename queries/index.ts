@@ -3,6 +3,7 @@ export { artsQuery } from './artsQuery';
 export { businessesQuery } from './businessesQuery';
 export { contactQuery } from './contactQuery';
 export { eventsQuery } from './eventsQuery';
+export { hcadaQuery } from './hcadaQuery';
 export { headingQuery } from './headingQuery';
 export { homeQuery } from './homeQuery';
 export { imageQuery, assetQuery } from './imageQuery';
