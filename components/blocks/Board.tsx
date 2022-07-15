@@ -24,22 +24,25 @@ const Board = ({ boardHeading, boardMembers }: BoardProps) => {
           {boardHeading}
         </h3>
         <ul className="md:flex md:flex-wrap">
-          {boardMembers.map(({ title, positionTitle, companies }, index) => (
-            <li
-              className={`text-center md:text-left md:w-1/2 mb-10 text-featBody ${
-                isEven(index) ? 'pr-10' : ''
-              }`}
-            >
-              <p className="font-black text-seaFoam mb-2">{title}</p>
-              <p className="font-semibold mb-2">{positionTitle}</p>
-              <p
-                className="font-semibold"
-                dangerouslySetInnerHTML={{
-                  __html: parseCompanies(companies),
-                }}
-              />
-            </li>
-          ))}
+          {boardMembers.map(
+            ({ _id, title, positionTitle, companies }, index) => (
+              <li
+                key={_id}
+                className={`text-center md:text-left md:w-1/2 mb-10 text-featBody ${
+                  isEven(index) ? 'pr-10' : ''
+                }`}
+              >
+                <p className="font-black text-seaFoam mb-2">{title}</p>
+                <p className="font-semibold mb-2">{positionTitle}</p>
+                <p
+                  className="font-semibold"
+                  dangerouslySetInnerHTML={{
+                    __html: parseCompanies(companies),
+                  }}
+                />
+              </li>
+            )
+          )}
         </ul>
       </Container>
     </section>
