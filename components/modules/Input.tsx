@@ -25,16 +25,29 @@ const Input = ({
       data-aos-delay={`${delay}`}
     >
       <span className="block mb-5">{label}</span>
-      <input
-        id={id}
-        type={type}
-        required={required}
-        name={id}
-        className="block w-full p-5 font-semibold text-xl"
-        onChange={(e) => {
-          func(e.target.value);
-        }}
-      />
+      {type === 'textarea' ? (
+        <textarea
+          id={id}
+          required={required}
+          name={id}
+          rows={6}
+          className="block w-full p-5 font-semibold text-xl"
+          onChange={(e) => {
+            func(e.target.value);
+          }}
+        />
+      ) : (
+        <input
+          id={id}
+          type={type}
+          required={required}
+          name={id}
+          className="block w-full p-5 font-semibold text-xl"
+          onChange={(e) => {
+            func(e.target.value);
+          }}
+        />
+      )}
     </label>
   );
 };

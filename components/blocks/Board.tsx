@@ -49,7 +49,7 @@ const Board = ({
                   data-aos-anchor={`#${slugify(boardHeading)}`}
                   data-aos-delay={`${itemDelay}`}
                   className={`fader text-center md:text-left md:w-1/2 mb-10 text-featBody ${
-                    isEven(index) ? 'pr-10' : ''
+                    isEven(index) ? 'md:pr-10' : ''
                   }`}
                 >
                   <p className="font-black text-seaFoam mb-2">{title}</p>

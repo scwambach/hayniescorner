@@ -52,5 +52,6 @@ export const hcadaQuery = groq`*[_type == "hcadaPage"][0] {
       },
       extraLinks,
     },
-  }
+  },
+  formHeading
 }`;

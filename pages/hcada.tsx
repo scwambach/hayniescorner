@@ -1,6 +1,6 @@
 import { hcadaQuery, siteQuery } from '@queries';
 import { getClient, usePreviewSubscription } from '@utils';
-import { Board, PageLayout, River } from '@components';
+import { Board, PageLayout, River, ContactForm } from '@components';
 import { useRouter } from 'next/router';
 import { colors } from '@styles';
 import HeadingBlock from '@components/blocks/HeadingBlock';
@@ -24,25 +24,32 @@ const HcadaPage = ({ content, global }: Props) => {
       global={global}
       subPage={{ banner: data.heroBanner, color: 'bg-seaFoam' }}
     >
-      <River
-        {...data.upperFeatures}
-        cap
-        bgColor={colors.black}
-        shadowColor={colors.seaFoam}
-      />
-      <HeadingBlock
-        {...data.boardSection.headingBlock}
-        bgColor={colors.black}
-        blockColor={colors.seaFoam}
-      />
+      <div className="mb-10">
+        <River
+          {...data.upperFeatures}
+          cap
+          bgColor={colors.black}
+          shadowColor={colors.seaFoam}
+        />
+        <HeadingBlock
+          {...data.boardSection.headingBlock}
+          bgColor={colors.black}
+          blockColor={colors.seaFoam}
+        />
 
-      <Board {...data.boardSection} />
+        <Board {...data.boardSection} />
 
-      <River
-        {...data.lowerFeatures}
-        reverse
-        bgColor={colors.black}
-        shadowColor={colors.seaFoam}
+        <River
+          {...data.lowerFeatures}
+          reverse
+          bgColor={colors.black}
+          shadowColor={colors.seaFoam}
+        />
+      </div>
+      <ContactForm
+        bgColor={colors.seaFoam}
+        heading={data.formHeading}
+        buttonColor="bg-black"
       />
     </PageLayout>
   );

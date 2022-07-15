@@ -63,8 +63,8 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
       {!loading && !submitted && submitError && (
         <h2 className="font-black mt-20 text-darkOrange tracking-featureHeading text-2xl md:text-3xl leading-tight lg:leading-tight mb-10">
           Looks like something went wrong. Don&apos;t worry, the developer has
-          been notified and will correctly the problem soon. Please try again at
-          a later date or send email directly to us
+          been notified and will correct the problem soon. Please try again at a
+          later date or send email directly to us
           <LinkObject classes="underline hover:text-color9" url="/contact">
             HERE!
           </LinkObject>
