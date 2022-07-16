@@ -1,65 +1,67 @@
+const nodemailer = require('nodemailer');
 export default async (req, res) => {
-  let htmlMessage = '';
-  let textMessage = '';
-  let subject = 'Form Submission';
-  let recipient = '';
+  async function main() {
+    let htmlMessage = '';
+    let textMessage = '';
+    let subject = 'Form Submission';
+    let recipient = '';
 
-  const mailjet = require('node-mailjet').connect(
-    process.env.MAILJET_API_KEY,
-    process.env.MAILJET_API_SECRET
-  );
+    Object.entries(req.body).forEach((entry, index) => {
+      if (entry[0] === 'subject') {
+        //@ts-ignore
+        subject = entry[1];
+      }
+      if (entry[0] === 'recipient') {
+        //@ts-ignore
+        recipient = entry[1];
+      }
 
-  Object.entries(req.body).forEach((entry, index) => {
-    if (entry[0] === 'subject') {
-      //@ts-ignore
-      subject = entry[1];
-    }
-    if (entry[0] === 'recipient') {
-      //@ts-ignore
-      recipient = entry[1];
-    }
+      if (
+        entry[0] !== 'hpFirst' &&
+        entry[0] !== 'recipient' &&
+        entry[0] !== 'submit' &&
+        entry[0] !== 'subject' &&
+        entry[1] !== ''
+      ) {
+        htmlMessage += `<li>${entry[0]}: ${entry[1]}</li>`;
+        textMessage += `${entry[0]}: ${entry[1]}${
+          Object.entries(req.body).length - 1 !== index && ', '
+        }`;
+      }
+    });
 
-    if (
-      entry[0] !== 'hpFirst' &&
-      entry[0] !== 'recipient' &&
-      entry[0] !== 'submit' &&
-      entry[0] !== 'subject' &&
-      entry[1] !== ''
-    ) {
-      htmlMessage += `<li>${entry[0]}: ${entry[1]}</li>`;
-      textMessage += `${entry[0]}: ${entry[1]}${
-        Object.entries(req.body).length - 1 !== index && ', '
-      }`;
-    }
-  });
-
-  const request = mailjet.post('send', { version: 'v3.1' }).request({
-    Messages: [
-      {
-        From: {
-          Email: recipient,
-          Name: `HCAD - ${subject}`,
-        },
-        To: [
-          {
-            Email: recipient,
-            Name: 'HCAD',
-          },
-        ],
-        Subject: subject,
-        TextPart: textMessage,
-        HTMLPart: htmlMessage,
-        CustomID: 'AppGettingStartedTest',
+    let transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        type: 'OAuth2',
+        clientId: process.env.GMAIL_CLIENT_ID,
+        clientSecret: process.env.GMAIL_CLIENT_SECRET,
+        refreshToken: process.env.GMAIL_REFRESH_TOKEN,
       },
-    ],
-  });
-  request
-    .then((result) => {
-      console.log(result.body);
+    });
+
+    let info = await transporter.sendMail({
+      from: '"HCAD Website" <mailbot@hayniescorner.com>',
+      to: recipient,
+      subject: subject,
+      text: textMessage,
+      html: htmlMessage,
+      auth: {
+        user: 'hayniescornerartdistrict@gmail.com',
+      },
+    });
+
+    console.log('Message sent: %s', info.messageId);
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+  }
+
+  main()
+    .then(() => {
       return res.status(200).json({ message: 'Success' });
     })
-    .catch((err) => {
-      console.log(err.statusCode);
-      return res.status(500).json({ message: err });
+    .catch(() => {
+      return res.status(500).json({ message: console.error });
     });
 };

@@ -24,7 +24,7 @@
     "next-sanity": "^0.5.2",
     "next-sanity-image": "^3.2.1",
     "nextjs-progressbar": "^0.0.14",
-    "node-mailjet": "^5.0.0",
+    "nodemailer": "^6.7.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-fittext": "^1.0.0",

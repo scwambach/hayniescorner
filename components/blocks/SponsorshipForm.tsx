@@ -4,14 +4,14 @@ import Axios from 'axios';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { colors } from '@styles';
 
-interface VolunteerFormProps {
+interface SponsorshipFormProps {
   events: {
     _id: string;
     title: string;
   }[];
 }
 
-const VolunteerForm = ({ events }: VolunteerFormProps) => {
+const SponsorshipForm = ({ events }: SponsorshipFormProps) => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
@@ -23,7 +23,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
 
   const mailer = {
     recipient: 'hayniescornerartdistrict@gmail.com',
-    subject: 'HCAD Volunteer Form',
+    subject: 'HCAD Sponsorship Form',
     name,
     email,
     phone,
@@ -68,7 +68,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
   };
 
   return (
-    <div className="form volunteer">
+    <div className="form sponsorship">
       {loading && (
         <div className="flex justify-center py-20">
           <ClipLoader size={150} color={colors.white} />
@@ -88,7 +88,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
       {!loading && submitted && !submitError && (
         <h2 className="font-black mt-20 text-white  tracking-featureHeading text-2xl md:text-6xl leading-tight lg:leading-tight mb-10">
           <span className="inline-block mb-5">
-            Thank you for filling out the volunteer&nbsp;form!
+            Thank you for filling out the sponsorship&nbsp;form!
           </span>
           We will reach out to you as soon&nbsp;as&nbsp;we&nbsp;can!
         </h2>
@@ -135,7 +135,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
               func={setPhone}
             />
             <span className="my-14 block">
-              Please send me information about volunteering for:
+              Please contact me about sponsoring:
               {eventError && (
                 <span className="block text-red font-black uppercase tracking-wider mt-5">
                   Please select at least one item
@@ -154,30 +154,6 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
                   delay={100}
                 />
               ))}
-              <Input
-                className="md:w-1/2 mb-5 flex items-start justify-start"
-                id="neighborhoodCleanUp"
-                required={false}
-                label="Neighborhood Clean Up"
-                type="checkbox"
-                delay={100}
-              />
-              <Input
-                className="md:w-1/2 mb-5 flex items-start justify-start"
-                id="other"
-                required={false}
-                label="Other"
-                type="checkbox"
-                delay={100}
-              />
-              <Input
-                className="md:w-1/2 mb-5 flex items-start justify-start"
-                id="anyEvent"
-                required={false}
-                label="Any Event"
-                type="checkbox"
-                delay={100}
-              />
             </div>
           </fieldset>
           <div
@@ -210,5 +186,5 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
   );
 };
 
-export { VolunteerForm };
-export default VolunteerForm;
+export { SponsorshipForm };
+export default SponsorshipForm;

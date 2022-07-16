@@ -1,8 +1,7 @@
-import { BlockContent } from '@sanity/block-content-to-react';
 import { groq } from 'next-sanity';
 import imageQuery from './imageQuery';
 
-export const volunteerQuery = groq`*[_type == "volunteerPage"][0] {
+export const volunteerQuery = groq`*[_id == $pageId][0] {
   pageDescription,
   "mainImage": {
     "url": mainImage.asset->url
@@ -13,9 +12,8 @@ export const volunteerQuery = groq`*[_type == "volunteerPage"][0] {
     heading
   },
   formHeading,
-  "availableEvents": *[_type == "event" && ((_id in path('drafts.**')) == false) && date >= $todayDate] | order(date asc) {
+  "eventTypes": *[_type == "iconItem" && ((_id in path('drafts.**')) == false)] | order(title asc) {
     _id,
     title,
-    date
   }
 }`;

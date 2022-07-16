@@ -17,12 +17,14 @@ const Input = ({
   className,
   delay = 0,
 }: InputProps) => {
+  const isCheck = type === 'checkbox' || type === 'radio';
+
   return (
     <label
       htmlFor={id}
-      className={`fader ${className}`}
-      data-aos="fade-up"
-      data-aos-delay={`${delay}`}
+      className={`fader ${className} ${type}`}
+      // data-aos="fade-up"
+      // data-aos-delay={`${delay}`}
     >
       <span className="block mb-5">{label}</span>
       {type === 'textarea' ? (
@@ -33,7 +35,7 @@ const Input = ({
           rows={6}
           className="block w-full p-5 font-semibold text-xl"
           onChange={(e) => {
-            func(e.target.value);
+            func ? func(e.target.value) : null;
           }}
         />
       ) : (
@@ -42,12 +44,18 @@ const Input = ({
           type={type}
           required={required}
           name={id}
-          className="block w-full p-5 font-semibold text-xl"
+          className={
+            isCheck
+              ? 'w-10 checkItem'
+              : `block w-full p-5 font-semibold text-xl`
+          }
           onChange={(e) => {
-            func(e.target.value);
+            func ? func(e.target.value) : null;
           }}
         />
       )}
+
+      {isCheck && <div className="checkmark"></div>}
     </label>
   );
 };

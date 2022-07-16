@@ -28,7 +28,7 @@ const ContactForm = ({
 
   const mailer = {
     recipient: 'hayniescornerartdistrict@gmail.com',
-    subject: 'HCAD Volunteer Form',
+    subject: 'HCAD Contact Form',
     name,
     email,
     phone,
@@ -59,7 +59,7 @@ const ContactForm = ({
 
   return (
     <section
-      className="form volunteer text-black py-16 lg:py-sectionPadding bg-seaFoam"
+      className="form contact text-black py-16 lg:py-sectionPadding bg-seaFoam"
       style={{
         backgroundColor: bgColor,
       }}
@@ -77,7 +77,7 @@ const ContactForm = ({
           <h2 className="font-black mt-20 text-darkOrange tracking-featureHeading text-2xl md:text-3xl leading-tight lg:leading-tight mb-10">
             Looks like something went wrong. Don&apos;t worry, the developer has
             been notified and will correct the problem soon. Please try again at
-            a later date or send email directly to us
+            a later date or send email directly to us&nbsp;
             <LinkObject classes="underline hover:text-color9" url="/contact">
               HERE!
             </LinkObject>
@@ -85,8 +85,8 @@ const ContactForm = ({
         )}
         {!loading && submitted && !submitError && (
           <h2 className="font-black mt-20 text-white  tracking-featureHeading text-2xl md:text-6xl leading-tight lg:leading-tight mb-10">
-            <span className="inline-block mb-5">
-              Thank you for filling out the volunteer&nbsp;form!
+            <span className="block mb-5">
+              Thank you for getting in touch with us!
             </span>
             We will reach out to you as soon&nbsp;as&nbsp;we&nbsp;can!
           </h2>

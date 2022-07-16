@@ -30,6 +30,7 @@ export { PortableTextModule } from './modules/PortableTextModule';
 export { ProgressiveImage } from './modules/ProgressiveImage';
 export { River } from './blocks/River';
 export { Seo } from './global/Seo';
+export { SponsorshipForm } from './blocks/SponsorshipForm';
 export { VideoModal } from './modules/VideoModal';
 export { VolunteerForm } from './blocks/VolunteerForm';
 
