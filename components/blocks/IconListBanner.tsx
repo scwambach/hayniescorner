@@ -15,6 +15,7 @@ import { slugify } from '@utils';
 interface IconItem {
   _id: string;
   title: string;
+  subtitle?: string;
   link?: LinkProps;
   iconImage?: ImageProps;
   customIcon?: string;
@@ -126,6 +127,9 @@ const IconListBanner = ({
                       </div>
                       <div className="itemTitle font-semibold uppercase text-iconHeading">
                         {item.title}
+                        <span className="block text-base tracking-widest">
+                          {item.subtitle}
+                        </span>
                       </div>
                     </div>
                   );

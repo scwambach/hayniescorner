@@ -37,7 +37,7 @@ const HeadingBlock = ({
         <div
           data-aos="fade-up"
           data-aos-delay={`${delayNum}`}
-          className={`fader block-container text-white max-w-smd wlg:max-w-none px-14 mx-auto wlg:px-36 py-20 ${
+          className={`fader block-container text-white content-box rounded-2xl max-w-smd wlg:max-w-none px-5 smd:px-14 mx-auto wlg:px-36 py-20 ${
             image.url ? 'wlg:flex wlg:items-center' : ''
           }`}
           style={{

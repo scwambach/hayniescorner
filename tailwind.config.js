@@ -111,6 +111,7 @@ module.exports = {
         wrapMobile: '0 50px',
         video: '56.25%',
         headerHeight: '95px',
+        headerHeightMobile: '71px',
         five: '5px',
         businessCard: '64%',
         ten: '10px',

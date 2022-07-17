@@ -33,6 +33,7 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
     items[] -> {
       _id,
       title,
+      subtitle,
       link,
       "customIcon": customIcon -> customStyleCode.code,
       ${imageQuery({ name: 'iconImage' })},

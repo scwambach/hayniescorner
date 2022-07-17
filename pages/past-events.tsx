@@ -39,5 +39,8 @@ export async function getServerSideProps({ res, err, query, preview = false }) {
     };
   }
 
-  return { props: { content: doc, global, preview } };
+  return {
+    props: { content: doc, global, preview },
+    revalidate: preview ? 1 : 60,
+  };
 }

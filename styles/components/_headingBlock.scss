@@ -1,5 +1,7 @@
 .headingblock {
   .block-container {
-    clip-path: url('#headingShape');
+    @media screen and (min-width: ($smd + 1)) {
+      clip-path: url('#headingShape');
+    }
   }
 }

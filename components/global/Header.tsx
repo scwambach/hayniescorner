@@ -53,7 +53,7 @@ const Header = ({ items, iconImage, customIcon, subPage }: HeaderProps) => {
       <Container maxWidth={breakpoints.xxl}>
         <div className="flex justify-between items-start">
           <LinkObject url="/">
-            <div className="flex my-4 items-center">
+            <div className="flex my-1 md:my-4 items-center">
               <ImageIcon iconImage={iconImage} customIcon={customIcon} />
               <span className="my-2 ml-5 mt-ten tracking-logo logo-copy-container">
                 <span className="font-bold uppercase text-logoBold">
@@ -69,7 +69,7 @@ const Header = ({ items, iconImage, customIcon, subPage }: HeaderProps) => {
           <nav className="navigation lg:mr-twenty">
             <button
               name="Menu Toggle"
-              className={`toggle block w-10 mr-0 ml-auto my-8 lg:hidden ${
+              className={`toggle block w-10 mr-0 ml-auto my-6 md:my-8 lg:hidden ${
                 menuOpen ? 'open' : 'close'
               }`}
               onClick={() => {

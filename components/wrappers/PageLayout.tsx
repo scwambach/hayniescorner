@@ -26,7 +26,7 @@ const PageLayout = ({
     <Layout>
       <main
         className={`bg-black overflow-hidden${
-          subPage ? ' pt-headerHeight' : ''
+          subPage ? ' pt-headerHeightMobile md:pt-headerHeight' : ''
         }`}
       >
         <Seo {...seoProps} />
