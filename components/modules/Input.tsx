@@ -5,6 +5,7 @@ interface InputProps {
   type: string;
   required: any;
   func?: any;
+  formId?: string;
   delay?: number;
 }
 
@@ -14,6 +15,7 @@ const Input = ({
   required,
   type,
   func,
+  formId,
   className,
   delay = 0,
 }: InputProps) => {
@@ -23,8 +25,9 @@ const Input = ({
     <label
       htmlFor={id}
       className={`fader ${className} ${type}`}
-      // data-aos="fade-up"
-      // data-aos-delay={`${delay}`}
+      data-aos="fade-up"
+      data-aos-anchor={`#${formId}`}
+      data-aos-delay={`${delay}`}
     >
       <span className="block mb-5">{label}</span>
       {type === 'textarea' ? (

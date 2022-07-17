@@ -3,9 +3,9 @@ import { useState } from 'react';
 import Axios from 'axios';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { breakpoints, colors } from '@styles';
-import { isEven } from '@utils';
 
 interface ContactFormProps {
+  formId: string;
   delay?: number;
   bgColor?: string;
   heading?: string;
@@ -17,11 +17,11 @@ const ContactForm = ({
   buttonColor,
   heading,
   delay = 0,
+  formId,
 }: ContactFormProps) => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-  const [phone, setPhone] = useState<string>('');
-  const [position, setPosition] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [submitError, setSubmitError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -31,8 +31,7 @@ const ContactForm = ({
     subject: 'HCAD Contact Form',
     name,
     email,
-    phone,
-    position,
+    message,
   };
 
   const postForm = () => {
@@ -59,13 +58,18 @@ const ContactForm = ({
 
   return (
     <section
+      id={formId}
       className="form contact text-black py-16 lg:py-sectionPadding bg-seaFoam"
       style={{
         backgroundColor: bgColor,
       }}
     >
       <Container maxWidth={breakpoints.wlg}>
-        <h4 className="uppercase font-black text-sectionHeading tracking-sectionHeading leading-base text-center text-white mb-10">
+        <h4
+          className="fader uppercase font-black text-sectionHeading tracking-sectionHeading leading-base text-center text-white mb-10"
+          data-aos="fade-up"
+          data-aos-anchor={`#${formId}`}
+        >
           {heading}
         </h4>
         {loading && (
@@ -101,6 +105,7 @@ const ContactForm = ({
           >
             <fieldset className="font-semibold text-featBody">
               <Input
+                formId={formId}
                 className="mb-8 block"
                 id="fullName"
                 label="Full Name"
@@ -109,28 +114,31 @@ const ContactForm = ({
                 func={setName}
               />
               <Input
+                formId={formId}
                 className="mb-8 block"
                 id="emailAddress"
                 label="Email Address"
                 type="email"
                 delay={50}
-                required={!!phone ? false : true}
+                required={true}
                 func={setEmail}
               />
               <Input
+                formId={formId}
                 className="mb-16 block"
                 id="message"
                 label="Message"
                 type="textarea"
                 delay={100}
-                required={!!email ? false : true}
-                func={setPhone}
+                required={true}
+                func={setMessage}
               />
             </fieldset>
             <div
               className="fader text-center"
               data-aos="fade-up"
-              data-aos-delay="150"
+              data-aos-delay={150}
+              data-aos-anchor={`#${formId}`}
             >
               <Button
                 classes={`w-full max-w-sm block md:inline-block mx-auto ${

@@ -5,13 +5,14 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import { colors } from '@styles';
 
 interface VolunteerFormProps {
+  formId: string;
   events: {
     _id: string;
     title: string;
   }[];
 }
 
-const VolunteerForm = ({ events }: VolunteerFormProps) => {
+const VolunteerForm = ({ events, formId }: VolunteerFormProps) => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
@@ -109,6 +110,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
             }}
           >
             <Input
+              formId={formId}
               className="mb-8 block"
               id="fullName"
               label="Full Name"
@@ -117,6 +119,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
               func={setName}
             />
             <Input
+              formId={formId}
               className="mb-8 block"
               id="emailAddress"
               label="Email Address"
@@ -126,6 +129,7 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
               func={setEmail}
             />
             <Input
+              formId={formId}
               className="mb-8 block"
               id="phoneNumber"
               label="Phone Number"
@@ -134,7 +138,12 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
               required={!!email ? false : true}
               func={setPhone}
             />
-            <span className="my-14 block">
+            <span
+              className="fader my-14 block"
+              data-aos="fade-up"
+              data-aos-delay={150}
+              data-aos-anchor={`#${formId}`}
+            >
               Please send me information about volunteering for:
               {eventError && (
                 <span className="block text-red font-black uppercase tracking-wider mt-5">
@@ -142,47 +151,60 @@ const VolunteerForm = ({ events }: VolunteerFormProps) => {
                 </span>
               )}
             </span>
-            <div className="md:flex md:flex-wrap">
-              {events.map((type) => (
-                <Input
-                  key={type._id}
-                  className="md:w-1/2 mb-5 flex items-start justify-start"
-                  id={type._id}
-                  required={false}
-                  label={type.title}
-                  type="checkbox"
-                  delay={100}
-                />
-              ))}
+            <div
+              className="fader md:flex md:flex-wrap"
+              data-aos="fade-up"
+              data-aos-anchor={`#${formId}`}
+              data-aos-delay={200}
+            >
+              {events.map((type) => {
+                return (
+                  <Input
+                    formId={formId}
+                    key={type._id}
+                    className="md:w-1/2 mb-5 flex items-start justify-start"
+                    id={type._id}
+                    required={false}
+                    label={type.title}
+                    type="checkbox"
+                    delay={0}
+                  />
+                );
+              })}
               <Input
+                formId={formId}
                 className="md:w-1/2 mb-5 flex items-start justify-start"
                 id="neighborhoodCleanUp"
                 required={false}
                 label="Neighborhood Clean Up"
                 type="checkbox"
-                delay={100}
+                delay={0}
               />
               <Input
+                formId={formId}
                 className="md:w-1/2 mb-5 flex items-start justify-start"
                 id="other"
                 required={false}
                 label="Other"
                 type="checkbox"
-                delay={100}
+                delay={0}
               />
               <Input
+                formId={formId}
                 className="md:w-1/2 mb-5 flex items-start justify-start"
                 id="anyEvent"
                 required={false}
                 label="Any Event"
                 type="checkbox"
-                delay={100}
+                delay={0}
               />
             </div>
           </fieldset>
           <div
             className="fader text-center"
-            // data-aos="fade-up" data-aos-delay="150"
+            data-aos="fade-up"
+            data-aos-anchor={`#${formId}`}
+            data-aos-delay={250}
           >
             <Button
               classes={`w-full max-w-sm block md:inline-block mx-auto mt-10 bg-black text-white block lg:inline-block`}

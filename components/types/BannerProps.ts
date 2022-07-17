@@ -2,9 +2,9 @@ import { ImageProps } from '@components';
 
 export interface BannerProps {
   backgroundColor?: string;
-  backgroundImage?: ImageProps;
-  backgroundColorStart?: string;
   backgroundColorEnd?: string;
+  backgroundColorStart?: string;
+  backgroundImage?: ImageProps;
   componentClasses?: string;
   containerClasses?: string;
   foregroundImage?: ImageProps;
@@ -21,5 +21,6 @@ export interface BannerProps {
   subHeading?: string;
   subHeadingClasses?: string;
   subHeadingColorClasses?: string;
+  underColor?: string;
   video?: string;
 }

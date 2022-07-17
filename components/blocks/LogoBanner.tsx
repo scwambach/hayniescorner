@@ -8,6 +8,7 @@ interface LogoBannerProps extends BannerProps {
 
 const LogoBanner = ({
   backgroundImage,
+  underColor,
   backgroundColor = 'bg-gradBase',
   video,
   customIcon,
@@ -26,7 +27,8 @@ const LogoBanner = ({
   return (
     <section className={`banner logo relative font-body`}>
       <BackgroundWrapper
-        gradient
+        hardLight
+        underColor={underColor}
         {...backgroundProps}
         alt="Photo of Haynie's Corner"
       >

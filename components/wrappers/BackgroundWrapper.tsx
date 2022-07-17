@@ -8,9 +8,9 @@ interface BackgroundWrapperProps {
   alt?: string;
   backgroundClasses?: string;
   backgroundColor?: string;
+  underColor?: string;
   backgroundImage?: ImageProps;
   children?: any | any[];
-  gradient?: boolean;
   grayScale?: boolean;
   hardLight?: boolean;
   priority?: boolean;
@@ -21,9 +21,9 @@ interface BackgroundWrapperProps {
 const BackgroundWrapper = ({
   alt,
   backgroundColor,
+  underColor,
   backgroundImage,
   children,
-  gradient,
   grayScale,
   hardLight,
   priority,
@@ -92,13 +92,13 @@ const BackgroundWrapper = ({
           {backgroundColor && (video || backgroundImage) && (
             <>
               <div
-                className={`absolute layer1 inset-0 ${backgroundColor} ${
-                  hardLight ? 'mix-blend-color' : 'mix-blend-multiply'
-                }`}
+                className={`absolute layer1 inset-0 ${
+                  underColor || backgroundColor
+                } ${hardLight ? 'mix-blend-color' : 'mix-blend-multiply'}`}
               />
               <div
                 className={`absolute ${
-                  gradient ? 'layer2 opacity-50 ' : 'opacity-60 '
+                  underColor ? 'opacity-60 ' : 'opacity-60 '
                 }inset-0  ${backgroundColor}`}
               />
             </>

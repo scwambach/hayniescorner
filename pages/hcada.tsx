@@ -47,6 +47,7 @@ const HcadaPage = ({ content, global }: Props) => {
         />
       </div>
       <ContactForm
+        formId="contactForm"
         bgColor={colors.seaFoam}
         heading={data.formHeading}
         buttonColor="bg-black"

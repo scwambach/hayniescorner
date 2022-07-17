@@ -5,13 +5,14 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import { colors } from '@styles';
 
 interface SponsorshipFormProps {
+  formId: string;
   events: {
     _id: string;
     title: string;
   }[];
 }
 
-const SponsorshipForm = ({ events }: SponsorshipFormProps) => {
+const SponsorshipForm = ({ events, formId }: SponsorshipFormProps) => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
@@ -109,6 +110,7 @@ const SponsorshipForm = ({ events }: SponsorshipFormProps) => {
             }}
           >
             <Input
+              formId={formId}
               className="mb-8 block"
               id="fullName"
               label="Full Name"
@@ -117,6 +119,7 @@ const SponsorshipForm = ({ events }: SponsorshipFormProps) => {
               func={setName}
             />
             <Input
+              formId={formId}
               className="mb-8 block"
               id="emailAddress"
               label="Email Address"
@@ -126,6 +129,7 @@ const SponsorshipForm = ({ events }: SponsorshipFormProps) => {
               func={setEmail}
             />
             <Input
+              formId={formId}
               className="mb-8 block"
               id="phoneNumber"
               label="Phone Number"
@@ -134,7 +138,12 @@ const SponsorshipForm = ({ events }: SponsorshipFormProps) => {
               required={!!email ? false : true}
               func={setPhone}
             />
-            <span className="my-14 block">
+            <span
+              className="fader my-14 block"
+              data-aos="fade-up"
+              data-aos-delay={150}
+              data-aos-anchor={`#${formId}`}
+            >
               Please contact me about sponsoring:
               {eventError && (
                 <span className="block text-red font-black uppercase tracking-wider mt-5">
@@ -142,23 +151,31 @@ const SponsorshipForm = ({ events }: SponsorshipFormProps) => {
                 </span>
               )}
             </span>
-            <div className="md:flex md:flex-wrap">
+            <div
+              className="fader md:flex md:flex-wrap"
+              data-aos="fade-up"
+              data-aos-anchor={`#${formId}`}
+              data-aos-delay={200}
+            >
               {events.map((type) => (
                 <Input
+                  formId={formId}
                   key={type._id}
                   className="md:w-1/2 mb-5 flex items-start justify-start"
                   id={type._id}
                   required={false}
                   label={type.title}
                   type="checkbox"
-                  delay={100}
+                  delay={0}
                 />
               ))}
             </div>
           </fieldset>
           <div
             className="fader text-center"
-            // data-aos="fade-up" data-aos-delay="150"
+            data-aos="fade-up"
+            data-aos-anchor={`#${formId}`}
+            data-aos-delay={250}
           >
             <Button
               classes={`w-full max-w-sm block md:inline-block mx-auto mt-10 bg-black text-white block lg:inline-block`}
