@@ -22,7 +22,7 @@ const ContactPage = ({ content, global }: Props) => {
       global={global}
       subPage={{ banner: data.heroBanner, color: 'bg-color9' }}
     >
-      <ContactInfo email={global.site.mainEmail} />
+      <ContactInfo email={global.site.mainEmail} links={data.links} />
     </PageLayout>
   );
 };

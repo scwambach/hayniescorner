@@ -10,5 +10,6 @@ export const contactQuery = groq`*[_type == "contactPage"][0] {
   heroBanner {
     ${imageQuery({ name: 'backgroundImage' })},
     heading
-  }
+  },
+  links,
 }`;

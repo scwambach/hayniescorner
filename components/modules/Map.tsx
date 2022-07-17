@@ -21,7 +21,7 @@ const Map = () => {
   if (!isLoaded) return <div>Map is loading</div>;
 
   return (
-    <div className="map">
+    <div className="map h-full">
       <GoogleMap
         center={center}
         zoom={14.5}
