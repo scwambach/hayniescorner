@@ -21,20 +21,24 @@ const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
           <LinkObject url="/" classes="my-10 lg:my-0">
             <ImageIcon iconImage={iconImage} customIcon={customIcon} />
           </LinkObject>
-          <div className="flex items-center justify-center lg:justify-between gap-2">
+          <div className="md:flex items-center justify-center lg:justify-between gap-2">
             <span>Follow us!</span>
-            {socials.map((soc) => (
-              <div key={soc._id}>
-                <LinkObject newTab={true} url={soc.url}>
-                  <DynamicIcon
-                    name={soc.icon}
-                    color={colors.color7}
-                    size={16}
-                  />
-                </LinkObject>
-              </div>
-            ))}
-            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <div className="flex my-5 gap-2 justify-center">
+              {socials.map((soc) => (
+                <div key={soc._id}>
+                  <LinkObject newTab={true} url={soc.url}>
+                    <DynamicIcon
+                      name={soc.icon}
+                      color={colors.color7}
+                      size={16}
+                    />
+                  </LinkObject>
+                </div>
+              ))}
+            </div>
+            <div className="hidden md:inline-block">
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+            </div>
             <LinkObject url="https://sproutyourdesign.com" newTab={true}>
               Site Design by Sprout Design
             </LinkObject>
