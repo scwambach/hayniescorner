@@ -1,4 +1,12 @@
 const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
+
+const oAuth2Client = new google.auth.OAuth2(
+  process.env.GMAIL_CLIENT_ID,
+  process.env.GMAIL_CLIENT_SECRET,
+  process.env.GMAIL_REDIRECT_URI
+);
+
 export default async (req, res) => {
   async function main() {
     let htmlMessage = '';
@@ -30,20 +38,22 @@ export default async (req, res) => {
       }
     });
 
-    let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
+    const accessToken = await oAuth2Client.getAccessToken();
+
+    let transporter = await nodemailer.createTransport({
+      service: 'gmail',
       auth: {
         type: 'OAuth2',
+        user: 'hayniescornerartdistrict@gmail.com',
         clientId: process.env.GMAIL_CLIENT_ID,
         clientSecret: process.env.GMAIL_CLIENT_SECRET,
         refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+        accessToken,
       },
     });
 
     let info = await transporter.sendMail({
-      from: '"HCAD Website" <mailbot@hayniescorner.com>',
+      from: '"HCAD Website" <hayniescornerartdistrict@gmail.com>',
       to: recipient,
       subject: subject,
       text: textMessage,
@@ -56,12 +66,10 @@ export default async (req, res) => {
     console.log('Message sent: %s', info.messageId);
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
   }
+  const sendMail = await main();
+  const { success }: any = await sendMail;
 
-  main()
-    .then(() => {
-      return res.status(200).json({ message: 'Success' });
-    })
-    .catch(() => {
-      return res.status(500).json({ message: console.error });
-    });
+  if (success) {
+    return res.status(200).json({ success: true });
+  }
 };

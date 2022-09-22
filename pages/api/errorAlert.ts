@@ -1,19 +1,28 @@
 const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
+
+const oAuth2Client = new google.auth.OAuth2(
+  process.env.GMAIL_CLIENT_ID,
+  process.env.GMAIL_CLIENT_SECRET,
+  process.env.GMAIL_REDIRECT_URI
+);
 
 export default async (req, res) => {
   const message = req.body.message;
   const data = req.body.config.data;
 
+  const accessToken = await oAuth2Client.getAccessToken();
+
   async function main() {
-    let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
+    let transporter = await nodemailer.createTransport({
+      service: 'gmail',
       auth: {
         type: 'OAuth2',
+        user: 'hayniescornerartdistrict@gmail.com',
         clientId: process.env.GMAIL_CLIENT_ID,
         clientSecret: process.env.GMAIL_CLIENT_SECRET,
         refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+        accessToken,
       },
     });
 
@@ -31,11 +40,10 @@ export default async (req, res) => {
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
   }
 
-  main()
-    .then(() => {
-      return res.status(200).json({ message: 'Success' });
-    })
-    .catch(() => {
-      return res.status(500).json({ message: console.error });
-    });
+  const sendMail = await main();
+  const { success }: any = await sendMail;
+
+  if (success) {
+    return res.status(200).json({ success: true });
+  }
 };
