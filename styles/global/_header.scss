@@ -137,6 +137,9 @@
       &.open {
         @media screen and (max-width: $lg) {
           display: block;
+          overflow-y: auto;
+          max-height: calc(100vh - 86px);
+          -webkit-overflow-scrolling: touch;
 
           li {
             opacity: 1;
@@ -174,18 +177,30 @@
             }
           }
         }
+
+        @media screen and (max-width: $md) {
+          max-height: calc(100vh - 70px);
+        }
       }
     }
   }
 
   button {
     &.toggle {
+      position: relative;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.3s;
+      top: 0;
+
       .bar {
         transform-origin: center;
         transition-duration: 0.3s;
         transition-timing-function: ease-in-out;
       }
       &.open {
+        position: relative;
+        top: 10px;
+
         .bar {
           &:nth-child(1),
           &:nth-child(3) {

@@ -57,6 +57,7 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
                       <LinkObject url={business.url} newTab={true}>
                         <div className="relative">
                           <div className="cardImage">
+                            <div className="absolute bottom-0 left-0 h-1/2 w-full z-10 bg-gradient-to-t from-black to-transparent" />
                             <ProgressiveImage
                               {...business.image}
                               imgWidth={600}
