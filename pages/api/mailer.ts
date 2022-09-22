@@ -7,6 +7,8 @@ const oAuth2Client = new google.auth.OAuth2(
   process.env.GMAIL_REDIRECT_URI
 );
 
+oAuth2Client.setCredentials({ refresh_token: process.env.GMAIL_REFRESH_TOKEN });
+
 export default async (req, res) => {
   async function main() {
     let htmlMessage = '';
@@ -63,8 +65,10 @@ export default async (req, res) => {
       },
     });
 
-    console.log('Message sent: %s', info.messageId);
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    return {
+      success: true,
+      message: { first: info.messageId },
+    };
   }
   const sendMail = await main();
   const { success }: any = await sendMail;
