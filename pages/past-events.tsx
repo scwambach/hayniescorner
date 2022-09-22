@@ -24,7 +24,7 @@ const EventsPage = ({ content, global }: Props) => {
 
 export default EventsPage;
 
-export async function getStaticProps({ res, err, query, preview = false }) {
+export async function getServerSideProps({ res, err, query, preview = false }) {
   const today = new Date().toISOString();
   const todayDate = today.split('T')[0];
 
@@ -41,6 +41,5 @@ export async function getStaticProps({ res, err, query, preview = false }) {
 
   return {
     props: { content: doc, global, preview },
-    revalidate: preview ? 1 : 60,
   };
 }

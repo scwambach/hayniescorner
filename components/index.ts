@@ -18,6 +18,7 @@ export { Input } from './modules/Input';
 export { Layout } from './wrappers/Layout';
 export { LeftBanner } from './blocks/LeftBanner';
 export { LinkObject } from './modules/LinkObject';
+export { EventDescription } from './modules/EventDescription';
 export { LinkTiles } from './blocks/LinkTiles';
 export { Logo } from './svg/Logo';
 export { LogoBanner } from './blocks/LogoBanner';

@@ -4,7 +4,7 @@ import {
   ImageProps,
   LinkObject,
   LinkProps,
-  PortableTextModule,
+  EventDescription,
   ProgressiveImage,
 } from '@components';
 import { breakpoints, colors } from '@styles';
@@ -72,7 +72,7 @@ const EventListing = ({ events = [], past }: EventListingProps) => {
                         {dayjs(date).format('D')}
                       </div>
                     </div>
-                    <h2 className="uppercase tracking-sectionHeading text-eventTitle font-black mb-2">
+                    <h2 className="uppercase leading-7 lg:leading-normal tracking-sectionHeading text-2xl lg:text-eventTitle font-black mb-2">
                       {title}
                     </h2>
                     <div className="meta font-semibold text-eventMeta mb-10 leading-featBody">
@@ -95,17 +95,12 @@ const EventListing = ({ events = [], past }: EventListingProps) => {
                       <div className="image mb-10">
                         <ProgressiveImage
                           {...image}
-                          imgHeight={327}
+                          classes="rounded-2xl"
                           imgWidth={862}
-                          height={245}
-                          width={560}
                         />
                       </div>
                     )}
-                    <div className="description">
-                      <PortableTextModule text={description} />
-                    </div>
-
+                    <EventDescription copy={description} />
                     {!past && links && (
                       <div className="mt-7">
                         {links.map((link, index) => (

@@ -120,6 +120,16 @@ export const customImageBuilder = ({
       .saturation(grayScale ? -100 : undefined);
   }
 
+  if (imgWidth && imgHeight) {
+    return imageUrlBuilder
+      .width(imgWidth)
+      .height(imgHeight)
+      .quality(quality)
+      .format('webp')
+      .saturation(grayScale ? -100 : undefined)
+      .fit('clip');
+  }
+
   if (windowWidth < breakpoints.sm && imgWidth > breakpoints.sm) {
     return imageUrlBuilder
       .width(Math.round(breakpoints.sm))
