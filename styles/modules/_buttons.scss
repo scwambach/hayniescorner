@@ -1,0 +1,40 @@
+.button {
+  button,
+  input[type='submit'] {
+    appearance: none;
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  > * {
+    padding: 15px;
+    letter-spacing: 1.3px;
+    display: inline-block;
+
+    @media screen and (min-width: ($lg + 1)) {
+      padding: 15px 30px;
+    }
+  }
+
+  + .button {
+    @media screen and (min-width: ($md + 1)) {
+      margin-left: 20px;
+    }
+
+    @media screen and (max-width: $md) {
+      margin-top: 10px;
+    }
+  }
+
+  .buttons-white-copy & {
+    color: $white;
+  }
+}

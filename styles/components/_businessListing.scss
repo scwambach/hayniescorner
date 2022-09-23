@@ -1,0 +1,56 @@
+.businesslisting {
+  .type {
+    &:nth-child(3n - 2) {
+      background-color: $darkOrange;
+      svg {
+        path {
+          fill: $darkOrange;
+        }
+      }
+    }
+    &:nth-child(3n - 1) {
+      background-color: $brightOrange;
+      svg {
+        path {
+          fill: $brightOrange;
+        }
+      }
+    }
+    &:nth-child(3n) {
+      background-color: $yellow;
+      svg {
+        transform: scaleX(-1);
+        path {
+          fill: $yellow;
+        }
+      }
+    }
+
+    .card {
+      &:nth-child(8n-7) {
+        clip-path: url('#card1');
+      }
+      &:nth-child(8n-6) {
+        clip-path: url('#card2');
+      }
+      &:nth-child(8n-5) {
+        clip-path: url('#card3');
+      }
+      &:nth-child(8n-4) {
+        clip-path: url('#card4');
+      }
+      &:nth-child(8n-3) {
+        clip-path: url('#card5');
+      }
+      &:nth-child(8n-2) {
+        clip-path: url('#card4');
+      }
+      &:nth-child(8n-1) {
+        clip-path: url('#card3');
+      }
+      &:nth-child(8n) {
+        clip-path: url('#card2');
+      }
+    }
+  }
+}

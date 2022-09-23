@@ -1,0 +1,101 @@
+body {
+  background-color: $black;
+}
+
+.unblur {
+  animation: unblur 0.15s linear;
+}
+
+.react-player {
+  iframe,
+  video {
+    object-fit: cover;
+  }
+}
+
+.contentContainer {
+  &.text-center {
+    .buttons {
+      justify-content: center;
+    }
+  }
+}
+
+.player-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  width: 100%;
+
+  .react-player {
+    > div,
+    iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 90% !important;
+      height: 90% !important;
+
+      @media screen and (min-width: ($xxl + 1)) {
+        width: 80% !important;
+        height: 80% !important;
+      }
+    }
+  }
+}
+
+.block {
+  > div {
+    > * {
+      margin: 1.75rem 0;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.customIcon {
+  &.block {
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+svg {
+  g {
+    &.circle {
+      transform-origin: center;
+      animation: rotating 70s linear infinite;
+    }
+  }
+}
+
+.cap {
+  width: 100%;
+  bottom: calc(100% - 0.7px);
+}
+
+.fader {
+  @media screen and (max-width: $md) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.eventlisting {
+  .description {
+    &.closed {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

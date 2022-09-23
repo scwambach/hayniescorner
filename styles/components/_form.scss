@@ -1,0 +1,52 @@
+.form {
+  select {
+    + svg {
+      pointer-events: none;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+
+  .checkbox {
+    position: relative;
+
+    &:hover {
+      input {
+        ~ .checkmark {
+          background: $darkOrange;
+        }
+      }
+    }
+
+    input {
+      &:checked {
+        ~ .checkmark {
+          background: $black;
+        }
+      }
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      border-radius: 100%;
+      background-color: $white;
+    }
+
+    span {
+      padding-left: 35px;
+    }
+
+    .checkItem {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+  }
+}

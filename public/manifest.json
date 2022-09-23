@@ -1,0 +1,32 @@
+{
+  "short_name": "HCAD",
+  "name": "https://hayniescorner.vercel.app/",
+  "lang": "en",
+  "description": "There’s always something to do in the corner! Adjacent to the Ohio River in downtown Evansville Indiana, a creative community of 4 neighborhoods (Riverside, Culver, Goosetown, Blackford’s Grove) define the Arts District.",
+  "start_url": "https://hayniescorner.vercel.app/",
+  "theme_color": "#A5CD39",
+  "background_color": "#2eb1c9",
+  "dir": "ltr",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/pwa/apple-icon-180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/pwa/manifest-icon-192.maskable.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa/manifest-icon-512.maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "prefer_related_applications": false
+}

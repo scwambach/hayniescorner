@@ -1,0 +1,16 @@
+.iconListBanner {
+  .content-box {
+    @media screen and (min-width: ($smd + 1)) {
+      clip-path: url('#listBox');
+    }
+
+    .itemIcon {
+      width: 56px;
+    }
+    .itemTitle {
+      @media screen and (min-width: ($sm + 1)) {
+        width: calc(100% - 80px);
+      }
+    }
+  }
+}

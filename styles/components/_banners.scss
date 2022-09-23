@@ -1,0 +1,27 @@
+.banner {
+  .buttons {
+    .button {
+      + .button {
+        background-color: $color2;
+      }
+    }
+  }
+
+  &.subpage {
+    h1 {
+      text-shadow: $textShadow;
+    }
+  }
+
+  &.logo {
+    .svg {
+      svg {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+    .layer2 {
+      background: linear-gradient(20deg, #000 0%, #000 15%, transparent 100%);
+    }
+  }
+}

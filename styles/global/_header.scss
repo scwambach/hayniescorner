@@ -1,0 +1,222 @@
+.header {
+  .logo-copy-container {
+    @media (max-width: $sxl) and (min-width: ($lg + 1)) {
+      display: none;
+    }
+  }
+  .navigation {
+    @media screen and (max-width: $lg) {
+      width: 50px;
+    }
+    > ul {
+      @media screen and (max-width: $lg) {
+        min-width: 100px;
+        right: 20px;
+        position: absolute;
+      }
+      > li {
+        @media screen and (max-width: $lg) {
+          pointer-events: none;
+        }
+
+        &:nth-child(7n - 6) {
+          a {
+            @media screen and (max-width: $lg) {
+              background-color: $red;
+            }
+            &:before {
+              background-color: $red;
+            }
+          }
+        }
+
+        &:nth-child(7n - 5) {
+          a {
+            @media screen and (max-width: $lg) {
+              background-color: $darkOrange;
+            }
+            &:before {
+              background-color: $darkOrange;
+            }
+          }
+        }
+
+        &:nth-child(7n - 4) {
+          a {
+            @media screen and (max-width: $lg) {
+              background-color: $orange;
+            }
+            &:before {
+              background-color: $orange;
+            }
+          }
+        }
+        &:nth-child(7n - 3) {
+          a {
+            @media screen and (max-width: $lg) {
+              background-color: $color6;
+            }
+            &:before {
+              background-color: $color6;
+            }
+          }
+        }
+        &:nth-child(7n - 2) {
+          a {
+            @media screen and (max-width: $lg) {
+              background-color: $seaFoam;
+            }
+            &:before {
+              background-color: $seaFoam;
+            }
+          }
+        }
+        &:nth-child(7n - 1) {
+          a {
+            @media screen and (max-width: $lg) {
+              background-color: $blue;
+            }
+            &:before {
+              background-color: $blue;
+            }
+          }
+        }
+        &:nth-child(7n) {
+          a {
+            @media screen and (max-width: $lg) {
+              background-color: $color9;
+            }
+            &:before {
+              background-color: $color9;
+            }
+          }
+        }
+        a {
+          &:hover {
+            @media screen and (min-width: ($md + 1)) {
+              &:before {
+                height: calc(100% - 50px);
+              }
+            }
+          }
+
+          &:before {
+            @media screen and (min-width: ($lg + 1)) {
+              content: '';
+              display: block;
+              height: calc(100% - 60px);
+              transition-duration: 0.1s;
+              transition-timing-function: ease-in-out;
+              width: 100%;
+              z-index: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+        }
+
+        &.open,
+        &:hover {
+          ul {
+            @media screen and (min-width: $md) {
+              display: block;
+            }
+          }
+        }
+
+        &.sub-open {
+          ul {
+            @media screen and (max-width: ($md - 1)) {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &.open {
+        @media screen and (max-width: $lg) {
+          display: block;
+          overflow-y: auto;
+          max-height: calc(100vh - 86px);
+          -webkit-overflow-scrolling: touch;
+
+          li {
+            opacity: 1;
+            pointer-events: all;
+
+            &:nth-child(1) {
+              transition-delay: 0.05s;
+            }
+            &:nth-child(2) {
+              transition-delay: calc(0.05s * 2);
+            }
+            &:nth-child(3) {
+              transition-delay: calc(0.05s * 3);
+            }
+            &:nth-child(4) {
+              transition-delay: calc(0.05s * 4);
+            }
+            &:nth-child(5) {
+              transition-delay: calc(0.05s * 5);
+            }
+            &:nth-child(6) {
+              transition-delay: calc(0.05s * 6);
+            }
+            &:nth-child(7) {
+              transition-delay: calc(0.05s * 7);
+            }
+            &:nth-child(8) {
+              transition-delay: calc(0.05s * 8);
+            }
+            &:nth-child(9) {
+              transition-delay: calc(0.05s * 9);
+            }
+            &:nth-child(10) {
+              transition-delay: calc(0.05s * 10);
+            }
+          }
+        }
+
+        @media screen and (max-width: $md) {
+          max-height: calc(100vh - 70px);
+        }
+      }
+    }
+  }
+
+  button {
+    &.toggle {
+      position: relative;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.3s;
+      top: 0;
+
+      .bar {
+        transform-origin: center;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+      }
+      &.open {
+        position: relative;
+        top: 10px;
+
+        .bar {
+          &:nth-child(1),
+          &:nth-child(3) {
+            width: 20px;
+          }
+          &:nth-child(1) {
+            transform: rotate(-45deg);
+          }
+          &:nth-child(3) {
+            transform: rotate(45deg) translateX(-4px) translateY(-21px);
+          }
+          &:nth-child(2) {
+            transform: scale(0) translateY(-21px);
+          }
+        }
+      }
+    }
+  }
+}

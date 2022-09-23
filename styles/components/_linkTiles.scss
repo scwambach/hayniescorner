@@ -1,0 +1,22 @@
+.linkTiles {
+  .tile {
+    &:nth-child(3n - 2) {
+      background: $darkOrange;
+
+      clip-path: url('#tile1');
+    }
+
+    &:nth-child(3n - 1) {
+      background: $orange;
+
+      clip-path: url('#tile2');
+      top: 5px;
+    }
+
+    &:nth-child(3n) {
+      background: $yellow;
+
+      clip-path: url('#tile3');
+    }
+  }
+}

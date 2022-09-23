@@ -1,0 +1,143 @@
+.river {
+  .featureRow {
+    + .featureRow {
+      margin-top: 100px;
+    }
+
+    .riverImage {
+      @media screen and (max-width: $md) {
+        padding-top: 75%;
+      }
+    }
+
+    &.reverse {
+      &:nth-child(2n) {
+        @media (max-width: $lg) and (min-width: ($md + 1)) {
+          max-width: 762px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .riverImage {
+          clip-path: url('#riverImage1');
+        }
+
+        .imgShadow {
+          left: -50px;
+          top: 50%;
+          transform: translateY(calc(-50% + 20px));
+        }
+      }
+
+      &:nth-child(2n - 1) {
+        @media screen and (min-width: ($md + 1)) {
+          max-width: 762px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media screen and (min-width: ($lg + 1)) {
+          max-width: 922px;
+        }
+
+        .copy {
+          @media screen and (min-width: ($lg + 1)) {
+            max-width: calc(100% - 500px);
+          }
+        }
+        .riverImage {
+          clip-path: url('#riverImage2');
+        }
+
+        .imgShadow {
+          left: 50px;
+          top: 50%;
+          transform: translateY(calc(-50% + 10px));
+        }
+      }
+    }
+
+    &.regular {
+      &:nth-child(2n) {
+        @media screen and (min-width: ($md + 1)) {
+          max-width: 762px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media screen and (min-width: ($lg + 1)) {
+          max-width: 922px;
+        }
+
+        .copy {
+          @media screen and (min-width: ($lg + 1)) {
+            max-width: calc(100% - 500px);
+          }
+        }
+
+        .riverImage {
+          clip-path: url('#riverImage2');
+        }
+
+        .imgShadow {
+          left: 50px;
+          top: 50%;
+          transform: translateY(calc(-50% + 10px));
+        }
+      }
+
+      &:nth-child(2n - 1) {
+        @media (max-width: $lg) and (min-width: ($md + 1)) {
+          max-width: 762px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .riverImage {
+          clip-path: url('#riverImage1');
+        }
+
+        .imgShadow {
+          left: -50px;
+          top: 50%;
+          transform: translateY(calc(-50% + 20px));
+        }
+      }
+    }
+
+    .image {
+      @media screen and (min-width: ($md + 1)) {
+        width: 300px;
+        height: 349px;
+      }
+
+      @media screen and (min-width: ($lg + 1)) {
+        width: 425px;
+        height: 449px;
+      }
+    }
+    .copy {
+      @media screen and (max-width: $md) {
+        margin: 0 auto;
+      }
+
+      @media screen and (min-width: ($md + 1)) {
+        width: calc(100% - 350px);
+      }
+      @media screen and (min-width: ($lg + 1)) {
+        width: calc(100% - 490px);
+      }
+    }
+
+    .button {
+      display: block;
+      max-width: 400px;
+
+      + .button {
+        @media screen and (min-width: ($md + 1)) {
+          margin: 10px 0 0;
+        }
+      }
+    }
+  }
+}
