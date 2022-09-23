@@ -15,7 +15,7 @@ import {
 } from './desk';
 import { businesses } from './desk/sections/businesses';
 
-const remoteURL = 'https://hayniescorner.vercel.app';
+const remoteURL = 'https://hayniescorner.com';
 const localURL = 'http://localhost:3000';
 
 const appUrl = window.location.hostname === 'localhost' ? localURL : remoteURL;
