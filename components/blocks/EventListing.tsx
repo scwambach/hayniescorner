@@ -102,7 +102,7 @@ const EventListing = ({ events = [], past }: EventListingProps) => {
                     )}
                     <EventDescription copy={description} />
                     {!past && links && (
-                      <div className="mt-7">
+                      <div className="mt-7 flex flex-col gap-3">
                         {links.map((link, index) => (
                           <Button
                             key={link._key}

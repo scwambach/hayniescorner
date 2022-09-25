@@ -1,6 +1,7 @@
 import { pastEventsQuery, siteQuery } from '@queries';
 import { getClient } from '@utils';
 import { EventListing, PageLayout } from '@components';
+import dayjs from 'dayjs';
 
 type Props = {
   content: any;
@@ -25,11 +26,10 @@ const EventsPage = ({ content, global }: Props) => {
 export default EventsPage;
 
 export async function getServerSideProps({ res, err, query, preview = false }) {
-  const today = new Date().toISOString();
-  const todayDate = today.split('T')[0];
+  const today = dayjs(new Date()).format('YYYY-MM-DD');
 
   const doc = await getClient(query?.preview === '').fetch(pastEventsQuery, {
-    todayDate,
+    todayDate: today,
   });
   const global = await getClient(query?.preview === '').fetch(siteQuery);
 

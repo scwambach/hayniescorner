@@ -37,4 +37,10 @@
   .buttons-white-copy & {
     color: $white;
   }
+
+  .eventlisting & {
+    + .button {
+      margin: 0;
+    }
+  }
 }
