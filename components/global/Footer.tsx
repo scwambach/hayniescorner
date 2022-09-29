@@ -39,9 +39,18 @@ const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
             <div className="hidden md:inline-block">
               &nbsp;&nbsp;|&nbsp;&nbsp;
             </div>
-            <LinkObject url="https://sproutyourdesign.com" newTab={true}>
-              Site Design by Sprout Design
-            </LinkObject>
+            <div className="lg:mt-5">
+              <LinkObject url="https://sproutyourdesign.com" newTab={true}>
+                Site Design by Sprout Design
+              </LinkObject>
+
+              <span className="block">
+                Photos by{' '}
+                <LinkObject newTab url="https://www.alexmorganimaging.com/">
+                  Alex Morgan
+                </LinkObject>
+              </span>
+            </div>
           </div>
         </div>
       </Container>
