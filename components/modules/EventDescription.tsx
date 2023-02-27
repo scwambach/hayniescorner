@@ -9,17 +9,11 @@ const EventDescription = ({ copy }: EventDescriptionProps) => {
   const [open, setOpen] = useState<boolean>(false);
   return (
     <>
-      <div className={`description ${open ? 'open' : 'closed'}`}>
-        <PortableTextModule text={copy} />
-      </div>
-      <button
-        className="mt-5 mb-10 bold underline text-xl uppercase font-semibold"
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
-        {`See ${open ? 'Less' : 'More'}`}
-      </button>
+      {copy && (
+        <div className="description">
+          <PortableTextModule text={copy} />
+        </div>
+      )}
     </>
   );
 };

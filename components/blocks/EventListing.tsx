@@ -62,7 +62,6 @@ const EventListing = ({ events = [], past }: EventListingProps) => {
                     key={_id}
                     className="fader relative mb-44 "
                     data-aos="fade-up"
-                    data-aos-delay={`${index * 100}`}
                   >
                     <div className="date text-center bg-blue mb-5 xmd:mb-0 xmd:absolute xmd:top-0 right-full w-24 py-5 mr-14">
                       <div className="text-dateMon uppercase font-bold leading-base">
@@ -91,7 +90,7 @@ const EventListing = ({ events = [], past }: EventListingProps) => {
                         </p>
                       )}
                     </div>
-                    {image && (
+                    {image?.url && (
                       <div className="image mb-10">
                         <ProgressiveImage
                           {...image}
