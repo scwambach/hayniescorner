@@ -71,7 +71,7 @@ const EventListing = ({ events = [], past }: EventListingProps) => {
                         {dayjs(date).format('D')}
                       </div>
                     </div>
-                    <h2 className="uppercase leading-7 lg:leading-normal tracking-sectionHeading text-2xl lg:text-eventTitle font-black mb-2">
+                    <h2 className="uppercase leading-7 lg:leading-8 tracking-sectionHeading text-2xl lg:text-eventTitle font-black mb-2">
                       {title}
                     </h2>
                     <div className="meta font-semibold text-eventMeta mb-10 leading-featBody">
