@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { volunteerQuery, siteQuery } from '@queries';
 import { useRouter } from 'next/router';
 import { getClient, usePreviewSubscription } from '@utils';
-import { Container, PageLayout } from '@components';
+import { Button, Container, LinkObject, PageLayout } from '@components';
 import { schedule } from '@utils/schedule';
 import * as SVG from '@svgs';
 import { breakpoints, colors } from '@styles';
@@ -114,6 +114,17 @@ const VolunteerPage = ({ content, global }: Props) => {
                 </div>
               );
             })}
+          </div>
+          <div className="text-center mt-20">
+            <Button classes="w-full block xmd:inline-block mx-auto xmd:mx-0 sm:w-full xmd:w-auto bg-blue whitespace-nowrap">
+              <LinkObject
+                url="https://www.facebook.com/hayniescornerwiffleballleague/"
+                newTab
+                classes="text-white"
+              >
+                Find this on Facebook
+              </LinkObject>
+            </Button>
           </div>
         </Container>
       </section>
