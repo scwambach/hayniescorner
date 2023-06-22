@@ -9,4 +9,5 @@ export { Logo } from './Logo';
 export { LogoWhite } from './LogoWhite';
 export { RiverImage1, RiverImage2 } from './RiverImages';
 export { Shadow } from './Shadow';
+export { Wiffle } from './Wiffle';
 export { Tile1, Tile2, Tile3 } from './Tiles';

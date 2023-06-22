@@ -10,6 +10,7 @@ import {
   LinkTiles,
   LeftBanner,
 } from '@components';
+import { schedule } from '@utils/schedule';
 
 type Props = {
   content: any;
@@ -33,7 +34,6 @@ const IndexPage = ({ content, global }: Props) => {
         priority
         align="text-center"
       />
-
       <River {...data.aboutFeatures} cap bgColor={colors.color6} />
       <IconListBanner {...data.eventTypes} bgColor={colors.seaFoam} />
       <LinkTiles {...data.linkTiles} />

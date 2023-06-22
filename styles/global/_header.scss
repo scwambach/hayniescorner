@@ -219,4 +219,17 @@
       }
     }
   }
+
+  .wiffle-icon {
+    &:hover {
+      .caption {
+        display: block;
+      }
+    }
+    .caption {
+      pointer-events: none;
+      user-select: none;
+      display: none;
+    }
+  }
 }

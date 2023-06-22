@@ -81,6 +81,7 @@ module.exports = {
         sxl: '1150px',
         xl: '1280px',
         xxl: '1348px',
+        xxxl: '1440px',
         mega: '2400px',
         eventTypeHeading: '280px',
         businessCard: '566px',
@@ -103,6 +104,7 @@ module.exports = {
         sxl: '1150px',
         xl: '1280px',
         xxl: '1348px',
+        xxxl: '1440px',
         mega: '2400px',
       },
       padding: {

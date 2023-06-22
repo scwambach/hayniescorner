@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { breakpoints } from '@styles';
 import { Container, LinkObject, ImageIcon, ImageProps } from '@components';
+import { Wiffle } from '@components/svg';
 
 interface HeaderProps {
   iconImage?: ImageProps;
@@ -43,6 +44,11 @@ const Header = ({ items, iconImage, customIcon, subPage }: HeaderProps) => {
       window.oldScroll = window.scrollY;
     };
   }, []);
+
+  // check if today is past this date 10/24/2023
+  const today = new Date();
+  const date = new Date('10/24/2023');
+  const isPast = today > date;
 
   return (
     <header
@@ -128,7 +134,33 @@ const Header = ({ items, iconImage, customIcon, subPage }: HeaderProps) => {
                   </li>
                 );
               })}
+              {!isPast && (
+                <li
+                  className={`relative block lg:hidden transition-all ease-in-out opacity-0 lg:opacity-100 lg:ml-navItem `}
+                  onMouseLeave={() => {
+                    setActiveIndex(null);
+                  }}
+                >
+                  <LinkObject
+                    classes={`nav-item relative block p-5 lg:p-0 lg:py-thirty lg:min-w-menuItem text-center`}
+                    setActiveIndex={setActiveIndex}
+                    copy="Wiffle Ball"
+                    url="/wiffle-ball"
+                  />
+                </li>
+              )}
             </ul>
+            {!isPast && (
+              <LinkObject
+                classes="wiffle-icon hidden lg:block absolute top-2 xxxl:top-3 right-2 xxxl:right-7"
+                url="/wiffle-ball"
+              >
+                <Wiffle size={30} />
+                <span className="caption w-16 text-xs absolute top-full left-1/2 -translate-x-1/2 bg-white text-black text-center p-[1px] mt-1 rounded-[5px]">
+                  Wiffle Ball
+                </span>
+              </LinkObject>
+            )}
           </nav>
         </div>
       </Container>
