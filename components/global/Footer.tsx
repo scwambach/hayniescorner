@@ -21,7 +21,7 @@ const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
         <div className="py-12 text-center lg:text-left flex flex-col lg:flex-row items-center lg:justify-between">
           <div>
 
-            <p className='sponsor flex items-center justify-between text-white text-base mb-5'><span className='block w-36'>First Friday's are brought to you by:</span> <a href='https://www.fieldandmain.com/' target='_blank'
+            <p className='sponsor flex items-center justify-between text-white text-base mb-5'><span className='block w-36'>First Friday&apos;s are brought to you by:</span> <a href='https://www.fieldandmain.com/' target='_blank'
               rel='noopener noreferrer'
               >
                 <img src={ sponsor.src} alt="Field and Main" />
