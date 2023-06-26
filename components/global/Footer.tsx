@@ -25,7 +25,7 @@ const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
               >
                 <img src={ sponsor.src} alt="Field and Main" />
               </a></p>
-            <p>&copy; 2022 | Haynie&apos;s Corner Arts Disctrict Association</p>
+            <p>&copy; 2023 | Haynie&apos;s Corner Arts Disctrict Association</p>
           </div>
           <LinkObject url="/" classes="my-10 lg:my-0">
             <ImageIcon iconImage={iconImage} customIcon={customIcon} />
