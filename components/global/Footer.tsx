@@ -14,6 +14,7 @@ interface FooterProps {
 }
 
 const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-black text-color7 text-footer py-10">
       <Container maxWidth={breakpoints.xl}>
@@ -25,7 +26,7 @@ const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
               >
                 <img src={ sponsor.src} alt="Field and Main" />
               </a></p>
-            <p>&copy; 2023 | Haynie&apos;s Corner Arts Disctrict Association</p>
+            <p>&copy; {currentYear} | Haynie&apos;s Corner Arts Disctrict Association</p>
           </div>
           <LinkObject url="/" classes="my-10 lg:my-0">
             <ImageIcon iconImage={iconImage} customIcon={customIcon} />
