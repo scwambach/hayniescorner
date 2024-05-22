@@ -1,7 +1,7 @@
 import { Container, ImageProps, DynamicIcon, LinkObject } from '@components';
 import ImageIcon from '@components/modules/ImageIcon';
 import { breakpoints, colors } from '@styles';
-import sponsor  from '../../images/sponsor.png';
+import sponsor from '../../images/sponsor.svg';
 
 interface FooterProps {
   iconImage?: ImageProps;
@@ -20,13 +20,24 @@ const Footer = ({ iconImage, customIcon, socials }: FooterProps) => {
       <Container maxWidth={breakpoints.xl}>
         <div className="py-12 text-center lg:text-left flex flex-col lg:flex-row items-center lg:justify-between">
           <div>
-
-            <p className='sponsor flex items-center justify-between text-white text-base mb-5'><span className='block w-36'>First Friday&apos;s are brought to you by:</span> <a href='https://www.fieldandmain.com/' target='_blank'
-              rel='noopener noreferrer'
+            <p className="sponsor flex-col sm:flex-row  flex gap-5 items-center justify-between text-white text-base mb-5">
+              <span className="block w-36">
+                First Friday&apos;s are brought to you by:
+              </span>{' '}
+              <a
+                className="w-44"
+                href="https://www.fieldandmain.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="CRS OneSource"
               >
-                <img src={ sponsor.src} alt="Field and Main" />
-              </a></p>
-            <p>&copy; {currentYear} | Haynie&apos;s Corner Arts Disctrict Association</p>
+                <img src={sponsor.src} alt="CRS OneSource logo" />
+              </a>
+            </p>
+            <p>
+              &copy; {currentYear} | Haynie&apos;s Corner Arts Disctrict
+              Association
+            </p>
           </div>
           <LinkObject url="/" classes="my-10 lg:my-0">
             <ImageIcon iconImage={iconImage} customIcon={customIcon} />
