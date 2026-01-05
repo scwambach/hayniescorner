@@ -1,4 +1,4 @@
-const newRatio = (crop, originalDimensions) => {
+const newRatio = (crop: any, originalDimensions: any) => {
   const heightPercentRemoved = crop ? crop.top + crop.bottom : 0;
   const widthPercentRemoved = crop ? crop.left + crop.right : 0;
 
