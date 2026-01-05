@@ -8,7 +8,23 @@ import { PageBanner } from "@/components/blocks/PageBanner";
 import { sponsorshipQuery } from "@/queries/sponsorshipQuery";
 import { SponsorshipForm } from "@/components/blocks/SponsorshipForm";
 
-export default async function VolunteerPage() {
+export async function generateMetadata() {
+  const data: VolunteerPageProps = await client.fetch(sponsorshipQuery);
+  return {
+    title: "Sponsorship - Haynie's Corner Arts District",
+    description: data.pageDescription,
+    openGraph: {
+      title: "Sponsorship - Haynie's Corner Arts District",
+      description: data.pageDescription,
+      images:
+        data.previewImage && data.previewImage.src
+          ? [`${data.previewImage.src}?w=1200&h=630&fit=crop`]
+          : [`${data.heroBanner.backgroundImage.src}?w=1200&h=630&fit=crop`],
+    },
+  };
+}
+
+export default async function SponsorshipPage() {
   const data: VolunteerPageProps = await client.fetch(sponsorshipQuery);
   return (
     <>

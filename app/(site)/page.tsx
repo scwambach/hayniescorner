@@ -8,6 +8,21 @@ import { colors } from "@/styles";
 import { client } from "@/utils/client";
 import { HomePageProps } from "@/utils/types";
 
+export async function generateMetadata() {
+  const data: HomePageProps = await client.fetch(homeQuery);
+  return {
+    title: "Haynie's Corner Arts District",
+    description: data.pageDescription,
+    openGraph: {
+      title: "Haynie's Corner Arts District",
+      description: data.pageDescription,
+      images: data.mainImage
+        ? [`${data.mainImage}?w=1200&h=630&fit=crop`]
+        : [`${data.heroBanner.backgroundImage.src}?w=1200&h=630&fit=crop`],
+    },
+  };
+}
+
 export default async function Home() {
   const data: HomePageProps = await client.fetch(homeQuery);
   return (

@@ -9,6 +9,22 @@ import { isEven } from "@/utils";
 import { client } from "@/utils/client";
 import { AboutPageProps } from "@/utils/types";
 
+export async function generateMetadata() {
+  const data: AboutPageProps = await client.fetch(aboutQuery);
+  return {
+    title: "About Us - Haynie's Corner Arts District",
+    description: data.pageDescription,
+    openGraph: {
+      title: "About Us - Haynie's Corner Arts District",
+      description: data.pageDescription,
+      images:
+        data.previewImage && data.previewImage.src
+          ? [`${data.previewImage.src}?w=1200&h=630&fit=crop`]
+          : [`${data.heroBanner.backgroundImage.src}?w=1200&h=630&fit=crop`],
+    },
+  };
+}
+
 export default async function AboutPage() {
   const data: AboutPageProps = await client.fetch(aboutQuery);
   return (

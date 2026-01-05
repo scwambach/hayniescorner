@@ -4,9 +4,7 @@ export const homeQuery = `*[_type == "homePage"][0] {
   title,
   pageDescription,
   slug,
-  "mainImage": {
-    "url": mainImage.asset->url
-  },
+  mainImage ${imageQuery},
   heroBanner {
     backgroundImage ${imageQuery},
     "customIcon": customIcon -> customStyleCode.code,

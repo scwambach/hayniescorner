@@ -8,6 +8,22 @@ import { Container } from "@/components/modules/Container";
 import { PageBanner } from "@/components/blocks/PageBanner";
 import VolunteerForm from "@/components/blocks/VolunteerForm";
 
+export async function generateMetadata() {
+  const data: VolunteerPageProps = await client.fetch(volunteerQuery);
+  return {
+    title: "Volunteer - Haynie's Corner Arts District",
+    description: data.pageDescription,
+    openGraph: {
+      title: "Volunteer - Haynie's Corner Arts District",
+      description: data.pageDescription,
+      images:
+        data.previewImage && data.previewImage.src
+          ? [`${data.previewImage.src}?w=1200&h=630&fit=crop`]
+          : [`${data.heroBanner.backgroundImage.src}?w=1200&h=630&fit=crop`],
+    },
+  };
+}
+
 export default async function VolunteerPage() {
   const data: VolunteerPageProps = await client.fetch(volunteerQuery);
   return (

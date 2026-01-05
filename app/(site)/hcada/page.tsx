@@ -8,6 +8,22 @@ import { colors } from "@/styles";
 import { client } from "@/utils/client";
 import { HcadaPageProps } from "@/utils/types";
 
+export async function generateMetadata() {
+  const data: HcadaPageProps = await client.fetch(hcadaQuery);
+  return {
+    title: "HCADA - Haynie's Corner Arts District",
+    description: data.pageDescription,
+    openGraph: {
+      title: "HCADA - Haynie's Corner Arts District",
+      description: data.pageDescription,
+      images:
+        data.previewImage && data.previewImage.src
+          ? [`${data.previewImage.src}?w=1200&h=630&fit=crop`]
+          : [`${data.heroBanner.backgroundImage.src}?w=1200&h=630&fit=crop`],
+    },
+  };
+}
+
 export default async function HcadaPage() {
   const data: HcadaPageProps = await client.fetch(hcadaQuery);
   return (

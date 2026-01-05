@@ -4,6 +4,22 @@ import { businessesQuery } from "@/queries";
 import { client } from "@/utils/client";
 import { BusinessPageProps } from "@/utils/types";
 
+export async function generateMetadata() {
+  const data: BusinessPageProps = await client.fetch(businessesQuery);
+  return {
+    title: "Businesses - Haynie's Corner Arts District",
+    description: data.pageDescription,
+    openGraph: {
+      title: "Businesses - Haynie's Corner Arts District",
+      description: data.pageDescription,
+      images:
+        data.previewImage && data.previewImage.src
+          ? [`${data.previewImage.src}?w=1200&h=630&fit=crop`]
+          : [`${data.heroBanner.backgroundImage.src}?w=1200&h=630&fit=crop`],
+    },
+  };
+}
+
 export default async function BusinessPage() {
   const data: BusinessPageProps = await client.fetch(businessesQuery);
   return (
