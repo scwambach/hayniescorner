@@ -1,7 +1,11 @@
-import { Map, Container, LinkObject, LinkProps, Button } from '@components';
-import * as SVG from '@svgs';
-import { breakpoints, colors } from '@styles';
-import { isEven } from '@utils';
+"use client";
+import { breakpoints, colors } from "@/styles";
+import { Container } from "../modules/Container";
+import { LinkObject } from "../modules/LinkObject";
+import { Map } from "../modules/Map";
+import { LinkProps } from "@/utils/types";
+import * as SVG from "@/components/svg";
+import { Button } from "../modules/Button";
 
 interface ContactInfoProps {
   email: string;
@@ -22,7 +26,7 @@ const ContactInfo = ({ email, links }: ContactInfoProps) => {
             data-aos-anchor="#contactInfo"
             data-aos="fade-up"
           >
-            <div className="flex flex-col md:flex-row lg:flex-col gap-14  md:flex-wrap lg:flex-nowrap">
+            <div className="flex flex-col md:flex-row lg:flex-col gap-12  md:flex-wrap lg:flex-nowrap">
               <div
                 className="fader"
                 data-aos-anchor="#contactInfo"
@@ -99,8 +103,8 @@ const ContactInfo = ({ email, links }: ContactInfoProps) => {
                   <Button
                     key={link._key}
                     index={index}
-                    classes={`w-full md:w-1/3 lg:w-full block ${
-                      index !== 0 ? 'mt-3 md:mt-0 lg:mt-3' : ''
+                    className={`w-full md:w-1/3 lg:w-full block ${
+                      index !== 0 ? "mt-3 md:mt-0 lg:mt-3" : ""
                     } mx-auto md:mx-0 sm:w-full md:w-auto bg-orange`}
                   >
                     <LinkObject {...link} />

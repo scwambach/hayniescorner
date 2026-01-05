@@ -1,8 +1,11 @@
-import { Button, Input, LinkObject } from '@components';
-import { useState } from 'react';
-import Axios from 'axios';
-import ClipLoader from 'react-spinners/ClipLoader';
-import { colors } from '@styles';
+"use client";
+import Axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
+import { colors } from "@/styles";
+import { Input } from "../modules/Input";
+import { LinkObject } from "../modules/LinkObject";
+import { Button } from "../modules/Button";
+import { useState } from "react";
 
 interface SponsorshipFormProps {
   formId: string;
@@ -12,19 +15,19 @@ interface SponsorshipFormProps {
   }[];
 }
 
-const SponsorshipForm = ({ events, formId }: SponsorshipFormProps) => {
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [phone, setPhone] = useState<string>('');
-  const [event, setEvent] = useState<string>('');
+export const SponsorshipForm = ({ events, formId }: SponsorshipFormProps) => {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [event, setEvent] = useState<string>("");
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [submitError, setSubmitError] = useState<boolean>(false);
   const [eventError, setEventError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
   const mailer = {
-    recipient: 'hayniescornerartdistrict@gmail.com',
-    subject: 'HCAD Sponsorship Form',
+    recipient: "hayniescornerartdistrict@gmail.com",
+    subject: "HCAD Sponsorship Form",
     name,
     email,
     phone,
@@ -32,21 +35,21 @@ const SponsorshipForm = ({ events, formId }: SponsorshipFormProps) => {
   };
 
   const postForm = () => {
-    Axios.post('/api/mailer', mailer)
+    Axios.post("/api/mailer", mailer)
       .then((response) => {
-        console.log('response', response);
+        console.log("response", response);
         setSubmitted(true);
         setLoading(false);
       })
       .catch((error) => {
-        Axios.post('/api/errorAlert', error)
+        Axios.post("/api/errorAlert", error)
           .then((response) => {
-            console.log('response', response);
+            console.log("response", response);
           })
           .catch((err) => {
-            console.log('error', err);
+            console.log("error", err);
           });
-        console.log('error', error);
+        console.log("error", error);
         setSubmitted(false);
         setSubmitError(true);
         setLoading(false);
@@ -61,10 +64,12 @@ const SponsorshipForm = ({ events, formId }: SponsorshipFormProps) => {
 
     for (let index = 0; index < checkboxes.length; index++) {
       const element = checkboxes[index];
-      const label = element.parentElement.firstElementChild.innerHTML;
-      allChecked.push(label);
+      const label = element.parentElement?.firstElementChild?.innerHTML;
+      if (label) {
+        allChecked.push(label);
+      }
     }
-    setEvent(allChecked.join(', '));
+    setEvent(allChecked.join(", "));
     setEventError(false);
   };
 
@@ -97,10 +102,15 @@ const SponsorshipForm = ({ events, formId }: SponsorshipFormProps) => {
 
       {!loading && !submitted && !submitError && (
         <form
+          className="text-black"
           onSubmit={(e) => {
-            event === '' ? setEventError(true) : setLoading(true);
             e.preventDefault();
-            postForm();
+            if (event === "") {
+              setEventError(true);
+            } else {
+              setLoading(true);
+              postForm();
+            }
           }}
         >
           <fieldset
@@ -178,18 +188,16 @@ const SponsorshipForm = ({ events, formId }: SponsorshipFormProps) => {
             data-aos-delay={250}
           >
             <Button
-              classes={`w-full max-w-sm block md:inline-block mx-auto mt-10 bg-black text-white block lg:inline-block`}
+              className={`w-full max-w-sm block md:inline-block mx-auto mt-10 bg-black text-white lg:inline-block`}
             >
               <button
                 // disabled={event === ''}
                 type="submit"
                 className="uppercase"
                 onClick={(e) => {
-                  if (event === '') {
+                  if (event === "") {
                     e.preventDefault();
                     setEventError(true);
-                  } else {
-                    null;
                   }
                 }}
               >
@@ -202,6 +210,3 @@ const SponsorshipForm = ({ events, formId }: SponsorshipFormProps) => {
     </div>
   );
 };
-
-export { SponsorshipForm };
-export default SponsorshipForm;

@@ -1,18 +1,16 @@
-import {
-  ProgressiveImage,
-  ImageProps,
-  Container,
-  LinkObject,
-} from '@components';
-import * as SVG from '@svgs';
-import { breakpoints } from '@styles';
-import { noOrphans } from '@utils';
+"use client";
+import * as SVG from "@/components/svg";
+import { CustomImageProps } from "@/utils/types";
+import { LinkObject } from "../modules/LinkObject";
+import { ImageObject } from "../modules/ImageObject";
+import { Container } from "../modules/Container";
+import { breakpoints } from "@/styles";
 
 interface SectionProps {
   _key: string;
   businesses: {
     _id: string;
-    image: ImageProps;
+    image: CustomImageProps;
     title: string;
     url: string;
   }[];
@@ -27,7 +25,7 @@ interface BusinessListingProps {
   sections: SectionProps[];
 }
 
-const BusinessListing = ({ sections }: BusinessListingProps) => {
+export const BusinessListing = ({ sections }: BusinessListingProps) => {
   return (
     <section>
       <div className="businesslisting text-center text-white">
@@ -57,18 +55,17 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
                       <LinkObject url={business.url} newTab={true}>
                         <div className="relative">
                           <div className="cardImage">
-                            <div className="absolute bottom-0 left-0 h-1/2 w-full z-10 bg-gradient-to-t from-black to-transparent" />
-                            <ProgressiveImage
+                            <div className="absolute bottom-0 left-0 h-1/2 w-full z-10 bg-linear-to-t from-black to-transparent" />
+                            <ImageObject
                               {...business.image}
-                              imgWidth={600}
-                              imgHeight={400}
+                              imageWidth={600}
                               alt={business.title}
-                              isBackground
+                              className="absolute object-cover h-full w-full top-0 left-0"
                             />
                           </div>
                           <div className="relative z-10 overflow-hidden h-0 pt-businessCard">
-                            <h3 className="text-xl md:text-businessTitle absolute px-10 bottom-10 w-full font-black uppercase tracking-sectionHeading leading-base">
-                              {noOrphans(business.title)}
+                            <h3 className="text-xl text-pretty md:text-businessTitle absolute px-10 bottom-10 w-full font-black uppercase tracking-sectionHeading leading-base">
+                              {business.title}
                             </h3>
                           </div>
                         </div>
@@ -89,6 +86,3 @@ const BusinessListing = ({ sections }: BusinessListingProps) => {
     </section>
   );
 };
-
-export { BusinessListing };
-export default BusinessListing;

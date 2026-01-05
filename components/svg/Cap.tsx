@@ -13,7 +13,7 @@ export const Cap = ({ bgColor }: CapProps) => (
     <path
       d="M0,0,1366-65.87V0H0Z"
       transform="translate(0.636 65.87)"
-      fill={bgColor || null}
+      fill={bgColor || undefined}
     />
   </svg>
 );

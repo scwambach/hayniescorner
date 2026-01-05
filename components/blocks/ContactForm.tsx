@@ -1,55 +1,57 @@
-import { Button, Input, Container, LinkObject } from '@components';
-import { useState } from 'react';
-import Axios from 'axios';
-import ClipLoader from 'react-spinners/ClipLoader';
-import { breakpoints, colors } from '@styles';
+"use client";
+import { useState } from "react";
+import Axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
+import { breakpoints, colors } from "@/styles";
+import { Button } from "../modules/Button";
+import { Input } from "../modules/Input";
+import { LinkObject } from "../modules/LinkObject";
+import { Container } from "../modules/Container";
 
 interface ContactFormProps {
   formId: string;
-  delay?: number;
   bgColor?: string;
   heading?: string;
   buttonColor?: string;
 }
 
-const ContactForm = ({
+export const ContactForm = ({
   bgColor = colors.color6,
   buttonColor,
   heading,
-  delay = 0,
   formId,
 }: ContactFormProps) => {
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [submitError, setSubmitError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
   const mailer = {
-    recipient: 'hayniescornerartdistrict@gmail.com',
-    subject: 'HCAD Contact Form',
+    recipient: "hayniescornerartdistrict@gmail.com",
+    subject: "HCAD Contact Form",
     name,
     email,
     message,
   };
 
   const postForm = () => {
-    Axios.post('/api/mailer', mailer)
+    Axios.post("/api/mailer", mailer)
       .then((response) => {
-        console.log('response', response);
+        console.log("response", response);
         setSubmitted(true);
         setLoading(false);
       })
       .catch((error) => {
-        Axios.post('/api/errorAlert', error)
+        Axios.post("/api/errorAlert", error)
           .then((response) => {
-            console.log('response', response);
+            console.log("response", response);
           })
           .catch((err) => {
-            console.log('error', err);
+            console.log("error", err);
           });
-        console.log('error', error);
+        console.log("error", error);
         setSubmitted(false);
         setSubmitError(true);
         setLoading(false);
@@ -65,11 +67,7 @@ const ContactForm = ({
       }}
     >
       <Container maxWidth={breakpoints.wlg}>
-        <h4
-          className="fader uppercase font-black text-sectionHeading tracking-sectionHeading leading-base text-center text-white mb-10"
-          data-aos="fade-up"
-          data-aos-anchor={`#${formId}`}
-        >
+        <h4 className="fader uppercase font-black text-sectionHeading tracking-sectionHeading leading-base text-center text-white mb-10">
           {heading}
         </h4>
         {loading && (
@@ -119,7 +117,6 @@ const ContactForm = ({
                 id="emailAddress"
                 label="Email Address"
                 type="email"
-                delay={50}
                 required={true}
                 func={setEmail}
               />
@@ -129,20 +126,14 @@ const ContactForm = ({
                 id="message"
                 label="Message"
                 type="textarea"
-                delay={100}
                 required={true}
                 func={setMessage}
               />
             </fieldset>
-            <div
-              className="fader text-center"
-              data-aos="fade-up"
-              data-aos-delay={150}
-              data-aos-anchor={`#${formId}`}
-            >
+            <div className="fader text-center">
               <Button
-                classes={`w-full max-w-sm block md:inline-block mx-auto ${
-                  buttonColor || 'bg-darkOrange'
+                className={`w-full max-w-sm block md:inline-block mx-auto ${
+                  buttonColor || "bg-darkOrange"
                 } text-white block lg:inline-block`}
               >
                 <button type="submit" className="uppercase">
@@ -156,6 +147,3 @@ const ContactForm = ({
     </section>
   );
 };
-
-export { ContactForm };
-export default ContactForm;

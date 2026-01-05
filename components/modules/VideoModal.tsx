@@ -1,9 +1,9 @@
-import { MainContext } from '@components';
-import { useContext, useEffect, useState } from 'react';
-import { Portal } from 'react-portal';
-import ReactPlayer from 'react-player';
-import { AiOutlineClose } from '@meronex/icons/ai';
-import { colors } from '@styles';
+"use client";
+import { useState } from "react";
+import { Portal } from "react-portal";
+import ReactPlayer from "react-player";
+import { AiOutlineClose } from "@meronex/icons/ai";
+import { colors } from "@/styles";
 
 type Props = {
   video: string;
@@ -11,14 +11,9 @@ type Props = {
   setActive: any;
 };
 
-const VideoModal = ({ video, active, setActive }: Props) => {
-  const [hasWindow, setHasWindow] = useState(false);
+export const VideoModal = ({ video, active, setActive }: Props) => {
+  const [hasWindow] = useState(typeof window !== "undefined");
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setHasWindow(true);
-    }
-  }, []);
   return (
     <>
       {hasWindow && video && (
@@ -26,27 +21,26 @@ const VideoModal = ({ video, active, setActive }: Props) => {
           <div
             className={`fixed bg-overlay z-50 h-screen w-screen top-0 left-0 transition-all ease-in-out flex flex-col justify-center items-center ${
               active
-                ? 'opacity-100 scale-100 pointer-events-auto'
-                : 'opacity-0 blur-3xl scale-0 pointer-events-none'
+                ? "opacity-100 scale-100 pointer-events-auto"
+                : "opacity-0 blur-3xl scale-0 pointer-events-none"
             }`}
           >
-            <a
+            <button
               className="absolute top-10 right-10 cursor-pointer z-50"
-              href={null}
               onClick={(e) => {
                 e.preventDefault();
                 setActive(false);
               }}
             >
               <AiOutlineClose color={colors.white} size={70} />
-            </a>
+            </button>
 
             <div className="player-wrapper">
               {active && (
                 <ReactPlayer
                   className="react-player"
-                  url={
-                    video.indexOf('http') < 0 ? `/videos/${video}.mp4` : video
+                  src={
+                    video.indexOf("http") < 0 ? `/videos/${video}.mp4` : video
                   }
                   controls
                 />
@@ -58,6 +52,3 @@ const VideoModal = ({ video, active, setActive }: Props) => {
     </>
   );
 };
-
-export { VideoModal };
-export default VideoModal;

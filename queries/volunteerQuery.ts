@@ -1,14 +1,13 @@
-import { groq } from 'next-sanity';
-import imageQuery from './imageQuery';
+import imageQuery from "./imageQuery";
 
-export const volunteerQuery = groq`*[_id == $pageId][0] {
+export const volunteerQuery = `*[_id == 'volunteerPage'][0] {
   pageDescription,
   "mainImage": {
     "url": mainImage.asset->url
   },
-  ${imageQuery({ name: 'previewImage' })},
+  previewImage,
   heroBanner {
-    ${imageQuery({ name: 'backgroundImage' })},
+    backgroundImage ${imageQuery},
     heading
   },
   formHeading,

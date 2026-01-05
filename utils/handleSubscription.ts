@@ -1,14 +1,18 @@
 /* eslint-disable no-console */
-import { handleList } from './handleList';
+import { handleList } from "./handleList";
 
-export const handleSubscription = (body, setSubmitted, setError) => {
+export const handleSubscription = (
+  body: any,
+  setSubmitted: any,
+  setError: any
+) => {
   fetch(`${process.env.SITE_URL}api/subscribe`, {
-    method: 'POST',
+    method: "POST",
     body,
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log('Post Contact:', data.error);
+      console.log("Post Contact:", data.error);
       if (data.error) {
         setError(data.error);
       } else {
@@ -19,6 +23,6 @@ export const handleSubscription = (body, setSubmitted, setError) => {
     })
 
     .catch((error) => {
-      console.error('Error:', error);
+      console.error("Error:", error);
     });
 };

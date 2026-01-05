@@ -1,6 +1,12 @@
-import { colors } from '@styles';
+import { colors } from "@/styles";
 
-const LogoWhite = ({ classes, color = colors.white }) => {
+const LogoWhite = ({
+  classes,
+  color = colors.white,
+}: {
+  classes?: string;
+  color?: string;
+}) => {
   return (
     <svg
       className={classes}

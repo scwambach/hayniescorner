@@ -1,6 +1,12 @@
-import { colors } from '@styles';
+import { colors } from "@/styles";
 
-export const Shadow = ({ color = colors.black, reverse }) => {
+export const Shadow = ({
+  color = colors.black,
+  reverse,
+}: {
+  color?: string;
+  reverse?: boolean;
+}) => {
   return (
     <>
       {reverse ? (

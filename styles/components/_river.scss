@@ -4,12 +4,6 @@
       margin-top: 100px;
     }
 
-    .riverImage {
-      @media screen and (max-width: $md) {
-        padding-top: 75%;
-      }
-    }
-
     &.reverse {
       &:nth-child(2n) {
         @media (max-width: $lg) and (min-width: ($md + 1)) {
@@ -19,7 +13,7 @@
         }
 
         .riverImage {
-          clip-path: url('#riverImage1');
+          clip-path: url("#riverImage1");
         }
 
         .imgShadow {
@@ -46,7 +40,7 @@
           }
         }
         .riverImage {
-          clip-path: url('#riverImage2');
+          clip-path: url("#riverImage2");
         }
 
         .imgShadow {
@@ -76,7 +70,7 @@
         }
 
         .riverImage {
-          clip-path: url('#riverImage2');
+          clip-path: url("#riverImage2");
         }
 
         .imgShadow {
@@ -94,7 +88,7 @@
         }
 
         .riverImage {
-          clip-path: url('#riverImage1');
+          clip-path: url("#riverImage1");
         }
 
         .imgShadow {

@@ -1,4 +1,4 @@
-import { breakpoints } from '@styles';
+import { breakpoints } from "@/styles";
 export const customImageBuilder = ({
   imageUrlBuilder,
   imgHeight,
@@ -9,6 +9,16 @@ export const customImageBuilder = ({
   quality,
   thin,
   windowWidth,
+}: {
+  imageUrlBuilder: any;
+  imgHeight?: number;
+  imgWidth: number;
+  isBackground?: boolean;
+  grayScale?: boolean;
+  mobileCrop?: boolean;
+  quality?: number;
+  thin?: boolean;
+  windowWidth: number;
 }) => {
   if (imgHeight && isBackground) {
     if (mobileCrop) {
@@ -17,9 +27,9 @@ export const customImageBuilder = ({
           .width(Math.round(breakpoints.sm))
           .height(Math.round(breakpoints.sm * 1.5))
           .quality(quality)
-          .format('webp')
+          .format("webp")
           .saturation(grayScale ? -100 : undefined)
-          .fit('clip');
+          .fit("clip");
       }
 
       if (windowWidth < breakpoints.md) {
@@ -27,9 +37,9 @@ export const customImageBuilder = ({
           .width(Math.round(breakpoints.md))
           .height(Math.round(breakpoints.md * 1.1))
           .quality(quality)
-          .format('webp')
+          .format("webp")
           .saturation(grayScale ? -100 : undefined)
-          .fit('clip');
+          .fit("clip");
       }
 
       if (windowWidth > 2000) {
@@ -37,17 +47,17 @@ export const customImageBuilder = ({
           .width(imgWidth)
           .height(imgHeight)
           .quality(quality)
-          .format('webp')
+          .format("webp")
           .saturation(grayScale ? -100 : undefined)
-          .fit('clip');
+          .fit("clip");
       }
     }
     return imageUrlBuilder
       .width(imgWidth)
       .height(imgHeight)
       .quality(quality)
-      .format('webp')
-      .fit('clip');
+      .format("webp")
+      .fit("clip");
   }
 
   if (mobileCrop && isBackground) {
@@ -57,9 +67,9 @@ export const customImageBuilder = ({
           .width(Math.round(breakpoints.sm))
           .height(Math.round(breakpoints.sm))
           .quality(quality)
-          .format('webp')
+          .format("webp")
           .saturation(grayScale ? -100 : undefined)
-          .fit('clip');
+          .fit("clip");
       }
 
       if (windowWidth < breakpoints.md) {
@@ -67,9 +77,9 @@ export const customImageBuilder = ({
           .width(Math.round(breakpoints.md))
           .height(200)
           .quality(quality)
-          .format('webp')
+          .format("webp")
           .saturation(grayScale ? -100 : undefined)
-          .fit('clip');
+          .fit("clip");
       }
 
       if (windowWidth > 2000) {
@@ -77,9 +87,9 @@ export const customImageBuilder = ({
           .width(imgWidth)
           .height(200)
           .quality(quality)
-          .format('webp')
+          .format("webp")
           .saturation(grayScale ? -100 : undefined)
-          .fit('clip');
+          .fit("clip");
       }
     }
 
@@ -88,9 +98,9 @@ export const customImageBuilder = ({
         .width(Math.round(breakpoints.sm))
         .height(Math.round(breakpoints.sm * 1.5))
         .quality(quality)
-        .format('webp')
+        .format("webp")
         .saturation(grayScale ? -100 : undefined)
-        .fit('clip');
+        .fit("clip");
     }
 
     if (windowWidth < breakpoints.md) {
@@ -98,9 +108,9 @@ export const customImageBuilder = ({
         .width(Math.round(breakpoints.md))
         .height(Math.round(breakpoints.md * 1.1))
         .quality(quality)
-        .format('webp')
+        .format("webp")
         .saturation(grayScale ? -100 : undefined)
-        .fit('clip');
+        .fit("clip");
     }
 
     if (windowWidth > 2000) {
@@ -108,15 +118,15 @@ export const customImageBuilder = ({
         .width(imgWidth + 600)
         .height(700)
         .quality(quality)
-        .format('webp')
+        .format("webp")
         .saturation(grayScale ? -100 : undefined)
-        .fit('clip');
+        .fit("clip");
     }
 
     return imageUrlBuilder
       .width(imgWidth)
       .quality(quality)
-      .format('webp')
+      .format("webp")
       .saturation(grayScale ? -100 : undefined);
   }
 
@@ -125,41 +135,41 @@ export const customImageBuilder = ({
       .width(imgWidth)
       .height(imgHeight)
       .quality(quality)
-      .format('webp')
+      .format("webp")
       .saturation(grayScale ? -100 : undefined)
-      .fit('clip');
+      .fit("clip");
   }
 
   if (windowWidth < breakpoints.sm && imgWidth > breakpoints.sm) {
     return imageUrlBuilder
       .width(Math.round(breakpoints.sm))
       .quality(quality)
-      .format('webp')
+      .format("webp")
       .saturation(grayScale ? -100 : undefined)
-      .fit('clip');
+      .fit("clip");
   }
 
   if (windowWidth < breakpoints.md && imgWidth > breakpoints.md) {
     return imageUrlBuilder
       .width(Math.round(breakpoints.md))
       .quality(quality)
-      .format('webp')
+      .format("webp")
       .saturation(grayScale ? -100 : undefined)
-      .fit('clip');
+      .fit("clip");
   }
 
   if (windowWidth < breakpoints.lg && imgWidth > breakpoints.lg) {
     return imageUrlBuilder
       .width(Math.round(breakpoints.lg))
       .quality(quality)
-      .format('webp')
+      .format("webp")
       .saturation(grayScale ? -100 : undefined)
-      .fit('clip');
+      .fit("clip");
   }
 
   return imageUrlBuilder
     .width(imgWidth)
     .quality(quality)
-    .format('webp')
+    .format("webp")
     .saturation(grayScale ? -100 : undefined);
 };

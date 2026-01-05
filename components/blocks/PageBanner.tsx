@@ -1,14 +1,19 @@
-import { Container, ImageProps, ComponentProps } from '@components';
-import BackgroundWrapper from '@components/wrappers/BackgroundWrapper';
-import { breakpoints } from '@styles';
+import { BackgroundWrapper } from "../global/BackgroundWrapper";
+import { CustomImageProps } from "@/utils/types";
+import { Container } from "../modules/Container";
+import { breakpoints } from "@/styles";
 
-interface PageBannerProps extends ComponentProps {
-  backgroundImage: ImageProps;
+interface PageBannerProps {
   backgroundColor: string;
+  backgroundImage: CustomImageProps;
+  containerClasses?: string;
   heading: string;
+  message?: any | any[];
+  priority?: boolean;
+  subHeading?: string;
 }
 
-const PageBanner = ({
+export const PageBanner = ({
   backgroundImage,
   backgroundColor,
   heading,
@@ -19,7 +24,7 @@ const PageBanner = ({
     grayScale: true,
   };
   return (
-    <section className="banner subpage relative font-body text-center text-white">
+    <section className="border-t-95 border-black banner subpage relative font-body text-center text-white">
       <BackgroundWrapper {...backgroundProps} hardLight alt={heading}>
         <Container maxWidth={breakpoints.xxl}>
           <h1 className="font-black text-4xl md:text-banner uppercase tracking-sectionHeading leading-tight  py-16 md:py-32">
@@ -30,6 +35,3 @@ const PageBanner = ({
     </section>
   );
 };
-
-export { PageBanner };
-export default PageBanner;

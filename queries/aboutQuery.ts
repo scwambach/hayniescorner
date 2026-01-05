@@ -1,14 +1,13 @@
-import { groq } from 'next-sanity';
-import imageQuery from './imageQuery';
+import imageQuery from "./imageQuery";
 
-export const aboutQuery = groq`*[_type == "aboutPage"][0] {
+export const aboutQuery = `*[_type == "aboutPage"][0] {
   pageDescription,
   "mainImage": {
     "url": mainImage.asset->url
   },
-  ${imageQuery({ name: 'previewImage' })},
+  previewImage ${imageQuery},
   heroBanner {
-    ${imageQuery({ name: 'backgroundImage' })},
+    backgroundImage ${imageQuery},
     heading
   },
   aboutFeatures {
@@ -17,7 +16,7 @@ export const aboutQuery = groq`*[_type == "aboutPage"][0] {
         _id,
         title,
         blockContent,
-        ${imageQuery({ name: 'image' })},
+        image ${imageQuery},
         links,
       },
       extraLinks,
@@ -29,7 +28,7 @@ export const aboutQuery = groq`*[_type == "aboutPage"][0] {
         _id,
         title,
         blockContent,
-        ${imageQuery({ name: 'image' })},
+        image ${imageQuery},
         links,
       },
       extraLinks,
@@ -37,7 +36,7 @@ export const aboutQuery = groq`*[_type == "aboutPage"][0] {
     headingBlock -> {
       heading,
       message,
-      ${imageQuery({ name: 'image' })}
+      image ${imageQuery}
     },
     links
   },
@@ -47,7 +46,7 @@ export const aboutQuery = groq`*[_type == "aboutPage"][0] {
         _id,
         title,
         blockContent,
-        ${imageQuery({ name: 'image' })},
+        image ${imageQuery},
         links,
       },
       extraLinks,

@@ -1,14 +1,14 @@
-import { groq } from 'next-sanity';
-import imageQuery from './imageQuery';
+import imageQuery from "./imageQuery";
 
-export const contactQuery = groq`*[_type == "contactPage"][0] {
+export const contactQuery = `*[_type == "contactPage"][0] {
   pageDescription,
+  "mainEmail": *[_type == "globalSettings"][0].mainEmail,
   "mainImage": {
     "url": mainImage.asset->url
   },
-  ${imageQuery({ name: 'previewImage' })},
+  previewImage ${imageQuery},
   heroBanner {
-    ${imageQuery({ name: 'backgroundImage' })},
+    backgroundImage ${imageQuery},
     heading
   },
   links,

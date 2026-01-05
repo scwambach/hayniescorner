@@ -1,21 +1,19 @@
-import {
-  Container,
-  ImageProps,
-  LinkProps,
-  ProgressiveImage,
-  PortableTextModule,
-  Button,
-  LinkObject,
-} from '@components';
-import * as SVG from '@svgs';
-import { breakpoints, colors } from '@styles';
-import { isEven, slugify } from '@utils';
+"use client";
+import * as SVG from "@/components/svg";
+import { breakpoints, colors } from "@/styles";
+import { isEven, slugify } from "@/utils";
+import { Portable } from "../modules/Portable";
+import { ImageObject } from "../modules/ImageObject";
+import { CustomImageProps, LinkProps } from "@/utils/types";
+import { LinkObject } from "../modules/LinkObject";
+import { Button } from "../modules/Button";
+import { Container } from "../modules/Container";
 
 interface FeatureProps {
   feature: {
     _id: string;
-    blockContent?: any | any[];
-    image: ImageProps;
+    blockContent?: any[];
+    image: CustomImageProps;
     links?: LinkProps[];
     title: string;
   };
@@ -26,18 +24,16 @@ interface RiverProps {
   features: FeatureProps[];
   bgColor?: string;
   shadowColor?: string;
-  delay?: number;
   cap?: boolean;
   reverse?: boolean;
   buttonColors?: string[];
 }
 
-const River = ({
+export const River = ({
   features,
   bgColor = colors.color6,
   shadowColor = colors.color5,
   buttonColors,
-  delay = 0,
   cap = false,
   reverse = false,
 }: RiverProps) => {
@@ -45,10 +41,10 @@ const River = ({
     <section
       className={`river relative ${
         cap
-          ? 'hasCap lg:pt-sectionPadding lg:pb-sectionPaddingBottom '
-          : 'lg:py-sectionPadding '
+          ? "hasCap lg:pt-sectionPadding lg:pb-sectionPaddingBottom "
+          : "lg:py-sectionPadding "
       }text-white py-16 md:py-5${
-        reverse ? ' reverse-block' : ' regular-block'
+        reverse ? " reverse-block" : " regular-block"
       }`}
       style={{
         backgroundColor: bgColor,
@@ -75,19 +71,15 @@ const River = ({
               allLinks.push(...extraLinks);
             }
 
-            const numberOrder = (delay || index) * 100;
-
             return (
               <div
-                id={`${title ? slugify(title) : 'riverItem'}`}
-                data-aos="fade-up"
-                data-aos-delay={`${numberOrder}`}
+                id={`${title ? slugify(title) : "riverItem"}`}
                 key={_id}
                 className={`fader md:flex md:justify-between items-center featureRow${
                   !isEven(reverse ? index + 1 : index)
-                    ? ' md:flex-row-reverse'
-                    : ''
-                }${reverse ? ' reverse' : ' regular'}`}
+                    ? " md:flex-row-reverse"
+                    : ""
+                }${reverse ? " reverse" : " regular"}`}
               >
                 <div className="image relative">
                   <div className="imgShadow hidden wlg:block absolute z-0">
@@ -96,58 +88,39 @@ const River = ({
                       reverse={!isEven(reverse ? index + 1 : index)}
                     />
                   </div>
-                  <div className="riverImage relative rounded-2xl md:rounded-none overflow-hidden md:overflow-auto z-10 md:h-full w-full md:w-featImage">
-                    <ProgressiveImage
-                      isBackground
+                  <div className="riverImage relative rounded-2xl md:rounded-none overflow-hidden md:overflow-auto z-10 md:h-full w-full">
+                    <ImageObject
+                      className="object-cover w-full h-full"
                       alt={title}
-                      imgHeight={600}
-                      imgWidth={600}
+                      imageWidth={600}
                       {...image}
                     />
                   </div>
                 </div>
                 <div className="copy pt-12 max-w-xs md:max-w-none md:py-12">
-                  <h2
-                    className="fader font-black uppercase text-xl lg:text-featHeading tracking-featureHeading mb-7"
-                    data-aos-anchor={`#${title ? slugify(title) : 'riverItem'}`}
-                    data-aos="fade-up"
-                    data-aos-delay={`${numberOrder + 50}`}
-                  >
+                  <h2 className="fader font-black uppercase text-xl lg:text-featHeading tracking-featureHeading mb-7">
                     {title}
                   </h2>
-                  <div
-                    className="fader font-semibold text-base lg:text-featBody leading-featBody"
-                    data-aos-anchor={`#${title ? slugify(title) : 'riverItem'}`}
-                    data-aos="fade-up"
-                    data-aos-delay={`${numberOrder + 100}`}
-                  >
-                    <PortableTextModule text={blockContent} />
+                  <div className="fader font-semibold text-base lg:text-featBody leading-featBody">
+                    {blockContent && <Portable content={blockContent} />}
                   </div>
 
                   {allLinks.length > 0 && (
-                    <div
-                      className="fader mt-7"
-                      data-aos-anchor={`#${
-                        title ? slugify(title) : 'riverItem'
-                      }`}
-                      data-aos="fade-up"
-                      data-aos-delay={`${numberOrder + 150}`}
-                    >
+                    <div className="fader mt-7">
                       {allLinks.map((link, index) => (
                         <Button
                           key={link._key}
-                          index={index}
-                          classes={`w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto ${
+                          className={`w-full block md:inline-block mx-auto md:mx-0 sm:w-full md:w-auto ${
                             isEven(index)
                               ? buttonColors
                                 ? buttonColors[0]
-                                : 'bg-color1'
+                                : "bg-color1"
                               : buttonColors
-                              ? buttonColors[1]
-                              : 'bg-orange'
+                                ? buttonColors[1]
+                                : "bg-orange"
                           }`}
                         >
-                          <LinkObject {...link} />
+                          <LinkObject url={link.url}>{link.copy}</LinkObject>
                         </Button>
                       ))}
                     </div>
@@ -161,6 +134,3 @@ const River = ({
     </section>
   );
 };
-
-export { River };
-export default River;

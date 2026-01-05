@@ -3,42 +3,34 @@ interface InputProps {
   label: string;
   className?: string;
   type: string;
-  required: any;
-  func?: any;
+  required: boolean;
+  func?: (value: string) => void;
   formId?: string;
   delay?: number;
 }
 
-const Input = ({
+export const Input = ({
   id,
   label,
   required,
   type,
   func,
-  formId,
   className,
-  delay = 0,
 }: InputProps) => {
-  const isCheck = type === 'checkbox' || type === 'radio';
+  const isCheck = type === "checkbox" || type === "radio";
 
   return (
-    <label
-      htmlFor={id}
-      className={`fader ${className} ${type}`}
-      data-aos="fade-up"
-      data-aos-anchor={`#${formId}`}
-      data-aos-delay={`${delay}`}
-    >
+    <label htmlFor={id} className={`fader ${className} ${type}`}>
       <span className="block mb-5">{label}</span>
-      {type === 'textarea' ? (
+      {type === "textarea" ? (
         <textarea
           id={id}
           required={required}
           name={id}
           rows={6}
-          className="block w-full p-5 font-semibold text-xl"
+          className="block w-full p-5 font-semibold text-xl bg-white"
           onChange={(e) => {
-            func ? func(e.target.value) : null;
+            func?.(e.target.value);
           }}
         />
       ) : (
@@ -49,11 +41,11 @@ const Input = ({
           name={id}
           className={
             isCheck
-              ? 'w-10 checkItem'
-              : `block w-full p-5 font-semibold text-xl`
+              ? "w-10 checkItem bg-white"
+              : `block w-full p-5 font-semibold text-xl bg-white`
           }
           onChange={(e) => {
-            func ? func(e.target.value) : null;
+            func?.(e.target.value);
           }}
         />
       )}
@@ -62,6 +54,3 @@ const Input = ({
     </label>
   );
 };
-
-export { Input };
-export default Input;

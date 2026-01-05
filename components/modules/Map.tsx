@@ -1,10 +1,10 @@
-import { GoogleMap, useLoadScript } from '@react-google-maps/api';
-import { mapStyle } from '@utils';
+import { GoogleMap, useLoadScript } from "@react-google-maps/api";
+import { mapStyle } from "@/utils";
 
-const Map = () => {
+export const Map = () => {
   const mapContainerStyle = {
-    height: '545px',
-    width: '100%',
+    height: "545px",
+    width: "100%",
   };
 
   const center = {
@@ -13,8 +13,8 @@ const Map = () => {
   };
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAP_API_KEY,
-    libraries: ['places'],
+    googleMapsApiKey: `${process.env.GOOGLE_MAP_API_KEY}`,
+    libraries: ["places"],
   });
 
   if (loadError) return <div>Something went wrong</div>;
@@ -34,6 +34,3 @@ const Map = () => {
     </div>
   );
 };
-
-export { Map };
-export default Map;

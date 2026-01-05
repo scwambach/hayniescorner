@@ -1,25 +1,14 @@
-import { groq } from 'next-sanity';
+import { groq } from "next-sanity";
 
-const imageQuery = ({
-  name,
-  fieldName,
-}: {
-  name: string;
-  fieldName?: string;
-}) => {
-  return groq`
-  "${fieldName || name}": {
-    defined( ${name} ) => { "reference": ${name} },
-    defined( ${name}.asset->url ) => { "url": ${name}.asset->url },
-    defined( ${name}.asset->metadata.lqip ) => { "lqip": ${name}.asset->metadata.lqip },
-    defined( ${name}.crop ) => { "crop": ${name}.crop },
-    defined( ${name}.hotspot ) => { "hotspot": ${name}.hotspot },
-    defined( ${name}.asset->metadata.dimensions.height ) => { "height": ${name}.asset->metadata.dimensions.height },
-    defined( ${name}.asset->metadata.dimensions.width ) => { "width": ${name}.asset->metadata.dimensions.width },
-    defined( ${name}.asset->metadata.dimensions.aspectRatio ) => { "aspectRatio": ${name}.asset->metadata.dimensions.aspectRatio },
+const imageQuery = `{
+  "src": asset->url,
+  "height": asset -> metadata.dimensions.height,
+  "width": asset -> metadata.dimensions.width,
+  "blurDataURL": asset-> metadata.lqip,
+  "imageFor": {
+    ...,
   }
-  `;
-};
+}`;
 
 export const assetQuery = () => {
   return groq`

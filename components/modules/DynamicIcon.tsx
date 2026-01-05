@@ -1,14 +1,14 @@
-import React, { ReactElement } from 'react';
-import * as Icons from '@meronex/icons/si';
-import { colors } from '@styles';
+import { ReactElement } from "react";
+import * as Icons from "@meronex/icons/si";
+import { colors } from "@/styles";
 
 interface Props {
-  name: string;
+  name: keyof typeof Icons;
   color?: string;
   size?: number;
 }
 
-function DynamicIcon({
+export function DynamicIcon({
   name,
   size = 50,
   color = colors.color2,
@@ -20,6 +20,3 @@ function DynamicIcon({
 
   return <IconComponent size={size} color={color} />;
 }
-
-export { DynamicIcon };
-export default DynamicIcon;
