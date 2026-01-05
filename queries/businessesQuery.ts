@@ -1,14 +1,13 @@
-import { groq } from 'next-sanity';
-import imageQuery from './imageQuery';
+import imageQuery from "./imageQuery";
 
-export const businessesQuery = groq`*[_type == "businessesPage"][0] {
+export const businessesQuery = `*[_type == "businessesPage"][0] {
   pageDescription,
   "mainImage": {
     "url": mainImage.asset->url
   },
-  ${imageQuery({ name: 'previewImage' })},
+  previewImage ${imageQuery},
   heroBanner {
-    ${imageQuery({ name: 'backgroundImage' })},
+    backgroundImage ${imageQuery},
     heading
   },
   sections {
@@ -20,8 +19,8 @@ export const businessesQuery = groq`*[_type == "businessesPage"][0] {
         "slug": slug.current
       },
       "businesses": *[_type == 'business' && references(^._ref)] | order(title asc) {
-        title, 
-        ${imageQuery({ name: 'image' })},
+        title,
+        image ${imageQuery},
         url,
         _id
       }

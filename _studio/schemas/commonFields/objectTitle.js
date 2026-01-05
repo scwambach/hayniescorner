@@ -1,6 +1,0 @@
-export const objectTitle = {
-  name: 'title',
-  title: 'Title',
-  type: 'string',
-  validation: (Rule) => Rule.required(),
-};

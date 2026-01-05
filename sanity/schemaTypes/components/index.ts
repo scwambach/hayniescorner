@@ -1,0 +1,1 @@
+export { heroBanner } from "./heroBanner";

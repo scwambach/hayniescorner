@@ -1,8 +1,6 @@
-import { BlockContent } from '@sanity/block-content-to-react';
-import { groq } from 'next-sanity';
-import imageQuery from './imageQuery';
+import imageQuery from "./imageQuery";
 
-export const homeQuery = groq`*[_type == "homePage"][0] {
+export const homeQuery = `*[_type == "homePage"][0] {
   title,
   pageDescription,
   slug,
@@ -10,10 +8,8 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
     "url": mainImage.asset->url
   },
   heroBanner {
-    ${imageQuery({ name: 'backgroundImage' })},
-    customIcon -> {
-      ...,
-    },
+    backgroundImage ${imageQuery},
+    "customIcon": customIcon -> customStyleCode.code,
   },
   aboutFeatures {
     features[] {
@@ -21,14 +17,14 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
         _id,
         title,
         blockContent,
-        ${imageQuery({ name: 'image' })},
+        image ${imageQuery},
         links,
       },
       extraLinks,
     }
   },
   eventTypes {
-    ${imageQuery({ name: 'backgroundImage' })},
+    backgroundImage ${imageQuery},
     blockContent,
     items[] -> {
       _id,
@@ -36,7 +32,7 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
       subtitle,
       link,
       "customIcon": customIcon -> customStyleCode.code,
-      ${imageQuery({ name: 'iconImage' })},
+      iconImage ${imageQuery},
     },
     links,
     title,
@@ -47,11 +43,11 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
       _key,
       link,
       "customIcon": customIcon -> customStyleCode.code,
-      ${imageQuery({ name: 'iconImage' })},
+      iconImage ${imageQuery},
     }
   },
   arts {
-    ${imageQuery({ name: 'backgroundImage' })},
+    backgroundImage ${imageQuery},
     blockContent,
     links,
     title
@@ -62,7 +58,7 @@ export const homeQuery = groq`*[_type == "homePage"][0] {
         _id,
         title,
         blockContent,
-        ${imageQuery({ name: 'image' })},
+        image ${imageQuery},
         links,
       },
       extraLinks,

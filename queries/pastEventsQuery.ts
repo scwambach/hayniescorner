@@ -1,20 +1,19 @@
-import { groq } from 'next-sanity';
-import imageQuery from './imageQuery';
+import imageQuery from "./imageQuery";
 
-export const pastEventsQuery = groq`*[_type == "eventsPage"][0] {
+export const pastEventsQuery = `*[_type == "eventsPage"][0] {
   pageDescription,
   "mainImage": {
     "url": mainImage.asset->url
   },
-  ${imageQuery({ name: 'previewImage' })},
+  previewImage ${imageQuery},
   heroBanner {
-    ${imageQuery({ name: 'backgroundImage' })},
+    backgroundImage ${imageQuery},
     heading
   },
   "events": *[_type == "event" && ((_id in path('drafts.**')) == false) && date < $todayDate] | order(date desc) {
     _id, 
     title,
-    ${imageQuery({ name: 'image' })},
+    image ${imageQuery},
     description,
     physicalLocation,
     location,

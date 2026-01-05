@@ -1,4 +1,4 @@
-import { colors } from '@styles';
+import { colors } from "@/styles";
 
 const Logo = ({ classes, color = colors.color6 }) => {
   return (

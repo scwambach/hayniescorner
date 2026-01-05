@@ -1,14 +1,13 @@
-import { groq } from 'next-sanity';
-import imageQuery from './imageQuery';
+import imageQuery from "./imageQuery";
 
-export const hcadaQuery = groq`*[_type == "hcadaPage"][0] {
+export const hcadaQuery = `*[_type == "hcadaPage"][0] {
   pageDescription,
   "mainImage": {
     "url": mainImage.asset->url
   },
-  ${imageQuery({ name: 'previewImage' })},
+  previewImage ${imageQuery},
   heroBanner {
-    ${imageQuery({ name: 'backgroundImage' })},
+    backgroundImage ${imageQuery},
     heading
   },
   upperFeatures {
@@ -17,7 +16,7 @@ export const hcadaQuery = groq`*[_type == "hcadaPage"][0] {
         _id,
         title,
         blockContent,
-        ${imageQuery({ name: 'image' })},
+        image ${imageQuery},
         links,
       },
       extraLinks,
@@ -27,7 +26,7 @@ export const hcadaQuery = groq`*[_type == "hcadaPage"][0] {
     headingBlock -> {
       heading,
       message,
-      ${imageQuery({ name: 'image' })}
+      image ${imageQuery}
     },
     boardHeading,
     boardMembers[] -> {
@@ -47,7 +46,7 @@ export const hcadaQuery = groq`*[_type == "hcadaPage"][0] {
         _id,
         title,
         blockContent,
-        ${imageQuery({ name: 'image' })},
+        image ${imageQuery},
         links,
       },
       extraLinks,

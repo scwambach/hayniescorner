@@ -1,26 +1,11 @@
-import {
-  Container,
-  ImageProps,
-  LinkProps,
-  ImageIcon,
-  LinkObject,
-} from '@components';
+"use client";
+import * as SVG from "@/components/svg";
+import { LinkTilesProps } from "@/utils/types";
+import { LinkObject } from "../modules/LinkObject";
+import { Container } from "../modules/Container";
+import { breakpoints } from "@/styles";
 
-import { breakpoints } from '@styles';
-import * as SVG from '@svgs';
-
-interface LinkTilesProps {
-  heading?: string;
-  delay?: number;
-  tiles: {
-    _key?: string;
-    customIcon?: string;
-    iconImage?: ImageProps;
-    link?: LinkProps;
-  }[];
-}
-
-const LinkTiles = ({ heading, tiles, delay = 0 }: LinkTilesProps) => {
+export const LinkTiles = ({ heading, tiles }: LinkTilesProps) => {
   return (
     <section className="linkTiles relative py-16  lg:py-sectionPadding bg-black">
       <SVG.Tile1 />
@@ -31,25 +16,24 @@ const LinkTiles = ({ heading, tiles, delay = 0 }: LinkTilesProps) => {
           {heading}
         </h3>
         <div className="flex flex-col md:flex-row md:justify-between gap-10 sxl:gap-10">
-          {tiles.map(({ _key, link, customIcon, iconImage }, index) => {
-            const numberOrder = (delay || index) * 100;
-
+          {tiles.map(({ _key, link, customIcon }) => {
             return (
-              <div
-                key={_key}
-                className="fader tile w-full"
-                data-aos="fade-up"
-                data-aos-delay={`${numberOrder}`}
-              >
+              <div key={_key} className="fader tile w-full">
                 <LinkObject
                   classes="w-full rounded-2xl sxl:rounded-0 flex justify-center items-center relative p-2 py-10 sxl:py-sixty"
                   {...link}
                 >
-                  <div className="icon flex justify-center sxl:mt-6 mb-8">
-                    <ImageIcon customIcon={customIcon} iconImage={iconImage} />
-                  </div>
+                  {customIcon && (
+                    <div className="icon flex justify-center sxl:mt-6 mb-8">
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: customIcon,
+                        }}
+                      />
+                    </div>
+                  )}
                   <span className="block text-tileHeading leading-base text-white text-center uppercase font-black tracking-tile">
-                    {link.copy}
+                    {link?.copy}
                   </span>
                 </LinkObject>
               </div>
@@ -60,6 +44,3 @@ const LinkTiles = ({ heading, tiles, delay = 0 }: LinkTilesProps) => {
     </section>
   );
 };
-
-export { LinkTiles };
-export default LinkTiles;

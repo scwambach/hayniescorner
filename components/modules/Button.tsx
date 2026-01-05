@@ -1,20 +1,17 @@
-import { isEven } from '@utils';
+"use client";
 
 interface ButtonProps {
-  classes?: string;
+  className?: string;
   children: any;
   index?: number;
 }
 
-const Button = ({ children, classes, index }: ButtonProps) => {
+export const Button = ({ children, className }: ButtonProps) => {
   return (
     <span
-      className={`button uppercase font-black tracking-nav relative text-sm lg:text-button border text-center border-transparent transition-all rounded-md shadow-sm ${classes}`}
+      className={`button uppercase font-black tracking-nav relative text-sm lg:text-button border text-center border-transparent transition-all rounded-md shadow-sm ${className}`}
     >
       {children}
     </span>
   );
 };
-
-export { Button };
-export default Button;

@@ -1,34 +1,21 @@
-import { groq } from 'next-sanity';
-import { imageQuery } from './imageQuery';
+import { imageQuery } from "./imageQuery";
 
-export const siteQuery = groq`{
+export const siteQuery = `{
   "site": *[_type == "globalSettings"][0] {
     title,
-    customIcon -> {
-      ...,
-    },
-    mainLogo -> {
-      ...,
-    },
-    defined(mainLogoImage) => {${imageQuery({ name: 'mainLogoImage' })}},
-    footerLogo -> {
-      ...,
-    },
-    defined(footerLogoImage) => {${imageQuery({ name: 'footerLogoImage' })}},
+    "footerLogo": footerLogo -> customStyleCode.code,
+    "mainLogo": mainLogo -> customStyleCode.code,
+    "customIcon": customIcon -> customStyleCode.code,
+    mainLogoImage ${imageQuery},
+    footerLogoImage ${imageQuery},
     siteDescription,
     siteTitle,
     mainEmail,
   },
-  "menus": *[_type == "navMenu"] {
-    ...,
-    _id,
-    title,
-    items[] {
-      ...,
-      link {
-        ...,
-      },
-    }
+  "navigation": *[_type == "navMenu"][0].items[] {
+    _key,
+    "url": link.url,
+    "copy": link.copy,
   },
   "socials": *[_type == "social"] | order(order asc) {
     _id,

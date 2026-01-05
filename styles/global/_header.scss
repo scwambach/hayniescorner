@@ -102,7 +102,7 @@
 
           &:before {
             @media screen and (min-width: ($lg + 1)) {
-              content: '';
+              content: "";
               display: block;
               height: calc(100% - 60px);
               transition-duration: 0.1s;

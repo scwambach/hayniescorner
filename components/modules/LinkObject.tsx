@@ -1,6 +1,7 @@
-import Link from 'next/link';
+"use client";
+import Link from "next/link";
 
-interface LinkObjectProps {
+export interface LinkObjectProps {
   anchor?: boolean;
   anchorName?: string;
   children?: any | any[];
@@ -8,11 +9,11 @@ interface LinkObjectProps {
   copy?: string;
   index?: number;
   newTab?: boolean;
-  setActiveIndex?: any;
+  setActiveIndex?: (index: number) => void;
   url?: string;
 }
 
-const LinkObject = ({
+export const LinkObject = ({
   anchor,
   anchorName,
   children,
@@ -21,31 +22,30 @@ const LinkObject = ({
   index,
   newTab,
   setActiveIndex,
-  url = '/',
+  url = "/",
 }: LinkObjectProps) => {
   const isSelf = () => {
-    return url.indexOf('http') < 0;
+    return url.indexOf("http") < 0;
   };
 
   return (
     <>
       {isSelf() ? (
-        <Link href={url}>
-          <a
-            onFocus={() => {
-              setActiveIndex ? setActiveIndex(index) : '';
-            }}
-            className={classes}
-            target={newTab ? '_blank' : '_self'}
-            rel={newTab ? 'noopener noreferrer' : null}
-          >
-            <span className="relative">{children || copy}</span>
-          </a>
+        <Link
+          href={url}
+          onFocus={() => {
+            if (setActiveIndex && index !== undefined) setActiveIndex(index);
+          }}
+          className={classes}
+          target={newTab ? "_blank" : "_self"}
+          rel={newTab ? "noopener noreferrer" : undefined}
+        >
+          <span className="relative">{children || copy}</span>
         </Link>
       ) : anchor ? (
         <a
           onFocus={() => {
-            setActiveIndex ? setActiveIndex(index) : '';
+            if (setActiveIndex && index !== undefined) setActiveIndex(index);
           }}
           className={classes}
           href={url}
@@ -55,29 +55,29 @@ const LinkObject = ({
       ) : (
         <a
           onFocus={() => {
-            setActiveIndex ? setActiveIndex(index) : '';
+            if (setActiveIndex && index !== undefined) setActiveIndex(index);
           }}
           className={classes}
           onClick={(e) => {
             if (anchor && anchorName) {
               e.preventDefault();
               const elem = document.getElementById(anchorName);
-              elem.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center',
-                inline: 'nearest',
+              elem?.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+                inline: "nearest",
               });
             }
           }}
           href={
-            classes === 'phone'
+            classes === "phone"
               ? `tel:${url}`
-              : classes === 'email'
-              ? `mailto:${url}`
-              : url
+              : classes === "email"
+                ? `mailto:${url}`
+                : url
           }
-          target={newTab ? '_blank' : '_self'}
-          rel={newTab ? 'noopener noreferrer' : null}
+          target={newTab ? "_blank" : "_self"}
+          rel={newTab ? "noopener noreferrer" : undefined}
         >
           <span className="relative">{children || copy}</span>
         </a>
@@ -85,6 +85,3 @@ const LinkObject = ({
     </>
   );
 };
-
-export { LinkObject };
-export default LinkObject;
