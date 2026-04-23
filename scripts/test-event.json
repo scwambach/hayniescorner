@@ -1,0 +1,24 @@
+{
+  "_type": "event",
+  "title": "First Friday",
+  "date": "2026-05-01",
+  "physicalLocation": true,
+  "location": {
+    "name": "Haynie's Corner",
+    "street": "Haynie's Corner",
+    "cityStateZip": "Evansville, IN 47713"
+  },
+  "description": [
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "text": ""
+        }
+      ]
+    }
+  ],
+  "links": []
+}
