@@ -20,8 +20,35 @@ const client = createClient({
   token: process.env.SANITY_WRITE_TOKEN, // Required for write operations
 });
 
+// Define event type
+type EventData = {
+  _type: "event";
+  title: string;
+  date: string;
+  time: string;
+  physicalLocation: boolean;
+  location?: {
+    name: string;
+    street: string;
+    cityStateZip: string;
+  };
+  description: Array<{
+    _type: string;
+    style: string;
+    children: Array<{
+      _type: string;
+      text: string;
+    }>;
+  }>;
+  links: Array<{
+    _key: string;
+    title: string;
+    url: string;
+  }>;
+};
+
 // Sample event data - modify as needed
-const eventsToCreate = [
+const eventsToCreate: EventData[] = [
   {
     _type: "event",
     title: "Community Arts Festival",
@@ -124,7 +151,7 @@ async function createEvents() {
       console.log(`Creating event: ${eventData.title}`);
 
       // Create the document as a draft
-      const result = await client.create(eventData);
+      const result = await client.create<EventData>(eventData);
       console.log(`✅ Created draft: ${result._id}`);
 
       // Publish the document by creating a non-draft version

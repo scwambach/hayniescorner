@@ -1,0 +1,100 @@
+
+> hcad-website@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+Turbopack build encountered 6 warnings:
+./styles/main.scss
+Issue while running loader
+SassWarning: 11 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+
+
+./styles/main.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 0, column 8 of file:///Users/scottwambach/Documents/Github/hayniescorner/styles/main.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import 'fonts';
+
+
+styles/main.scss 1:9  root stylesheet
+
+
+
+./styles/main.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 1, column 8 of file:///Users/scottwambach/Documents/Github/hayniescorner/styles/main.scss:1:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+1 | @import 'settings';
+
+
+styles/main.scss 2:9  root stylesheet
+
+
+
+./styles/main.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 2, column 8 of file:///Users/scottwambach/Documents/Github/hayniescorner/styles/main.scss:2:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+2 | @import 'animations';
+
+
+styles/main.scss 3:9  root stylesheet
+
+
+
+./styles/main.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 3, column 8 of file:///Users/scottwambach/Documents/Github/hayniescorner/styles/main.scss:3:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+3 | @import 'global';
+
+
+styles/main.scss 4:9  root stylesheet
+
+
+
+./styles/main.scss
+Issue while running loader
+SassWarning: Deprecation Warning on line 5, column 8 of file:///Users/scottwambach/Documents/Github/hayniescorner/styles/main.scss:5:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+5 | @import 'components/banners';
+
+
+styles/main.scss 6:9  root stylesheet
+
+
+
+✓ Compiled successfully in 17.5s
+  Running TypeScript ...
+Failed to type check.
+
+./scripts/check2026Events.ts:45:21
+Type error: Parameter 'event' implicitly has an 'any' type.
+
+  [90m43 |[0m
+  [90m44 |[0m     console.log([32m`\n📊 Found [0m${events.length[32m} events for 2026:\n`[0m);
+[31m[1m>[0m [90m45 |[0m     events.forEach((event, index) => {
+  [90m   |[0m                     [31m[1m^[0m
+  [90m46 |[0m       console.log([32m`[0m${index + [35m1[0m[32m}. [0m${event.date[32m} - [0m${event.title[32m}`[0m);
+  [90m47 |[0m     });
+  [90m48 |[0m   } [36mcatch[0m (error) {
+Next.js build worker exited with code: 1 and signal: null

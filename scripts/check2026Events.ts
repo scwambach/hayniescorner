@@ -33,7 +33,9 @@ const client = createClient({
 
 async function check2026Events() {
   try {
-    const events = await client.fetch(
+    const events = await client.fetch<
+      Array<{ _id: string; title: string; date: string }>
+    >(
       `*[_type == "event" && date >= "2026-01-01"] | order(date asc) {
         _id,
         title,
