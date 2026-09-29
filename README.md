@@ -9,10 +9,10 @@ A modern Next.js website for Haynes Corner, featuring events, businesses, arts, 
 
 ## Tech Stack
 
-- **Framework**: Next.js 16.2.4 (React 19.2.5)
-- **CMS**: Sanity 5.31.1
-- **Styling**: Tailwind CSS 4.2.4, SASS, Styled Components
-- **TypeScript**: 5.9.3
+- **Framework**: Next.js 16.3.7 (React 19.3.0)
+- **CMS**: Sanity 6.17.0
+- **Styling**: Tailwind CSS 4.3.3, SASS, Styled Components
+- **TypeScript**: 6.0.3
 - **Maps**: Google Maps API
 - **Email**: Nodemailer
 
@@ -56,7 +56,7 @@ npm run dev
 
 ## Security
 
-All packages are kept up-to-date with **0 vulnerabilities**. Security overrides are configured in `package.json` for transitive dependencies.
+The dependency tree currently reports **0 known vulnerabilities**. Security overrides are configured in `package.json` for transitive dependencies.
 
 ## Environment Variables
 

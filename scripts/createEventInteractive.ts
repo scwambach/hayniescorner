@@ -70,7 +70,7 @@ async function createEventInteractive() {
     const description = await question("Event description: ");
     const linkTitle = await question("Link title (press Enter to skip): ");
 
-    let links = [];
+    const links = [];
     if (linkTitle) {
       const linkUrl = await question("Link URL: ");
       links.push({

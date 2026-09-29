@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = process.getBuiltinModule("fs");
 
 const envContent = fs.readFileSync(".env", "utf-8");
 const lines = envContent.split("\n");
